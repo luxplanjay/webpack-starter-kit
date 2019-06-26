@@ -32,6 +32,19 @@ module.exports = env => ({
         ],
       },
       {
+        test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[path]/[name].[ext]',
+              limit: 10000,
+              mimetype: 'application/font-woff',
+            },
+          },
+        ],
+      },
+      {
         test: /\.html$/,
         use: 'html-loader',
       },
