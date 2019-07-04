@@ -42,7 +42,7 @@ module.exports = env => ({
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
-      chunkFilename: 'chunk-[id].[contenthash].css',
+      chunkFilename: '[name].[id].[contenthash].css',
     }),
     new OptimizeCssAssetsPlugin({}),
   ],
