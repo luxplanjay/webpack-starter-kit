@@ -9,7 +9,6 @@ module.exports = env => ({
   entry: './index.js',
   output: {
     path: paths.BUILD_DIR,
-    filename: '[name].bundle.js',
   },
   module: {
     rules: [
