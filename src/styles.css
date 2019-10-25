@@ -13,5 +13,8 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
+  /*
+   * CSS image reference example.
+   */
   background-image: url('images/bg-pattern.png');
 }
