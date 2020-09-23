@@ -5,14 +5,20 @@
 ### Prerequisites
 
 Для корректной работы SASS-компилятора и других инструментов, необходимо один
-раз глобально поставить дополнительные пакеты, выполнив в терминале (с правами
-администратора) следующие команды. Пользователям MacOS ничего делать не нужно.
+раз глобально поставить дополнительные пакеты, выполнив в терминале следующие
+команды. Пользователям MacOS ничего делать не нужно.
 
-Пользователям **Windows**.
+Пользователям **Windows**, в режиме администратора.
+[Как запусттить Powershell](https://youtu.be/p2tFnxcymwk) в режиме
+администратора.
 
 ```shell
-npm install --global windows-build-tools
+npm install --global --production windows-build-tools
 ```
+
+Вот как выглядит процесс успешной установки для пользователей **Windows**.
+
+![Установка windows-build-tools](https://user-images.githubusercontent.com/1426799/45007904-bde9f280-afb4-11e8-8a35-c77dffaffa2a.gif)
 
 Пользователям **Linux**.
 
@@ -28,7 +34,7 @@ sudo apt-get install gcc g++ make
 git clone https://github.com/luxplanjay/webpack-starter-kit.git
 ```
 
-Переименовать папку сборки по имени вашего проекта.
+Переименовать папку сборки именем вашего проекта.
 
 ```shell
 mv webpack-starter-kit имя_проекта
