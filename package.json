@@ -1,7 +1,7 @@
 {
   "name": "webpack-starter-kit",
   "version": "1.1.0",
-  "description": "",
+  "description": "Для корректной работы SASS-компилятора и других инструментов, необходимо один\r раз глобально поставить дополнительные пакеты, выполнив в терминале следующие\r команды. Пользователям MacOS ничего делать не нужно.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --env.mode development --config ./webpack/config.js",
