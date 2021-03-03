@@ -33,10 +33,62 @@
       }
     </style>
   </head>
-
+  <!-- Library Header -->
+  <div class="library-page" style="display: none">
+    <header class="page-header">
+      <div class="container page-header__container">
+        <nav class="nav">
+          <div class="main-link logo">
+            <svg width="24" height="24" aria-label="Logo">
+              <use
+                class="icon-logo"
+                href="./images/symbol-defs.svg#icon-logo"
+              ></use>
+            </svg>
+            <span class="logo__studio">Filmoteka</span>
+          </div>
+          <button
+            type="button"
+            class="nav__button"
+            data-menu-button
+            aria-expanded="false"
+            aria-controls="menu-container"
+          >
+            WATCHED
+          </button>
+          <button
+            type="button"
+            class="nav__button"
+            data-menu-button
+            aria-expanded="false"
+            aria-controls="menu-container"
+          >
+            QUEUE
+          </button>
+          <div class="nav__container" id="menu-container" data-menu>
+            <ul class="menu">
+              <li class="menu__item">
+                <span class="link menu__link">HOME</span>
+              </li>
+              <li class="menu__item">
+                <span class="link menu__link menu__link--current"
+                  >MY LIBRARY</span
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
   <body>
-    <form  id="search-form">
-      <input type="text" name="query" autocomplete="off" placeholder="Поиск фильмов" />
-  </form>
+    <form id="search-form">
+      <input
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Поиск фильмов"
+      />
+    </form>
   </body>
 </html>
