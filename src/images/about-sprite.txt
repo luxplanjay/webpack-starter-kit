@@ -1,0 +1,12 @@
+icon-arrow-left - стрелка, правая делается разворотом левой
+icon-closer - крестик
+icon-search - иконка поиска/лупы
+icon-film - иконка фильма из хэдера
+icon-heart - иконка сердца из футера
+
+для базовой стилизации иконок используется класс .icon, без него icon-closer и icon-arrow-left неправильно отображатся
+
+пример использования:
+        <svg class="icon">
+          <use href="./images/sprite.svg#icon-closer "></use>
+        </svg>
