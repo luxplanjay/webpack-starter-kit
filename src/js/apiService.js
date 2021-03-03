@@ -13,10 +13,22 @@ inputSearch.addEventListener('submit', event => onSearch(event));
 //базовая функция запроса списка фильмов
 const fetchFilms = async (moviesURL) => {
     const response = await axios.get(moviesURL)
-    .then(({data : {results}}) => {console.log(results);
-    page += 1;
-return results})
-    .catch (error => console.log("ОШИБКА ОШИБКА ОШИБКА"))
+    .then(({data : {results}}) => {
+         if(results.length === 0) {
+             console.log("По Вашему запросу ничего не найдено");
+             return;
+         }
+        console.log(results);
+        page += 1;
+        return results
+})
+    .catch (error => {
+        if(error.response.status === 422) {
+            console.log("Вы ввели некорректное название фильма");
+        } else {
+        console.log(error)}
+    })
+    // .catch (error => console.log(error))
 }
 
 //функция поиска по ключевому слову
@@ -34,7 +46,7 @@ function onSearch(event){
 const fetchInfoFilm = async (movieID) => {
     const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
     const response = await axios.get(infoMovieURL);
-    console.log(response);
+    // console.log(response);
 }
 const movieID = 512896;
 fetchInfoFilm(movieID);
