@@ -24,6 +24,7 @@ const fetchFilms = async (moviesURL) => {
 })
     .catch (error => {
         if(error.response.status === 422) {
+            console.log(error);
             console.log("Вы ввели некорректное название фильма");
         } else {
         console.log(error)}
