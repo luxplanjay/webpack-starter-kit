@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include for-size(mobile) {
+    width: 320px;
+  }
+
+  @include for-size(tablet) {
+    width: 768px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @include for-size(desktop) {
+    width: 1024px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.flexbox {
+  @include container(flex, center, center);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body,
+h1,
+h2,
+h3,
+ul,
+p,
+b {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
