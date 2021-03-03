@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
+    <title>Filmoteka</title>
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css"
+    /> -->
 
     <!-- Don't forget to delete this style tag. -->
     <style>
@@ -33,10 +41,62 @@
       }
     </style>
   </head>
-
+  <!-- Library Header -->
+  <div class="library-page" style="display: none">
+    <header class="page-header">
+      <div class="container page-header__container">
+        <nav class="nav">
+          <div class="main-link logo">
+            <svg width="24" height="24" aria-label="Logo">
+              <use
+                class="icon-logo"
+                href="./images/symbol-defs.svg#icon-logo"
+              ></use>
+            </svg>
+            <span class="logo__studio">Filmoteka</span>
+          </div>
+          <button
+            type="button"
+            class="nav__button"
+            data-menu-button
+            aria-expanded="false"
+            aria-controls="menu-container"
+          >
+            WATCHED
+          </button>
+          <button
+            type="button"
+            class="nav__button"
+            data-menu-button
+            aria-expanded="false"
+            aria-controls="menu-container"
+          >
+            QUEUE
+          </button>
+          <div class="nav__container" id="menu-container" data-menu>
+            <ul class="menu">
+              <li class="menu__item">
+                <span class="link menu__link">HOME</span>
+              </li>
+              <li class="menu__item">
+                <span class="link menu__link menu__link--current"
+                  >MY LIBRARY</span
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
   <body>
-    <form  id="search-form">
-      <input type="text" name="query" autocomplete="off" placeholder="Поиск фильмов" />
-  </form>
+    <form id="search-form">
+      <input
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Поиск фильмов"
+      />
+    </form>
   </body>
 </html>
