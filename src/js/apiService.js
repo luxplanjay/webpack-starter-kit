@@ -29,7 +29,6 @@ const fetchFilms = async (moviesURL) => {
         } else {
         console.log(error)}
     })
-    // .catch (error => console.log(error))
 }
 
 //функция поиска по ключевому слову
@@ -47,7 +46,6 @@ function onSearch(event){
 const fetchInfoFilm = async (movieID) => {
     const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
     const response = await axios.get(infoMovieURL);
-    // console.log(response);
 }
 const movieID = 512896;
 fetchInfoFilm(movieID);

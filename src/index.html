@@ -8,38 +8,7 @@
     <!-- <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css"
     /> -->
-
-    <!-- Don't forget to delete this style tag. -->
-    <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .intro {
-        text-align: center;
-      }
-
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
-      }
-
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
   </head>
   <!-- Library Header -->
   <div class="library-page" style="display: none">
@@ -90,13 +59,14 @@
     </header>
   </div>
   <body>
-    <form id="search-form">
-      <input
+    <form class="search" id="search-form">
+      <input class="search__input"
         type="text"
         name="query"
         autocomplete="off"
         placeholder="Поиск фильмов"
       />
+      <div class="search__box"></div>
     </form>
   </body>
 </html>
