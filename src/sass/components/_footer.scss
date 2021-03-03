@@ -1,0 +1,9 @@
+.footer {
+
+
+    &__text {
+        @include font(normal, 400, 16px, 1.16);
+        color: $subtitle-text-color;
+        margin-bottom: 4px;
+}
+
