@@ -1,0 +1,19 @@
+.header {
+    font-family: 'Roboto';
+    font-weight: 500;
+    background-color: $color-background;
+}
+
+.header__title {
+    display: none;
+    color: $text-header;
+}
+
+
+.site-nav__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    // overflow: hidden;
+    outline:none;
+}
