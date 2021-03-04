@@ -1,5 +1,5 @@
 .footer {
-  background-color: #f7f7f7;
+  background-color: $footer-bg-color;
   margin-left: auto;
   margin-right: auto;
 
@@ -16,8 +16,8 @@
 }
 
 .footer-text {
-  font-family: Roboto;
-  color: #545454;
+  font-family: Roboto, sans-serif;
+  color: $footer-text-color;
 }
 
 .material-icons {
@@ -28,7 +28,7 @@
 }
 
 .footer-link {
-  color: #545454;
+  color: $footer-text-color;
   list-style-type: none;
   font-style: normal;
   border-bottom: 1px solid rgba(84, 84, 84, 1);
@@ -63,5 +63,8 @@
   }
   .footer-text {
     font-size: 16px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
   }
 }
