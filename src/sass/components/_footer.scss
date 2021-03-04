@@ -1,0 +1,29 @@
+.footer-page {
+  /* общие стили для подвала сайта */
+  background-color: getColor(footer-background);
+
+  color: footer-text;
+  font-weight: 400;
+
+  //   @media screen and (max-width: #{mobile-1}) {
+  font-size: 14px;
+  line-height: 16px;
+  //   }
+
+  @media screen and (min-width: $mobile) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__info-area {
+    margin: 30px auto;
+
+    @media screen and (min-width: $mobile) {
+      margin-bottom: 28px;
+    }
+
+    &--icon {
+      fill: accent;
+    }
+  }
+}

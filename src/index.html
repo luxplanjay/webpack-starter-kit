@@ -14,33 +14,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css"
     /> -->
-
-  <!-- Don't forget to delete this style tag. -->
-  <style>
-    body {
-      min-height: 100vh;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .intro {
-      text-align: center;
-    }
-
-    .intro h1 {
-      margin-top: 0;
-      font-weight: 500;
-      font-size: 40px;
-    }
-
-    .intro img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
 </head>
 <!-- Library Header -->
 <div class="library-page" style="display: none">
@@ -80,17 +53,15 @@
   </form>
 
   <!-- footer -->
-  <footer>
-    <div class="container">
-      <ul footer__info-area>
-        <li>
-          <p class="footer__info-area--copyrightText">&copy; 2020 | All Rights Reserved | Developed with</p>
-        </li>
-        <li><svg></svg></li>
-        <li>
-          <p class="footer__info-area--studentsList">by GoIT Students</p>
-        </li>
-      </ul>
+  <footer class="footer-page">
+    <div class="container footer-page__info-area">
+      <span class="footer-page__info-area--copyrightText">&copy; 2021 | All Rights Reserved | Developed with</span>
+      <svg class="footer-page__info-area--icon">
+        <use href="./images/symbol-defs.svg#icon-heart"></use>
+      </svg>
+      <span class="footer-page__info-area--studentsList">by
+        <span>GoIT Students</span>
+      </span>
 
     </div>
   </footer>

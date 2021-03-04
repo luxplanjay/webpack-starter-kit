@@ -3,6 +3,8 @@ $colors: (
   'white-text': #ffffff,
   'accent': #ff6b08,
   'footer-text': #545454,
+  'footer-background': #f7f7f7,
+  'footer-background-draft': red,
   'modal-grey_text': #8c8c8c,
 );
 @function getColor($key) {
