@@ -1,0 +1,39 @@
+$width_desktop: 1024px;
+$width_tablet: 768px;
+$width_mobile: 320px;
+
+$duration_transition: 1s;
+$transition-common: $duration_transition cubic-bezier(0.4, 0, 0.2, 1);
+
+:root {
+    --width_desktop: $width_desktop;
+    --width_tablet: $width_tablet;
+    --width_mobile: $width_mobile;
+  }
+
+  //  в домашке №8 по хтмл я использовалтакой подход к переменным - рекомендую
+
+//   $color_active-1: #2196f3;
+//   $color_active-2: #ffffff;
+//   $color_icon_header: #757575;
+//   $color_icon_team: #afb1b8;
+//   $color_icon_clients: #afb1b8;
+//   $color_icon_footer: #ffffff;
+  
+//   $color_text-dark: #212121;
+//   $color_text-grey: #757575;
+//   $color_text-light: #ffffff;
+//   $color_text-transp: rgba(255, 255, 255, 0.6);
+  
+//   $color_header-background: white;
+//   $color_hero-background: white;
+//   $color_hero-underlay: #2f303a;
+//   $color_features_icon-background: #f5f4fa;
+//   $color_team-background: #f5f4fa;
+//   $color_team_mamber-background: #fff;
+//   $color_footer-background: #2f303a;
+//   $color_footer_icon-background: rgba(255, 255, 255, 0.1);
+//   $color_portfolio-background: #fff;
+//   $color_button-background: #2196f3;
+//   $color_backdrop-background: rgba(0, 0, 0, 0.2);
+//   $color_backdrop_form-background: white;

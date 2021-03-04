@@ -1,0 +1,214 @@
+@import "../utils/mixins";
+
+
+/* myLibrary styles*/
+.library {
+    &__container {
+        outline: 1px dashed red;
+        margin: 0px auto;
+        width: $width_mobile;
+        padding: 20px 20px 40px; 
+      }
+    
+      &__list {
+        outline: 1px dashed greenyellow;
+        margin: 0px auto;
+        padding: 0px;
+        list-style: none;
+        @include CenteredFlex(flex, wrap);
+
+      }
+      &__card-container {        
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        &:not(:last-child) {
+          outline: 2px solid green;
+          margin-bottom: 20px;
+        }
+      }
+    
+      &__card {
+        margin: 0px;
+        padding: 0px;
+        width: 280px;
+        height: 440px;
+    
+        background-color: wheat;
+        outline: 1px solid yellow;
+        &__link{
+            width: 100%;
+            @include CenteredFlex(flex, wrap);
+        }
+        &__image{
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        &__title{
+            width: 100%;
+        }
+        &__info{
+            width: 100%;
+        }
+      }     
+    
+      &__page-selector {
+        outline: 2px solid green;
+        margin: 40px auto 0px;
+        width: 280px;
+        height: 40px;
+        background-color: #f7f7f7;
+      }
+    @include for-size(mobile) {
+        &__container {
+            outline: 1px dashed red;
+            margin: 0px auto;
+            width: $width_mobile;
+            padding: 20px 20px 40px; 
+          }
+        
+          &__list {
+            outline: 1px dashed greenyellow;
+            margin: 0px auto;
+            padding: 0px;
+            font-size: 0px;
+            list-style: none;
+            @include CenteredFlex(flex, wrap);
+
+          }
+          &__card-container {
+            @include CenteredFlex(flex, wrap);
+            margin: 0px 0px 0px 0px;
+            padding: 0px;
+            &:not(:last-child) {
+              outline: 2px solid green;
+              margin-bottom: 20px;
+            }
+          }
+        
+          &__card {
+            margin: 0px;
+            padding: 0px;
+            width: 280px;
+            height: 440px;
+        
+            background-color: wheat;
+            outline: 1px solid yellow;
+          }
+        
+          &__page-selector {
+            outline: 2px solid green;
+            margin: 40px auto 0px;
+            width: 280px;
+            height: 40px;
+            background-color: #f7f7f7;
+          }
+    }
+    @include for-size(tablet) {
+        &__container {
+            outline: 1px dashed red;
+            margin: 0px auto;
+            width: $width_tablet;
+            padding: 60px 75px; 
+          }
+        
+          &__list {
+            outline: 1px dashed greenyellow;
+            margin: 0px auto;
+            padding: 0px;
+            list-style: none;
+            @include CenteredFlex(flex, wrap);
+
+          }
+          &__card-container {
+            @include CenteredFlex(flex, wrap);
+            margin: 0px 0px 0px 0px;
+            margin-left: 30px;
+            padding: 0px;
+            &:nth-child(n){
+                margin-bottom: 0px;
+            }
+            &:nth-child(n + 3) {
+              outline: 2px solid green;
+              margin-top: 30px;
+             
+            }
+            &:nth-child(2n + 1) {
+              outline: 2px solid red;
+              margin-left: 0px;
+            }
+          }
+        
+          &__card {
+            margin: 0px;
+            padding: 0px;
+            width: 293px;
+            height: 440px;
+        
+            background-color: wheat;
+            outline: 1px solid yellow;
+          }
+        
+          &__page-selector {
+            outline: 2px solid green;
+            margin: 50px auto 0px;
+            width: 375px;
+            height: 40px;
+            background-color: #f7f7f7;
+          }
+
+    }
+    @include for-size(desktop) {
+        &__container {
+            outline: 1px dashed red;
+            margin: 0px auto;
+            width: $width_desktop;
+            padding: 60px 70px 60px; 
+          }
+        
+          &__list {
+            outline: 1px dashed greenyellow;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            @include CenteredFlex(flex, wrap);
+          }
+          &__card-container {
+            @include CenteredFlex(flex, wrap);
+            margin: 0px 0px 0px 0px;
+            margin-left: 30px;
+            padding: 0px;
+            &:nth-child(n){
+                margin-bottom: 0px;
+            }
+            &:nth-child(n + 4) {
+              outline: 2px solid green;
+              margin-top: 30px;
+              margin-bottom: 0px;
+            }
+            &:nth-child(3n + 1) {
+              outline: 2px solid red;
+              margin-left: 0px;
+              margin-bottom: 0px;
+            }
+          }
+        
+          &__card {
+            margin: 0px;
+            padding: 0px;
+            width: 274px;
+            height: 440px;
+        
+            background-color: wheat;
+            outline: 1px solid yellow;
+          }
+        
+          &__page-selector {
+            outline: 2px solid green;
+            margin: 50px auto 0px;
+            width: 375px;
+            height: 40px;
+            background-color: #f7f7f7;
+          }
+    }
+}
