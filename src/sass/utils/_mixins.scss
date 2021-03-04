@@ -37,9 +37,14 @@
             @content;
         }
     }
-    @else if $range==desktop {
-        @media (min-width: $desktop) {
-            @content;
-        }
+   @else if $range == tablet-plus {
+    @media (min-width: $tablet) {
+      @content;
     }
+  } 
+  @else if $range == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+}
 }

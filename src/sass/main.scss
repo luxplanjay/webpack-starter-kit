@@ -1,7 +1,9 @@
 @import './utils/variables';
 @import './utils/mixins.scss';
 @import './utils/common';
-@import './components/footer';
 @import 'modern-normalize/modern-normalize.css';
+@import './layouts/01header';
 @import './layouts/films';
 @import './components/film-card.scss';
+@import './components/footer';
+
