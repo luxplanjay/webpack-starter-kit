@@ -24,6 +24,7 @@
   &:hover,
   &:focus {
     border: 2px solid #ff6b01;
+    border-radius: 5px;
   }
 }
 .moviesList-item:not(:nth-child(3n)) {
