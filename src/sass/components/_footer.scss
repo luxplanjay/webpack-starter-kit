@@ -1,14 +1,10 @@
 .footer-page {
   /* общие стили для подвала сайта */
   background-color: getColor(footer-background);
-
-  color: footer-text;
+  color: getColor(footer-text);
   font-weight: 400;
-
-  //   @media screen and (max-width: #{mobile-1}) {
   font-size: 14px;
   line-height: 16px;
-  //   }
 
   @media screen and (min-width: $mobile) {
     font-size: 16px;
@@ -16,14 +12,43 @@
   }
 
   &__info-area {
-    margin: 30px auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0px auto;
+    text-align: center;
 
     @media screen and (min-width: $mobile) {
-      margin-bottom: 28px;
+      padding-bottom: 28px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--text {
+      margin: 0;
+
+      &:first-child {
+        margin-right: 10px;
+      }
     }
 
     &--icon {
-      fill: accent;
+      fill: getColor(accent);
+      width: 14px;
+      height: 13px;
+      margin: 0px 10px;
+    }
+
+    &--students-link {
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        color: getColor(accent);
+      }
     }
   }
 }
