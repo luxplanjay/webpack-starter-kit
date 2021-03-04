@@ -1,0 +1,12 @@
+.films__list {
+    display: grid;
+    margin-bottom: 50px;
+  @include for-size(tablet) {
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include for-size(desktop) {
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
