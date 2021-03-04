@@ -33,15 +33,17 @@ $color-bcg-btn: #ff6b01;
 
 // by Maryasov
 // for FT-11 _library.scss
-
+$width_mobile:320px;
+  $width_tablet:768px;
+  $width_desktop:1024px;
 
 $duration_transition: 1s;
 $transition-common: $duration_transition cubic-bezier(0.4, 0, 0.2, 1);
 
 :root {
-    --width_desktop: $width_desktop;
-    --width_tablet: $width_tablet;
-    --width_mobile: $width_mobile;
+    // --width_desktop: $width_desktop;
+    // --width_tablet: $width_tablet;
+    // --width_mobile: $width_mobile;
   }
 
   //  в домашке №8 по хтмл я использовалтакой подход к переменным - рекомендую

@@ -1,8 +1,10 @@
 @import "../utils/mixins";
 
-$width_desktop: $mobile;
-$width_tablet: $tablet;
-$width_mobile: $desktop;
+@import "../utils/variables";
+
+// $width_desktop: 1024;
+// $width_tablet: 768px;
+// $width_mobile: 320px;
 
 /* myLibrary styles*/
 .library {
@@ -165,7 +167,7 @@ $width_mobile: $desktop;
         &__container {
             outline: 1px dashed red;
             margin: 0px auto;
-            width: $width_desktop;
+            width: 1024px;
             padding: 60px 70px 60px; 
           }
         
