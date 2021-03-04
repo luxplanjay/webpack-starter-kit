@@ -1,6 +1,6 @@
 <ul class="moviesList moviesList-js">
     {{#each this}}
-    <li class="moviesList-item moviesList-item-js">
+    <li class="moviesList-item moviesList-item-js" data-movieId="{{id}}">
         <img src="https://image.tmdb.org/t/p/w300{{poster_path}}" alt="It seems the poster is missing"
             class="moviesList-poster" />
         <p class="moviesList-movieName moviesList-movieName-js">{{title}}</p>

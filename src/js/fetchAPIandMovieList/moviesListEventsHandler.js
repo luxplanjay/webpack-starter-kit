@@ -1,7 +1,7 @@
 import fetchAPI from './fetchAPI';
 import debounce from 'lodash.debounce';
 import renderMovies from './renderMovies.js';
-import movieListTmp from '../template/moviesListTemplate.hbs';
+import movieListTmp from '../../template/moviesListTemplate.hbs';
 const refs = {
   movieInputRef: document.querySelector('.movie-searchTag-js'),
   moviesContainerRef: document.querySelector('.movies-container-js'),
