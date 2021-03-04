@@ -34,6 +34,10 @@
     @media (min-width: 0px) and (max-width: $desktop - 1) {
       @content;
     }
+  } @else if $range == tablet-plus {
+    @media (min-width: $tablet) {
+      @content;
+    }
   } @else if $range == desktop {
     @media (min-width: $desktop) {
       @content;

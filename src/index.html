@@ -11,17 +11,19 @@
 
   <header class="header">
     <div class="container header-container">
-      <div class="logo-container">
-        <svg class="header__logo" width="24" height="24">
-          <use class="icon-mobile-close" href="./images/sprite.svg#icon-film"></use>
-        </svg>
-        <h1 class="header__title">
-          Filmoteka
-        </h1>
+      <div class="header-nav-container">
+        <div class="logo-container">
+          <svg class="header__logo" width="24" height="24">
+            <use class="icon-mobile-close" href="./images/sprite.svg#icon-film"></use>
+          </svg>
+          <h1 class="header__title">
+            Filmoteka
+          </h1>
+        </div>
         <nav>
           <ul class="site-nav__list">
             <li class="site-nav__item">
-              <button class="site-nav__button">Home</button>
+              <button class="site-nav__button is-active">Home</button>
             </li>
             <li class="site-nav__item">
               <button class="site-nav__button">My library</button>
@@ -29,14 +31,16 @@
           </ul>
         </nav>
       </div>
-    </div>
-    <form class="search-form">
-      <input class="search-form__input" type="text" name="query" placeholder="Поиск фильмов" lang="ru"/>
-      <svg class="search-form__icon" width="12" height="12">
-        <use class="icon-mobile-close" href="./images/sprite.svg#icon-search"></use>
-      </svg>
+      <form class="search-form">
+        <input class="search-form__input" type="text" name="query" placeholder="Поиск фильмов" lang="ru"/>
+        <svg class="search-form__icon" width="12" height="12">
+          <use class="icon-mobile-close" href="./images/sprite.svg#icon-search"></use>
+        </svg>
+        
+      </form>
+
       <p class="search-form__error">Search result not successful. Enter the correct movie name and</p>
-    </form>
+    </div>
   </header>
 
   
