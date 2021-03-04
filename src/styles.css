@@ -1,8 +1,20 @@
-html {
+:root {  
+  --primary-white-color: #FFFFFF; 
+   --primary-text-color: #000000; 
+    --modal-secondary-text-color: #8C8C8C;  
+    --footer-text-color: #545454; 
+     --footer-bg-color: #F7F7F7;  
+     --accent-color: #FF6B08; 
+      --error-color: #FF001B;
+    }
+
+      
+      html {
   box-sizing: border-box;
 }
 
 *,
+
 *::before,
 *::after {
   box-sizing: inherit;
