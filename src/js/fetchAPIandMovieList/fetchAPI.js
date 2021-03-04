@@ -5,13 +5,19 @@ export default {
   searchTag: '',
   page: 1,
   itemsPerPage: 9,
-  adult: 'false', //false,true
-  language: 'ru-RU', //ru-RU,ua-UA,en-US.....
-  validTimeWindow: 'week', //day,week
-  validMediaType: 'movie', //all,movie,tv,person
-  genresArray: [],
+  adult: 'false', //false,true / отображать взрослый контент или нет
+  language: 'en-US', //ru-RU,ua-UA,en-US.....
+  validTimeWindow: 'week', //day,week  /  выбор между тренды за неделю или за день
+  validMediaType: 'movie', //all,movie,tv,person / тренды выбор всё,толькоо фильмы,только сериалы, по популярным актёрам
+  genresArray: [], // массив ид и имен жанров
+  errorHandler(error) {
+    //обработчик ошибок ( кетчей )
+    moviesContainerRef.innerHTML =
+      error + '. It is a server error , Pls just try again!';
+  },
   fetchGenres() {
-    const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${myKey}&language=ru-RU`;
+    //Функция забирает с сервера массив с именами и ид жанров
+    const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${myKey}&language=${this.language}`;
     const f = fetch(url)
       .then(response => {
         if (response.ok) {
@@ -19,17 +25,22 @@ export default {
         }
       })
       .then(response => response.genres)
-      .catch(e => {
-        moviesContainerRef.innerHTML = e;
-      });
+      .catch(this.errorHandler);
     f.then(res => {
       this.genresArray = res.slice();
     });
   },
   getMoviesWithGenreNames(response) {
+    //Функция заменяет для фильма ид жанров на их имена
+    if (
+      response.results.genre_ids === null ||
+      response.results.release_date === ''
+    ) {
+      return;
+    }
     response.results.map(movie => {
-      const genresNamesArr = movie.genre_ids.map(element => {
-        const newEl = this.genresArray.find(el => el.id === element);
+      const genresNamesArr = movie.genre_ids.map(movieGenre => {
+        const newEl = this.genresArray.find(genre => genre.id === movieGenre);
         return newEl.name;
       });
       movie.genre_ids = genresNamesArr.slice();
@@ -38,6 +49,7 @@ export default {
     });
   },
   resetPageToFirst() {
+    //сброс на 1ю страницу
     this.page = 1;
   },
   get movieName() {
@@ -47,6 +59,7 @@ export default {
     this.searchTag = value;
   },
   searchMoviesbyTag() {
+    //Поиск фильма по тому что ввели в инпут
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${myKey}&language=${this.language}&query=${this.searchTag}&page=${this.page}&per_page=${this.itemsPerPage}&include_adult=${this.adult}`;
     this.fetchGenres();
     return fetch(url)
@@ -56,21 +69,19 @@ export default {
         }
       })
       .then(response => {
-        this.getMoviesWithGenreNames(response);
-        this.page += 1;
+        console.log(response);
         if (response.results.length === 0) {
-          moviesContainerRef.innerHTML =
-            'Невозможно найти фильм , попробуйте другое название';
+          moviesContainerRef.innerHTML = 'No movies found , try another name';
           return;
         }
+        this.getMoviesWithGenreNames(response);
+        this.page += 1;
         return response.results;
       })
-      .catch(e => {
-        moviesContainerRef.innerHTML = e;
-      });
+      .catch(this.errorHandler);
   },
   getTrendingMovies() {
-    moviesContainerRef.innerHTML = '';
+    //Забирает с сервера трендовые фильмы , по умолчанию за неделю
     movieInputRef.value = '';
     const url = `https://api.themoviedb.org/3/trending/${this.validMediaType}/${this.validTimeWindow}?api_key=${myKey}&language=${this.language}`;
     this.fetchGenres();
@@ -82,13 +93,9 @@ export default {
       })
       .then(response => {
         this.getMoviesWithGenreNames(response);
-        response.results.map(el => {});
         this.page += 1;
-
         return response.results;
       })
-      .catch(e => {
-        moviesContainerRef.innerHTML = e;
-      });
+      .catch(this.errorHandler);
   },
 };
