@@ -1,7 +1,11 @@
 .search {
+    position: relative;
+    height: 500px;
     background-image: url('../images/library-mobile.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+.search__form {
     position: absolute;
     margin: auto;
     top: 0;

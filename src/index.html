@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Filmoteka</title>
-  <!-- <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Filmoteka</title>
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     /> -->
@@ -44,10 +44,15 @@
 </div>
 
 <body>
-  <form id="search-form">
-    <input type="text" name="query" autocomplete="off" placeholder="Поиск фильмов" />
-  </form>
-
+ <main>
+   <section class="search">
+    <form class="search__form" id="search-form">
+      <input class="search__input" type="text" name="query" autocomplete="off" placeholder="Поиск фильмов" />
+      <div class="search__box"></div>
+    </form>
+   </section>
+ </main>
+  
   <!-- footer -->
   <footer class="footer-page">
 

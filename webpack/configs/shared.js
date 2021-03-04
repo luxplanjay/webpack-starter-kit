@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
+const CopyPlugin = require("copy-webpack-plugin");
 const paths = require('../utils/paths');
 
 module.exports = env => ({
@@ -71,5 +72,8 @@ module.exports = env => ({
     new CleanWebpackPlugin(),
     new FriendlyErrorsWebpackPlugin(),
     new WebpackBar(),
+    new CopyPlugin({
+      patterns: [{ from: "favicon", to: "favicon" }],
+    }),
   ],
 });
