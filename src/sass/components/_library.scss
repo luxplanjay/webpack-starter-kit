@@ -1,5 +1,8 @@
 @import "../utils/mixins";
 
+$width_desktop: $mobile;
+$width_tablet: $tablet;
+$width_mobile: $desktop;
 
 /* myLibrary styles*/
 .library {
