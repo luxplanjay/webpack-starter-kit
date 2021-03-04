@@ -1,7 +1,7 @@
 .movies-container {
   margin-top: 60px;
   width: 882px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 .moviesList {
   min-height: 500px;
@@ -32,7 +32,7 @@
 .moviesList-item:last-child {
   margin-right: 0;
 }
-.moviesList-item:not(:nth-last-child(-n + 3)) {
+.moviesList-item {
   margin-bottom: 30px;
 }
 .moviesList-movieName {
@@ -43,5 +43,4 @@
 .moviesList-movieGenreAndYear {
   color: #ff6b01;
   word-wrap: normal;
-  overflow: inherit;
 }

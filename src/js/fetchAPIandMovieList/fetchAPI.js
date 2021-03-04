@@ -32,19 +32,23 @@ export default {
   },
   getMoviesWithGenreNames(response) {
     //Функция заменяет для фильма ид жанров на их имена
-    if (
-      response.results.genre_ids === null ||
-      response.results.release_date === ''
-    ) {
-      return;
-    }
+
     response.results.map(movie => {
-      const genresNamesArr = movie.genre_ids.map(movieGenre => {
-        const newEl = this.genresArray.find(genre => genre.id === movieGenre);
-        return newEl.name;
-      });
-      movie.genre_ids = genresNamesArr.slice();
-      movie.release_date = movie.release_date.substring(0, 4);
+      if (movie.genre_ids.length === 0) {
+        movie.genre_ids.push('Genre');
+      } else {
+        const genresNamesArr = movie.genre_ids.map(movieGenre => {
+          const newEl = this.genresArray.find(genre => genre.id === movieGenre);
+          return newEl.name;
+        });
+        movie.genre_ids = genresNamesArr.slice();
+      }
+      if (movie.release_date === '') {
+        movie.release_date = 'Year';
+      } else {
+        movie.release_date = movie.release_date.substring(0, 4);
+      }
+
       return movie;
     });
   },
