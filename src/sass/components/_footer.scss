@@ -1,9 +1,93 @@
 .footer {
-
-
+   width: 100%;
+    background-color: $color-footer;
+    color: $text-footer;
+    text-align: center;
+    @include for-size(mobile-only) {
+        @include font(normal, 14px, 1.14);
+        padding-top: 29px;
+        padding-bottom: 30px;
+        height: 100px;
+    }
+    @include for-size(mobile) {
+        @include font(normal, 14px, 1.14);
+        padding-top: 29px;
+        padding-bottom: 30px;
+          height: 100px;
+    }
+    @include for-size(tablet) {
+        @include font(normal, 16px, 1.19);
+        padding-top: 30px;
+        padding-bottom: 28px;
+          height: 77px;
+    }
+    @include for-size(desktop) {
+        @include font(normal, 16px, 1.19);
+        padding-top: 30px;
+        padding-bottom: 28px;
+          height: 77px;
+    }
+    &__flex {
+        @include for-size(mobile-only) {
+            display: inline;
+            margin: auto;
+        }
+        @include for-size(mobile) {
+            display: inline;
+            margin: auto;
+        }
+        @include for-size(tablet) {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+        @include for-size(desktop) {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+    }
+    &__flex--dev {
+        @include for-size(mobile-only) {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            // padding-top: 10px;
+        }
+        @include for-size(mobile) {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            // padding-top: 10px;
+        }
+        @include for-size(tablet) {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            // padding-top: 10px;
+        }
+        @include for-size(desktop) {
+            display: flex;
+        }
+    }
     &__text {
-        @include font(normal, 400, 16px, 1.16);
-        color: $subtitle-text-color;
         margin-bottom: 4px;
+    }
+    &__heart {
+        fill: $color-accent;
+        vertical-align: auto;
+        color: $text-accent;
+        @include for-size(mobile-only) {
+            margin: 1px 10px 0;
+        }
+        @include for-size(mobile) {
+            margin: 1px 10px 0;
+        }
+        @include for-size(tablet) {
+            margin: 3.5px 10px 0;
+        }
+        @include for-size(desktop) {
+            margin: 3.5px 10px 0;
+        }
+    }
 }
-
