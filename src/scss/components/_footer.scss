@@ -63,5 +63,8 @@
   }
   .footer-text {
     font-size: 16px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
   }
 }
