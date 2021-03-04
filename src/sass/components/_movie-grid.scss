@@ -1,4 +1,5 @@
 p,
+ul,
 h1,
 h2,
 h3 {
@@ -8,53 +9,52 @@ h3 {
 
 .movie-cards {
   padding-top: 20px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding-top: 60px;
   }
 }
 
 .movie-grid {
+  margin-right: auto;
+  margin-left: auto;
   list-style: none;
   display: grid;
-  justify-items: center;
-  padding: 0;
-  margin: 0;
   @media screen and (min-width: 768px) {
     display: grid;
-    grid-template-columns: 313px 313px;
-    align-items: center;
-    justify-content: center;
+    width: 617px;
+    grid-template-columns: 323px 293px;
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $desktop) {
     display: grid;
+    width: 884px;
     grid-template-columns: 304px 304px 274px;
-    align-items: center;
-    justify-content: center;
   }
 }
 
 .movie-grid__item {
   margin-bottom: 20px;
-  @media screen and (min-width: 768px) {
-    margin-right: 20px;
-  }
-  @media screen and (min-width: 1024px) {
+  width: 280px;
+  @media screen and (min-width: $tablet) {
+    width: 293px;
     margin-right: 30px;
     margin-bottom: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 274px;
   }
 }
 
 .movie-grid__item:nth-child(2n) {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     margin-right: 0px;
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $desktop) {
     margin-right: 30px;
   }
 }
 
 .movie-grid__item:nth-child(3n) {
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $desktop) {
     margin-right: 0px;
   }
 }
@@ -71,18 +71,23 @@ h3 {
 .movie-grid__title {
   margin-top: 10px;
   font-size: 12px;
-  font-style: Roboto;
-  font-weight: 500;
+  font-style: $font;
+  font-weight: 700;
   line-height: 1.16;
+  color: $color-black;
   text-transform: uppercase;
-  @media screen and (min-width: 768px) {
+   @media screen and (min-width: $tablet) {
     line-height: 1.33;
   }
 }
 .movie-grid__info {
+  margin-top: 3px;
   font-size: 12px;
+  font-style: $font;
+  font-weight: 500;
   line-height: 1.16;
-  @media screen and (min-width: 768px) {
+  color: $color-orange;
+  @media screen and (min-width: $tablet) {
     line-height: 1.33;
   }
 }
