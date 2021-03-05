@@ -1,6 +1,6 @@
 @import './utils/variables';
 @import './base/normalize';
-@import './base/reset.scss';
+@import './base/reset';
 @import './components/btn';
 @import './components/card';
 @import './components/container';
@@ -9,5 +9,4 @@
 @import './components/modal';
 @import './components/pagination';
 @import './components/spinner';
-@import './base/reset';
 @import './components/moviesList';
