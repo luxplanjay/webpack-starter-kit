@@ -1,5 +1,6 @@
 import './sass/main.scss';
 import refs from './js/refs';
+import './js/up-btn';
 
 import headerRenderMarcup from './js/header-render';
 
