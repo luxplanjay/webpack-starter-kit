@@ -19,7 +19,7 @@ h3 {
   margin-left: auto;
   list-style: none;
   display: grid;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     display: grid;
     width: 617px;
     grid-template-columns: 323px 293px;
@@ -61,7 +61,6 @@ h3 {
 
 .movie-grid__item > a {
   text-decoration: none;
-  font-size: 12px;
 }
 
 .movie-grid > img {
@@ -70,24 +69,24 @@ h3 {
 
 .movie-grid__title {
   margin-top: 10px;
-  font-size: 12px;
+  font-size: $main-font-size;
   font-style: $font;
-  font-weight: 700;
-  line-height: 1.16;
+  font-weight: $title-font-weigth;
+  line-height: $title-line-height;
   color: $color-black;
   text-transform: uppercase;
-   @media screen and (min-width: $tablet) {
-    line-height: 1.33;
+  @media screen and (min-width: $tablet) {
+    line-height: $main-line-height;
   }
 }
 .movie-grid__info {
   margin-top: 3px;
-  font-size: 12px;
+  font-size: $main-font-size;
   font-style: $font;
-  font-weight: 500;
-  line-height: 1.16;
+  font-weight: $main-font-weight;
+  line-height: $title-line-height;
   color: $color-orange;
   @media screen and (min-width: $tablet) {
-    line-height: 1.33;
+    line-height: $main-line-height;
   }
 }
