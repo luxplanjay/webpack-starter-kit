@@ -2,6 +2,9 @@ import './sass/main.scss';
 import refs from './js/refs';
 import './js/up-btn';
 import './js/header-position';
+import './js/storage';
+import './js/themes';
+import './js/theme-change';
 
 import headerRenderMarcup from './js/header-render';
 

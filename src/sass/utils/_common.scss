@@ -32,6 +32,14 @@ body {
   overflow-x: hidden;
 }
 
+// theme
+body.dark-theme {
+  background-color: #333333;
+  .film__title {
+    color: $text-header;
+  }
+}
+
 h1,
 h2,
 h3,
