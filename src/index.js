@@ -2,7 +2,7 @@ import './sass/main.scss';
 import refs from './js/refs';
 
 import headerRenderMarcup from './js/header-render';
-
+import './js/footermodal.js'
 headerRenderMarcup();
 
 import addContent from './js/addContent';
