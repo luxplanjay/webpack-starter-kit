@@ -44,4 +44,14 @@ export default {
   get searchQuery() {
     return this.query;
   },
+
+  get perPage() {
+    if (document.body.clientWidth < 768) {
+      return 4;
+    }
+    if (document.body.clientWidth < 1024) {
+      return 8;
+    }
+    return 9;
+  },
 };
