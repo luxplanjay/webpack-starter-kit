@@ -122,7 +122,7 @@
             margin: 0px auto;
             padding: 0px;
             list-style: none;
-            @include CenteredFlex(flex, wrap);
+            @include CenteredFlex(flex, wrap,$justify: left);
 
           }
           &__card-container {
@@ -176,7 +176,7 @@
             margin: 0px;
             padding: 0px;
             list-style: none;
-            @include CenteredFlex(flex, wrap);
+            @include CenteredFlex(flex, wrap,$justify: left);
           }
           &__card-container {
             @include CenteredFlex(flex, wrap);
