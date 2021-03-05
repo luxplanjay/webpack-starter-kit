@@ -17,7 +17,6 @@
     ),
     url(../images/mobile/header.jpg);
 
-
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
@@ -206,12 +205,7 @@
   }
 }
 
-
-
-
-
 // library
-
 
 .header-container--library {
   padding: 46px 20px 65px;
@@ -225,7 +219,6 @@
       $color-background
     ),
     url(../images/mobile/headerLib.jpg);
-
 
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
@@ -284,5 +277,23 @@
           url(../images/desktop/headerLib@2x.jpg);
       }
     }
+  }
+}
+
+.header-nav-container--library {
+  margin-bottom: 40px;
+}
+
+.library__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.library__item:not(:last-child) {
+  margin-right: 20px;
+
+  @include for-size(tablet-plus) {
+    margin-right: 15px;
   }
 }
