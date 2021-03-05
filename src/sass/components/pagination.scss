@@ -1,0 +1,82 @@
+ul {
+  list-style: none;
+  font-family: $text-main;
+  margin: 0;
+  padding: 0;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.pagination.is-hidden {
+  display: none;
+}
+
+.pagination__list {
+  display: flex;
+  max-width: 374px;
+  height: 40px;
+  background: $color-background;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: $color-light-background;
+}
+.pagination__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: $text-main;
+  line-height: 1.33;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+.pagination__item.prev {
+  background: url('../images/arrow-left2.svg') no-repeat center center;
+}
+
+.pagination__item.next {
+  background: url('../images/arrow-left2.svg') no-repeat center center;
+  transform: rotate(180deg);
+}
+
+.pagination__item.prev,
+.pagination__item.next {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  background-color: $color-footer;
+}
+
+.pagination .numb {
+  border-radius: 5px;
+}
+
+.pagination__item .dots {
+  font-size: 12px;
+  cursor: default;
+}
+
+.pagination li.active,
+.pagination ul li.numb:hover,
+.pagination ul li:first-child:hover,
+.pagination ul li:last-child:hover {
+  color: $text-header;
+  background-color: $color-accent;
+  height: 40px;
+  // width: 40px;
+}
+
+.pagination li.active {
+  color: $text-header;
+  background-color: $color-accent;
+  height: 40px;
+  width: 40px;
+}

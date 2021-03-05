@@ -1,0 +1,11 @@
+        {{#each this}}
+        <li class="film item" data-movieId={{id}}>
+          <a href="" class="film__link link">
+            <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}"  class="film__img" alt="">
+            <div class="film__content">
+              <h3 class="film__title">{{title}}</h3>
+              <p class="film__info">Drama, Comedy | 2019</p>
+            </div>
+          </a>
+        </li>
+        {{/each}}
