@@ -53,6 +53,8 @@
     "axios": "^0.21.1",
     "basiclightbox": "^5.0.4",
     "core-js": "^3.6.5",
+    "firebase": "^8.2.9",
+    "firebaseui": "^4.7.3",
     "handlebars": "^4.7.6",
     "lodash.debounce": "^4.0.8",
     "micromodal": "^0.4.6"
