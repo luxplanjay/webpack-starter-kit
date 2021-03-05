@@ -1,0 +1,8 @@
+{{#each this}}
+<li class="movie-card" data-movieId="{{id}}>
+    <img class=" movie-poster" src="https://image.tmdb.org/t/p/w300{{poster_path}}" loading="lazy"
+    alt="Film {{title}} poster">
+    <h1 class="movie-title">{{title}}</h1>
+    <p class="movie-info"> {{genre_ids}} | {{release_date}}</p>
+</li>
+{{/each}}
