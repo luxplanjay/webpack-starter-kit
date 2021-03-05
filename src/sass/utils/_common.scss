@@ -6,11 +6,11 @@
   padding-right: 20px;
 
   @include for-size(mobile) {
-    width: 320px;
+    min-width: 320px;
   }
 
   @include for-size(tablet) {
-    width: 768px;
+    min-width: 768px;
     padding-left: 15px;
     padding-right: 15px;
   }

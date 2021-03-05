@@ -4,6 +4,13 @@
   font-weight: 500;
   text-transform: uppercase;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+      transform: scale(1.05);
+  }
 
   &.is-active {
     background: $color-accent;
