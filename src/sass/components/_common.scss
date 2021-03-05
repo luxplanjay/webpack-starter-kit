@@ -4,11 +4,11 @@
   margin-left: auto;
   margin-right: auto;
   @media screen and (min-width: $tablet) {
-    padding-left: 76px;
-    padding-right: 76px;
+    padding-left: $tablet-side-container;
+    padding-right: $tablet-side-container;
   }
   @media screen and (min-width: $desktop) {
-    padding-left: 71px;
-    padding-right: 71px;
+    padding-left: $desk-side-container;
+    padding-right: $desk-side-container;
   }
 }
