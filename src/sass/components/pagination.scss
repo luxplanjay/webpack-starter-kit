@@ -7,6 +7,7 @@ ul {
 .pagination {
   display: flex;
   justify-content: center;
+  padding-bottom: 60px;
 }
 
 .pagination.is-hidden {
@@ -21,6 +22,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
+  background-color: $color-light-background;
 }
 .pagination__item {
   display: flex;
