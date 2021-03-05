@@ -1,0 +1,167 @@
+.page-header {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.56),
+      rgba(0, 0, 0, 0.56)
+    ),
+    url(../images/mobile/Rectangle@2x.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.search-icon {
+  fill: $white-color;
+}
+
+.navigation-item {
+  color: $white-color;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.logo-span {
+  margin-top: 46px;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+  align-items: flex-end;
+}
+
+.logo-name {
+  display: none;
+}
+
+.header-navigation {
+  display: flex;
+  margin-top: 46px;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.navigation-link {
+  color: $white-color;
+}
+
+.navigation-link:hover {
+  color: $white-color;
+}
+
+.navigation-item:first-child {
+  margin-right: 39px;
+  position: relative;
+}
+
+.search-input {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 0.5px $white-color;
+  outline: none;
+  color: $white-color;
+  width: 280px;
+  margin-bottom: 97px;
+  font-size: 18px;
+}
+
+.search-form {
+  text-align: center;
+  margin-top: 58px;
+}
+
+.search-icon {
+  position: absolute;
+  margin-left: -18px;
+}
+
+.search-input::placeholder {
+  color: $white-color;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.current::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: $orange-color;
+  left: 0;
+  bottom: -3px;
+}
+
+@media screen and (min-width: 768px) {
+  .page-header {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/tablet/Rectangle@2x.jpg);
+    background-position: center;
+  }
+
+  .logo-image {
+    margin-right: 12px;
+  }
+
+  .logo-name {
+    display: block;
+    font-size: 30px;
+    color: $white-color;
+  }
+
+  .logo {
+    display: flex;
+  }
+
+  .search-input {
+    width: 336px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page-header {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/desktop/Rectangle@2x.jpg);
+    background-position: center;
+  }
+
+  .search-input::placeholder {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+// стили для иконок, пример
+
+// .login-icon {
+//   position: absolute;
+//   fill: $white-color;
+//   margin-top: 20px;
+//   right: 50px;
+// }
+
+// .loged-icon {
+//   position: absolute;
+//   fill: $white-color;
+//   margin-top: 20px;
+//   right: 20px;
+// }

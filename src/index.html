@@ -24,5 +24,65 @@
     />
   </head>
 
-  <body></body>
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <!-- Иконки для примера, для регистрации. Можно поменять на текст -->
+
+        <!-- <div class="svg-wrapper">
+          <svg class="login-icon" width="20" height="20">
+            <use href="./images/symbol-defs.svg#icon-user-plus"></use>
+          </svg>
+          <svg class="loged-icon" width="20" height="20">
+            <use href="./images/symbol-defs.svg#icon-user-check"></use>
+          </svg>
+        </div> -->
+
+        <div class="logo-wrapper">
+          <span class="logo-span">
+            <a href="#" class="logo-link">
+              <img
+                class="logo-image"
+                src="./images/icons/film.png"
+                alt="Логотип сайта"
+                width="24"
+                height="24"
+              />
+              <span class="logo-name">Filmoteka</span>
+            </a>
+          </span>
+
+          <ul class="header-navigation">
+            <li class="navigation-item current">
+              <a href="" class="navigation-link">Home</a>
+            </li>
+            <li class="navigation-item">
+              <a href="" class="navigation-link">My library</a>
+            </li>
+          </ul>
+        </div>
+        <form class="search-form" id="search-form">
+          <input
+            class="search-input js-input"
+            type="text"
+            name="query"
+            autocomplete="off"
+            placeholder="Поиск фильмов"
+          />
+          <a href="">
+            <svg class="search-icon" width="16" height="16">
+              <use href="./images/symbol-defs.svg#icon-search"></use>
+            </svg>
+          </a>
+        </form>
+      </div>
+
+      <!-- Кнопки для my library -->
+
+      <!-- <div class="btn-wrapper">
+        <button type="button" class="header-btn watched-btn">Watched</button>
+        <button type="button" class="header-btn queue-btn">Queue</button>
+      </div> -->
+    </header>
+  </body>
 </html>
