@@ -26,79 +26,85 @@
   </head>
 
   <body>
-    <header>
-        <div id="header" class="home">
-          <nav class="page__nav">
-            <h1 class="logo">
-              <a class="home-link" href="">Filmoteka</a>
-            </h1>
-            <div><a id="home" class="route selected" href="">Home</a></div>
-            <div><a class="route" href="">My Library</a></div>
-          </nav>
-          <div class="form">
-            <form class="search-form">
-              <div class="input__wrapper">
-                <input type="text" class="form__input" name="query" id="searchQuery" placeholder="Поиск фильмов"
-                  autocomplete="off" />
-                <button type="submit" class="form__button">
-                  <span class="form__search"></span>
-                </button>
-              </div>
-            </form>
-            <!-- <div class="form__warning">Search result not successful. Enter the correct movie name and</div>-->
-          </div>
-        
+    <header class="box-container">
+      <div id="header" class="home">
+        <nav class="page__nav">
+          <h1 class="logo">
+            <a class="home-link" href="">Filmoteka</a>
+          </h1>
+          <div><a id="home" class="route selected" href="">Home</a></div>
+          <div><a class="route" href="">My Library</a></div>
+        </nav>
+        <div class="form">
+          <form class="search-form">
+            <div class="input__wrapper">
+              <input
+                type="text"
+                class="form__input"
+                name="query"
+                id="searchQuery"
+                placeholder="Поиск фильмов"
+                autocomplete="off"
+              />
+              <button type="submit" class="form__button">
+                <span class="form__search"></span>
+              </button>
+            </div>
+          </form>
+          <!-- <div class="form__warning">Search result not successful. Enter the correct movie name and</div>-->
         </div>
+      </div>
 
-<div id="header-lib" class="my-library">
-  <nav class="page__nav">
-    <h1 class="logo">
-      <a class="home-link" href="">Filmoteka</a>
-    </h1>
-    <div><a id="home-lib" class="route " href="">Home</a></div>
-    <div><a id="mylibrary" class="route selected" href="">My Library</a></div>
-  </nav>
+      <div id="header-lib" class="my-library">
+        <nav class="page__nav">
+          <h1 class="logo">
+            <a class="home-link" href="">Filmoteka</a>
+          </h1>
+          <div><a id="home-lib" class="route" href="">Home</a></div>
+          <div>
+            <a id="mylibrary" class="route selected" href="">My Library</a>
+          </div>
+        </nav>
 
-  <div class="js-buttons">
-    <button type="button" class="library__button library__button--active">Watched</button>
-    <button type="button" class="library__button">Queue</button>
-  </div>
-
-</div>
-</header>
-    <div class="container">
-      <section class="movie-cards">
-        <ul class="movie-grid" id="js-grid">
-          <li class="movie-grid__item">
-            <a href="">
-              <img src="./img/card-image-1024.jpg" alt="movie-cover" />
-              <h2 class="movie-grid__title">Movie Title</h2>
-              <p class="movie-grid__info">Movie description</p>
-            </a>
-          </li>
-          <li class="movie-grid__item">
-            <a href="">
-              <img src="./img/card-image-1024.jpg" alt="movie-cover" />
-              <h2 class="movie-grid__title">Movie Title</h2>
-              <p class="movie-grid__info">Movie date</p>
-            </a>
-          </li>
-          <li class="movie-grid__item">
-            <a href="">
-              <img src="./img/card-image-1024.jpg" alt="movie-cover" />
-              <h2 class="movie-grid__title">Movie Title</h2>
-              <p class="movie-grid__info">Movie date</p>
-            </a>
-          </li>
-          <li class="movie-grid__item">
-            <a href="">
-              <img src="./img/card-image-1024.jpg" alt="movie-cover" />
-              <h2 class="movie-grid__title">Movie Title</h2>
-              <p class="movie-grid__info">Movie date</p>
-            </a>
-          </li>
-        </ul>
-      </section>
-    </div>
+        <div class="js-buttons">
+          <button type="button" class="library__button library__button--active">
+            Watched
+          </button>
+          <button type="button" class="library__button">Queue</button>
+        </div>
+      </div>
+    </header>
+    <section class="movie-cards box-container">
+      <ul class="movie-grid" id="js-grid">
+        <li class="movie-grid__item">
+          <a href="">
+            <img src="./img/card-image-1024.jpg" alt="movie-cover" />
+            <h2 class="movie-grid__title">Movie Title</h2>
+            <p class="movie-grid__info">Movie description</p>
+          </a>
+        </li>
+        <li class="movie-grid__item">
+          <a href="">
+            <img src="./img/card-image-1024.jpg" alt="movie-cover" />
+            <h2 class="movie-grid__title">Movie Title</h2>
+            <p class="movie-grid__info">Movie date</p>
+          </a>
+        </li>
+        <li class="movie-grid__item">
+          <a href="">
+            <img src="./img/card-image-1024.jpg" alt="movie-cover" />
+            <h2 class="movie-grid__title">Movie Title</h2>
+            <p class="movie-grid__info">Movie date</p>
+          </a>
+        </li>
+        <li class="movie-grid__item">
+          <a href="">
+            <img src="./img/card-image-1024.jpg" alt="movie-cover" />
+            <h2 class="movie-grid__title">Movie Title</h2>
+            <p class="movie-grid__info">Movie date</p>
+          </a>
+        </li>
+      </ul>
+    </section>
   </body>
 </html>
