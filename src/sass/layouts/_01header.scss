@@ -5,44 +5,74 @@
 }
 
 .header-container {
-  padding: 47px 20px 97px;
+  padding: 46px 20px 97px;
 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-  //   color: $text-header;
-  @include for-size(mobile) {
-    background: url(../images/mobile/header.jpg);
+  background-size: cover;
+  background-image: linear-gradient(
+      to right,
+      $color-background,
+      $color-background
+    ),
+    url(../images/mobile/header.jpg);
 
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      & {
-        background: url(../images/mobile/header@2x.jpg);
-      }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: linear-gradient(
+          to right,
+          $color-background,
+          $color-background
+        ),
+        url(../images/mobile/header@2x.jpg);
     }
   }
 
   @include for-size(tablet) {
-    background: url(../images/tablet/header.jpg);
+    padding: 40px 75px 97px 70px;
+    background-image: linear-gradient(
+        to right,
+        $color-background,
+        $color-background
+      ),
+      url(../images/tablet/header.jpg);
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
       & {
-        background: url(../images/tablet/header@2x.jpg);
+        background-image: linear-gradient(
+            to right,
+            $color-background,
+            $color-background
+          ),
+          url(../images/tablet/header@2x.jpg);
       }
     }
   }
 
   @include for-size(desktop) {
-    background: url(../images/desktop/header.jpg);
+    padding: 40px 70px 97px;
+    background-image: linear-gradient(
+        to right,
+        $color-background,
+        $color-background
+      ),
+      url(../images/desktop/header.jpg);
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
       & {
-        background: url(../images/desktop/header@2x.jpg);
+        background-image: linear-gradient(
+            to right,
+            $color-background,
+            $color-background
+          ),
+          url(../images/desktop/header@2x.jpg);
       }
     }
   }
@@ -53,7 +83,7 @@
   flex-wrap: nowrap;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 38px;
+  margin-bottom: 27px;
 }
 
 .logo-container {
@@ -61,9 +91,22 @@
   align-items: center;
 }
 
+@include for-size(tablet-plus) {
+  .header__logo {
+    margin-right: 10px;
+  }
+}
+// Уточнить.   можно заголовок дисплей-нан прятать или лучше из-хидден?
 .header__title {
   display: none;
+  font-size: 30px;
+  line-height: 1.17;
+  font-weight: 500;
   color: $text-header;
+
+  @include for-size(tablet-plus) {
+    display: block;
+  }
 }
 
 .site-nav__list {
@@ -75,22 +118,44 @@
 }
 
 .site-nav__button {
-  padding: 0;
+  padding: 3px 0;
   text-transform: uppercase;
   border: none;
   background-color: transparent;
   color: inherit;
-
-  cursor: pointer;
-  // overflow: hidden;
-  outline: none;
   font-size: 12px;
   line-height: 1.17;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.7;
+  transition: 0.5s;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &.is-active {
+    opacity: 1;
+    // Пока что не получилось сделать подчеркивание псевдо элементом :(
+    // &::after {
+    //   position: absolute;
+    //   display: inline-block;
+    //   bottom: -3px;
+    //   left: 0;
+    //   content: ' ';
+    //   width: 100%;
+    //   height: 30px;
+    //   color: white;
+    // }
+    border-bottom: 3px solid $text-accent;
+  }
 }
 
-.site-nav__button.is-active {
-  border-bottom: 3px solid $text-accent;
-}
+// .site-nav__button.is-active {
+//   border-bottom: 3px solid $text-accent;
+// }
 
 .search-form {
   max-width: 336px;
@@ -112,10 +177,8 @@
   &::placeholder {
     font-family: Roboto;
     font-weight: 400;
-    //   font-style: normal;
     font-size: 14px;
     line-height: 1.14;
-
     color: $text-header;
   }
 }
@@ -126,28 +189,100 @@
   right: 0px;
 }
 
-.search-form__error {
+.header__error {
   display: none;
+
   margin-top: 22px;
-  margin-bottom: -22px;
+  margin-bottom: -50px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
   text-align: left;
+  color: $text-error;
+
+  @include for-size(tablet-plus) {
+    margin-bottom: -37px;
+    text-align: center;
+  }
 }
 
-@include for-size(tablet-plus) {
-  .header__logo {
-    margin-right: 10px;
-  }
-  .header__title {
-    display: block;
-    font-size: 30px;
-    line-height: 1.17;
-    font-weight: 500;
+
+
+
+
+// library
+
+
+.header-container--library {
+  padding: 46px 20px 65px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+      to right,
+      $color-background,
+      $color-background
+    ),
+    url(../images/mobile/headerLib.jpg);
+
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: linear-gradient(
+          to right,
+          $color-background,
+          $color-background
+        ),
+        url(../images/mobile/headerLib@2x.jpg);
+    }
   }
 
-  .search-form__error {
-    text-align: center;
+  @include for-size(tablet) {
+    padding: 40px 75px 65px 70px;
+    background-image: linear-gradient(
+        to right,
+        $color-background,
+        $color-background
+      ),
+      url(../images/tablet/headerLib.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: linear-gradient(
+            to right,
+            $color-background,
+            $color-background
+          ),
+          url(../images/tablet/headerLib@2x.jpg);
+      }
+    }
+  }
+
+  @include for-size(desktop) {
+    padding: 40px 70px 65px;
+    background-image: linear-gradient(
+        to right,
+        $color-background,
+        $color-background
+      ),
+      url(../images/desktop/headerLib.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: linear-gradient(
+            to right,
+            $color-background,
+            $color-background
+          ),
+          url(../images/desktop/headerLib@2x.jpg);
+      }
+    }
   }
 }

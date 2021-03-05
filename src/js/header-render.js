@@ -1,9 +1,9 @@
 // import refs from '/js/refs';
-import headerTemplate from '../templates/header-template.hbs';
+import headerHomeTemplate from '../templates/header-home-template.hbs';
 import refs from './refs';
 
 function headerRenderMarcup() {
-    const markup = headerTemplate();
+    const markup = headerHomeTemplate();
     refs.headerRef.insertAdjacentHTML('beforeend', markup);
 
 }
