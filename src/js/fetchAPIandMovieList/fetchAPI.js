@@ -7,7 +7,7 @@ export default {
   itemsPerPage: 9,
   adult: 'false', //false,true / отображать взрослый контент или нет
   language: 'en-US', //ru-RU,ua-UA,en-US.....
-  validTimeWindow: 'week', //day,week  /  выбор между тренды за неделю или за день
+  validTimeWindow: 'day', //day,week  /  выбор между тренды за неделю или за день
   validMediaType: 'movie', //all,movie,tv,person / тренды выбор всё,толькоо фильмы,только сериалы, по популярным актёрам
   genresArray: [], // массив ид и имен жанров
   errorHandler(error) {
@@ -73,7 +73,7 @@ export default {
         }
       })
       .then(response => {
-        console.log(response);
+        console.log(response); // в консоле можно посмотреть что пришло нам
         if (response.results.length === 0) {
           moviesContainerRef.innerHTML = 'No movies found , try another name';
           return;
@@ -85,9 +85,9 @@ export default {
       .catch(this.errorHandler);
   },
   getTrendingMovies() {
-    //Забирает с сервера трендовые фильмы , по умолчанию за неделю
+    //Забирает с сервера трендовые фильмы , по умолчанию за день
     movieInputRef.value = '';
-    const url = `https://api.themoviedb.org/3/trending/${this.validMediaType}/${this.validTimeWindow}?api_key=${myKey}&language=${this.language}`;
+    const url = `https://api.themoviedb.org/3/trending/${this.validMediaType}/${this.validTimeWindow}?api_key=${myKey}&language=${this.language}&page=${this.page}`;
     this.fetchGenres();
     return fetch(url)
       .then(response => {
@@ -99,6 +99,22 @@ export default {
         this.getMoviesWithGenreNames(response);
         this.page += 1;
         return response.results;
+      })
+      .catch(this.errorHandler);
+  },
+  getFullMovieInfo(movie_Id) {
+    // возвращает полное инфо по фильму
+    // movie_Id можно взять из Li dataset.movieId к примеру getFullMovieInfo(event.target.dataset.movieId)
+    const url = `https://api.themoviedb.org/3/movie/${movie_Id}?api_key=${myKey}&language=en-US`;
+    return fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+      .then(response => {
+        console.log(response);
+        return response;
       })
       .catch(this.errorHandler);
   },

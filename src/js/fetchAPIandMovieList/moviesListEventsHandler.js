@@ -15,6 +15,7 @@ function searchMovies() {
 }
 
 function showMoviesInTrend() {
+  fetchAPI.resetPageToFirst();
   refs.moviesContainerRef.innerHTML = '';
   fetchAPI.getTrendingMovies().then(results => {
     renderMovies(results, refs.moviesContainerRef, movieListTmp);
