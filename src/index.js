@@ -1,9 +1,11 @@
 import './sass/main.scss';
 import refs from './js/refs';
 
+
 import headerRenderMarcup from './js/header-render';
 
 headerRenderMarcup();
+
 
 import addContent from './js/addContent';
 import apiService from './js/apiService.js';
