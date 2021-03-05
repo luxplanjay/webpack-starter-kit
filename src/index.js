@@ -6,7 +6,7 @@ import refs from './js/refs';
 
 
 
-import headerRenderMarcup from './js/header-render';
+import headerHomeRenderMarcup from './js/header-render';
 
 
 
@@ -19,7 +19,7 @@ import headerRenderMarcup from './js/header-render';
 
 
 
-headerRenderMarcup();
+headerHomeRenderMarcup();
 
 
 
