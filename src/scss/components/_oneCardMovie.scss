@@ -1,0 +1,27 @@
+.movie-card {
+  width: 274px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  &:hover,
+  &:focus {
+    border: 2px solid #ff6b01;
+    border-radius: 5px;
+  }
+}
+
+.movies-poster {
+  width: 274px;
+  height: 398px;
+  border-radius: 5px;
+}
+
+.movie-title {
+  margin-top: 10px;
+  color: black;
+  text-transform: uppercase;
+}
+.movie-info {
+  color: #ff6b01;
+  word-wrap: normal;
+}
