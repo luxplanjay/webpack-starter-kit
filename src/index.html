@@ -18,10 +18,24 @@
     <!-- header -->
     <header>
       <div class="container">
+         <nav >
+        <h1>
+          <a href="./index.html">Filmoteka</a>
+        </h1>
+        <div>Home</div>
+        <div>My Library</div>
+      </nav>
+      <!--Это инпут для ввода тега по которому идет поиск фильма-->
+      <form action="">
         <input
+          type="text"
           name="movieName"
           class="movie-searchTag movie-searchTag-js"
-        /><!--Это инпут для ввода тега по которому идет поиск фильма-->
+          placeholder="Поиск фильмов"
+          autocomplete="off"
+        />
+         <button type="submit"></button>
+         </form>
       </div>
     </header>
 
