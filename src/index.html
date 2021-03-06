@@ -225,39 +225,63 @@
 
     </main>
 
-    <!-- Modal from Olga -->
-    <div class="madals-wrapper">
-        <div class="backdrop">
-            <div class="modal">
-                <picture class="modal-img">img</picture>
-                <h1 class="title-text">A FISTFUL OF LEAD</h1>
-                <ul class="content">
-                    <li class="content-list">
-                        <div class="content-list-item">Vote/Votes</div>
-                        <div class="content-list-item-show">7.3/1260</div>
-                    </li>
-                    <li class="content-list">
-                        <div class="content-list-item">Popularity</div>
-                        <div class="content-list-item-show">100.2</div>
-                    </li>
-                    <li class="content-list">
-                        <div class="content-list-item">Original Title</div>
-                        <div class="content-list-item-show">A FISTFUL OF LEAD</div>
-                    </li>
-                    <li class="content-list">
-                        <div class="content-list-item">Genre</div>
-                        <div class="content-list-item-show">Western</div>
-                    </li>
-                </ul>
-                <h2 class="middle">ABOUT</h2>
-                <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione autem, reprehenderit magni adipisci temporibus commodi beatae repudiandae? Similique quidem labore expedita doloremque fuga, aliquam sint voluptatem officiis eos hic dolorum?
-                    Velit alias officia similique fuga, repudiandae cumque debitis dolore veniam obcaecati. Quas, minima aperiam! Voluptatum fugit laboriosam inventore qui quae voluptate dolore. Nulla quod quos culpa dolorem beatae est, quasi quam temporibus
-                    ducimus!</p>
-                <div class="fix">
-                    <button class="modal-btn-color">ADD TO WATCHED</button>
-                    <button class="modal-btn-white">ADD TO QUEUE</button>
-                </div>
 
+<!-- Modal from Olga -->
+<div class="madals__wrapper">
+  //класс утилита --- is__hidden__content--- убрать и появится модалка
+  <div class="backdrop is__hidden__content">
+    <div class="modal">
+         
+      <button class="btn__close" data-modal-close>
+        <svg class="modal__use" width="20" height="20">
+          <use class="modal__use" href="./images/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+
+      <div class="part-one">
+           <!-- <picture class="modal__img"><img src="./images/tablet/MOON.jpg" width="240" height="356" alt="foto"></picture> -->
+
+
+<picture class="modal__img">
+  <source srcset="./images/desktop/MONSTER.jpg 1x, ./images/desktop/MONSTER@2x.jpg 2x" media="(min-width: 1024px)" />
+  <source srcset="./images/tablet/MOON.jpg 1x, ./images/tablet/MOON@2x.jpg 2x" media="(min-width: 768px)" />
+  <source srcset="./images/mobile/WOMEN.jpg 1x, ./images/mobile/WOMEN@2x.jpg 2x" media="(max-width: 767px)" />
+<img  src="./images/tablet/HOLLYWOOD.jpg" width="240" height="356" alt="foto"> 
+</picture>
+
+      </div>
+    <div class="part-two">
+      <h1 class="title__text">A FISTFUL OF LEAD</h1>
+      <ul class="content">
+        <li class="content__list">
+          <div class="content__list__item">Vote/Votes</div>
+          <div class="content__list__item__show">7.3/1260</div>
+        </li>
+        <li class="content__list">
+          <div class="content__list__item">Popularity</div>
+          <div class="content__list__item__show">100.2</div>
+        </li>
+        <li class="content__list">
+          <div class="content__list__item">Original Title</div>
+          <div class="content__list__item__show">A FISTFUL OF LEAD</div>
+        </li>
+        <li class="content__list">
+          <div class="content__list__item">Genre</div>
+          <div class="content__list__item__show">Western</div>
+        </li>
+      </ul>
+      <h2 class="middle">ABOUT</h2>
+      <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione autem, reprehenderit magni
+        adipisci temporibus commodi beatae repudiandae? Similique quidem labore expedita doloremque fuga, aliquam sint
+        voluptatem officiis eos hic dolorum? Velit alias officia similique fuga, repudiandae cumque debitis dolore
+        veniam obcaecati. Quas, minima aperiam! Voluptatum fugit laboriosam inventore qui quae voluptate dolore. veniam obcaecati.
+         Quas, minima aperiam! Voluptatum fugit laboriosam inventore qui quae voluptate dolore.
+      </p>
+      <div class="fix">
+        <button class="modal__btn__color">ADD TO WATCHED</button>
+        <button class="modal__btn__white">ADD TO QUEUE</button>
+      </div>
+     </div>
             </div>
         </div>
     </div>
