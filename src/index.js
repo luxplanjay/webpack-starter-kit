@@ -7,7 +7,7 @@ import './js/themes';
 import './js/theme-change';
 
 import headerRenderMarcup from './js/header-render';
-
+import './js/footermodal.js'
 headerRenderMarcup();
 
 import addContent from './js/addContent';
