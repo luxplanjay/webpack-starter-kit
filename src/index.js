@@ -5,10 +5,11 @@ import './js/header-position';
 import './js/storage';
 import './js/themes';
 import './js/theme-change';
-
-import headerRenderMarcup from './js/header-render';
 import './js/footermodal.js'
-headerRenderMarcup();
+
+import createHeaderHomeMarkup from './js/header-render';
+createHeaderHomeMarkup();
+
 
 import addContent from './js/addContent';
 import apiService from './js/apiService.js';
@@ -50,3 +51,4 @@ function onSubmitSearchForm(event) {
 }
 
 searchFormRef.addEventListener('submit', onSubmitSearchForm);
+

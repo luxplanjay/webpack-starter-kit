@@ -6,6 +6,7 @@
   font-family: 'Roboto';
   font-weight: 500;
   color: $text-header;
+  background-color: $color-footer;
   transition: all 0.25s ease 0s;
 }
 
@@ -85,6 +86,81 @@
       }
     }
   }
+
+  // library
+
+  &--library {
+    padding: 46px 20px 65px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(
+        to right,
+        $color-background,
+        $color-background
+      ),
+      url(../images/mobile/headerLib.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: linear-gradient(
+            to right,
+            $color-background,
+            $color-background
+          ),
+          url(../images/mobile/headerLib@2x.jpg);
+      }
+    }
+
+    @include for-size(tablet) {
+      padding: 40px 75px 65px 70px;
+      background-image: linear-gradient(
+          to right,
+          $color-background,
+          $color-background
+        ),
+        url(../images/tablet/headerLib.jpg);
+
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        & {
+          background-image: linear-gradient(
+              to right,
+              $color-background,
+              $color-background
+            ),
+            url(../images/tablet/headerLib@2x.jpg);
+        }
+      }
+    }
+
+    @include for-size(desktop) {
+      padding: 40px 70px 65px;
+      background-image: linear-gradient(
+          to right,
+          $color-background,
+          $color-background
+        ),
+        url(../images/desktop/headerLib.jpg);
+
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        & {
+          background-image: linear-gradient(
+              to right,
+              $color-background,
+              $color-background
+            ),
+            url(../images/desktop/headerLib@2x.jpg);
+        }
+      }
+    }
+  }
 }
 
 .header-nav-container {
@@ -93,6 +169,10 @@
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 27px;
+
+  &--library {
+    margin-bottom: 43px;
+  }
 }
 
 .logo-container {
@@ -172,35 +252,34 @@
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-}
 
-.search-form__input {
-  width: 100%;
-  padding: 4px 2px;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid $text-header;
-  outline: none;
-  color: $text-header;
-
-  &::placeholder {
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.14;
+  &__input {
+    width: 100%;
+    padding: 4px 2px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $text-header;
+    outline: none;
     color: $text-header;
-  }
-}
 
-.search-form__icon {
-  position: absolute;
-  top: 8px;
-  right: 0px;
+    &::placeholder {
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.14;
+      color: $text-header;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 8px;
+    right: 0px;
+  }
 }
 
 .header__error {
   display: none;
-
   margin-top: 22px;
   margin-bottom: -50px;
   font-weight: 400;
@@ -213,85 +292,6 @@
     margin-bottom: -37px;
     text-align: center;
   }
-}
-
-// library
-
-.header-container--library {
-  padding: 46px 20px 65px;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: linear-gradient(
-      to right,
-      $color-background,
-      $color-background
-    ),
-    url(../images/mobile/headerLib.jpg);
-
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    & {
-      background-image: linear-gradient(
-          to right,
-          $color-background,
-          $color-background
-        ),
-        url(../images/mobile/headerLib@2x.jpg);
-    }
-  }
-
-  @include for-size(tablet) {
-    padding: 40px 75px 65px 70px;
-    background-image: linear-gradient(
-        to right,
-        $color-background,
-        $color-background
-      ),
-      url(../images/tablet/headerLib.jpg);
-
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      & {
-        background-image: linear-gradient(
-            to right,
-            $color-background,
-            $color-background
-          ),
-          url(../images/tablet/headerLib@2x.jpg);
-      }
-    }
-  }
-
-  @include for-size(desktop) {
-    padding: 40px 70px 65px;
-    background-image: linear-gradient(
-        to right,
-        $color-background,
-        $color-background
-      ),
-      url(../images/desktop/headerLib.jpg);
-
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      & {
-        background-image: linear-gradient(
-            to right,
-            $color-background,
-            $color-background
-          ),
-          url(../images/desktop/headerLib@2x.jpg);
-      }
-    }
-  }
-}
-
-.header-nav-container--library {
-  margin-bottom: 40px;
 }
 
 .library__list {
