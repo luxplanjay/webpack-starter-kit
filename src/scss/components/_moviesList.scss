@@ -1,41 +1,57 @@
-.movies-container {
-  margin-top: 60px;
-  width: 882px;
-  margin-bottom: 20px;
-}
 .moviesList {
-  min-height: 500px;
-  width: 882px;
   padding: 0;
   margin: 0;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
+
+  @media screen and (min-width: 767px) {
+    margin-top: 60px;
+  }
 }
 .moviesList-poster {
-  width: 274px;
-  height: 398px;
+  width: 100%;
   border-radius: 5px;
 }
+
 .moviesList-item {
-  width: 274px;
+  width: 280px;
+  margin-bottom: 20px;
+
+  transition: all 250ms cubic-bezier(0.4, 0.1, 0.4, 1);
+
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
+
   &:hover,
   &:focus {
-    border: 2px solid #ff6b01;
+    transform: scale(1.01);
     border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.01);
+  }
+
+  @media screen and (min-width: 767px) and (max-width: 1023px) {
+    max-width: 294px;
+    &:nth-child(odd) {
+      margin-right: 30px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 274px;
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
   }
 }
-.moviesList-item:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
-.moviesList-item:last-child {
-  margin-right: 0;
-}
-.moviesList-item {
-  margin-bottom: 30px;
-}
+
+// .moviesList-item:not(:nth-child(3n)) {
+//   margin-right: 30px;
+// }
+// .moviesList-item:last-child {
+//   margin-right: 0;
+// }
+
 .moviesList-movieName {
   margin-top: 10px;
   color: black;
