@@ -10,6 +10,7 @@ h3 {
 .movie-cards {
   display: block;
   padding-top: 20px;
+  width: max-content;
   &.is-hidden {
     display: none;
   }
@@ -30,7 +31,7 @@ h3 {
   }
   @media screen and (min-width: $desktop) {
     display: grid;
-    width: 884px;
+    width: 882px;
     grid-template-columns: 304px 304px 274px;
   }
 }
