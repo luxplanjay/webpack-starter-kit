@@ -4,6 +4,7 @@ import refs from './refs';
 let numberOfPagesPagination;
 let totalPages;
 const FETCH = 20;
+const screenWidth = 580;
 
 function createArrayPaginationMobile(numberOfPages, activePage, totalPages) {
   let arrayOfPages;
@@ -64,14 +65,12 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
 }
 
 export default {
-  addPaginationList(
-    totalPagesFetch,
-    totalHits,
-    // { total_pages: totalPagesFetch, total_results: totalHits },
-    activePage,
-  ) {
-    // totalPages = totalPagesFetch > 20 ? 20 : totalPagesFetch;
-    totalPages = totalPagesFetch;
+  addPaginationList(totalHits, activePage) {
+    totalPages =
+      totalHits / apiService.perPage <= 20
+        ? Math.ceil(totalHitstotalHits / apiService.perPage)
+        : 20;
+
     if (!totalHits) return;
     let arrayPagination;
     // debugger;
@@ -85,7 +84,7 @@ export default {
         numberOfPagesPagination = 9;
       }
     }
-    if (document.body.clientWidth < 768) {
+    if (document.body.clientWidth < screenWidth) {
       arrayPagination = createArrayPaginationMobile(
         totalPages <= 5 ? totalPages : numberOfPagesPagination,
         activePage,

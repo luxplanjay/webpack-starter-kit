@@ -31,12 +31,10 @@ async function fetchDataForMainPage(
 ) {
   try {
     let resultArrayForAddContent = [];
-    let totalPages;
     let totalResults;
 
     for (let set of fetchSettings) {
       const resAwait = await apiService.fetchDataTrending(set);
-      totalPages = resAwait.total_pages;
       totalResults = resAwait.total_results;
       resultArrayForAddContent = [
         ...resultArrayForAddContent,
@@ -45,7 +43,7 @@ async function fetchDataForMainPage(
     }
 
     addContent.additemList(resultArrayForAddContent);
-    pagination.addPaginationList(totalPages, totalResults, pagePagination);
+    pagination.addPaginationList(totalResults, pagePagination);
     localStorage.setItem('currentRequest', Request.HOME);
   } catch (error) {
     throw error;
@@ -71,7 +69,7 @@ async function fetchDataSearch(
     }
 
     addContent.additemList(resultArrayForAddContent);
-    pagination.addPaginationList(totalPages, totalResults, pagePagination);
+    pagination.addPaginationList(totalResults, pagePagination);
     localStorage.setItem('currentRequest', Request.SEARCH);
   } catch (error) {
     throw error;
