@@ -52,3 +52,14 @@ $modal-text-line-height: 1.67;
 $mob-side-container: 20px;
 $tablet-side-container: 76px;
 $desk-side-container: 71px;
+
+// by Maryasov
+// for FT-11 _library.scss
+//break-points
+$width_mobile:320px;
+$width_tablet:768px;
+$width_desktop:1024px;
+
+//transition variables
+$duration_transition: 1s;
+$transition-common: $duration_transition cubic-bezier(0.4, 0, 0.2, 1);

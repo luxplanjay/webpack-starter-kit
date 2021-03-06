@@ -1,0 +1,12 @@
+.form {
+  display: block;
+  &.is-hidden {
+    display: none;
+  }
+}
+.js-buttons {
+  display: block;
+  &.is-hidden {
+    display: none;
+  }
+}

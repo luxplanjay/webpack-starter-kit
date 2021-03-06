@@ -27,50 +27,49 @@
 
   <body>
     <header class="box-container">
-      <div id="header" class="home">
+      <div id="header">
         <nav class="page__nav">
           <h1 class="logo">
-            <a class="home-link" href="">Filmoteka</a>
+            <a class="home-link" href="./index.html">Filmoteka</a>
           </h1>
-          <div><a id="home" class="route selected" href="">Home</a></div>
-          <div><a class="route" href="">My Library</a></div>
-        </nav>
-        <div class="form">
-          <form class="search-form">
-            <div class="input__wrapper">
-              <input
-                type="text"
-                class="form__input"
-                name="query"
-                id="searchQuery"
-                placeholder="Поиск фильмов"
-                autocomplete="off"
-              />
-              <button type="submit" class="form__button">
-                <span class="form__search"></span>
-              </button>
-            </div>
-          </form>
-          <!-- <div class="form__warning">Search result not successful. Enter the correct movie name and</div>-->
-        </div>
-      </div>
-
-      <div id="header-lib" class="my-library">
-        <nav class="page__nav">
-          <h1 class="logo">
-            <a class="home-link" href="">Filmoteka</a>
-          </h1>
-          <div><a id="home-lib" class="route" href="">Home</a></div>
           <div>
-            <a id="mylibrary" class="route selected" href="">My Library</a>
+            <a id="home" class="route selected" href="./index.html">Home</a>
           </div>
+          <div><a id="library" class="route" href="">My Library</a></div>
         </nav>
-
-        <div class="js-buttons">
-          <button type="button" class="library__button library__button--active">
-            Watched
-          </button>
-          <button type="button" class="library__button">Queue</button>
+        <div class="header-template">
+          <div class="form">
+            <form class="search-form">
+              <div class="input__wrapper">
+                <input
+                  type="text"
+                  class="form__input"
+                  name="query"
+                  id="searchQuery"
+                  placeholder="Поиск фильмов"
+                  autocomplete="off"
+                />
+                <button type="submit" class="form__button">
+                  <span class="form__search"></span>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="js-buttons is-hidden">
+            <button
+              id="watched"
+              type="button"
+              class="library__button library__button--active"
+            >
+              Watched
+            </button>
+            <button id="queue" type="button" class="library__button">
+              Queue
+            </button>
+          </div>
+        </div>
+        <div class="form__warning">
+          <!-- Search result not successful. Enter the correct movie name and -->
         </div>
       </div>
     </header>
@@ -107,7 +106,169 @@
       </ul>
     </section>
 
-    <footer class="page-footer">
+    <!-- made by Nicolay Maryasov -->
+    <section class="library__container is-hidden">
+      <ul class="library__list" id="my-library">
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+        <li class="library__card-container">
+          <article class="library__card">
+            <a class="library__card__link" href="">
+              <img
+                class="library__card__image"
+                src="./img/card-image-1024.jpg"
+                alt="movie-cover"
+              />
+              <h2 class="library__card__title movie-grid__title">
+                Movie Title
+              </h2>
+              <p class="library__card__info movie-grid__info">
+                Movie description
+              </p>
+            </a>
+          </article>
+        </li>
+      </ul>
+      <div class="library__page-selector">
+        <span>Place page-selector here...</span>
+      </div>
+    </section>
+
+     <footer class="page-footer">
       <div class="container footer-container">
         <p class="footer-text">
           &copy; 2021 | All Rights Reserved | Developed with
