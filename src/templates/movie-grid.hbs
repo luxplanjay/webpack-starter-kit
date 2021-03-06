@@ -1,7 +1,10 @@
 {{#each this}}
 <li class="movie-grid__item">
     <a href="#">
-        <img src={{this.poster_path}} alt="movie-cover" />
+        <div class="movie-grid__poster-container">
+            <img class="movie-grid__poster-img" src="https://image.tmdb.org/t/p/original/{{this.poster_path}}"
+                alt="Poster" />
+        </div>
         <h2 class="movie-grid__title">{{this.original_title}}</h2>
         <p class="movie-grid__info">
             {{#each this.genre_ids}}

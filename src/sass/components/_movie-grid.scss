@@ -68,8 +68,15 @@ h3 {
   text-decoration: none;
 }
 
-.movie-grid > img {
+.movie-grid__poster-img {
   border-radius: 5px;
+  width: 280px;
+  @media screen and (min-width: $tablet) {
+    width: 293px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 274px;
+  }
 }
 
 .movie-grid__title {
@@ -94,4 +101,7 @@ h3 {
   @media screen and (min-width: $tablet) {
     line-height: $main-line-height;
   }
+}
+.movie-grid__poster-container {
+  text-align: center;
 }
