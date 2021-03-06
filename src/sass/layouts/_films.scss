@@ -1,7 +1,21 @@
+.films__container {
+  width: 100%;
+  padding: 40px 20px;
+  @include for-size(tablet) {
+    padding: 60px 75px;
+  }
+  @include for-size(desktop) {
+    padding: 60px 70px;
+  }
+}
 .films__list {
     display: grid;
-    margin-bottom: 50px;
-  @include for-size(tablet) {
+    padding: 60px auto;
+  // @include for-size(tablet) {
+  //   grid-gap: 30px;
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
+  @media (min-width: 580px) {
     grid-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
   }
