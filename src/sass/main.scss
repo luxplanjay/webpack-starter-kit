@@ -2,11 +2,15 @@
 @import './utils/mixins.scss';
 @import './utils/common';
 @import 'modern-normalize/modern-normalize.css';
+@import './components/theme';
 @import './layouts/01header';
 @import './layouts/films';
 @import './components/film-card.scss';
+@import './components/up-btn';
 @import './components/footer';
-
+@import './components/footer-modal';
+@import './components/modal.scss';
 
 @import './components/btn';
+@import './components/pagination.scss';
 

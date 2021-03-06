@@ -63,8 +63,11 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
 }
 
 export default {
-  addPaginationList({ totalHits }, activePage) {
-    totalPages = Math.ceil(totalHits / apiService.perPages);
+  addPaginationList(
+    { total_pages: totalPagesFetch, total_results: totalHits },
+    activePage,
+  ) {
+    totalPages = totalPagesFetch > 20 ? 20 : totalPagesFetch;
     if (!totalHits) return;
     let arrayPagination;
     // debugger;

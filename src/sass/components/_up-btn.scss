@@ -1,0 +1,25 @@
+.back_to_top {
+  display: none;
+  position: fixed;
+  text-align: center;
+  bottom: 100px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+  z-index: 9999;
+  background: $text-accent;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+    transition: opacity cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  }
+}
+.back_to_top-show {
+  display: block;
+}
+.btn-up {
+  display: inline-block;
+  margin-top: 10px;
+}

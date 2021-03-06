@@ -1,9 +1,13 @@
 import './sass/main.scss';
 import refs from './js/refs';
-
+import './js/up-btn';
+import './js/header-position';
+import './js/storage';
+import './js/themes';
+import './js/theme-change';
+import './js/footermodal.js'
 
 import createHeaderHomeMarkup from './js/header-render';
-
 createHeaderHomeMarkup();
 
 
@@ -18,7 +22,9 @@ fetchDataForMainPage();
 async function fetchDataForMainPage() {
   try {
     const result = await apiService.fetchDataTrending();
-    addContent.additemList(result);
+    console.log(result);
+    addContent.additemList(result, apiService.perPage);
+    pagination.addPaginationList(result, 1);
   } catch (error) {
     throw error;
   }
@@ -26,7 +32,8 @@ async function fetchDataForMainPage() {
 async function fetchDataSearch() {
   try {
     const result = await apiService.fetchDataSearch();
-    addContent.additemList(result);
+    addContent.additemList(result, apiService.perPage);
+    pagination.addPaginationList(result, 1);
   } catch (error) {
     throw error;
   }
