@@ -33,7 +33,7 @@
             <a class="home-link" href="">Filmoteka</a>
           </h1>
           <div><a id="home" class="route selected" href="">Home</a></div>
-          <div><a class="route" href="">My Library</a></div>
+          <div><a id="library" class="route" href="">My Library</a></div>
         </nav>
         <div class="form">
           <form class="search-form">
@@ -62,15 +62,23 @@
           </h1>
           <div><a id="home-lib" class="route" href="">Home</a></div>
           <div>
-            <a id="mylibrary" class="route selected" href="">My Library</a>
+            <a id="mylibrary" class="route selected is-hidden" href=""
+              >My Library</a
+            >
           </div>
         </nav>
 
         <div class="js-buttons">
-          <button type="button" class="library__button library__button--active">
+          <button
+            id="watched"
+            type="button"
+            class="library__button library__button--active"
+          >
             Watched
           </button>
-          <button type="button" class="library__button">Queue</button>
+          <button id="queue" type="button" class="library__button">
+            Queue
+          </button>
         </div>
       </div>
     </header>
