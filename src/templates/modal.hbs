@@ -1,0 +1,46 @@
+<div id="modal" class="modal">
+    <button class="modal__close-btn" type="button">
+        <svg class="icon-close" width="20px" height="20px">
+            <use href="./img/sprite.svg#icon-close"></use>
+        </svg>
+    </button>
+    <img src={{url}} alt="film poster" class="modal__image" width="240px">
+    <div class="modal__info-box">
+        <h2 class="modal__film-title">{{title}}</h2>
+        <div class="modal__rating-box">
+            <ul class="modal__rating-list">
+                <li class="modal__rating-item">
+                    <span class="modal__rating-votes">Vote / Votes</span>
+                    <span class="modal__rating-votes-avarage">{{vote_average}}</span>
+                    <span class="slice">/</span>
+                    <span class="modal__rating-votes-total">{{vote_count}}</span>
+                </li>
+                <li class="modal__rating-item">
+                    <span class="modal__rating-popular">Popularity</span>
+                    <span class="modal__rating-popular-value">{{popularity}}</span>
+                </li>
+                <li class="modal__rating-item">
+                    <span class="modal__rating-name">Original Title</span>
+                    <div class="modal__rating-name-box">
+                        <span class="modal__rating-name-value">{{original_title}}</span>
+                    </div>
+                </li>
+                <li class="modal__rating-item">
+                    <span class="modal__rating-genre">Genre</span>
+                    <div class="modal__rating-genre-box">
+                        <span class="modal__rating-genre-value">{{genres}}</span>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <h3 class="modal__title-about">About</h3>
+        <p class="modal__text-about">
+            {{overview}}
+        </p>
+        <div class="modal__button-box">
+            <button class="modal__watched-button" type="button">add to <br> watched</button>
+            <button class="modal__queue-button" type="button">add to queue</button>
+        </div>
+    </div>
+</div>
