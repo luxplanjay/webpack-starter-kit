@@ -3,6 +3,7 @@ import apiService from './apiService.js';
 import refs from './refs';
 let numberOfPagesPagination;
 let totalPages;
+const FETCH = 20;
 
 function createArrayPaginationMobile(numberOfPages, activePage, totalPages) {
   let arrayOfPages;
@@ -64,10 +65,13 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
 
 export default {
   addPaginationList(
-    { total_pages: totalPagesFetch, total_results: totalHits },
+    totalPagesFetch,
+    totalHits,
+    // { total_pages: totalPagesFetch, total_results: totalHits },
     activePage,
   ) {
-    totalPages = totalPagesFetch > 20 ? 20 : totalPagesFetch;
+    // totalPages = totalPagesFetch > 20 ? 20 : totalPagesFetch;
+    totalPages = totalPagesFetch;
     if (!totalHits) return;
     let arrayPagination;
     // debugger;
@@ -103,8 +107,9 @@ export default {
     );
   },
 
-  getPageForFetch(eventTarget) {
+  getActivePageForFetch(eventTarget) {
     let activePage = +refs.paginationBox.querySelector('.active').textContent;
+
     if (eventTarget.classList.contains('prev')) {
       return activePage > 1 ? activePage - 1 : 1;
     }
@@ -112,5 +117,39 @@ export default {
       return activePage < totalPages ? activePage + 1 : totalPages;
     }
     return +eventTarget.textContent;
+  },
+
+  getSettingForFetch(activePage) {
+    let resultArray = [];
+    const perPage = apiService.perPage;
+
+    let itemEnd = activePage * perPage;
+    let itemStart = itemEnd - perPage + 1;
+
+    const currentPage = Math.floor(itemStart / FETCH) + 1;
+    const currentNumStart = (itemStart % FETCH) - 1;
+    let currentNumEnd = currentNumStart + perPage;
+
+    if (currentNumEnd < FETCH) {
+      resultArray = [
+        { page: currentPage, numStart: currentNumStart, numEnd: currentNumEnd },
+      ];
+      return resultArray;
+    }
+    //одна страница
+    else {
+      resultArray = [
+        { page: currentPage, numStart: currentNumStart, numEnd: FETCH },
+      ];
+    }
+
+    const nextPage = currentPage + 1;
+    const nextNumStart = 0;
+    const nextNumEnd = nextNumStart + perPage - (FETCH - currentNumStart);
+    resultArray = [
+      ...resultArray,
+      { page: nextPage, numStart: nextNumStart, numEnd: nextNumEnd },
+    ];
+    return resultArray;
   },
 };

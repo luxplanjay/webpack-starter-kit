@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmoteka</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header class="header"></header>
 
     <main>
-
       <div class="theme-switch__control">
-        <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle" aria-label="Change theme" />
-        <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+        <input
+          class="theme-switch__toggle"
+          type="checkbox"
+          name="theme"
+          id="theme-switch-toggle"
+          aria-label="Change theme"
+        />
+        <label
+          aria-hidden="true"
+          class="theme-switch__track"
+          for="theme-switch-toggle"
+        >
         </label>
         <div aria-hidden="true" class="theme-switch__marker"></div>
       </div>
@@ -24,7 +35,7 @@
         <div class="films__container container">
           <h2 class="films__title" hidden>Popular films</h2>
           <ul class="films__list">
-            <li class="film item">
+            <!-- <li class="film item">
               <a href="" class="film__link link">
                 <img src="./images/5.png" class="film__img" alt="" />
                 <div class="film__content">
@@ -112,492 +123,489 @@
                   <p class="film__info">Drama, Comedy | 2019</p>
                 </div>
               </a>
-            </li>
+            </li> -->
           </ul>
+          <div class="pagination">
+            <ul class="pagination__list"></ul>
+          </div>
         </div>
       </section>
-      <section class="pagination">
-        <ul class="pagination__list"></ul>
-      </section>
+
       <div class="back_to_top">
         <span class="btn-up">&#5169;</span>
       </div>
-
-        <section class="films">
-            <div class="films__container container">
-                <h2 class="films__title" hidden>Popular films</h2>
-                <ul class="films__list">
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="film item">
-                        <a href="" class="film__link link">
-                            <img src="./images/5.png" class="film__img" alt="" />
-                            <div class="film__content">
-                                <h3 class="film__title">Once upone a time... in Hollywood</h3>
-                                <p class="film__info">Drama, Comedy | 2019</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="pagination">
-            <ul class="pagination__list"></ul>
-        </section>
-
     </main>
 
+    <!-- Modal from Olga -->
+    <div class="madals__wrapper">
+      //класс утилита --- is__hidden__content--- убрать и появится модалка
+      <div class="backdrop is__hidden__content">
+        <div class="modal">
+          <button class="btn__close" data-modal-close>
+            <svg class="modal__use" width="20" height="20">
+              <use
+                class="modal__use"
+                href="./images/sprite.svg#icon-close"
+              ></use>
+            </svg>
+          </button>
 
-<!-- Modal from Olga -->
-<div class="madals__wrapper">
-  //класс утилита --- is__hidden__content--- убрать и появится модалка
-  <div class="backdrop is__hidden__content">
-    <div class="modal">
-         
-      <button class="btn__close" data-modal-close>
-        <svg class="modal__use" width="20" height="20">
-          <use class="modal__use" href="./images/sprite.svg#icon-close"></use>
-        </svg>
-      </button>
+          <div class="part-one">
+            <!-- <picture class="modal__img"><img src="./images/tablet/MOON.jpg" width="240" height="356" alt="foto"></picture> -->
 
-      <div class="part-one">
-           <!-- <picture class="modal__img"><img src="./images/tablet/MOON.jpg" width="240" height="356" alt="foto"></picture> -->
-
-
-<picture class="modal__img">
-  <source srcset="./images/desktop/MONSTER.jpg 1x, ./images/desktop/MONSTER@2x.jpg 2x" media="(min-width: 1024px)" />
-  <source srcset="./images/tablet/MOON.jpg 1x, ./images/tablet/MOON@2x.jpg 2x" media="(min-width: 768px)" />
-  <source srcset="./images/mobile/WOMEN.jpg 1x, ./images/mobile/WOMEN@2x.jpg 2x" media="(max-width: 767px)" />
-<img  src="./images/tablet/HOLLYWOOD.jpg" width="240" height="356" alt="foto"> 
-</picture>
-
-      </div>
-    <div class="part-two">
-      <h1 class="title__text">A FISTFUL OF LEAD</h1>
-      <ul class="content">
-        <li class="content__list">
-          <div class="content__list__item">Vote/Votes</div>
-          <div class="content__list__item__show">7.3/1260</div>
-        </li>
-        <li class="content__list">
-          <div class="content__list__item">Popularity</div>
-          <div class="content__list__item__show">100.2</div>
-        </li>
-        <li class="content__list">
-          <div class="content__list__item">Original Title</div>
-          <div class="content__list__item__show">A FISTFUL OF LEAD</div>
-        </li>
-        <li class="content__list">
-          <div class="content__list__item">Genre</div>
-          <div class="content__list__item__show">Western</div>
-        </li>
-      </ul>
-      <h2 class="middle">ABOUT</h2>
-      <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione autem, reprehenderit magni
-        adipisci temporibus commodi beatae repudiandae? Similique quidem labore expedita doloremque fuga, aliquam sint
-        voluptatem officiis eos hic dolorum? Velit alias officia similique fuga, repudiandae cumque debitis dolore
-        veniam obcaecati. Quas, minima aperiam! Voluptatum fugit laboriosam inventore qui quae voluptate dolore. veniam obcaecati.
-         Quas, minima aperiam! Voluptatum fugit laboriosam inventore qui quae voluptate dolore.
-      </p>
-      <div class="fix">
-        <button class="modal__btn__color">ADD TO WATCHED</button>
-        <button class="modal__btn__white">ADD TO QUEUE</button>
-      </div>
-     </div>
+            <picture class="modal__img">
+              <source
+                srcset="
+                  ./images/desktop/MONSTER.jpg    1x,
+                  ./images/desktop/MONSTER@2x.jpg 2x
+                "
+                media="(min-width: 1024px)"
+              />
+              <source
+                srcset="
+                  ./images/tablet/MOON.jpg    1x,
+                  ./images/tablet/MOON@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ./images/mobile/WOMEN.jpg    1x,
+                  ./images/mobile/WOMEN@2x.jpg 2x
+                "
+                media="(max-width: 767px)"
+              />
+              <img
+                src="./images/tablet/HOLLYWOOD.jpg"
+                width="240"
+                height="356"
+                alt="foto"
+              />
+            </picture>
+          </div>
+          <div class="part-two">
+            <h1 class="title__text">A FISTFUL OF LEAD</h1>
+            <ul class="content">
+              <li class="content__list">
+                <div class="content__list__item">Vote/Votes</div>
+                <div class="content__list__item__show">7.3/1260</div>
+              </li>
+              <li class="content__list">
+                <div class="content__list__item">Popularity</div>
+                <div class="content__list__item__show">100.2</div>
+              </li>
+              <li class="content__list">
+                <div class="content__list__item">Original Title</div>
+                <div class="content__list__item__show">A FISTFUL OF LEAD</div>
+              </li>
+              <li class="content__list">
+                <div class="content__list__item">Genre</div>
+                <div class="content__list__item__show">Western</div>
+              </li>
+            </ul>
+            <h2 class="middle">ABOUT</h2>
+            <p class="lorem">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+              autem, reprehenderit magni adipisci temporibus commodi beatae
+              repudiandae? Similique quidem labore expedita doloremque fuga,
+              aliquam sint voluptatem officiis eos hic dolorum? Velit alias
+              officia similique fuga, repudiandae cumque debitis dolore veniam
+              obcaecati. Quas, minima aperiam! Voluptatum fugit laboriosam
+              inventore qui quae voluptate dolore. veniam obcaecati. Quas,
+              minima aperiam! Voluptatum fugit laboriosam inventore qui quae
+              voluptate dolore.
+            </p>
+            <div class="fix">
+              <button class="modal__btn__color">ADD TO WATCHED</button>
+              <button class="modal__btn__white">ADD TO QUEUE</button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- modal end -->
 
     <footer class="footer">
-        <div class="footer__flex">
-            <p class="footer__text"><span>&#169;&ensp;</span>2021 | All Rights Reserved |</p>
-            <div class="footer__flex--dev">
-                <p class="footer__text">&thinsp;Developed with</p>
-                <svg class="footer__heart" height="12.88" width="14">
-          <use href="./images/sprite.svg#icon-heart"></use>
-        </svg>
-                <p class="footer__text">by&thinsp;<a href="#" class="footer__text js-footer__text">GoIT Students | команда: "JS
-            survivors"</a></p>
-            </div>
-            <!-- modal -->
-            <div class="lightbox js-lightbox">
-                <div class="lightbox__body">
-                    <div class="lightbox__content">
-                        <h3 class="lightbox__title">Над проектом работали</h3>
-                        <ul class="lightbox__list">
-
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Viktor Vashchenko</h4>
-                                    <p class="comcontent__subtitle">Team lead, Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/Viktor-V72" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-                                    <h4 class="comcontent__name">Валентин</h4>
-                                    <p class="comcontent__subtitle">Scrum master, Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Oksana Stezhko</h4>
-                                    <p class="comcontent__subtitle">Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/OksanaStezhko" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/in/%D0%BE%D0%BA%D1%81%D0%B0%D0%BD%D0%B0-%D1%81%D1%82%D0%B5%D0%B6%D0%BA%D0%BE-48a890208/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Alexandra Gubar</h4>
-                                    <p class="comcontent__subtitle">Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/Goobka" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/in/oleksandra-peleno-72a033202/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Alexandr Sytsenko</h4>
-                                    <p class="comcontent__subtitle">Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/AlexSytsenko" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Vera Khomenko</h4>
-                                    <p class="comcontent__subtitle"> Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/VeraKhomenko" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/in/vera-khomenko-88599b1b9/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Ольга</h4>
-                                    <p class="comcontent__subtitle"> Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Aleksei Yarmolenko</h4>
-                                    <p class="comcontent__subtitle">Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/Lekasey" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Александра</h4>
-                                    <p class="comcontent__subtitle"> Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="lightbox__fourrowel">
-
-                                <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
-                                <svg class="lightbox__img" height="20" width="20">
-                  <use href="./images/sprite1.svg#happy"></use>
-                </svg>
-                                <div class="comcontent">
-
-                                    <h4 class="comcontent__name">Oleksandr Hopatsa</h4>
-                                    <p class="comcontent__subtitle">Frontent developer</p>
-                                </div>
-                                <ul class="lightbox__list">
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://github.com/Hopatsa-Oleksandr" aria-label="Github">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                    <li class="sociallinks">
-                                        <a class="sociallinks__icon" href="https://www.linkedin.com/" aria-label="Linkedin">
-                                            <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <button type="button" class="lightbox__button" data-action="close-lightbox">
-              <svg class="icon">
-                <use href="./images/sprite.svg#icon-close"></use>
-              </svg>
-            </button>
-                    </div>
-                </div>
-            </div>
+      <div class="footer__flex">
+        <p class="footer__text">
+          <span>&#169;&ensp;</span>2021 | All Rights Reserved |
+        </p>
+        <div class="footer__flex--dev">
+          <p class="footer__text">&thinsp;Developed with</p>
+          <svg class="footer__heart" height="12.88" width="14">
+            <use href="./images/sprite.svg#icon-heart"></use>
+          </svg>
+          <p class="footer__text">
+            by&thinsp;<a href="#" class="footer__text js-footer__text"
+              >GoIT Students | команда: "JS survivors"</a
+            >
+          </p>
         </div>
+        <!-- modal -->
+        <div class="lightbox js-lightbox">
+          <div class="lightbox__body">
+            <div class="lightbox__content">
+              <h3 class="lightbox__title">Над проектом работали</h3>
+              <ul class="lightbox__list">
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Viktor Vashchenko</h4>
+                    <p class="comcontent__subtitle">
+                      Team lead, Frontent developer
+                    </p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/Viktor-V72"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Валентин</h4>
+                    <p class="comcontent__subtitle">
+                      Scrum master, Frontent developer
+                    </p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Oksana Stezhko</h4>
+                    <p class="comcontent__subtitle">Frontent developer</p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/OksanaStezhko"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/in/%D0%BE%D0%BA%D1%81%D0%B0%D0%BD%D0%B0-%D1%81%D1%82%D0%B5%D0%B6%D0%BA%D0%BE-48a890208/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Alexandra Gubar</h4>
+                    <p class="comcontent__subtitle">Frontent developer</p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/Goobka"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/in/oleksandra-peleno-72a033202/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Alexandr Sytsenko</h4>
+                    <p class="comcontent__subtitle">Frontent developer</p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/AlexSytsenko"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Vera Khomenko</h4>
+                    <p class="comcontent__subtitle">Frontent developer</p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/VeraKhomenko"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/in/vera-khomenko-88599b1b9/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Ольга</h4>
+                    <p class="comcontent__subtitle">Frontent developer</p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Aleksei Yarmolenko</h4>
+                    <p class="comcontent__subtitle">Frontent developer</p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/Lekasey"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Александра</h4>
+                    <p class="comcontent__subtitle">Frontent developer</p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="lightbox__fourrowel">
+                  <!-- <img src="./images/5.png" class="lightbox__img" alt="" width="50" /> -->
+                  <svg class="lightbox__img" height="20" width="20">
+                    <use href="./images/sprite1.svg#happy"></use>
+                  </svg>
+                  <div class="comcontent">
+                    <h4 class="comcontent__name">Oleksandr Hopatsa</h4>
+                    <p class="comcontent__subtitle">Frontent developer</p>
+                  </div>
+                  <ul class="lightbox__list">
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://github.com/Hopatsa-Oleksandr"
+                        aria-label="Github"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="sociallinks">
+                      <a
+                        class="sociallinks__icon"
+                        href="https://www.linkedin.com/"
+                        aria-label="Linkedin"
+                      >
+                        <svg height="20" width="20">
+                          <use href="./images/sprite1.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
 
-
+              <button
+                type="button"
+                class="lightbox__button"
+                data-action="close-lightbox"
+              >
+                <svg class="icon">
+                  <use href="./images/sprite.svg#icon-close"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
