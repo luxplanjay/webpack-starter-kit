@@ -1,0 +1,40 @@
+.form-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  background: inherit;
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+}
+.search-input {
+  box-sizing: border-box;
+  width: 100%;
+  background: inherit;
+  border: none;
+  outline: none;
+  color: $primary-white-color;
+  border-bottom: 0.5px solid $primary-white-color;
+  padding: 4px;
+  margin: 0px;
+
+  &:hover,
+  &input:active,
+  &:focus {
+    background-color: inherit;
+    outline: inherit;
+    color: $primary-white-color;
+  }
+}
+.btn-form {
+  background-color: inherit;
+  border: none;
+  margin-left: -15px;
+}
+.input-search::placeholder {
+  color: $primary-white-color;
+  font-size: 14px;
+  line-height: 1.14;
+}

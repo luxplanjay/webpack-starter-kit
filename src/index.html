@@ -20,26 +20,46 @@
     <div class="spinner" id="loading"></div>
 
     <!-- header -->
-    <header>
+    <header class="header">
       <div class="container">
-        <nav>
-          <h1>
-            <a href="./index.html">Filmoteka</a>
-          </h1>
-          <div>Home</div>
-          <div>My Library</div>
-        </nav>
-        <!--Это инпут для ввода тега по которому идет поиск фильма-->
-        <form action="">
-          <input
-            type="text"
-            name="movieName"
-            class="movie-searchTag movie-searchTag-js"
-            placeholder="Поиск фильмов"
-            autocomplete="off"
-          />
-          <button type="submit"></button>
-        </form>
+        <div class="header-box">
+          <div class="nav" id="nav">
+            <div class="logo">
+              <a href="./index.html" class="link-logo">
+                <svg class="icon-logo" width="24px" height="24px">
+                  <use href="./images/symbol-defs.svg#icon-film"></use>
+                </svg>
+              </a>
+              <h1 class="title">Filmoteka</h1>
+            </div>
+            <nav>
+              <ul class="nav-list">
+                <li class="nav-item">
+                  <a class="link-nav activ" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="link-nav"
+                    href="./index.html"
+                    aria-label="library-page"
+                    >mylibrary</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <form class="form-search" action="">
+            <input
+              type="text"
+              name="movieName"
+              class="search-input movie-searchTag movie-searchTag-js"
+              placeholder="Поиск фильмов"
+              autocomplete="off"
+              id="input"
+            />
+            <button type="submit" class="btn-form"></button>
+          </form>
+        </div>
       </div>
     </header>
 

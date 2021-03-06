@@ -1,0 +1,81 @@
+.header-box {
+  padding-top: 41px;
+  padding-bottom: 65px;
+}
+.header {
+  background-color: $primary-text-color;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  .link-logo {
+    margin-right: 10px;
+  }
+  .icon-logo {
+    fill: inherit;
+    pointer-events: none;
+  }
+  .title {
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      color: $primary-white-color;
+      font-family: Roboto;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 1.16;
+      align-items: center;
+      text-align: center;
+      margin: 0px;
+      margin-top: -32px;
+    }
+  }
+}
+
+.header-box .nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-list {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  .link-nav {
+    padding: 2px;
+    position: relative;
+    text-decoration: none;
+    color: $primary-white-color;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  .activ::after {
+    position: absolute;
+    height: 3px;
+    content: '';
+    display: block;
+    background-color: $accent-color;
+    width: 100%;
+    bottom: -3px;
+    left: 0;
+  }
+}
+
+.nav-item {
+  margin-left: 37px;
+  padding-top: 12px;
+  padding-bottom: 38px;
+}
+
+.link-logo {
+  background-color: inherit;
+  width: 24px;
+  height: 24px;
+}
