@@ -85,12 +85,12 @@
       &:hover {
         cursor: pointer;
       }
-      &:focus {
+      &:focus{
         width: 236px;
         opacity: 1;
         cursor: text;
       }
-      &:focus ~ .search__box {
+      &:focus ~ .search__box{
         right: -336px;
         background: #FF6B08;
         z-index: 6;

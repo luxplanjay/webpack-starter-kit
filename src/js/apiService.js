@@ -1,5 +1,5 @@
-//подключение axios (надо загрузить в проект)
 import axios from 'axios';
+//импорт шаблона import test from '../templates/test.hbs';
 
 // данные для запроса
 const token = "6b8ef447c2ce3d010bfcc7f710d71588";
@@ -30,8 +30,6 @@ const genres = {
  37: "Western"
 }
  
-
-
 //форма поиска и слушатель на ней
 const inputSearch = document.querySelector('.search__input');
 inputSearch.addEventListener('input', onSearch);
@@ -49,14 +47,14 @@ const message = {
 const fetchFilms = async (moviesURL) => {
     const response = await axios.get(moviesURL)
     .then(({data : {results}}) => {
-         if(results.length === 0) {
-             errorWarning.textContent = message.notFound;
-             return;
-         }
-        const changeGenre = [...results].map(el => genresMovie(el));
-        console.log(changeGenre);
-        page += 1;
-    return changeGenre;
+        if(results.length === 0) {
+            errorWarning.textContent = message.notFound;
+            return;
+        }
+       const changeGenre = [...results].map(el => genresMovie(el));
+       page += 1;
+    renderFilms(changeGenre);
+    return;      
 })
     .catch (error => {
         if(error.response.status === 422) {
@@ -69,6 +67,13 @@ const fetchFilms = async (moviesURL) => {
         console.log(error)}
     })
 }
+function renderFilms (arrayFilms) {
+   //вот здесь передается changeGenre в шаблон
+    // const qwe = test(arrayFilms);
+    console.log(arrayFilms);
+    console.log('это мог бы быть ваш шаблон');
+}
+
 //преобразование id жанров в названия
 function genresMovie(element) {
     element.genre_ids = element.genre_ids.map(genreMovie => genreMovie = genres[genreMovie]).join(',');
@@ -89,16 +94,34 @@ function onSearch(){
     fetchFilms(searchMoviesURL);
 }
 }
-
 //функция запроса информации о фильме
 const fetchInfoFilm = async (movieID) => {
     const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
-    const response = await axios.get(infoMovieURL);
+    const response = await axios.get(infoMovieURL)
+    .then(({data}) => {
+       console.log(data);
+
+    //здесь передавать результат в шаблон или во внешнюю функцию
+    // const qwe = test(response);
+    // console.log(qwe);
+})
+    .catch (error => {
+        if(error.response.status === 404) {
+            console.log( message.notFound);
+        } 
+        if(error.response.status >= 500) {
+            console.log( message.serverError);
+        } 
+        else {
+        console.log(error)}
+    })
 }
-const movieID = 512896;
+//в переменную movieID передавать динамические данные
+let movieID = 512896;
 fetchInfoFilm(movieID);
 
 //стартовый запрос популярных фильмов
-   fetchFilms(popularMoviesURL);
+  fetchFilms(popularMoviesURL);
+
    
   
