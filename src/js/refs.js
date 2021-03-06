@@ -7,6 +7,7 @@ const refs = {
   homeGallery: document.querySelector('.movie-cards'),
   buttonWatched: document.querySelector('#watched'),
   buttonQueue: document.querySelector('#queue'),
+  movieGrid: document.querySelector('#js-grid'),
 };
 
 export default refs;
