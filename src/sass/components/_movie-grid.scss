@@ -8,7 +8,11 @@ h3 {
 }
 
 .movie-cards {
+  display: block;
   padding-top: 20px;
+  &.is-hidden {
+    display: none;
+  }
   @media screen and (min-width: $tablet) {
     padding-top: 60px;
   }
