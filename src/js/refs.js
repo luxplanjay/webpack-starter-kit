@@ -8,6 +8,9 @@ const refs = {
   buttonWatched: document.querySelector('#watched'),
   buttonQueue: document.querySelector('#queue'),
   movieGrid: document.querySelector('#js-grid'),
+  errorWarning: document.querySelector('.form__warning'),
+  underscoreOnMyLibrary: document.querySelector('.lib'),
+  underscoreOnHome: document.querySelector('.underscore'),
 };
 
 export default refs;
