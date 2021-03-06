@@ -27,58 +27,49 @@
 
   <body>
     <header class="box-container">
-      <div id="header" class="home">
+      <div id="header">
         <nav class="page__nav">
           <h1 class="logo">
-            <a class="home-link" href="">Filmoteka</a>
+            <a class="home-link" href="./index.html">Filmoteka</a>
           </h1>
-          <div><a id="home" class="route selected" href="">Home</a></div>
+          <div>
+            <a id="home" class="route selected" href="./index.html">Home</a>
+          </div>
           <div><a id="library" class="route" href="">My Library</a></div>
         </nav>
-        <div class="form">
-          <form class="search-form">
-            <div class="input__wrapper">
-              <input
-                type="text"
-                class="form__input"
-                name="query"
-                id="searchQuery"
-                placeholder="Поиск фильмов"
-                autocomplete="off"
-              />
-              <button type="submit" class="form__button">
-                <span class="form__search"></span>
-              </button>
-            </div>
-          </form>
-          <!-- <div class="form__warning">Search result not successful. Enter the correct movie name and</div>-->
-        </div>
-      </div>
-
-      <div id="header-lib" class="my-library">
-        <nav class="page__nav">
-          <h1 class="logo">
-            <a class="home-link" href="">Filmoteka</a>
-          </h1>
-          <div><a id="home-lib" class="route" href="">Home</a></div>
-          <div>
-            <a id="mylibrary" class="route selected is-hidden" href=""
-              >My Library</a
-            >
+        <div class="header-template">
+          <div class="form">
+            <form class="search-form">
+              <div class="input__wrapper">
+                <input
+                  type="text"
+                  class="form__input"
+                  name="query"
+                  id="searchQuery"
+                  placeholder="Поиск фильмов"
+                  autocomplete="off"
+                />
+                <button type="submit" class="form__button">
+                  <span class="form__search"></span>
+                </button>
+              </div>
+            </form>
           </div>
-        </nav>
-
-        <div class="js-buttons">
-          <button
-            id="watched"
-            type="button"
-            class="library__button library__button--active"
-          >
-            Watched
-          </button>
-          <button id="queue" type="button" class="library__button">
-            Queue
-          </button>
+          <div class="js-buttons is-hidden">
+            <button
+              id="watched"
+              type="button"
+              class="library__button library__button--active"
+            >
+              Watched
+            </button>
+            <button id="queue" type="button" class="library__button">
+              Queue
+            </button>
+          </div>
+        </div>
+        <div class="form__warning">
+          <!-- Search result not successful. Enter the correct movie name and -->
         </div>
       </div>
     </header>
@@ -115,7 +106,7 @@
       </ul>
     </section>
     <!-- made by Nicolay Maryasov -->
-    <section class="library__container">
+    <section class="library__container is-hidden">
       <ul class="library__list" id="my-library">
         <li class="library__card-container">
           <article class="library__card">
