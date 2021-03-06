@@ -1,13 +1,16 @@
 .box-container {
+  width: $width_mobile;
   padding-right: $mob-side-container;
   padding-left: $mob-side-container;
   margin-left: auto;
   margin-right: auto;
   @media screen and (min-width: $tablet) {
+    width: $width_tablet;
     padding-left: $tablet-side-container;
     padding-right: $tablet-side-container;
   }
   @media screen and (min-width: $desktop) {
+    width: $width_desktop;
     padding-left: $desk-side-container;
     padding-right: $desk-side-container;
   }
