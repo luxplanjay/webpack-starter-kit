@@ -1,6 +1,6 @@
 import filmCard from '../templates/film-card.hbs';
 import refs from './refs';
-const pathForImg = 'https://image.tmdb.org/t/p/w500/';
+const pathForImg = 'https://image.tmdb.org/t/p/w342/';
 
 export default {
   additemList(results) {
