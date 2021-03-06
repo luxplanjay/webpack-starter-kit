@@ -1,7 +1,10 @@
 const refs = {
-  input: document.querySelector('#searchQuery'),
-  myLibrary: document.querySelector('#mylibrary'),
-  home: document.querySelector('#home-lib'),
+  searchForm: document.querySelector('.form'),
+  inputForm: document.querySelector('.search-form'),
+  navLibrary: document.querySelector('#library'),
+  buttons: document.querySelector('.js-buttons'),
+  myLibraryGallery: document.querySelector('.library__container'),
+  homeGallery: document.querySelector('.movie-cards'),
   buttonWatched: document.querySelector('#watched'),
   buttonQueue: document.querySelector('#queue'),
 };
