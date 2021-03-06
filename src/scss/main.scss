@@ -1,8 +1,9 @@
 @import './utils/variables';
+@import './utils/mixins';
 @import './base/normalize';
 @import './base/reset';
 
-// @import './components/btn';
+//@import './components/btn';
 // @import './components/card';
 
 @import './components/container';
@@ -15,3 +16,4 @@
 // @import './components/spinner';
 
 @import './components/moviesList';
+@import './components/oneCardMovie';

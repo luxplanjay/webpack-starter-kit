@@ -1,9 +1,73 @@
-.header-box {
-  padding-top: 41px;
-  padding-bottom: 65px;
-}
 .header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100%;
+  height: 320px;
+  padding-top: 48px;
+  padding-bottom: 65px;
   background-color: $primary-text-color;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.56),
+      rgba(0, 0, 0, 0.56)
+    ),
+    url(../images/bgiMobile.jpg);
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/bgiMobile@2x.jpg);
+  }
+
+  @include for-size(tablet-landscape) {
+    padding-top: 41px;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/bgiTablet.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url(../images/bgiTablet@2x.jpg);
+    }
+  }
+  @include for-size(desktop) {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)
+      ),
+      url(../images/bgiDesktop.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url(../images/bgiDesktop@2x.jpg);
+    }
+  }
 }
 
 .logo {
@@ -56,15 +120,15 @@
       color: $accent-color;
     }
   }
+
   .activ::after {
-    position: absolute;
-    height: 3px;
     content: '';
-    display: block;
-    background-color: $accent-color;
-    width: 100%;
-    bottom: -3px;
+    position: absolute;
     left: 0;
+    height: 3px;
+    width: 100%;
+    bottom: -6px;
+    background-color: $accent-color;
   }
 }
 
