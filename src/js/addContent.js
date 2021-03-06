@@ -1,19 +1,18 @@
 import filmCard from '../templates/film-card.hbs';
-import paginationList from '../templates/pagination.hbs';
 import refs from './refs';
+const pathForImg = 'https://image.tmdb.org/t/p/w500/';
 
 export default {
-  additemList({ results, total_pages }, perPage) {
-    const numStart = 0;
-    const numEnd = numStart + perPage;
-    console.log(numStart, numEnd + 1);
-    if (total_pages === 0) {
-      //подумать как вывести сообщение, что ничего не найдено
-    }
+  additemList(results) {
+    const resultForMarkup = results.map(elem => {
+      return {
+        ...elem,
+        poster_path: pathForImg + elem.poster_path,
+        release_date: elem.release_date ? elem.release_date.slice(0, 4) : '',
+      };
+    });
+
     refs.filmListRef.innerHTML = '';
-    refs.filmListRef.insertAdjacentHTML(
-      'beforeend',
-      filmCard(results.slice(numStart, numEnd)),
-    );
+    refs.filmListRef.insertAdjacentHTML('beforeend', filmCard(resultForMarkup));
   },
 };

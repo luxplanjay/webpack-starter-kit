@@ -12,7 +12,8 @@ export default {
       .catch(console.error);
   },
 
-  fetchDataTrending() {
+  fetchDataTrending({ page: currentPage = 1 }) {
+    this.page = currentPage;
     const urlApi = `https://api.themoviedb.org/3/trending/movie/week?api_key=${this.keyApi}&page=${this.page}`;
     const options = {
       headers: {
@@ -23,9 +24,9 @@ export default {
     return this.fetchReturn(urlApi, options);
   },
 
-  fetchDataSearch() {
+  fetchDataSearch({ page: currentPage = 1 }) {
+    this.page = currentPage;
     const urlApi = `https://api.themoviedb.org/3/search/movie?api_key=${this.keyApi}&page=${this.page}&query=${this.query}`;
-    console.log('hh', urlApi);
 
     const options = {
       headers: {
