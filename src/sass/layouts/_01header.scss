@@ -1,10 +1,20 @@
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   font-family: 'Roboto';
   font-weight: 500;
   color: $text-header;
+  transition: all 0.25s ease 0s;
+}
+
+.js-modify-header {
+  opacity: 0.7;
 }
 
 .header-container {
+  width: 100%;
   padding: 46px 20px 97px;
 
   background-position: center;
