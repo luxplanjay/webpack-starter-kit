@@ -1,0 +1,241 @@
+.modal {
+  display: block;
+  position: relative;
+  width: 280px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 48px 20px 41px;
+  background-color: $color-white;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    width: 618px;
+    padding: 40px 28px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 882px;
+    padding: 50px 30px 40px;
+  }
+
+  &__close-btn {
+    position: absolute;
+    padding: 0;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: $color-white;
+    border: none;
+  }
+
+  &__image {
+    border-radius: 5px;
+
+    @media screen and (min-width: $tablet) {
+      width: 264px;
+      height: 374px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 396px;
+      height: 478px;
+      object-fit: cover;
+    }
+  }
+
+  &__info-box {
+    @media screen and (min-width: $tablet) {
+      margin-left: 32px;
+      width: 264px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-left: 30px;
+      width: 396px;
+    }
+  }
+
+  &__film-title {
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: $main-font-weight;
+    font-size: 20px;
+    line-height: $modal-line-height;
+
+    @media screen and (min-width: $tablet) {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 30px;
+      line-height: 1.16;
+    }
+  }
+
+  &__rating-box {
+    margin-top: 20px;
+  }
+
+  &__rating-list {
+    list-style: none;
+  }
+
+  &__rating-item {
+    display: flex;
+    margin-top: 10px;
+    align-items: baseline;
+  }
+
+  &__rating-item:first-child {
+    margin-top: 0;
+  }
+
+  &__rating-votes,
+  &__rating-popular,
+  &__rating-name,
+  &__rating-genre {
+    display: block;
+
+    font-style: normal;
+    font-weight: $main-font-weight;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    color: $color-text-modal;
+  }
+
+  &__rating-votes-avarage,
+  &__rating-votes-total,
+  &__rating-popular-value,
+  &__rating-name-value,
+  &__rating-genre-value {
+    display: block;
+
+    font-style: normal;
+    font-weight: $main-font-weight;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    color: $color-black;
+  }
+
+  &__rating-votes-avarage {
+    padding: 1px 9px 1px 10px;
+    background: $color-bcg-btn;
+    border-radius: 5px;
+    text-align: center;
+    color: $color-bcg-grey;
+  }
+
+  &__rating-votes-total {
+    padding: 1px 4px;
+    background: $color-bcg-grey;
+    border-radius: 5px;
+  }
+
+  &__rating-name-box,
+  &__rating-genre-box {
+    width: 132px;
+
+    @media screen and (min-width: $tablet) {
+      width: 156px;
+    }
+  }
+
+  &__rating-name-value {
+    line-height: $main-line-height;
+  }
+
+  &__rating-votes {
+    margin-right: 41px;
+  }
+
+  &__rating-popular {
+    margin-right: 53px;
+  }
+
+  &__rating-name {
+    margin-right: 39px;
+  }
+
+  &__rating-genre {
+    margin-right: 76px;
+  }
+
+  &__title-about {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: $main-font-weight;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    text-transform: uppercase;
+  }
+
+  &__text-about {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: $main-font-weight;
+    font-size: $main-font-size;
+    line-height: $modal-text-line-height;
+  }
+
+  &__button-box {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  &__watched-button {
+    margin-right: 14px;
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 15px;
+    }
+  }
+
+  &__watched-button,
+  &__queue-button {
+    width: 113px;
+    height: 44px;
+    border: 1px solid $color-black;
+    border-radius: 5px;
+    background-color: $color-white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: $main-font-weight;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @media screen and (min-width: $tablet) {
+      width: 125px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 136px;
+    }
+  }
+
+  &__watched-button:hover,
+  &__watched-button:focus,
+  &__queue-button:hover,
+  &__queue-button:focus {
+    background: $color-bcg-btn;
+    color: $color-white;
+    border: none;
+  }
+}
+
+.icon-close {
+  width: 30px;
+  height: 30px;
+}
+
+.slice {
+  margin-right: 3px;
+  margin-left: 3px;
+  display: block;
+  font-weight: $main-font-weight;
+  font-size: $main-font-size;
+  line-height: $main-line-height;
+  color: $color-text-modal;
+}

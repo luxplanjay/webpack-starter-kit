@@ -8,7 +8,12 @@ h3 {
 }
 
 .movie-cards {
+  display: block;
   padding-top: 20px;
+  width: max-content;
+  &.is-hidden {
+    display: none;
+  }
   @media screen and (min-width: $tablet) {
     padding-top: 60px;
   }
@@ -26,7 +31,7 @@ h3 {
   }
   @media screen and (min-width: $desktop) {
     display: grid;
-    width: 884px;
+    width: 882px;
     grid-template-columns: 304px 304px 274px;
   }
 }
@@ -63,8 +68,15 @@ h3 {
   text-decoration: none;
 }
 
-.movie-grid > img {
+.movie-grid__poster-img {
   border-radius: 5px;
+  width: 280px;
+  @media screen and (min-width: $tablet) {
+    width: 293px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 274px;
+  }
 }
 
 .movie-grid__title {
@@ -89,4 +101,7 @@ h3 {
   @media screen and (min-width: $tablet) {
     line-height: $main-line-height;
   }
+}
+.movie-grid__poster-container {
+  text-align: center;
 }
