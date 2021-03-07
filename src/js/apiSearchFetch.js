@@ -9,8 +9,7 @@ const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=$
     
 return fetch(url)
 .then(res => res.json())
-.then(({results}) =>
- console.log(results))
+.then(({results}) => results)
 },
 
 get query(){
