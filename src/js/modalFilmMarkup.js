@@ -12,6 +12,7 @@ function getFilmInfo(movie_id) {
     function closeModalByEscape(event) {
       if (event.code === 'Escape') {
         modal.close();
+        window.removeEventListener('keydown', closeModalByEscape);
       }
     }
   });
