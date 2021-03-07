@@ -68,7 +68,7 @@ export default {
   addPaginationList(totalHits, activePage) {
     totalPages =
       totalHits / apiService.perPage <= 20
-        ? Math.ceil(totalHitstotalHits / apiService.perPage)
+        ? Math.ceil(totalHits / apiService.perPage)
         : 20;
 
     if (!totalHits) return;
