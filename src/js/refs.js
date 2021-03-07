@@ -4,6 +4,7 @@ const refs = {
   navLibrary: document.querySelector('#library'),
   buttons: document.querySelector('.js-buttons'),
   myLibraryGallery: document.querySelector('.library__container'),
+  libraryList: document.querySelector('#my-library'),
   homeGallery: document.querySelector('.movie-cards'),
   buttonWatched: document.querySelector('#watched'),
   buttonQueue: document.querySelector('#queue'),
