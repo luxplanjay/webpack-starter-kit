@@ -20,11 +20,20 @@ function setHeaderMarkup(value) {
     refs.headerRef.innerHTML = '';
     refs.headerRef.insertAdjacentHTML('beforeend', value);
     const siteNavButtonsRef = document.querySelector('.site-nav__list');
+    const buttonHomeRef = document.querySelector('button[data="home"]');
+    const logoRef = document.querySelector('.header__logo');
 
-    siteNavButtonsRef.addEventListener('click', hendlerSiteNavButtons);
+    siteNavButtonsRef.addEventListener('click', handlerSiteNavButtonsClick);
+    logoRef.addEventListener('click', () => {
+        if (buttonHomeRef.classList.contains('is-active')) {
+            return;
+        } else {
+            createHeaderHomeMarkup();
+        }
+    });
 }
 
-function hendlerSiteNavButtons(event) {
+function handlerSiteNavButtonsClick(event) {
     const element = event.target;
 
     if (element.nodeName !== "BUTTON" || element.classList.contains('is-active')) {

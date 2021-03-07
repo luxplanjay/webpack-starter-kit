@@ -15,7 +15,7 @@
 }
 
 .header-container {
-  width: 100%;
+  // width: 100%;
   padding: 46px 20px 97px;
 
   background-position: center;
@@ -178,13 +178,14 @@
 .logo-container {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  
 }
 
 .header__logo {
   width: 24px;
   height: 24px;
   background-image: url(../images/film.svg);
+  cursor: pointer;
 }
 
 @include for-size(tablet-plus) {
@@ -285,7 +286,7 @@
 }
 
 .header__error {
-  // display: none;
+  display: none;
   margin-top: 22px;
   margin-bottom: -52px;
   font-weight: 400;
