@@ -34,74 +34,76 @@ h3 {
     width: 882px;
     grid-template-columns: 304px 304px 274px;
   }
-}
 
-.movie-grid__item {
-  margin-bottom: 20px;
-  width: 280px;
-  @media screen and (min-width: $tablet) {
-    width: 293px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-  }
-  @media screen and (min-width: $desktop) {
-    width: 274px;
-  }
-}
+  &__item {
+    margin-bottom: 20px;
+    width: 280px;
+    @media screen and (min-width: $tablet) {
+      width: 293px;
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 274px;
+    }
 
-.movie-grid__item:nth-child(2n) {
-  @media screen and (min-width: $tablet) {
-    margin-right: 0px;
-  }
-  @media screen and (min-width: $desktop) {
-    margin-right: 30px;
-  }
-}
+    &:nth-child(2n) {
+      @media screen and (min-width: $tablet) {
+        margin-right: 0px;
+      }
+      @media screen and (min-width: $desktop) {
+        margin-right: 30px;
+      }
+    }
 
-.movie-grid__item:nth-child(3n) {
-  @media screen and (min-width: $desktop) {
-    margin-right: 0px;
+    &:nth-child(3n) {
+      @media screen and (min-width: $desktop) {
+        margin-right: 0px;
+      }
+    }
   }
-}
 
-.movie-grid__item > a {
-  text-decoration: none;
-}
+  &__item > a {
+    text-decoration: none;
+  }
 
-.movie-grid__poster-img {
-  border-radius: 5px;
-  width: 280px;
-  @media screen and (min-width: $tablet) {
-    width: 293px;
+  &__poster-container {
+    text-align: center;
   }
-  @media screen and (min-width: $desktop) {
-    width: 274px;
-  }
-}
 
-.movie-grid__title {
-  margin-top: 10px;
-  font-size: $main-font-size;
-  font-style: $font;
-  font-weight: $title-font-weigth;
-  line-height: $title-line-height;
-  color: $color-black;
-  text-transform: uppercase;
-  @media screen and (min-width: $tablet) {
-    line-height: $main-line-height;
+  &__poster-img {
+    border-radius: 5px;
+    width: 280px;
+    @media screen and (min-width: $tablet) {
+      width: 293px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 274px;
+    }
   }
-}
-.movie-grid__info {
-  margin-top: 3px;
-  font-size: $main-font-size;
-  font-style: $font;
-  font-weight: $main-font-weight;
-  line-height: $title-line-height;
-  color: $color-orange;
-  @media screen and (min-width: $tablet) {
-    line-height: $main-line-height;
+
+  &__title {
+    margin-top: 10px;
+    font-size: $main-font-size;
+    font-style: $font;
+    font-weight: $title-font-weigth;
+    line-height: $title-line-height;
+    color: $color-black;
+    text-transform: uppercase;
+    @media screen and (min-width: $tablet) {
+      line-height: $main-line-height;
+    }
   }
-}
-.movie-grid__poster-container {
-  text-align: center;
+
+  &__info {
+    margin-top: 3px;
+    font-size: $main-font-size;
+    font-style: $font;
+    font-weight: $main-font-weight;
+    line-height: $title-line-height;
+    color: $color-orange;
+    @media screen and (min-width: $tablet) {
+      line-height: $main-line-height;
+    }
+  }
 }

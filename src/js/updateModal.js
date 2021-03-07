@@ -1,4 +1,3 @@
-// '../scss/styles.scss';
 import modalTpl from '../templates/modal.hbs';
 
 function updateModal(film) {
