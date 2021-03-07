@@ -1,35 +1,35 @@
 .bottom-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {
-    display: inline-block;
-    padding: 14px 38px 12px;
-    min-width: 136px;
-    cursor: pointer;
-    color: #fff;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 12px;
-    font-family: Roboto, sans-serif;
-    border: 1px solid #fff
-    
+  display: inline-block;
+  padding: 14px 38px 12px;
+  min-width: 136px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+  border: 1px solid #fff;
 }
 
-.button:focus, .button:hover {
-    background-color: $accent-color;
-    border-color: $accent-color;
-    color: #fff;
-    outline: none;
+.button:focus,
+.button:hover {
+  background-color: $accent-color;
+  border-color: $accent-color;
+  color: #fff;
+  outline: none;
 }
-    .button-watched {
-        background-color: initial;
-       margin-right: 15px;
-    }
+.btn-watched {
+  background-color: initial;
+  margin-right: 15px;
+}
 
-    .button-queque {
-        background-color: initial;
-    }
+.btn-queque {
+  background-color: initial;
+}
