@@ -2,7 +2,7 @@ import * as basicLightbox from 'basiclightbox'
 import 'basicLightbox/src/styles/main.scss';
 import updateModal from './updateModal'
 import searchMovie from './apiFilmFetch'
-'../scss/styles.scss';
+import '../scss/styles.scss';
 
 function getFilmInfo(movie_id) {    
 searchMovie(movie_id).then((film) => {
