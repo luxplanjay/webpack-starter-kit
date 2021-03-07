@@ -1,0 +1,51 @@
+{{!-- <div data-id={{id}}> --}}
+    <div>
+        <div>
+            {{#if poster_path}}
+            <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}"
+                data-source="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" alt="{{title}}" />
+            {{else}}
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg" alt="{{title}}" />
+            {{/if}}
+        </div>
+
+        <div>
+            <h2>{{title}}</h2>
+            <ul>
+                <li>
+                    <p>Vote / Votes</p>
+                    <p>
+                        <span>{{vote_average}}</span> / <span>{{vote_count}}</span>
+                    </p>
+                </li>
+                <li>
+                    <p>Popularity</p>
+                    <p>{{popularity}}</p>
+                </li>
+                <li>
+                    <p>Original title</p>
+                    <p>{{orifinal_title}}</p>
+                </li>
+                <li>
+                    <p>Genre</p>
+                    <p>
+                        {{#each genre_ids}}
+                        <span>{{genre_ids.name}}</span>
+                        {{/each}}
+                    </p>
+                </li>
+            </ul>
+            <h3>About</h3>
+            <p>
+                {{overview}}
+            </p>
+            <div>
+                <button type='button'>add to watched</button>
+                <button type='button'>add to queue</button>
+            </div>
+        </div>
+
+        <button type="button" class="closeModalBtn">X close</button>
+    </div>
+    {{!--
+</div> --}}

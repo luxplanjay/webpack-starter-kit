@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Filmoteka</title>
-    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Filmoteka</title>
+  <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+  <!-- <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     /> -->
@@ -44,19 +45,22 @@
 </div>
 
 <body>
- <main>
-   <section class="search">
-    <div class="search__form">
-      <input class="search__input" type="text" name="query" autocomplete="off" placeholder="Поиск фильмов"/>
-      <div class="search__box">
-      
+  <main>
+    <section class="search">
+      <div class="search__form">
+        <input class="search__input" type="text" name="query" autocomplete="off" placeholder="Поиск фильмов" />
+        <div class="search__box">
+
+        </div>
+        <p class="search__warning"></p>
       </div>
-      <p class="search__warning"></p>
-    </div>
-    
-   </section>
- </main>
-  
+
+    </section>
+  </main>
+  <!-- for Modal -->
+  <div class="modal" id="modal" data-id="{{id}}">
+    open Modal
+  </div>
   <!-- footer -->
   <footer class="footer-page">
 
@@ -75,4 +79,3 @@
 </body>
 
 </html>
-
