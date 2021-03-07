@@ -52,6 +52,7 @@
     "axios": "^0.21.1",
     "copy-webpack-plugin": "^6.4.1",
     "core-js": "^3.6.5",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "lodash.debounce": "^4.0.8"
   }
 }
