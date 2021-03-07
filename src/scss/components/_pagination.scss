@@ -1,0 +1,79 @@
+.pagination {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.next,
+.prev {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #f7f7f7;
+  color: #000;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @media screen and (max-width: 640px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+.first,
+.last {
+  display: none;
+}
+.tui-ico-ellip {
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.btn-page1,
+.btn-page2,
+.btn-page3,
+.btn-page4,
+.btn-page5,
+.btn-page {
+  &:not(:last-child) {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  width: 40px;
+  height: 40px;
+  background: #f7f7f7;
+  color: #000;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @media screen and (max-width: 640px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.btn-page1:hover,
+.btn-page2:hover,
+.btn-page3:hover,
+.btn-page4:hover,
+.btn-page5:hover,
+.btn-page:hover {
+  transition: 1s;
+  background: #ff6b08;
+  transform: scale(1.07);
+}
+
+.active {
+  background: #ff6b08;
+  color: #ffff;
+}

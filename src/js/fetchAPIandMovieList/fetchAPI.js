@@ -84,10 +84,10 @@ export default {
       })
       .catch(this.errorHandler);
   },
-  getTrendingMovies() {
+  getTrendingMovies(page = 1) {
     //Забирает с сервера трендовые фильмы , по умолчанию за день
     movieInputRef.value = '';
-    const url = `https://api.themoviedb.org/3/trending/${this.validMediaType}/${this.validTimeWindow}?api_key=${myKey}&language=${this.language}&page=${this.page}`;
+    const url = `https://api.themoviedb.org/3/trending/${this.validMediaType}/${this.validTimeWindow}?api_key=${myKey}&language=${this.language}&page=${page}&per_page=${this.itemsPerPage}`;
     this.fetchGenres();
     return fetch(url)
       .then(response => {
@@ -98,7 +98,7 @@ export default {
       .then(response => {
         this.getMoviesWithGenreNames(response);
         this.page += 1;
-        return response.results;
+        return response;
       })
       .catch(this.errorHandler);
   },
