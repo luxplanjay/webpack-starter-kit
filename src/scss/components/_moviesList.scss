@@ -1,3 +1,6 @@
+.movies-container {
+  min-height: 400px;
+}
 .moviesList {
   padding: 0;
   margin: 0;
@@ -11,6 +14,7 @@
 }
 .moviesList-poster {
   width: 100%;
+  height: 398px;
   border-radius: 5px;
 }
 
@@ -26,8 +30,10 @@
 
   &:hover,
   &:focus {
-    transform: scale(1.01);
+    transform: scale(1.04);
+
     border-radius: 5px;
+
     background-color: rgba(0, 0, 0, 0.01);
   }
 
@@ -37,9 +43,9 @@
       margin-right: 30px;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1334px) {
     max-width: 274px;
-    &:not(:nth-child(3n)) {
+    &:not(:nth-child(4n)) {
       margin-right: 30px;
     }
   }
@@ -61,3 +67,4 @@
   color: #ff6b01;
   word-wrap: normal;
 }
+

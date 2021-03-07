@@ -1,7 +1,13 @@
+import Pagination from 'tui-pagination';
+import { initProgramFilmoteka } from './moviesListEventsHandler';
+import movieListTmp from '../../template/moviesListTemplate.hbs';
+import renderMovies from './renderMovies.js';
 const myKey = '1690d1319b4e719ac3308f10c68ac649';
 const moviesContainerRef = document.querySelector('.movies-container-js');
 const movieInputRef = document.querySelector('.movie-searchTag-js');
+const eContainerRef = document.querySelector('.error-container-js');
 export default {
+  moviesSearchActive: false, // ищем фильмы или рендер трендовых
   searchTag: '',
   page: 1,
   itemsPerPage: 9,
@@ -12,7 +18,7 @@ export default {
   genresArray: [], // массив ид и имен жанров
   errorHandler(error) {
     //обработчик ошибок ( кетчей )
-    moviesContainerRef.innerHTML =
+    eContainerRef.innerHTML =
       error + '. It is a server error , Pls just try again!';
   },
   fetchGenres() {
@@ -62,9 +68,11 @@ export default {
   set movieName(value) {
     this.searchTag = value;
   },
-  searchMoviesbyTag() {
+  searchMoviesbyTag(page = 1) {
     //Поиск фильма по тому что ввели в инпут
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${myKey}&language=${this.language}&query=${this.searchTag}&page=${this.page}&per_page=${this.itemsPerPage}&include_adult=${this.adult}`;
+    this.moviesSearchActive = true;
+
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${myKey}&language=${this.language}&query=${this.searchTag}&page=${page}&per_page=${this.itemsPerPage}&include_adult=${this.adult}`;
     this.fetchGenres();
     return fetch(url)
       .then(response => {
@@ -73,19 +81,23 @@ export default {
         }
       })
       .then(response => {
-        console.log(response); // в консоле можно посмотреть что пришло нам
+        //console.log(response); // в консоле можно посмотреть что пришло нам
         if (response.results.length === 0) {
-          moviesContainerRef.innerHTML = 'No movies found , try another name';
+          eContainerRef.innerHTML =
+            'Search result not successful. Enter the correct movie name and try again';
+          moviesContainerRef.innerHTML =
+            'Search result not successful. Enter the correct movie name and try again';
           return;
         }
         this.getMoviesWithGenreNames(response);
-        this.page += 1;
-        return response.results;
+        //this.page += 1;
+        return response;
       })
       .catch(this.errorHandler);
   },
   getTrendingMovies(page = 1) {
     //Забирает с сервера трендовые фильмы , по умолчанию за день
+    this.moviesSearchActive = false;
     movieInputRef.value = '';
     const url = `https://api.themoviedb.org/3/trending/${this.validMediaType}/${this.validTimeWindow}?api_key=${myKey}&language=${this.language}&page=${page}&per_page=${this.itemsPerPage}`;
     this.fetchGenres();
@@ -117,5 +129,24 @@ export default {
         return response;
       })
       .catch(this.errorHandler);
+  },
+
+  async searchMovies(page = 1) {
+    //рендер результата поиска возвращает промис
+    //moviesContainerRef.innerHTML = '';
+    return this.searchMoviesbyTag(page).then(response => {
+      renderMovies(response.results, moviesContainerRef, movieListTmp);
+      //console.log(response);
+      return response;
+    });
+  },
+  async showMoviesInTrend(page = 1) {
+    //рендер трендовых возвращает промис
+    //moviesContainerRef.innerHTML = '';
+    return this.getTrendingMovies(page).then(response => {
+      renderMovies(response.results, moviesContainerRef, movieListTmp);
+      //console.log(response);
+      return response;
+    });
   },
 };
