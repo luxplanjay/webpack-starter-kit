@@ -3,7 +3,10 @@ import './js/openLibrary.js';
 import refs from './js/refs.js';
 import homeTrending from './js/apiPopularFetch.js';
 import gridTemplate from './templates/movie-grid.hbs';
- import lightbox from './js/modalFilmMarkup'
+import lightbox from './js/modalFilmMarkup'
+import { processingSpinner, deleteSpinner } from './js/spinner-loader';
+
+processingSpinner();
 
 homeTrending.fetchPopular().then(results => {
   const newResults = results.map(result => {
@@ -12,6 +15,8 @@ homeTrending.fetchPopular().then(results => {
       'https://image.tmdb.org/t/p/original/' + result.poster_path;
     return result;
   });
+    
+    deleteSpinner();
     refs.movieGrid.insertAdjacentHTML('beforeend', gridTemplate(newResults));
     console.log("refs.movieGrid")
     lightbox()
