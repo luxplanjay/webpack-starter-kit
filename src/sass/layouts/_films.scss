@@ -1,5 +1,5 @@
 .films__container {
-  width: 100%;
+  max-width: 100%;
   padding: 40px 20px;
   @include for-size(tablet) {
     padding: 60px 75px;

@@ -16,7 +16,7 @@
   }
 
   @include for-size(desktop) {
-    width: 1024px;
+    max-width: 1024px;
     padding-left: 15px;
     padding-right: 15px;
   }
