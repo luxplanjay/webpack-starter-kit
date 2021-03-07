@@ -64,12 +64,12 @@
             />
             <button type="submit" class="btn-form"></button>
           </form>
-          <form class="button-lib is-hidden">
-            <button type="submit" class="button btn-watched btn-active">
-              WATCHED
-            </button>
-            <button type="submit" class="button btn-queque">QUEQUE</button>
-          </form>
+          
+          <div class="bottom-header">
+            <button type="submit" class="button button-watched">WATCHED</button>
+            <button type="submit" class="button button-queque">QUEQUE</button>
+          </div>
+          <div class="error-container-js"></div>
         </div>
       </div>
     </header>
@@ -82,7 +82,10 @@
       </div>
 
       <!-- pagination-->
-      <div id="pagination" class="pagination container"></div>
+      <div
+        id="pagination"
+        class="pagination container pagination-container-js"
+      ></div>
     </main>
 
     <!-- footer -->

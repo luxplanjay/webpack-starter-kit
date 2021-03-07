@@ -1,9 +1,11 @@
 import Pagination from 'tui-pagination';
-import { showMoviesInTrend } from './fetchAPIandMovieList/moviesListEventsHandler';
+// import { showMoviesInTrend } from './fetchAPIandMovieList/moviesListEventsHandler';
+// import { searchMovies } from './fetchAPIandMovieList/moviesListEventsHandler';
+import fetchAPI from '../js/fetchAPIandMovieList/fetchAPI';
 //import 'tui-pagination/dist/tui-pagination.css';
 
 export default function renderPagination(totalItems) {
-  console.log(totalItems);
+  //console.log(totalItems);
   const pagination = new Pagination('pagination', {
     totalItems,
     itemsPerPage: 20,
@@ -23,6 +25,11 @@ export default function renderPagination(totalItems) {
     },
   });
   pagination.on('afterMove', function (eventData) {
-    showMoviesInTrend(eventData.page);
+    console.log('poisk ili net', fetchAPI.moviesSearchActive);
+    if (fetchAPI.moviesSearchActive === false) {
+      fetchAPI.showMoviesInTrend(eventData.page);
+    } else if (fetchAPI.moviesSearchActive === true) {
+      fetchAPI.searchMovies(eventData.page);
+    }
   });
 }
