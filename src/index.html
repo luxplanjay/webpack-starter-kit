@@ -26,7 +26,7 @@
   </head>
 
   <body>
-    <header class="box-container">
+    <header class="box-container home">
       <div id="header">
         <nav class="page__nav">
           <h1 class="logo">
@@ -34,8 +34,12 @@
           </h1>
           <div>
             <a id="home" class="route selected" href="./index.html">Home</a>
+            <div class="underscore"></div>
           </div>
-          <div><a id="library" class="route" href="">My Library</a></div>
+          <div>
+            <a id="library" class="route" href="">My Library</a>
+            <div class="underscore lib is-hidden"></div>
+          </div>
         </nav>
         <div class="header-template">
           <div class="form">
@@ -74,60 +78,7 @@
       </div>
     </header>
     <section class="movie-cards box-container">
-      <ul class="movie-grid" id="js-grid">
-        <!-- <li class="movie-grid__item">
-          <a href="">
-            <div class="movie-grid__poster-container">
-              <img
-                class="movie-grid__poster-img"
-                src="./img/card-image-1024.jpg"
-                alt="Poster"
-              />
-            </div>
-            <h2 class="movie-grid__title">Movie Title</h2>
-            <p class="movie-grid__info">Genres | Year</p>
-          </a>
-        </li>
-        <li class="movie-grid__item">
-          <a href="">
-            <div class="movie-grid__poster-container">
-              <img
-                class="movie-grid__poster-img"
-                src="./img/card-image-1024.jpg"
-                alt="Poster"
-              />
-            </div>
-            <h2 class="movie-grid__title">Movie Title</h2>
-            <p class="movie-grid__info">Genres | Year</p>
-          </a>
-        </li>
-        <li class="movie-grid__item">
-          <a href="">
-            <div class="movie-grid__poster-container">
-              <img
-                class="movie-grid__poster-img"
-                src="./img/card-image-1024.jpg"
-                alt="Poster"
-              />
-            </div>
-            <h2 class="movie-grid__title">Movie Title</h2>
-            <p class="movie-grid__info">Genres | Year</p>
-          </a>
-        </li>
-        <li class="movie-grid__item">
-          <a href=""
-            ><div class="movie-grid__poster-container">
-              <img
-                class="movie-grid__poster-img"
-                src="./img/card-image-1024.jpg"
-                alt="Poster"
-              />
-            </div>
-            <h2 class="movie-grid__title">Movie Title</h2>
-            <p class="movie-grid__info">Genres | Year</p>
-          </a>
-        </li> -->
-      </ul>
+      <ul class="movie-grid" id="js-grid"></ul>
     </section>
     <!-- made by Nicolay Maryasov -->
     <section class="library__container is-hidden">
