@@ -38,8 +38,7 @@ function inputHandler(event) {
   }
   fetchAPI.movieName = movieName;
   fetchAPI.moviesSearchActive = true;
-  //fetchAPI.resetPageToFirst();
-  //searchMovies(1);
+
   initProgramFilmoteka();
 }
 
