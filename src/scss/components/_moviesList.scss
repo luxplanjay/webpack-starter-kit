@@ -49,6 +49,10 @@
       margin-right: 30px;
     }
   }
+  a,
+  img {
+    cursor: pointer;
+  }
 }
 
 // .moviesList-item:not(:nth-child(3n)) {
@@ -67,4 +71,3 @@
   color: #ff6b01;
   word-wrap: normal;
 }
-
