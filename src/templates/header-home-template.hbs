@@ -1,4 +1,3 @@
-
 <div class="container header-container">
     <div class="header-nav-container">
         <div class="logo-container">
@@ -20,23 +19,26 @@
                     <button class="site-nav__button">My library</button>
                 </li>
             </ul>
-    <div class="theme-switch__control">
-        <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
-            aria-label="Change theme" />
-        <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
-        </label>
-        <div aria-hidden="true" class="theme-switch__marker"></div>
-    </div>
+            <div class="theme-switch__control">
+                <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+                    aria-label="Change theme" />
+                <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+                </label>
+                <div aria-hidden="true" class="theme-switch__marker"></div>
+            </div>
         </nav>
     </div>
     <form class="search-form">
-        <input class="search-form__input" type="text" name="query" placeholder="Movie search" autocomplete="off"/>
+        <input class="search-form__input" type="text" name="query" placeholder="Movie search" autocomplete="off" />
         {{!-- <svg class="search-form__icon" width="12" height="12">
             <use class="icon-mobile-close" href="./src/images/sprite.svg#icon-search"></use>
         </svg> --}}
         <span class="search-form__icon"></span>
 
     </form>
+    <div class="error-container">
+        <p class="header__error">Search result not successful. Enter the correct movie name and press enter</p>
+    </div>
 
-    <p class="header__error">Search result not successful. Enter the correct movie name and press enter</p>
+
 </div>
