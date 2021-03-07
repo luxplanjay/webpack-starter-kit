@@ -78,9 +78,9 @@
   }
   .icon-logo {
     fill: inherit;
-    pointer-events: none;
+    //pointer-events: none;
   }
-  .title {
+  .link-title {
     display: none;
     @media screen and (min-width: 768px) {
       display: flex;
