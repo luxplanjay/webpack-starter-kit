@@ -6,6 +6,7 @@ import './js/storage';
 import './js/themes';
 import './js/theme-change';
 import './js/footermodal.js';
+import showErrorNote from'./js/error-notification';
 
 import createHeaderHomeMarkup from './js/header-render';
 createHeaderHomeMarkup();
@@ -14,6 +15,7 @@ import addContent from './js/addContent';
 import apiService from './js/apiService.js';
 import pagination from './js/pagination.js';
 const searchFormRef = document.querySelector('.search-form');
+const errorNoteRef = document.querySelector('.header__error');
 const Request = {
   HOME: 'home',
   LIBRARY: 'library',
@@ -86,8 +88,11 @@ async function fetchDataFilm() {
 function onSubmitSearchForm(event) {
   event.preventDefault();
   const searchQuery = event.target.elements.query.value;
+  
   if (!searchQuery) {
+    showErrorNote(errorNoteRef);
     //вывести сообщение пользователю, что ничего не найдено, а вдруг сам не догадается
+    // есть глюк, надо подправить
     return;
   }
   apiService.searchQuery = searchQuery;

@@ -178,6 +178,13 @@
 .logo-container {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.header__logo {
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/film.svg);
 }
 
 @include for-size(tablet-plus) {
@@ -275,18 +282,22 @@
     position: absolute;
     top: 8px;
     right: 0px;
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/search.svg);
   }
 }
 
 .header__error {
   display: none;
   margin-top: 22px;
-  margin-bottom: -50px;
+  margin-bottom: -52px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
   text-align: left;
   color: $text-error;
+  text-align: center;
 
   @include for-size(tablet-plus) {
     margin-bottom: -37px;

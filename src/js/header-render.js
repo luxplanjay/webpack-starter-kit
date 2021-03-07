@@ -37,3 +37,31 @@ function hendlerSiteNavButtons(event) {
 
 export default createHeaderHomeMarkup;
 
+
+
+
+
+//    const siteNavButtonsRef = document.querySelector('.site-nav__list');
+//     const logoRef = document.querySelector('.header__logo');
+
+//     siteNavButtonsRef.addEventListener('click', (event) => {
+//         foo(event, siteNavButtonsRef, logoRef);
+//     });
+    
+// }
+
+// function foo(event, but, logo) {
+//     const element = event.target;
+
+//     if (element.nodeName !== "BUTTON" || element.classList.contains('is-active') || element !== logo) {
+//         return;
+//     } else if (element === logo && but.firstChild.classList.contains('is-active')) { 
+//         createHeaderLibraryrMarkup();
+
+//     }else {
+//         element.textContent === 'My library' ? createHeaderLibraryrMarkup() : createHeaderHomeMarkup();     
+//     }   
+// }
+
+
+
