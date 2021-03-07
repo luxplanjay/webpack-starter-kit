@@ -4,7 +4,9 @@
             <use href="./img/sprite.svg#icon-close"></use>
         </svg>
     </button>
-    <img src={{url}} alt="film poster" class="modal__image" width="240px">
+    <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}"
+        data-source="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="film poster" class="modal__image"
+        width="240px">
     <div class="modal__info-box">
         <h2 class="modal__film-title">{{title}}</h2>
         <div class="modal__rating-box">
@@ -28,7 +30,9 @@
                 <li class="modal__rating-item">
                     <span class="modal__rating-genre">Genre</span>
                     <div class="modal__rating-genre-box">
-                        <span class="modal__rating-genre-value">{{genres}}</span>
+                        {{#each this.genres}}
+                        <span class="modal__rating-genre-value">{{this.name}}</span>
+                        {{/each}}
                     </div>
                 </li>
             </ul>
