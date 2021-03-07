@@ -1,124 +1,118 @@
 .lightbox {
-   position: fixed;
-   width: 100%;
-   height: 100%;
-   background-color: $color-background;
-   top: 0;
-   left: 0;
-   opacity: 0;
-   overflow: auto;
-   visibility: hiden;
-   pointer-events: none;
-        &__body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100%;
-            padding: 20px;
-        }
-        &__content {
-            color: $text-footer;
-            background-color: rgba(255, 255, 255, 0.70);
-            max-width: 800px;
-            padding: 20px;
-            position: relative;
-            border-radius: 4px;
-        }
-        &__title {
-            @include font(500, 26px, 1.14);
-            text-align: center;
-            margin: 0;
-            color: $text-main;
-        }
-
-        &__list {
-                @include for-size(mobile-only) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow: auto;
+    visibility: hiden;
+    pointer-events: none;
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+        padding: 20px;
+    }
+    &__content {
+        color: $text-footer;
+        background-color: rgba(255, 255, 255, 0.7);
+        max-width: 800px;
+        padding: 20px;
+        position: relative;
+        border-radius: 4px;
+    }
+    &__title {
+        @include font(500, 26px, 1.14);
+        text-align: center;
+        margin: 0;
+        color: $text-main;
+    }
+    &__list {
+        @include for-size(mobile-only) {
             display: inline;
             margin: auto;
-            }
-                @include for-size(mobile) {
+        }
+        @include for-size(mobile) {
             display: inline;
             margin: auto;
-            }
-                @include for-size(tablet) {
+        }
+        @include for-size(tablet) {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: normal;
-            }
-                @include for-size(desktop) {
+        }
+        @include for-size(desktop) {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: normal;
-            } 
         }
-        &__fourrowel {
-
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: $text-header;
-            box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-                0px 1px 2px rgba(0, 0, 0, 0.08),
-                0px 2px 2px rgba(0, 0, 0, 0.12);
-            border-radius: 0px 0px 4px 4px;
-            margin-top: 20px;
+    }
+    &__fourrowel {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $text-header;
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+        border-radius: 0px 0px 4px 4px;
+        margin-top: 20px;
+        padding-left: 20px;
+        @include for-size(tablet) {
+            margin: 20px 20px 0 0;
             padding-left: 20px;
-           
-                 @include for-size(tablet) {
-                margin: 20px 20px 0 0;
-                padding-left: 20px;
-                width: 40%;
-                min-height: 100px;
-                 }
-                @include for-size(desktop) {
-                margin: 20px 20px 0 0;
-                padding-left: 20px;
-                width: 40%;
-                min-height: 100px;
-                }
- }
-    &__fourrowel:nth-child(even) {
-                @include for-size(tablet) {
-                 margin: 20px 0 0 0;
-                 }
-                @include for-size(desktop) {
-                 margin: 20px 0 0 0;
-                 }
- }
-        &__button {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-            padding: 0;
-            margin: 0;
-            border: none;
-            border-radius: 50%;
-            background-color: $text-accent;
-            fill: $text-main;
-            cursor: pointer;
-            outline: none;
-            background-position: center;
-            background-size: 30%;
-            background-repeat: no-repeat;
-            
+            width: 40%;
+            min-height: 100px;
         }
-        &__img {
-            height: 40px;
-            width: 40px;
-            }
- }
+        @include for-size(desktop) {
+            margin: 20px 20px 0 0;
+            padding-left: 20px;
+            width: 40%;
+            min-height: 100px;
+        }
+    }
+    &__fourrowel:nth-child(even) {
+        @include for-size(tablet) {
+            margin: 20px 0 0 0;
+        }
+        @include for-size(desktop) {
+            margin: 20px 0 0 0;
+        }
+    }
+    &__button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-radius: 50%;
+        background-color: $text-accent;
+        fill: $text-main;
+        cursor: pointer;
+        outline: none;
+        background-position: center;
+        background-size: 30%;
+        background-repeat: no-repeat;
+    }
+    &__img {
+        border-radius: 50%;
+    }
+}
 
-  .lightbox.is-open {
+.lightbox.is-open {
     opacity: 1;
     pointer-events: initial;
 }
+
 .js-lightbox.is-open .lightbox__list {
     transform: scale(1);
 }
@@ -126,30 +120,23 @@
 .lightbox__button:hover,
 .lightbox__button:focus {
     background-color: $color-background;
-                box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-            0px 1px 2px rgba(0, 0, 0, 0.08),
-            0px 2px 2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-
 
 .sociallinks {
     border-radius: 50%;
     padding: 10px;
-    &__link:not(:last-child) {
-    
-    }
-    &__icon {  
+    &__link:not(:last-child) {}
+    &__icon {
         fill: $text-main;
-               
-       
     }
     &__icon:hover,
-    &__icon:focus {      
-    fill: $color-accent;  }
+    &__icon:focus {
+        fill: $color-accent;
+    }
 }
 
 .comcontent {
-
     @include font(normal, 16px, 1.16);
     display: flex;
     flex-wrap: wrap;
@@ -157,16 +144,15 @@
     padding: 10px;
     text-align: left;
     width: 70%;
-         &__name {
-            @include font(500, 18px, 1.8);
-            color: $text-second;
-            margin: 0;
-            padding-left: 10px;
-        }
-
-        &__subtitle {
-            @include font(normal, 16px, 1.6);
-            color: $text-accent;
-            padding-left: 10px;
-        }
+    &__name {
+        @include font(500, 18px, 1.4);
+        color: $text-second;
+        margin: 0;
+        padding-left: 10px;
+    }
+    &__subtitle {
+        @include font(normal, 14px, 1.4);
+        color: $text-accent;
+        padding-left: 10px;
+    }
 }
