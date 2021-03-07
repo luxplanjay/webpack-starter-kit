@@ -15,7 +15,7 @@
 }
 
 .header-container {
-  width: 100%;
+  // width: 100%;
   padding: 46px 20px 97px;
 
   background-position: center;
@@ -178,13 +178,14 @@
 .logo-container {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  
 }
 
 .header__logo {
   width: 24px;
   height: 24px;
   background-image: url(../images/film.svg);
+  cursor: pointer;
 }
 
 @include for-size(tablet-plus) {
@@ -249,10 +250,6 @@
   }
 }
 
-// .site-nav__button.is-active {
-//   border-bottom: 3px solid $text-accent;
-// }
-
 .search-form {
   max-width: 336px;
   position: relative;
@@ -299,10 +296,11 @@
   color: $text-error;
   text-align: center;
 
-  @include for-size(tablet-plus) {
+  @media screen and (min-width: 506px) {
     margin-bottom: -37px;
     text-align: center;
   }
+
 }
 
 .library__list {
