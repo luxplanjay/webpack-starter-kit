@@ -28,12 +28,9 @@
   display: none;
 }
 .tui-ico-ellip {
+  margin-right: 15px;
   font-weight: bold;
   color: black;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
 }
 
 .btn-page1,
@@ -52,6 +49,7 @@
   height: 40px;
   background: #f7f7f7;
   color: #000;
+  font-weight: 500;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -60,6 +58,12 @@
     width: 30px;
     height: 30px;
   }
+}
+.next:hover,
+.prev:hover {
+  transition: 1s;
+  background: #ff6b08;
+  transform: scale(1.07);
 }
 
 .btn-page1:hover,
