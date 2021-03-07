@@ -11,16 +11,20 @@
 .films__list {
     display: grid;
     padding: 60px auto;
+    justify-content: center;
   // @include for-size(tablet) {
   //   grid-gap: 30px;
   //   grid-template-columns: repeat(2, 1fr);
   // }
-  @media (min-width: 580px) {
+  @media (min-width: 768px) {
     grid-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
+    max-width: 618px;
+    margin: auto;
   }
   @include for-size(desktop) {
     grid-gap: 30px;
     grid-template-columns: repeat(3, 1fr);
+    min-width: 882px;
   }
 }
