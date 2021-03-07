@@ -2,9 +2,11 @@
 <div class="container header-container">
     <div class="header-nav-container">
         <div class="logo-container">
-            <svg class="header__logo" width="24" height="24">
+            {{!-- Откатываемся до этого момента --}}
+            {{!-- <svg class="header__logo" width="24" height="24">
                 <use class="icon-mobile-close" href="./images/sprite.svg#icon-film"></use>
-            </svg>
+            </svg> --}}
+            <span class="header__logo"></span>
             <h1 class="header__title">
                 Filmoteka
             </h1>
@@ -22,11 +24,12 @@
     </div>
     <form class="search-form">
         <input class="search-form__input" type="text" name="query" placeholder="Поиск фильмов" autocomplete="off" lang="ru" />
-        <svg class="search-form__icon" width="12" height="12">
+        {{!-- <svg class="search-form__icon" width="12" height="12">
             <use class="icon-mobile-close" href="./src/images/sprite.svg#icon-search"></use>
-        </svg>
+        </svg> --}}
+        <span class="search-form__icon"></span>
 
     </form>
 
-    <p class="header__error">Search result not successful. Enter the correct movie name and</p>
+    <p class="header__error">Search result not successful. Enter the correct movie name and press enter</p>
 </div>
