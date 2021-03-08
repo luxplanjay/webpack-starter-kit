@@ -34,8 +34,18 @@ export default {
     }
   },
 
-  async fetchDataLibrary() {
-    save('currentRequest', LIBRARY);
+  async fetchDataLibrary(pagePagination = 1) {
+    const perPage = apiService.perPage;
+    const resultArray = load('watched').map(elem => Number(elem));
+    const promisesIdFilms = resultArray.map(elem =>
+      apiService.fetchDetalsFilm(elem, pagePagination),
+    );
+
+    const resultArrayDetalsFilm = await Promise.all(promisesIdFilms);
+    const numFirst = pagePagination * perPage - perPage;
+    const numLast = pagePagination * perPage;
+    addContent.addLibraryList(resultArrayDetalsFilm.slice(numFirst, numLast));
+    pagination.addPaginationList(resultArrayDetalsFilm.length, pagePagination);
   },
 
   async fetchDataFilm(movieId) {
@@ -45,7 +55,5 @@ export default {
     } catch (error) {
       throw error;
     }
-
-    save('currentRequest', FILM);
   },
 };
