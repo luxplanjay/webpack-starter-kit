@@ -45,11 +45,8 @@ function handlerSiteNavButtonsClick(event) {
     // console.log(element.parentNode);
     if (element.nodeName === "BUTTON" && !element.classList.contains('is-active')) {
         element.textContent === 'My library' ? createHeaderLibraryrMarkup() : createHeaderHomeMarkup();
-
-    } else {
+    } else  {
         !buttonHomeRef.classList.contains('is-active') ? createHeaderHomeMarkup() : console.log(5);
-    } else if (!buttonHomeRef.classList.contains('is-active')) {
-        createHeaderHomeMarkup();
     } 
 }
 
