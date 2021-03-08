@@ -268,12 +268,21 @@
     }
   }
 
-  &__icon {
+  &__button {
     position: absolute;
     top: 8px;
-    right: 0px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
     width: 12px;
     height: 12px;
+    background-repeat: no-repeat;
     background-image: url(../images/search.svg);
   }
 }
