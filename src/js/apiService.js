@@ -1,5 +1,5 @@
 import { load, save, remove } from './storage';
-import { HOME, LIBRARY, SEARCH } from './request.js';
+import { HOME, LIBRARY, QUEUE, SEARCH, WATCHED } from './request.js';
 
 export default {
   ulrApi: '',
@@ -25,8 +25,7 @@ export default {
       case HOME:
         this.urlApi = `https://api.themoviedb.org/3/trending/movie/week?api_key=${this.keyApi}&page=${this.page}&language=${this.language}`;
         break;
-      case LIBRARY:
-        break;
+
       case SEARCH:
         this.urlApi = `https://api.themoviedb.org/3/search/movie?api_key=${this.keyApi}&page=${this.page}&query=${this.query}&language=${this.language}`;
         break;
@@ -46,6 +45,7 @@ export default {
 
   fetchDetalsFilm(movieId) {
     const urlApi = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${this.keyApi}&language=${this.language}`;
+
     const options = {
       headers: {
         Accept: 'application/json',

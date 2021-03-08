@@ -3,74 +3,55 @@ import headerHomeTemplate from '../templates/header-home-template.hbs';
 import headerLibraryTemplate from '../templates/header-lib-template.hbs';
 import refs from './refs';
 
+let logoNavRef;
+let siteNavButtonsRef;
+let buttonHomeRef;
+let markup;
+
 
 function createHeaderHomeMarkup() {
-    const markup = headerHomeTemplate();
+    markup = headerHomeTemplate();
 
     setHeaderMarkup(markup);
+    
+    if (refs.headerRef.classList.contains("header-container--library")) {
+        refs.headerRef.classList.remove("header-container--library");
+    }
 }
 
 function createHeaderLibraryrMarkup() {
-    const markup = headerLibraryTemplate();
+    markup = headerLibraryTemplate();
 
-    setHeaderMarkup(markup);    
+    setHeaderMarkup(markup);
+
+    refs.headerRef.classList.add("header-container--library");
 }
 
 function setHeaderMarkup(value) {
     refs.headerRef.innerHTML = '';
     refs.headerRef.insertAdjacentHTML('beforeend', value);
-    const siteNavButtonsRef = document.querySelector('.site-nav__list');
-    const buttonHomeRef = document.querySelector('button[data="home"]');
-    const logoRef = document.querySelector('.header__logo');
 
+    siteNavButtonsRef = document.querySelector('.site-nav__list');
+    logoNavRef = document.querySelector('.logo-container');
+    buttonHomeRef = document.querySelector('.js-home');
+
+    logoNavRef.addEventListener('click', handlerSiteNavButtonsClick);
     siteNavButtonsRef.addEventListener('click', handlerSiteNavButtonsClick);
-    logoRef.addEventListener('click', () => {
-        if (buttonHomeRef.classList.contains('is-active')) {
-            return;
-        } else {
-            createHeaderHomeMarkup();
-        }
-    });
 }
+
 
 function handlerSiteNavButtonsClick(event) {
     const element = event.target;
-
-    if (element.nodeName !== "BUTTON" || element.classList.contains('is-active')) {
-        return;
-    } else {
-        element.textContent === 'My library' ? createHeaderLibraryrMarkup() : createHeaderHomeMarkup();     
-    }   
+    // console.log(element.parentNode);
+    if (element.nodeName === "BUTTON" && !element.classList.contains('is-active')) {
+        element.textContent === 'My library' ? createHeaderLibraryrMarkup() : createHeaderHomeMarkup();
+    } else  {
+        !buttonHomeRef.classList.contains('is-active') ? createHeaderHomeMarkup() : console.log(5);
+    } 
 }
-
 
 export default createHeaderHomeMarkup;
 
-
-
-
-
-//    const siteNavButtonsRef = document.querySelector('.site-nav__list');
-//     const logoRef = document.querySelector('.header__logo');
-
-//     siteNavButtonsRef.addEventListener('click', (event) => {
-//         foo(event, siteNavButtonsRef, logoRef);
-//     });
-    
-// }
-
-// function foo(event, but, logo) {
-//     const element = event.target;
-
-//     if (element.nodeName !== "BUTTON" || element.classList.contains('is-active') || element !== logo) {
-//         return;
-//     } else if (element === logo && but.firstChild.classList.contains('is-active')) { 
-//         createHeaderLibraryrMarkup();
-
-//     }else {
-//         element.textContent === 'My library' ? createHeaderLibraryrMarkup() : createHeaderHomeMarkup();     
-//     }   
-// }
 
 
 
