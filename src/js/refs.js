@@ -19,7 +19,9 @@ const refs = {
   descr: document.querySelector('.description-text'),
 
   addToWatchedBtn: document.querySelector('.modal__btn--watched'),
-  addToQueueBtn: document.querySelector('.modal__btn--queue')
+  addToQueueBtn: document.querySelector('.modal__btn--queue'),
+
+  watchedBtnLibrary: document.querySelector('.header'),
 };
 
 export default refs;
