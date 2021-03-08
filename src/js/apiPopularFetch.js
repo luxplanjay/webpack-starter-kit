@@ -1,6 +1,7 @@
 export default {
   key: '2d2272085b6a086155bacb1413ae9080',
   page: 1,
+  _urlPopular: `https://api.themoviedb.org/3/trending/movie/day`,
 
   fetchPopular() {
     const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${this.key}&page=${this.page}`;
@@ -17,7 +18,7 @@ export default {
       .then(({ genres }) => genres)
       .catch(error => console.log(error));
   },
-  urlPopular() {
-    return `https://api.themoviedb.org/3/trending/movie/day?api_key=${this.key}&page=${this.page}`;
+  get urlPopular() {
+    return this._urlPopular;
   },
 };
