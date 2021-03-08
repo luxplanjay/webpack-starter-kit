@@ -24,7 +24,7 @@ function handleWatched(event) {
     refs.addToWatchedBtn.innerHTML = 'ADD TO WATCHED';
   };
 
-  Server.addToWatched(all);
+  // Server.addToWatched(all);
   localStorage.setItem('watched', JSON.stringify(all));
 }
 
@@ -39,6 +39,6 @@ function handleQueue(event) {
     all.splice(all.indexOf(id), 1);
     refs.addToQueueBtn.innerHTML = 'ADD TO QUEUE';
   };     
-    Server.addToQueue(all);
+    // Server.addToQueue(all);
      localStorage.setItem('queue', JSON.stringify(all));
 }
