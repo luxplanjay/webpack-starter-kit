@@ -1,16 +1,16 @@
 // backdrop
-
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: scroll;
+}
 .modal-overflow {
   overflow: hidden;
 }
-
-.modal-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .movie-modal {
   position: fixed;
   top: 0;
@@ -31,60 +31,32 @@
   width: 100%;
 }
 
-.backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow-y: scroll;
-}
-
-.film-card {
-  position: absolute;
-  background-color: #fff;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  max-height: 95vh;
-  overflow-y: auto;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    width: 668px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 886px;
-    padding: 50px;
-  }
+.modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .close-button {
   position: absolute;
-  top: 25px;
-  right: 35px;
+  top: 7px;
+  right: 7px;
   z-index: 100;
-  display: block;
+
   width: 35px;
   height: 35px;
 
   padding: 0;
-  background-color: $footer-bg-color;
-  border: 1px solid $modal-secondary-text-color;
+  background-color: transparent;
+  border: none;
   border-radius: 50%;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     width: 45px;
     height: 45px;
-    top: 40px;
-    right: 60px;
+    top: 7px;
+    right: 7px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -94,7 +66,6 @@
 }
 
 .close {
-  position: absolute;
   bottom: 0px;
   left: 5px;
 
@@ -127,6 +98,30 @@
 
 .close:after {
   transform: rotate(-45deg);
+}
+.film-card {
+  position: absolute;
+  background-color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 48px 20px 41px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  max-height: 95vh;
+  overflow-y: auto;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    width: 668px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 886px;
+    padding: 50px;
+  }
 }
 
 // ======= modal window =============================
