@@ -2,6 +2,8 @@ import addContent from './addContent';
 import apiService from './apiService.js';
 import pagination from './pagination.js';
 import request from './request.js';
+import updateModalValue from './modal'
+
 
 export default {
   async fetchDataForMainPage(
@@ -58,11 +60,11 @@ export default {
     localStorage.setItem('currentRequest', request.LIBRARY);
   },
 
-  async fetchDataFilm(movieId) {
+  async fetchDataFilm (movieId) {
     try {
       const resAwait = await apiService.fetchDetalsFilm(movieId);
       console.log('запрос по фильму',resAwait);
-      addContent.addModalForm(resAwait);
+      updateModalValue(resAwait)
     } catch (error) {
       throw error;
     }
@@ -70,3 +72,4 @@ export default {
     localStorage.setItem('currentRequest', request.FILM);
   },
 };
+
