@@ -1,5 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
-import 'basicLightbox/src/styles/main.scss';
+import 'basiclightbox/src/styles/main.scss';
 import searchMovie from './apiFilmFetch';
 import modalTpl from '../templates/modal.hbs';
 import onButtonAddToQueue from './onButtonAddToQueue';
@@ -8,6 +8,7 @@ import refs from './refs.js';
 
 function getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
+    // console.log(film);
     const markupFilm = modalTpl(film);
     const modal = basicLightbox.create(markupFilm);
     modal.show();

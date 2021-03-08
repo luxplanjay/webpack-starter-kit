@@ -45,6 +45,7 @@
   &__info {
     @include CenteredFlex(inline-flex, nowrap, center, flex-start);
     width: 100%;
+
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
@@ -53,6 +54,10 @@
     vertical-align: middle;
     text-align: left;
     color: #ff6b08;
+
+    &--genres{
+      max-width: 50%;
+      overflow: hidden;    }
 
     &--ratio {
       @include CenteredFlex(inline-flex, nowrap, center, center);
