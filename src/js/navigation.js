@@ -1,22 +1,40 @@
-import refs from './refs';
-//inport apiServise from './fetchAPIandMovieList/fetchAPI.js';
+const refs = {
+  home: document.querySelector('.home-link'),
+  library: document.querySelector('.lib-link'),
+  header: document.querySelector('.header'),
+  search: document.querySelector('.form-search'),
+  buttonHeader: document.querySelector('.button-header'),
+  watchedBtn: document.querySelector('button-watched'),
+  queueBtn: document.querySelector('button-queque'),
+};
 
-refs.homeBtn.addEventListener('click', activeHomePage);
-refs.logo.addEventListener('click', activeHomePage);
-refs.headerTitle.addEventListener('click', activeHomePage);
+refs.home.addEventListener('click', activeHome);
+refs.library.addEventListener('click', activelibrary);
 
-function activeHomePage(event) {
-  event.preventDefault();
-  addClassHome();
+function activeHome(e) {
+  e.preventDefault();
+
+  refs.header.classList.replace('header-lib', 'header-home');
+  refs.search.classList.remove('is-hidden');
+  refs.buttonHeader.classList.add('is-hidden');
+  refs.library.classList.remove('active');
+  refs.home.classList.add('active');
+  refs.watchedBtn.classList.add('is-hidden');
+  refs.queueBtn.classList.add('is-hidden');
 }
 
-function addClassHome() {
-  refs.backgroundHome.classList.remove('header-lib');
-  refs.backgroundHome.classList.add('header-home');
+function activelibrary(e) {
+  e.preventDefault();
 
-  refs.homeBtn.classList.add('active');
-  refs.myLibraryBtn.classList.remove('active');
-
-  refs.inputForm.classList.remove('is-hidden');
-  refs.bntlibrary.classList.add('is-hidden');
+  refs.header.classList.replace('header-home', 'header-lib');
+  refs.buttonHeader.classList.remove('is-hidden');
+  refs.search.classList.add('is-hidden');
+  refs.home.classList.remove('active');
+  refs.library.classList.add('active');
+  refs.watchedBtn.classList.remove('active-btn');
+  refs.queueBtn.classList.add('active-btn');
+}
+function activeBorder() {
+  refs.home.classList.toggle('active');
+  refs.library.classList.toggle('active');
 }
