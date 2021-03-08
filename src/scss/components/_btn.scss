@@ -1,11 +1,10 @@
-.bottom-header {
+.button-header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .button {
-  display: inline-block;
   padding: 14px 38px 12px;
   min-width: 136px;
   cursor: pointer;
@@ -32,4 +31,11 @@
 
 .button-queque {
   background-color: initial;
+}
+.active-btn {
+  background-color: $accent-color;
+  border: 0;
+}
+.button-link:not(:last-child) {
+  margin-right: 15px;
 }
