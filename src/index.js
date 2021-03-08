@@ -5,3 +5,4 @@ import './js/modal';
 import './js/navigation';
 //import './js/lib';
 import './js/themes';
+import './js/spinner';

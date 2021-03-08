@@ -1,0 +1,205 @@
+/* spinner */
+
+.spinner-container {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: rotation 1s infinite;
+    animation: rotation 1s infinite;
+  }
+  
+  .is-hidden {
+    display: none;
+  }
+  
+  .spinner-container .shape {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+  }
+  .spinner-container .shape.shape-1 {
+    left: 0;
+    background-color: #4285f4;
+  }
+  .spinner-container .shape.shape-2 {
+    right: 0;
+    background-color: #34a853;
+  }
+  .spinner-container .shape.shape-3 {
+    bottom: 0;
+    background-color: #fbbc05;
+  }
+  .spinner-container .shape.shape-4 {
+    bottom: 0;
+    right: 0;
+    background-color: #ea4335;
+  }
+  .spinner-container .shape-1 {
+    -webkit-animation: shape1 2s linear infinite;
+    animation: shape1 2s linear infinite;
+  }
+  .spinner-container .shape-2 {
+    -webkit-animation: shape2 2s linear infinite;
+    animation: shape2 2s linear infinite;
+  }
+  .spinner-container .shape-3 {
+    animation: shape3 2s linear infinite;
+  }
+  .spinner-container .shape-4 {
+    animation: shape4 2s linear infinite;
+  }
+  
+  @-webkit-keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes shape1 {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(0, 18px);
+    }
+    50% {
+      transform: translate(18px, 18px);
+    }
+    75% {
+      transform: translate(18px, 0);
+    }
+  }
+  @keyframes shape1 {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(0, 18px);
+    }
+    50% {
+      transform: translate(18px, 18px);
+    }
+    75% {
+      transform: translate(18px, 0);
+    }
+  }
+  @-webkit-keyframes shape2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-18px, 0);
+    }
+    50% {
+      -webkit-transform: translate(-18px, 18px);
+      transform: translate(-18px, 18px);
+    }
+    75% {
+      -webkit-transform: translate(0, 18px);
+      transform: translate(0, 18px);
+    }
+  }
+  @keyframes shape2 {
+    0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    25% {
+      -webkit-transform: translate(-18px, 0);
+      transform: translate(-18px, 0);
+    }
+    50% {
+      -webkit-transform: translate(-18px, 18px);
+      transform: translate(-18px, 18px);
+    }
+    75% {
+      -webkit-transform: translate(0, 18px);
+      transform: translate(0, 18px);
+    }
+  }
+  @-webkit-keyframes shape3 {
+    0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    25% {
+      -webkit-transform: translate(18px, 0);
+      transform: translate(18px, 0);
+    }
+    50% {
+      -webkit-transform: translate(18px, -18px);
+      transform: translate(18px, -18px);
+    }
+    75% {
+      -webkit-transform: translate(0, -18px);
+      transform: translate(0, -18px);
+    }
+  }
+  @keyframes shape3 {
+    0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    25% {
+      -webkit-transform: translate(18px, 0);
+      transform: translate(18px, 0);
+    }
+    50% {
+      -webkit-transform: translate(18px, -18px);
+      transform: translate(18px, -18px);
+    }
+    75% {
+      -webkit-transform: translate(0, -18px);
+      transform: translate(0, -18px);
+    }
+  }
+  @-webkit-keyframes shape4 {
+    0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    25% {
+      -webkit-transform: translate(0, -18px);
+      transform: translate(0, -18px);
+    }
+    50% {
+      -webkit-transform: translate(-18px, -18px);
+      transform: translate(-18px, -18px);
+    }
+    75% {
+      -webkit-transform: translate(-18px, 0);
+      transform: translate(-18px, 0);
+    }
+  }
+  @keyframes shape4 {
+    0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    25% {
+      -webkit-transform: translate(0, -18px);
+      transform: translate(0, -18px);
+    }
+    50% {
+      -webkit-transform: translate(-18px, -18px);
+      transform: translate(-18px, -18px);
+    }
+    75% {
+      -webkit-transform: translate(-18px, 0);
+      transform: translate(-18px, 0);
+    }
+  }
