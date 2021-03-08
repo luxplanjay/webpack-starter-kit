@@ -7,6 +7,8 @@ import './js/themes';
 import './js/theme-change';
 import './js/footermodal.js';
 import showErrorNote from './js/error-notification';
+import './js/modal';
+import './js/modal-close';
 
 import createHeaderHomeMarkup from './js/header-render';
 createHeaderHomeMarkup();
@@ -15,6 +17,7 @@ import apiService from './js/apiService.js';
 import pagination from './js/pagination.js';
 import fnFetch from './js/fetch.js';
 import request from './js/request.js';
+// import modal from './js/modal';
 
 const searchFormRef = document.querySelector('.search-form');
 const errorNoteRef = document.querySelector('.header__error');

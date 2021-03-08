@@ -18,14 +18,15 @@ export default {
     refs.filmListRef.insertAdjacentHTML('beforeend', filmCard(resultForMarkup));
   },
 
-  addModalForm(results) {
-    const resultForMarkup = {
-      ...results,
-      poster_path: pathForModal + results.poster_path,
-    };
-    console.dir(resultForMarkup);
-    refs.modalRef.innerHTML = '';
-    refs.modalRef.insertAdjacentHTML('beforeend', modalForm(resultForMarkup));
-    refs.backdropModalRef.classList.remove('is__hidden__content');
-  },
+  // addModalForm(results) {
+  //   const resultForMarkup = {
+  //     ...results,
+  //     poster_path: pathForModal + results.poster_path,
+  //   };
+  //   console.dir(resultForMarkup);
+  //   return poster_path
+    // refs.modalRef.innerHTML = '';
+    // refs.modalRef.insertAdjacentHTML('beforeend', modalForm(resultForMarkup));
+    // refs.backdropModalRef.classList.remove('visually-hidden');
+  // },
 };

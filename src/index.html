@@ -133,11 +133,12 @@
     <div class="backdrop visually-hidden">
       <div class="modal">
         <button class="btn__close" data-action="close" aria-label="close-button">
-          <svg class="btn__cross" width="20" height="20">
+          <!-- <svg class="btn__cross" width="20" height="20">
             <use
               href="./images/sprite.svg#icon-close"
             ></use>
-          </svg>
+          </svg> -->
+          X
         </button>
         <div class="modal__content">
           <div class="modal__block image__block">
@@ -165,16 +166,16 @@
               </ul>
               <ul class="list film-info__values">
                 <li class="film-info__value">
-                  <span class="content-list__item--value"><span class="film-info__rate">7.3</span>/1260</span>
+                  <span class="film-info__rate">7.3/</span> / <span class="content-list__item--value" data-attribute="votes">1260</span>
                 </li>
                 <li class="film-info__value">
-                  <span class="content-list__item--value">100.2</span>
+                  <span class="content-list__item--value" data-attribute="popularity">100.2</span>
                 </li>
                 <li class="film-info__value">
-                  <span class="content-list__item--value">A FISTFUL OF LEAD</span>
+                  <span class="content-list__item--value" data-attribute="title">A FISTFUL OF LEAD</span>
                 </li>
                 <li class="film-info__value">
-                  <span class="content-list__item--value">Western</span>
+                  <span class="content-list__item--value" data-attribute="genre">Western</span>
                 </li>
               </ul>
             </div>
