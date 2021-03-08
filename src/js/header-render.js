@@ -25,7 +25,6 @@ function createHeaderLibraryrMarkup() {
     setHeaderMarkup(markup);
 
     refs.headerRef.classList.add("header-container--library");
-    
 }
 
 function setHeaderMarkup(value) {
@@ -43,9 +42,12 @@ function setHeaderMarkup(value) {
 
 function handlerSiteNavButtonsClick(event) {
     const element = event.target;
-    console.log(element.parentNode);
+    // console.log(element.parentNode);
     if (element.nodeName === "BUTTON" && !element.classList.contains('is-active')) {
         element.textContent === 'My library' ? createHeaderLibraryrMarkup() : createHeaderHomeMarkup();
+
+    } else {
+        !buttonHomeRef.classList.contains('is-active') ? createHeaderHomeMarkup() : console.log(5);
     } else if (!buttonHomeRef.classList.contains('is-active')) {
         createHeaderHomeMarkup();
     } 
