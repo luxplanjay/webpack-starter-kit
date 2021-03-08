@@ -1,11 +1,19 @@
 import refs from './refs.js';
 
 // modified by MAryasov
+import searchMovie from './apiFilmFetch'
 import {libraryMarkup} from './components/library';
 // temporary data:
+// console.log(searchMovie(597));
+const currentPageIDs = [597, 486, 357];
+let currentPageCards = {cards: currentPageIDs
+  .map((cardID)=>{searchMovie(cardID)})
+};
+
 const testData = {
   cards:[
       {
+        id: 597,
         poster_path: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
         title: "Titanic",
         genre_ids: '18, 10749',        
@@ -13,6 +21,7 @@ const testData = {
         vote_average: 7.9
       },
       {
+        id: 597,
         poster_path: "https://image.tmdb.org/t/p/original/e9XRikkyth0GtG8RkU3XNm0oMsA.jpg",
         title: "Titanic II",
         genre_ids: '28, 12, 53',        
@@ -20,6 +29,7 @@ const testData = {
         vote_average: 4.6
       },
       {
+        id: 597,
         poster_path: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
         title: "Titanic",
         genre_ids: '18, 10749',        
