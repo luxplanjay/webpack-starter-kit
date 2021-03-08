@@ -14,9 +14,6 @@ import movieLibrary from './js/movieLibrary';
 import createHeaderHomeMarkup from './js/header-render';
 createHeaderHomeMarkup();
 
-import keyWords from './js/keyWords';
-// keyWords()
-
 import apiService from './js/apiService.js';
 import pagination from './js/pagination.js';
 import fnFetch from './js/fetch.js';
