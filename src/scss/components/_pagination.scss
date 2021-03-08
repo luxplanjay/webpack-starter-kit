@@ -12,7 +12,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #f7f7f7;
+  background: transparent;
   color: #000;
   border-radius: 5px;
   border: none;
@@ -62,8 +62,8 @@
 .next:hover,
 .prev:hover {
   transition: 1s;
-  background: #ff6b08;
-  transform: scale(1.07);
+  box-shadow: gray;
+  transform: scale(1.09);
 }
 
 .btn-page1:hover,
