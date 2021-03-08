@@ -16,6 +16,38 @@
   </head>
 
   <body>
+
+    <div class="toolbar">
+      <!-- Разметка переключателя темы -->
+      <div class="theme-switch">
+        <img src="https://cdn2.iconfinder.com/data/icons/gardening-flat-colorful/2048/1954_-_Sun_II-512.png" height="24"
+  width="24" alt="" aria-label="Иконка солнца"
+    class="theme-switch__icon">
+        
+
+        <div class="theme-switch__control">
+          <input
+            class="theme-switch__toggle"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-toggle"
+            aria-label="Переключить между тёмной и светлой темой"
+          />
+          <label
+            aria-hidden="true"
+            class="theme-switch__track"
+            for="theme-switch-toggle"
+          >
+          </label>
+          <div aria-hidden="true" class="theme-switch__marker"></div>
+        </div>
+
+        <img src="https://cdn0.iconfinder.com/data/icons/weather-web-app-ui-colored/100/weather-15-512.png" height="33"
+  width="25" alt="" aria-label="Иконка луны"
+    class="theme-switch__icon">
+      </div>
+    </div>
+    
     <!-- Spinner -->
     <div class="spinner" id="loading"></div>
 
