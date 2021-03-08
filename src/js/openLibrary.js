@@ -1,6 +1,6 @@
 import refs from './refs.js';
 import optionsPagination from '../js/paginationOptions';
-import { libraryMarkupBuilder } from './components/library';
+import libraryTemplate from '../templates/library.hbs';
 // temporary data:
 const testData = {
   results: [
@@ -33,23 +33,86 @@ const container = $('#library__page-selector');
 // temporary data:
 const currentPageIDs = [793723, 527774, 9602, 580532];
 
+
+//----------
+// console.log(watchedData);
+
+refs.navLibrary.addEventListener('click', openLibrary);
+
+function openLibrary(event) {
+  event.preventDefault();
 const watchedItems = localStorage.getItem('filmsWatched');
 const parsedWatchedItems = JSON.parse(watchedItems);
 
 const watchedData = {
   results: parsedWatchedItems,
 };
-//----------
-console.log(watchedData);
 
-refs.navLibrary.addEventListener('click', openLibrary);
-
-function openLibrary(event) {
-  event.preventDefault();
   refs.searchForm.classList.add('is-hidden');
   refs.homeGallery.classList.add('is-hidden');
   refs.buttons.classList.remove('is-hidden');
+  //слушатель кнопки очередь
+  refs.buttonQueue.addEventListener('click', event => {
+    const filmsQueue = localStorage.getItem('filmsQueue');
+    const parsedQueueItems = JSON.parse(filmsQueue);
 
+    const queueData = {
+      results: parsedQueueItems,
+    };
+    container.pagination({
+      ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!
+      dataSource: queueData, //передача корня ссылки на сайт в данном случае ссылка поиска
+      pageSize: pageSizeCalc(window.innerWidth),
+      callback: function (data, pagination) {
+        // тут код с методами отрисовки макета страницы по шаблонам,
+        //data это кусок массива объектов согласно номера страницы dataSource[..., data<N- elements of array >, ...]
+        //------------------------------------------------
+        // pagination.pageSize = pageSizeCalc(window.innerWidth);
+        // console.log(pagination);
+        // console.log(data);
+        // homeTrending.page = Math.trunc(
+        //   Number(pagination.pageNumber) /
+        //     Math.trunc(20 / Number(pagination.pageSize)),
+        // );
+        // apiSearch.page = this.pageNumber;
+        //--------------------------------------------
+        const html = libraryTemplate(data);
+        $('#my-library').html(html);
+      },
+      // ajax: apiService.ajaxDataForSearch, // настройки запросов аякса под каждый сайт-сервер (apiKey,page,query)
+    });
+  });
+  // слушатель кнопки просмотренные
+  refs.buttonWatched.addEventListener('click', event => {
+    const watchedItems = localStorage.getItem('filmsWatched');
+    const parsedWatchedItems = JSON.parse(watchedItems);
+
+    const watchedData = {
+      results: parsedWatchedItems,
+    };
+    container.pagination({
+      ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!
+      dataSource: watchedData, //передача корня ссылки на сайт в данном случае ссылка поиска
+      pageSize: pageSizeCalc(window.innerWidth),
+      callback: function (data, pagination) {
+        // тут код с методами отрисовки макета страницы по шаблонам,
+        //data это кусок массива объектов согласно номера страницы dataSource[..., data<N- elements of array >, ...]
+        //------------------------------------------------
+        // pagination.pageSize = pageSizeCalc(window.innerWidth);
+        // console.log(pagination);
+        // console.log(data);
+        // homeTrending.page = Math.trunc(
+        //   Number(pagination.pageNumber) /
+        //     Math.trunc(20 / Number(pagination.pageSize)),
+        // );
+        // apiSearch.page = this.pageNumber;
+        //--------------------------------------------
+        const html = libraryTemplate(data);
+        $('#my-library').html(html);
+      },
+      // ajax: apiService.ajaxDataForSearch, // настройки запросов аякса под каждый сайт-сервер (apiKey,page,query)
+    });
+  });
   // modified by MAryasov
   // refs.libraryList.textContent = '';
   container.pagination({
@@ -69,7 +132,7 @@ function openLibrary(event) {
       // );
       // apiSearch.page = this.pageNumber;
       //--------------------------------------------
-      const html = libraryMarkupBuilder(data);
+      const html = libraryTemplate(data);
       $('#my-library').html(html);
     },
     // ajax: apiService.ajaxDataForSearch, // настройки запросов аякса под каждый сайт-сервер (apiKey,page,query)
