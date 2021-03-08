@@ -120,9 +120,10 @@
     font-size: 12px;
     line-height: 1.16px;
     text-transform: uppercase;
+    background-color: transparent;
   }
 
-  .activ::after {
+  .is-active::after {
     content: '';
     position: absolute;
     left: 0;
@@ -151,4 +152,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
+}
+.is-hidden {
+  display: none;
 }
