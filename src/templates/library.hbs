@@ -1,36 +1,30 @@
-<ul class="library__list" id="my-library">
-  {{#each cards}}
-    <li class="library__card-container">
-      <article class="lib-card">
-        <a class="lib-card__link" href="">
-          <div class="lib-card__image-container">
-            <img
-            class="lib-card__image"
-            src="{{this.poster_path}}"
-            alt="movie-cover"
-          />
-          </div>          
-          <h2 class="lib-card__title">
-            {{this.title}}
-          </h2>
-          <div class="lib-card__info">
-            <span>
-              {{! ToDo: get ganre list by ganre_id  }}
-              {{this.genre_ids}}
-            </span>
-            <span>&nbsp; | &nbsp;</span>
-            <span>
-              {{! ToDo: get year by release_date  }}
-              {{this.release_date}}
-            </span>
-            <div class="lib-card__info--ratio">
-              <span>
-                {{this.vote_average}}
-              </span>
-            </div>
-          </div>
-        </a>
-      </article>
-    </li>
-  {{/each}}
-</ul>
+{{#each this}}
+<li class="library__card-container">
+  <article class="lib-card">
+    <a class="lib-card__link" href="">
+      <div class="lib-card__image-container">
+        <img class="lib-card__image" src="{{this.poster_path}}" alt="movie-cover" />
+      </div>
+      <h2 class="lib-card__title">
+        {{this.title}}
+      </h2>
+      <div class="lib-card__info">
+        <span>
+          {{! ToDo: get ganre list by ganre_id  }}
+          {{this.genre_ids}}
+        </span>
+        <span>&nbsp; | &nbsp;</span>
+        <span>
+          {{! ToDo: get year by release_date  }}
+          {{this.release_date}}
+        </span>
+        <div class="lib-card__info--ratio">
+          <span>
+            {{this.vote_average}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </article>
+</li>
+{{/each}}
