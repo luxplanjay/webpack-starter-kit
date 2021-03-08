@@ -1,11 +1,6 @@
-
 <div class="container header-container">
     <div class="header-nav-container">
         <div class="logo-container">
-            {{!-- Откатываемся до этого момента --}}
-            {{!-- <svg class="header__logo" width="24" height="24">
-                <use class="icon-mobile-close" href="./images/sprite.svg#icon-film"></use>
-            </svg> --}}
             <span class="header__logo"></span>
             <h1 class="header__title">
                 Filmoteka
@@ -14,29 +9,29 @@
         <nav>
             <ul class="site-nav__list">
                 <li class="site-nav__item">
-                    <button class="site-nav__button is-active" data="home" data-request="home">Home</button>
+                    <button class="site-nav__button is-active js-home">Home</button>
                 </li>
                 <li class="site-nav__item">
-                    <button class="site-nav__button"data-request="library">My library</button>
+                    <button class="site-nav__button js-library">My library</button>
                 </li>
             </ul>
-    <div class="theme-switch__control">
-        <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
-            aria-label="Change theme" />
-        <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
-        </label>
-        <div aria-hidden="true" class="theme-switch__marker"></div>
-    </div>
+            <div class="theme-switch__control">
+                <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+                    aria-label="Change theme" />
+                <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+                </label>
+                <div aria-hidden="true" class="theme-switch__marker"></div>
+            </div>
         </nav>
     </div>
     <form class="search-form">
-        <input class="search-form__input" type="text" name="query" placeholder="Movie search" autocomplete="off"/>
-        {{!-- <svg class="search-form__icon" width="12" height="12">
-            <use class="icon-mobile-close" href="./src/images/sprite.svg#icon-search"></use>
-        </svg> --}}
+        <input class="search-form__input" type="text" name="query" placeholder="Movie search" autocomplete="off" />
         <span class="search-form__icon"></span>
 
     </form>
+    <div class="error-container">
+        <p class="header__error">Search result not successful. Enter the correct movie name and press enter</p>
+    </div>
 
-    <p class="header__error">Search result not successful. Enter the correct movie name and press enter</p>
+
 </div>

@@ -172,14 +172,13 @@
 .logo-container {
   display: flex;
   align-items: center;
-  
+  cursor: pointer;
 }
 
 .header__logo {
   width: 24px;
   height: 24px;
   background-image: url(../images/film.svg);
-  cursor: pointer;
 }
 
 @include for-size(tablet-plus) {
@@ -279,22 +278,35 @@
   }
 }
 
+.error-container {
+  position: relative;
+  max-width: 336px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include for-size(tablet-plus) {
+    max-width: none;
+  }
+}
+
 .header__error {
   display: none;
-  margin-top: 22px;
-  margin-bottom: -52px;
+  position: absolute;
+  top: 20px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
   text-align: left;
   color: $text-error;
-  text-align: center;
+  text-align: left;
 
-  @media screen and (min-width: 506px) {
+  @include for-size(tablet-plus) {
+    position: static;
+    max-width: inherit;
+    margin-top: 22px;
     margin-bottom: -37px;
     text-align: center;
   }
-
 }
 
 .library__list {
