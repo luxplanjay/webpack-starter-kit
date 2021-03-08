@@ -37,7 +37,7 @@
     background-color: rgba(0, 0, 0, 0.01);
   }
 
-  @media screen and (min-width: 767px) and (max-width: 1023px) {
+  @media screen and (min-width: 767px) and (max-width: 1333px) {
     max-width: 294px;
     &:nth-child(odd) {
       margin-right: 30px;
