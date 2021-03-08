@@ -1,36 +1,14 @@
 import './sass/main.scss';
 import './js/openLibrary.js';
 import refs from './js/refs.js';
-import homeTrending from './js/apiPopularFetch.js';
 import apiService from './js/apiSearchFetch.js';
 import * as apiGenresFetch from './js/apiGenresFetch';
 import gridTemplate from './templates/movie-grid.hbs';
 import lightbox from './js/modalFilmMarkup';
 import { processingSpinner, deleteSpinner } from './js/spinner-loader';
 import './js/pagination.min';
-import spinner from './templates/spinner.hbs';
-
-// -------------данный объект репрезентация объекта в пагинаторе, для понимания работы и логики
-const pagination = {
-  // pageNumber, //	number	The selected page number
-  pageRange: 5, //	number	Visible page number range
-  pageSize: pageSizeCalc(window.innerWidth), //	number	Entries of per page
-  // totalPage, //	number	Total page
-  // totalNumber, //number	Total entries
-  // el, //  jQuery object	Pagination element
-  // direction, //number	Pagination direction, -1 means forward, 1 means backward, 0 means current is at initialization.
-};
-//-------------------------
-// возвращает размер страницы в зависимости от вьюпорта пользователя
-function pageSizeCalc(innerWidth) {
-  if (innerWidth < 768) {
-    return 4;
-  }
-  if (innerWidth < 1024) {
-    return 8;
-  }
-  return 9;
-}
+import optionsPagination from './js/paginationOptions';
+const container = $('#pagination-container');
 
 // processingSpinner();
 // Кусок кода ниже находиться в apiGenresFetch
@@ -64,83 +42,29 @@ refs.inputForm.addEventListener('submit', event => {
   event.preventDefault();
   const form = event.currentTarget;
   apiService.query = form.elements.query.value;
-
-  refs.movieGrid.innerHTML = ' ';
+  console.log(apiService.searchUrl);
+  refs.movieGrid.innerHTML = '';
   form.reset(); //чистим форму
-  homeTrending.fetchGenres().then(genresData => {
-    apiService.fetchMovie().then(results => {
-      const newResults = apiGenresFetch.getCardData(results, genresData); //функция вняшняя по формированию данных для карточки фильма
-      refs.movieGrid.insertAdjacentHTML('beforeend', gridTemplate(newResults));
-    });
+
+  container.pagination({
+    ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!
+    dataSource: apiService.searchUrl, //передача корня ссылки на сайт в данном случае ссылка поиска
+    ajax: apiService.ajaxDataForSearch, // настройки запросов аякса под каждый сайт-сервер (apiKey,page,query)
   });
 });
-// загрузочная страница - первый фетч - популярные фильмы
-homeTrending.fetchGenres().then(genresData => {
-  // homeTrending.fetchPopular().then(results => { // закоментил т.к. даный кусок кода исполняет пагинатор
-  // const newResults = apiGenresFetch.getCardData(results, genresData);
-  $('#pagination-container').pagination({
-    dataSource:
-      //   function (done) {
-      //   $.ajax({
-      //     type: 'GET',
-      //     url: `https://api.themoviedb.org/3/trending/movie/day?api_key=2d2272085b6a086155bacb1413ae9080`,
-      //     success: function (response) {
-      //       done(results);
-      //     },
-      //   });
-      // },
-      'https://api.themoviedb.org/3/trending/movie/day?api_key=2d2272085b6a086155bacb1413ae9080', // стек данных для пагинации, может быть функция возвращающая массив объектов, куча возможностей
-    // локатор это ключ который есть в response и данные которого мы передаем в data
-    locator: 'results',
-    // общее количество страниц, почеммуто ломает pageSize
-    // totalNumber: 1000,
-    totalNumberLocator: function (response) {
-      // you can return totalNumber by analyzing response content
-      // console.log(response.total_pages);
-      return response.total_pages;
-    },
-    pageSize: pageSizeCalc(window.innerWidth), // количество объектов-элементов на страницу
-    pageRange: 1,
-    //форматирование результатов данных из джсона
-    formatResult: function (results) {
-      apiGenresFetch.getCardData(results, genresData); // вняшняя функция по формированию данных для карточки фильма
-      // console.log(this.pageSize);
-    },
-    // то что отображается прежде чем вернется ответ от сервера - спинер совать сюда
-    ajax: {
-      beforeSend: function () {
-        $('#js-grid').html(spinner());
-      },
-    },
-    showPrevious: true, // показать стрелочку предыдущее
-    showNext: true, //показать стрелочку следующее
-    autoHidePrevious: true, // авто спрятать кнопку предыдущее
-    autoHideNext: true, //авто спрятать кнопку следующее
-    // showGoInput: true, //показать Гоинпут для ввода страницы
-    // showGoButton: true, // показать кнопку Го для перехода к введенной в инпуте странице
-    callback: function (data, pagination) {
-      // тут код с методами отрисовки макета страницы по шаблонам,
-      //data это кусок массива объектов согласно номера страницы dataSource[..., data<N- elements of array >, ...]
-      //------------------------------------------------
-      // pagination.pageSize = pageSizeCalc(window.innerWidth);
-      // console.log(pagination);
-      // console.log(data);
-      // homeTrending.page = Math.trunc(
-      //   Number(pagination.pageNumber) /
-      //     Math.trunc(20 / Number(pagination.pageSize)),
-      // );
-      //--------------------------------------------
-      const html = gridTemplate(data);
-      $('#js-grid').html(html);
-    },
-    //псевдоним заменяющий имя пагинатора pageNumber на имя в API запросе в нашем случае page что позволяет повторно отсялать запросы при нажатии на страницу
-    alias: {
-      pageNumber: 'page',
-      pageSize: 'limit',
-    },
-  });
-  // deleteSpinner();
-  // refs.movieGrid.insertAdjacentHTML('beforeend', gridTemplate(newResults));
-  lightbox();
-  // }); // закоментил т.к. данный кусок кода выполняет пагинатор
+
+//запускается при отрисовке страницы первым
+container.pagination({
+  ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!
+  dataSource: apiService.popularUrl, //передача корня ссылки на сайт в данном случае ссылка популярных фильмов
+  ajax: apiService.ajaxDataForPopular, // настройки запросов аякса под каждый сайт-сервер (apiKey,page,query)
 });
+// deleteSpinner();
+lightbox();
+// homeTrending.fetchGenres().then(genresData => {
+//   apiService.fetchMovie().then(results => {
+//     const newResults = apiGenresFetch.getCardData(results, genresData); //функция вняшняя по формированию данных для карточки фильма
+//     refs.movieGrid.insertAdjacentHTML('beforeend', gridTemplate(newResults));
+//   });
+// });
+// });
