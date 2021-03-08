@@ -5,6 +5,12 @@ import {libraryMarkupBuilder} from './components/library';
 // temporary data:
 const currentPageIDs = [793723, 527774, 9602, 580532];
 
+const watchedItems = localStorage.getItem('filmsWatched');
+const parsedWatchedItems = JSON.parse(watchedItems);
+
+const watchedData = {
+  cards: parsedWatchedItems,
+};
 
 refs.navLibrary.addEventListener('click', openLibrary);
 
