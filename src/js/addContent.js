@@ -1,5 +1,7 @@
 import filmCard from '../templates/film-card.hbs';
 import refs from './refs';
+// import keyWords from './keyWords';
+
 const pathForImg = 'https://image.tmdb.org/t/p/w342/';
 const imgDefault = './images/default.jpg';
 
