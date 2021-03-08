@@ -7,6 +7,7 @@ import refs from './refs.js';
 
 function getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
+    // console.log(film);
     const markupFilm = modalTpl(film);
     const modal = basicLightbox.create(markupFilm);
     modal.onclick = modal.show();
