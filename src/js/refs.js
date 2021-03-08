@@ -18,6 +18,8 @@ const refs = {
   genre: document.querySelector('[data-attribute="genre"]'),
   descr: document.querySelector('.description-text'),
 
+  addToWatchedBtn: document.querySelector('.modal__btn--watched'),
+  addToQueueBtn: document.querySelector('.modal__btn--queue')
 };
 
 export default refs;

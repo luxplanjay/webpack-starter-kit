@@ -3,6 +3,7 @@ import './refs';
 import refs from './refs';
 import pathForModal from './addContent';
 
+
 function updateModalValue(obj) {
   refs.modalTitle.textContent = obj.title;
   refs.modalImg.src = obj.poster_path
