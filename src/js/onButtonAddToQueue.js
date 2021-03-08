@@ -19,8 +19,6 @@ function onButtonAddToQueue(selectedFilm) {
     filmsArray.push(selectedFilm);
     localStorage.setItem('filmsQueue', JSON.stringify(filmsArray));
   }
-
-  console.log(localStorage.getItem('filmsQueue'));
 }
 
 export default onButtonAddToQueue;

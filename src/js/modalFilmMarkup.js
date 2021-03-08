@@ -3,6 +3,7 @@ import 'basicLightbox/src/styles/main.scss';
 import searchMovie from './apiFilmFetch';
 import modalTpl from '../templates/modal.hbs';
 import onButtonAddToQueue from './onButtonAddToQueue';
+import onButtonAddToWatched from './onButtonAddToWatched';
 import refs from './refs.js';
 
 function getFilmInfo(movie_id) {
