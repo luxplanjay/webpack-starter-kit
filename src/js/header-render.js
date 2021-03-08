@@ -3,22 +3,23 @@ import headerHomeTemplate from '../templates/header-home-template.hbs';
 import headerLibraryTemplate from '../templates/header-lib-template.hbs';
 import refs from './refs';
 
+let logoNavRef;
+let siteNavButtonsRef;
+let buttonHomeRef;
+let markup;
+
 
 function createHeaderHomeMarkup() {
-    const markup = headerHomeTemplate();
+    markup = headerHomeTemplate();
 
     setHeaderMarkup(markup);
 }
 
 function createHeaderLibraryrMarkup() {
-    const markup = headerLibraryTemplate();
+    markup = headerLibraryTemplate();
 
     setHeaderMarkup(markup);    
 }
-
-let logoNavRef;
-let siteNavButtonsRef;
-let buttonHomeRef;
 
 function setHeaderMarkup(value) {
     refs.headerRef.innerHTML = '';
