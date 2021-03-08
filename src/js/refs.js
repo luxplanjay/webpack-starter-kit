@@ -4,10 +4,14 @@ const refs = {
   navLibrary: document.querySelector('#library'),
   buttons: document.querySelector('.js-buttons'),
   myLibraryGallery: document.querySelector('.library__container'),
+  libraryList: document.querySelector('#my-library'),
   homeGallery: document.querySelector('.movie-cards'),
   buttonWatched: document.querySelector('#watched'),
   buttonQueue: document.querySelector('#queue'),
   movieGrid: document.querySelector('#js-grid'),
+  errorWarning: document.querySelector('.form__warning'),
+  underscoreOnMyLibrary: document.querySelector('.lib'),
+  underscoreOnHome: document.querySelector('.underscore'),
 };
 
 export default refs;
