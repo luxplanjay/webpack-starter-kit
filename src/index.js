@@ -9,6 +9,7 @@ import './js/footermodal.js';
 import showErrorNote from './js/error-notification';
 import './js/modal';
 import './js/modal-close';
+import movieLibrary from './js/movieLibrary';
 
 import createHeaderHomeMarkup from './js/header-render';
 createHeaderHomeMarkup();
