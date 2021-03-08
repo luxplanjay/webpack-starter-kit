@@ -1,9 +1,6 @@
-<div class="container header-container header-container--library">
+{{!-- < class="container header-container header-container--library"> --}}
     <div class="header-nav-container header-nav-container--library">
         <div class="logo-container">
-            {{!-- <svg class="header__logo" width="24" height="24">
-                <use class="icon-mobile-close" href="./images/sprite.svg#icon-film"></use>
-            </svg> --}}
             <span class="header__logo"></span>
             <h1 class="header__title">
                 Filmoteka
@@ -12,10 +9,10 @@
         <nav>
             <ul class="site-nav__list">
                 <li class="site-nav__item">
-                    <button class="site-nav__button" data="home">Home</button>
+                    <button class="site-nav__button js-home js-library-home" data-request="home">Home</button>
                 </li>
                 <li class="site-nav__item">
-                    <button class="site-nav__button is-active">My library</button>
+                    <button class="site-nav__button is-active js-library" data-request="library">My library</button>
                 </li>
             </ul>
         </nav>
@@ -23,11 +20,10 @@
 
     <ul class="library__list">
         <li class="library__item">
-            <button class="button button--library">Watched</button>
+            <button class="button button--library" data-request="watched">Watched</button>
         </li>
         <li class="library__item">
-            <button class="button button--library is-active">Queue</button>
+            <button class="button button--library is-active" data-request="queue">Queue</button>
         </li>
     </ul>
-    
-</div>
+

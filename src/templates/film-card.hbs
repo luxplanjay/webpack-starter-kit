@@ -1,17 +1,18 @@
         {{#each this}}
         <li class="film item" data-movieId={{id}}>
           <a href="" class="film__link link">
-            <img src="{{poster_path}}"  class="film__img" alt="">
+            <img src="{{poster_path}}" class="film__img" alt="">
             <div class="film__content"}>
               <h3 class="film__title">{{title}}</h3>
               <div class="film__info">
                 <ul class="film__genres" >
                   {{#each genres}}
-                  {{#if @last}} <li class="film__list__genre"> {{name}} </li>
+                  {{#if @last}} <li class="film__list__genre"> {{name}}&thinsp;</li>
                   {{else}}
-                                <li class="film__list__genre"> {{name}}, </li>
+                                <li class="film__list__genre"> {{name}},&thinsp;</li>
                   {{/if}}
-                 {{/each}}</ul> | {{release_date}}</div>
+                 {{/each}}|&ensp;{{release_date}}&ensp;</ul>
+                  <span class="film__average">{{vote_average}}</span></div>
             </div>
           </a>
         </li>

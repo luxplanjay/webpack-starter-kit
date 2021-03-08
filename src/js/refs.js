@@ -1,5 +1,5 @@
 const refs = {
-  headerRef: document.querySelector('.header'),
+  headerRef: document.querySelector('.header-container'),
   paginationBox: document.querySelector('.pagination'),
   paginationList: document.querySelector('.pagination__list'),
   filmListRef: document.querySelector('.films__list'),
@@ -21,7 +21,14 @@ const refs = {
   addToWatchedBtn: document.querySelector('.modal__btn--watched'),
   addToQueueBtn: document.querySelector('.modal__btn--queue'),
 
-  watchedBtnLibrary: document.querySelector('.header'),
+ 
+=======
+  pageNavRef: () => document.querySelector('.site-nav__list'),
+  pageHomeRef: () => document.querySelector('[data-request="home"]'),
+  pageLibraryRef: () => document.querySelector('[data-request="library"]'),
+  pageWatchedRef: () => document.querySelector('[data-request="watched"]'),
+  pageQueueRef: () => document.querySelector('[data-request="queue"]'),
+
 };
 
 export default refs;

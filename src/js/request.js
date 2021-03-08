@@ -3,7 +3,9 @@ const requstName = {
   LIBRARY: 'library',
   SEARCH: 'search',
   FILM: 'film',
+  WATCHED: 'watched',
+  QUEUE: 'queue'
 };
-const { HOME, LIBRARY, SEARCH, FILM } = requstName;
+const { HOME, LIBRARY, SEARCH, FILM, WATCHED, QUEUE } = requstName;
 
-export { HOME, LIBRARY, SEARCH, FILM };
+export { HOME, LIBRARY, SEARCH, FILM, WATCHED, QUEUE };
