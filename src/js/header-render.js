@@ -13,12 +13,18 @@ function createHeaderHomeMarkup() {
     markup = headerHomeTemplate();
 
     setHeaderMarkup(markup);
+    
+    if (refs.headerRef.classList.contains("header-container--library")) {
+        refs.headerRef.classList.remove("header-container--library");
+    }
 }
 
 function createHeaderLibraryrMarkup() {
     markup = headerLibraryTemplate();
 
     setHeaderMarkup(markup);
+
+    refs.headerRef.classList.add("header-container--library");
 }
 
 function setHeaderMarkup(value) {
@@ -39,9 +45,12 @@ function handlerSiteNavButtonsClick(event) {
     // console.log(element.parentNode);
     if (element.nodeName === "BUTTON" && !element.classList.contains('is-active')) {
         element.textContent === 'My library' ? createHeaderLibraryrMarkup() : createHeaderHomeMarkup();
+
     } else {
         !buttonHomeRef.classList.contains('is-active') ? createHeaderHomeMarkup() : console.log(5);
-    }
+    } else if (!buttonHomeRef.classList.contains('is-active')) {
+        createHeaderHomeMarkup();
+    } 
 }
 
 export default createHeaderHomeMarkup;
