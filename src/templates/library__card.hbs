@@ -1,26 +1,34 @@
-<article class="lib-card">
-  <a class="lib-card__link" href="">
-    <img class="lib-card__image" src="{{this.poster_path}}" alt="movie-cover" />
-    <h2 class="lib-card__title">
-      {{this.title}}
-    </h2>
-    <div class="lib-card__info">
-      <span>
-        {{! ToDo: get ganre list by ganre_id  }}
-        {{this.ganre_id}}
-      </span>
-      <span>
-        |
-      </span>
-      <span>
-        {{! ToDo: get year by release_date  }}
-        {{this.release_date}}
-      </span>
-      <div class="lib-card__info--ratio">
-        <span>
-          {{this.vote_average}}
-        </span>
-      </div>
-    </div>
-  </a>
-</article>
+  <li class="library__card-container">
+    <article class="lib-card" id="lib-card">
+      <a class="lib-card__link" href="#" data-id="{{id}}">
+        <div class="lib-card__image-container">
+          <img
+            class="lib-card__image"
+            src="{{poster_path}}"
+            alt="movie-cover"
+          />
+        </div>
+        <h2 class="lib-card__title">
+          {{title}}
+        </h2>
+        <div class="lib-card__info">
+          <span class="lib-card__info--genres">
+            {{! ToDo: list of genres can be too long!  }}
+            {{genres}}
+          </span>
+          <span>
+            |
+          </span>
+          <span>
+            {{! ToDo: get year by release_date  }}
+            {{release_date}}
+          </span>
+          <div class="lib-card__info--ratio">
+            <span>
+              {{vote_average}}
+            </span>
+          </div>
+        </div>
+      </a>
+    </article>
+  </li>

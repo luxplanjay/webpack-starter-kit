@@ -1,8 +1,6 @@
 import refs from './refs.js';
 import optionsPagination from '../js/paginationOptions';
-
-// modified by MAryasov
-import { libraryMarkup } from './components/library';
+import { libraryMarkupBuilder } from './components/library';
 // temporary data:
 const testData = {
   results: [
@@ -31,6 +29,19 @@ const testData = {
 };
 //
 const container = $('#library__page-selector');
+// modified by MAryasov--------
+// temporary data:
+const currentPageIDs = [793723, 527774, 9602, 580532];
+
+const watchedItems = localStorage.getItem('filmsWatched');
+const parsedWatchedItems = JSON.parse(watchedItems);
+
+const watchedData = {
+  results: parsedWatchedItems,
+};
+//----------
+console.log(watchedData);
+
 refs.navLibrary.addEventListener('click', openLibrary);
 
 function openLibrary(event) {
@@ -38,11 +49,12 @@ function openLibrary(event) {
   refs.searchForm.classList.add('is-hidden');
   refs.homeGallery.classList.add('is-hidden');
   refs.buttons.classList.remove('is-hidden');
+
   // modified by MAryasov
-  refs.libraryList.textContent = '';
+  // refs.libraryList.textContent = '';
   container.pagination({
     ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!
-    dataSource: testData, //передача корня ссылки на сайт в данном случае ссылка поиска
+    dataSource: watchedData, //передача корня ссылки на сайт в данном случае ссылка поиска
     pageSize: pageSizeCalc(window.innerWidth),
     callback: function (data, pagination) {
       // тут код с методами отрисовки макета страницы по шаблонам,
@@ -57,7 +69,7 @@ function openLibrary(event) {
       // );
       // apiSearch.page = this.pageNumber;
       //--------------------------------------------
-      const html = libraryMarkup(data);
+      const html = libraryMarkupBuilder(data);
       $('#my-library').html(html);
     },
     // ajax: apiService.ajaxDataForSearch, // настройки запросов аякса под каждый сайт-сервер (apiKey,page,query)
@@ -66,6 +78,10 @@ function openLibrary(event) {
   //   'afterbegin',
   //   libraryMarkup(testData).trim(),
   // );
+
+  // modified by Maryasov
+  // refs.libraryList.textContent = '';
+  // libraryMarkupBuilder(currentPageIDs);
 
   refs.myLibraryGallery.classList.remove('is-hidden');
   refs.errorWarning.classList.add('is-hidden');
