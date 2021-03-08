@@ -1,5 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
-import 'basicLightbox/src/styles/main.scss';
+import 'basiclightbox/src/styles/main.scss';
 import searchMovie from './apiFilmFetch'
 import modalTpl from "../templates/modal.hbs"
 import refs from './refs.js';

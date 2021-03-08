@@ -36,9 +36,9 @@ function openLibrary(event) {
   refs.searchForm.classList.add('is-hidden');
   refs.homeGallery.classList.add('is-hidden');
   refs.buttons.classList.remove('is-hidden');
-  // modified by MAryasov
-  refs.myLibraryGallery.textContent = '';
-  refs.myLibraryGallery.insertAdjacentHTML('afterbegin',libraryMarkup(testData).trim());
+  // modified by Maryasov
+  refs.libraryList.textContent = '';
+  refs.libraryList.insertAdjacentHTML('afterbegin',libraryMarkup(testData).trim());
   //
   refs.myLibraryGallery.classList.remove('is-hidden');
   refs.errorWarning.classList.add('is-hidden');  
