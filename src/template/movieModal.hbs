@@ -1,6 +1,6 @@
 {{#if poster_path}}
-<img class="movie-modal-image" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}"
-    loading="lazy">
+<img class="movie-modal-image" src="https://image.tmdb.org/t/p/w500{{poster_path}} " alt="{{original_title}}"
+    loading="lazy" data-movieId="{{id}}">
 {{else}}
 <img class="movie-modal-image" src="https://i.pinimg.com/564x/12/61/84/126184dfb0f0c766bfd35206dae35b37.jpg"
     alt="No photo" loading="lazy">
@@ -39,11 +39,13 @@
     {{!-- <div class="buttons-wrapper movie-button">
         <button class="button js-add-to-watched">add to watched</button>
         <button class="button modal-light-btn js-add-to-queue">add to queue</button>
-        
     </div> --}}
 
     <div class="buttons-wrapper movie-button">
-        <button class="button">ADD TO WATCHED</button>
-        <button class="button">ADD TO QUEUE</button>
+        <input type="checkbox" class="visuallyhidden watched-checkbox">
+        <span class="button add-watched-button" data-movieId="{{id}}">add to watched</span>
+        <input type="checkbox" class="visuallyhidden queue-checkbox ">
+        <span class="button add-queue-button" data-movieId="{{id}}">add to queue</span>
+
     </div>
 </div>
