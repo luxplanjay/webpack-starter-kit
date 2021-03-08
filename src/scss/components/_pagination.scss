@@ -84,27 +84,28 @@
 
 .is-hidden {
   display: none;
-.prev {
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-right: 40px solid lightgray;
-  @media screen and (max-width: 640px) {
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-right: 30px solid lightgray;
+  .prev {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 40px solid lightgray;
+    @media screen and (max-width: 640px) {
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-right: 30px solid lightgray;
+    }
   }
-}
-.next {
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 40px solid lightgray;
-  @media screen and (max-width: 640px) {
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 30px solid lightgray;
+  .next {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 40px solid lightgray;
+    @media screen and (max-width: 640px) {
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 30px solid lightgray;
+    }
   }
 }
