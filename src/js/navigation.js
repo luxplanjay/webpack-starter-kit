@@ -17,10 +17,8 @@ function activeHome(e) {
   refs.header.classList.replace('header-lib', 'header-home');
   refs.search.classList.remove('is-hidden');
   refs.buttonHeader.classList.add('is-hidden');
-  refs.library.classList.remove('active');
-  refs.home.classList.add('active');
-  refs.watchedBtn.classList.add('is-hidden');
-  refs.queueBtn.classList.add('is-hidden');
+  refs.library.classList.remove('is-active');
+  refs.home.classList.add('is-active');
 }
 
 function activelibrary(e) {
@@ -29,12 +27,6 @@ function activelibrary(e) {
   refs.header.classList.replace('header-home', 'header-lib');
   refs.buttonHeader.classList.remove('is-hidden');
   refs.search.classList.add('is-hidden');
-  refs.home.classList.remove('active');
-  refs.library.classList.add('active');
-  refs.watchedBtn.classList.remove('active-btn');
-  refs.queueBtn.classList.add('active-btn');
-}
-function activeBorder() {
-  refs.home.classList.toggle('active');
-  refs.library.classList.toggle('active');
+  refs.home.classList.remove('is-active');
+  refs.library.classList.add('is-active');
 }
