@@ -6,6 +6,7 @@ const myKey = '1690d1319b4e719ac3308f10c68ac649';
 const moviesContainerRef = document.querySelector('.movies-container-js');
 const movieInputRef = document.querySelector('.movie-searchTag-js');
 const eContainerRef = document.querySelector('.error-container-js');
+const pagRef = document.querySelector('.pagination-container-js');
 export default {
   moviesSearchActive: false, // ищем фильмы или рендер трендовых
   searchTag: '',
@@ -18,6 +19,7 @@ export default {
   genresArray: [], // массив ид и имен жанров
   errorHandler(error) {
     //обработчик ошибок ( кетчей )
+    pagRef.classList.add('is-hidden');
     eContainerRef.innerHTML =
       error + '. It is a server error , Pls just try again!';
   },
@@ -85,6 +87,7 @@ export default {
         if (response.results.length === 0) {
           eContainerRef.innerHTML =
             'Search result not successful. Enter the correct movie name and try again';
+          pagRef.classList.add('is-hidden');
           moviesContainerRef.innerHTML =
             'Search result not successful. Enter the correct movie name and try again';
           return;
