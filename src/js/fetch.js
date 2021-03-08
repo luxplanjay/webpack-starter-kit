@@ -1,75 +1,51 @@
 import addContent from './addContent';
 import apiService from './apiService.js';
 import pagination from './pagination.js';
-import request from './request.js';
-import updateModalValue from './modal'
-
+import updateModalValue from './modal';
+import { HOME, LIBRARY, SEARCH, FILM } from './request.js';
+import { load, save, remove } from './storage';
 
 export default {
-  async fetchDataForMainPage(
+  async fetchData(
     fetchSettings = [{ page: 1, numStart: 0, numEnd: apiService.perPage }],
     pagePagination = 1,
   ) {
     try {
-      let resultArrayForAddContent = [];
+      let resultArray = [];
       let totalResults;
 
       for (let set of fetchSettings) {
-        const resAwait = await apiService.fetchDataTrending(set);
+        const resAwait = await apiService.fetchData(set);
         totalResults = resAwait.total_results;
-        resultArrayForAddContent = [
-          ...resultArrayForAddContent,
+        resultArray = [
+          ...resultArray,
           ...resAwait.results.slice(set.numStart, set.numEnd),
         ];
       }
+      const promisesIdFilms = resultArray.map(elem =>
+        apiService.fetchDetalsFilm(elem.id),
+      );
+      const resultArrayDetalsFilm = await Promise.all(promisesIdFilms);
 
-      addContent.additemList(resultArrayForAddContent);
+      addContent.additemList(resultArray, resultArrayDetalsFilm);
       pagination.addPaginationList(totalResults, pagePagination);
-      localStorage.setItem('currentRequest', request.HOME);
-    } catch (error) {
-      throw error;
-    }
-  },
-
-  async fetchDataSearch(
-    fetchSettings = [{ page: 1, numStart: 0, numEnd: apiService.perPage }],
-    pagePagination = 1,
-  ) {
-    try {
-      let resultArrayForAddContent = [];
-      let totalResults;
-
-      for (let set of fetchSettings) {
-        const resAwait = await apiService.fetchDataSearch(set);
-        totalResults = resAwait.total_results;
-        resultArrayForAddContent = [
-          ...resultArrayForAddContent,
-          ...resAwait.results.slice(set.numStart, set.numEnd),
-        ];
-      }
-
-      addContent.additemList(resultArrayForAddContent);
-      pagination.addPaginationList(totalResults, pagePagination);
-      localStorage.setItem('currentRequest', request.SEARCH);
     } catch (error) {
       throw error;
     }
   },
 
   async fetchDataLibrary() {
-    localStorage.setItem('currentRequest', request.LIBRARY);
+    save('currentRequest', LIBRARY);
   },
 
-  async fetchDataFilm (movieId) {
+  async fetchDataFilm(movieId) {
     try {
       const resAwait = await apiService.fetchDetalsFilm(movieId);
-      console.log('запрос по фильму',resAwait);
-      updateModalValue(resAwait)
+      updateModalValue(resAwait);
     } catch (error) {
       throw error;
     }
 
-    localStorage.setItem('currentRequest', request.FILM);
+    save('currentRequest', FILM);
   },
 };
-
