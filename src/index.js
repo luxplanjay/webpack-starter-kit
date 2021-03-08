@@ -19,17 +19,15 @@ import keyWords from './js/keyWords';
 import apiService from './js/apiService.js';
 import pagination from './js/pagination.js';
 import fnFetch from './js/fetch.js';
-import request from './js/request.js';
+import { HOME, LIBRARY, SEARCH } from './js/request.js';
+import { load, save, remove } from './js/storage';
 // import modal from './js/modal';
 
 const searchFormRef = document.querySelector('.search-form');
 const errorNoteRef = document.querySelector('.header__error');
+save('currentRequest', HOME);
 
-localStorage.setItem('currentRequest', request.HOME);
-
-fnFetch.fetchDataForMainPage();
-
-fnFetch.fetchDataForMainPage();
+fnFetch.fetchData();
 
 function onSubmitSearchForm(event) {
   event.preventDefault();
@@ -40,7 +38,8 @@ function onSubmitSearchForm(event) {
     return;
   }
   apiService.searchQuery = searchQuery;
-  fnFetch.fetchDataSearch();
+  save('currentRequest', SEARCH);
+  fnFetch.fetchData();
 }
 
 function onClickPaginate(event) {
@@ -49,17 +48,17 @@ function onClickPaginate(event) {
   }
   const pagePagination = pagination.getActivePageForFetch(event.target);
   const fetchSettings = pagination.getSettingForFetch(pagePagination);
-  const currentRequest = localStorage.getItem('currentRequest');
+  const currentRequest = load('currentRequest');
 
   switch (currentRequest) {
-    case request.HOME:
-      fnFetch.fetchDataForMainPage(fetchSettings, pagePagination);
+    case HOME:
+      fnFetch.fetchData(fetchSettings, pagePagination);
       break;
-    case request.LIBRARY:
+    case LIBRARY:
       fnFetch.fetchDataLibrary(fetchSettings, pagePagination);
       break;
-    case request.SEARCH:
-      fnFetch.fetchDataSearch(fetchSettings, pagePagination);
+    case SEARCH:
+      fnFetch.fetchData(fetchSettings, pagePagination);
       break;
 
     default:
@@ -68,12 +67,9 @@ function onClickPaginate(event) {
 }
 
 function onClickFilm(event) {
-  console.log(event.target.nodeName, event.target.dataset, event);
+  const movieId = event.path.find(elem => elem.classList.value === 'film item')
+    .dataset.movieid;
   event.preventDefault();
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
-  const movieId = event.target.dataset.movieid;
   fnFetch.fetchDataFilm(movieId);
 }
 

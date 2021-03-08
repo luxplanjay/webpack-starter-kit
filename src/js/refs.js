@@ -7,16 +7,16 @@ const refs = {
   bodyEl: document.querySelector('body'),
   modalRef: document.querySelector('.modal'),
   backdropModalRef: document.querySelector('.backdrop'),
-  closeBtn: document.querySelector("[data-action=close]"),
+  closeBtn: document.querySelector('[data-action=close]'),
 
-    modalImg:document.querySelector('.modal__image'),
-    modalTitle: document.querySelector('.modal__title'),
-    votes: document.querySelector('[data-attribute="votes"]'),
-    rate: document.querySelector('.film-info__rate'),
-    popularity: document.querySelector('[data-attribute="popularity"]'),
-    title: document.querySelector('[data-attribute="title"]'),
-    genre: document.querySelector('[data-attribute="genre"]'),
-    descr: document.querySelector('.description-text')
+  modalImg: document.querySelector('.modal__image'),
+  modalTitle: document.querySelector('.modal__title'),
+  votes: document.querySelector('[data-attribute="votes"]'),
+  rate: document.querySelector('.film-info__rate'),
+  popularity: document.querySelector('[data-attribute="popularity"]'),
+  title: document.querySelector('[data-attribute="title"]'),
+  genre: document.querySelector('[data-attribute="genre"]'),
+  descr: document.querySelector('.description-text'),
 
 };
 
