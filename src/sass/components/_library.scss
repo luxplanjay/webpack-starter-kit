@@ -10,7 +10,7 @@
 .library {
   &__container {
     display: block;
-    outline: 1px dashed red;
+    // outline: 1px dashed red;
     margin: 0px auto;
     width: $width_mobile;
     padding: 20px 20px 40px;
@@ -20,7 +20,7 @@
   }
 
   &__list {
-    outline: 1px dashed greenyellow;
+    // outline: 1px dashed greenyellow;
     margin: 0px auto;
     padding: 0px;
     list-style: none;
@@ -30,7 +30,7 @@
     margin: 0px 0px 0px 0px;
     padding: 0px;
     &:not(:last-child) {
-      outline: 2px solid green;
+      // outline: 2px solid green;
       margin-bottom: 20px;
     }
   }
@@ -42,7 +42,7 @@
     height: 440px;
 
     background-color: wheat;
-    outline: 1px solid yellow;
+    // outline: 1px solid yellow;
     &__link {
       width: 100%;
       @include CenteredFlex(flex, wrap);
@@ -61,7 +61,7 @@
   }
 
   &__page-selector {
-    outline: 2px solid green;
+    // outline: 2px solid green;
     margin: 40px auto 0px;
     width: 280px;
     height: 40px;
@@ -69,14 +69,14 @@
   }
   @include for-size(mobile) {
     &__container {
-      outline: 1px dashed red;
+      // outline: 1px dashed red;
       margin: 0px auto;
       width: $width_mobile;
       padding: 20px 20px 40px;
     }
 
     &__list {
-      outline: 1px dashed greenyellow;
+      // outline: 1px dashed greenyellow;
       margin: 0px auto;
       padding: 0px;
       font-size: 0px;
@@ -88,7 +88,7 @@
       margin: 0px 0px 0px 0px;
       padding: 0px;
       &:not(:last-child) {
-        outline: 2px solid green;
+        // outline: 2px solid green;
         margin-bottom: 20px;
       }
     }
@@ -99,32 +99,32 @@
       width: 280px;
       height: 440px;
 
-      background-color: wheat;
-      outline: 1px solid yellow;
+      // background-color: wheat;
+      // outline: 1px solid yellow;
     }
 
     &__page-selector {
-      outline: 2px solid green;
+      // outline: 2px solid green;
       margin: 40px auto 0px;
       width: 280px;
       height: 40px;
-      background-color: #f7f7f7;
+      // background-color: #f7f7f7;
     }
   }
   @include for-size(tablet) {
     &__container {
-      outline: 1px dashed red;
+      // outline: 1px dashed red;
       margin: 0px auto;
       width: $width_tablet;
       padding: 60px 75px;
     }
 
     &__list {
-      outline: 1px dashed greenyellow;
+      // outline: 1px dashed greenyellow;
       margin: 0px auto;
       padding: 0px;
       list-style: none;
-      @include CenteredFlex(flex, wrap);
+      @include CenteredFlex(flex, wrap,$justify:left);
     }
     &__card-container {
       @include CenteredFlex(flex, wrap);
@@ -135,11 +135,11 @@
         margin-bottom: 0px;
       }
       &:nth-child(n + 3) {
-        outline: 2px solid green;
+        // outline: 2px solid green;
         margin-top: 30px;
       }
       &:nth-child(2n + 1) {
-        outline: 2px solid red;
+        // outline: 2px solid red;
         margin-left: 0px;
       }
     }
@@ -150,32 +150,32 @@
       width: 293px;
       height: 440px;
 
-      background-color: wheat;
-      outline: 1px solid yellow;
+      // background-color: wheat;
+      // outline: 1px solid yellow;
     }
 
     &__page-selector {
-      outline: 2px solid green;
+      // outline: 2px solid green;
       margin: 50px auto 0px;
       width: 375px;
       height: 40px;
-      background-color: #f7f7f7;
+      // background-color: #f7f7f7;
     }
   }
   @include for-size(desktop) {
     &__container {
-      outline: 1px dashed red;
+      // outline: 1px dashed red;
       margin: 0px auto;
       width: 1024px;
       padding: 60px 70px 60px;
     }
 
     &__list {
-      outline: 1px dashed greenyellow;
+      // outline: 1px dashed greenyellow;
       margin: 0px;
       padding: 0px;
       list-style: none;
-      @include CenteredFlex(flex, wrap);
+      @include CenteredFlex(flex, wrap,$justify:left);
     }
     &__card-container {
       @include CenteredFlex(flex, wrap);
@@ -186,12 +186,12 @@
         margin-bottom: 0px;
       }
       &:nth-child(n + 4) {
-        outline: 2px solid green;
+        // outline: 2px solid green;
         margin-top: 30px;
         margin-bottom: 0px;
       }
       &:nth-child(3n + 1) {
-        outline: 2px solid red;
+        // outline: 2px solid red;
         margin-left: 0px;
         margin-bottom: 0px;
       }
@@ -203,16 +203,17 @@
       width: 274px;
       height: 440px;
 
-      background-color: wheat;
-      outline: 1px solid yellow;
+      // background-color: wheat;
+      // outline: 1px solid yellow;
     }
 
     &__page-selector {
-      outline: 2px solid green;
+      // outline: 2px solid green;
       margin: 50px auto 0px;
       width: 375px;
       height: 40px;
-      background-color: #f7f7f7;
+      // background-color: #f7f7f7;
     }
   }
 }
+@import '../components/lib-card'

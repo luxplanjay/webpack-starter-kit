@@ -1,0 +1,99 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+
+.lib-card {
+  @include CenteredFlex(flex, nowrap, center);
+  margin: 0px;
+  padding: 0px;
+  width: 293px;
+  height: 440px;
+
+  background-color: wheat;
+//   outline: 1px solid yellow;
+  &__link {
+    @include CenteredFlex(flex, wrap, center);
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+  &__image-container {
+    @include CenteredFlex(flex, nowrap, flex-end);
+    width: 100%;
+    height: 398px;
+    // align-items: flex-end;
+    // object-fit: cover;
+    overflow: hidden;
+    border-radius: 5px;
+    // font-size: 0px;
+  }
+  &__image{
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  &__title {
+    width: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+
+    color: #000000;
+  }
+  &__info {
+    @include CenteredFlex(inline-flex, nowrap, center, flex-start);
+    width: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    vertical-align: middle;
+    text-align: left;
+    color: #ff6b08;
+
+    &--ratio {
+      @include CenteredFlex(inline-flex, nowrap, center, center);
+      width: 36px;
+      height: 16px;
+      margin-left: 10px;
+      text-align: center;
+      vertical-align: middle;
+
+      color: #fff;
+      // background-color: #FF6B08;
+      background-color: #ff6b01;
+      border-radius: 5px;
+    }
+  }
+
+  @include for-size(mobile) {
+    margin: 0px;
+    padding: 0px;
+    width: 280px;
+    height: 440px;
+
+    // background-color: wheat;
+    // outline: 1px solid yellow;
+  }
+  @include for-size(tablet) {
+    margin: 0px;
+    padding: 0px;
+    width: 293px;
+    height: 440px;
+
+    // background-color: wheat;
+    // outline: 1px solid yellow;
+  }
+  @include for-size(desktop) {
+    margin: 0px;
+    padding: 0px;
+    width: 274px;
+    height: 440px;
+
+    // background-color: wheat;
+    // outline: 1px solid yellow;
+  }
+}
