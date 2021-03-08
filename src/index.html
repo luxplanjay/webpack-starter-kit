@@ -36,7 +36,7 @@
               <ul class="nav-list">
                 <li class="nav-item">
                   <a
-                    class="link-nav activ home-link"
+                    class="link-nav is-active home-link"
                     href="./index.html"
                     id="homePage"
                     >Home</a
@@ -53,7 +53,8 @@
               </ul>
             </nav>
           </div>
-          <form class="form-search" action="">
+          <form class="form-search is-hidden" action="">
+            <i class="material-icons white search-icon">search</i>
             <input
               type="text"
               name="movieName"
@@ -66,10 +67,16 @@
           </form>
 
           <div class="button-header is-hidden">
-            <button type="submit" class="button button-watched active-btn">
-              WATCHED
-            </button>
-            <button type="submit" class="button button-queque">QUEQUE</button>
+            <a href="#" class="button-link"
+              ><button type="submit" class="button button-watched active-btn">
+                WATCHED
+              </button></a
+            >
+            <a href="#" class="button-link"
+              ><button type="submit" class="button button-queque">
+                QUEQUE
+              </button>
+            </a>
           </div>
           <div class="error-container-js"></div>
         </div>
