@@ -14,10 +14,9 @@ export default function renderPagination(totalItems) {
       page: '<a href="#" class="tui-page-btn btn-page1 btn">{{page}}</a>',
       currentPage:
         '<a href="#" class="tui-page-btn btn-page1 active btn">{{page}}</a>',
-      moveButton:
-        '<a href ="#" class=" {{type}} custom-class-{{type}}">&rarr;</a>',
+      moveButton: '<a href ="#" class=" {{type}} custom-class-{{type}}"></a>',
       disabledMoveButton:
-        '<a href ="#" class="{{type}} custom-class-{{type}}">&larr;</a>',
+        '<a href ="#" class="{{type}} custom-class-{{type}}"></a>',
       moreButton:
         '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip custom-class-{{type}}">' +
         '<span class="tui-ico-ellip">...</span>' +

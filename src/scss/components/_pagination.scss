@@ -12,7 +12,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #f7f7f7;
+  background: transparent;
   color: #000;
   border-radius: 5px;
   border: none;
@@ -62,8 +62,8 @@
 .next:hover,
 .prev:hover {
   transition: 1s;
-  background: #ff6b08;
-  transform: scale(1.07);
+  box-shadow: 7px, 5px, 5px darkgrey;
+  transform: scale(1.09);
 }
 
 .btn-page1:hover,
@@ -81,6 +81,30 @@
   background: #ff6b08;
   color: #ffff;
 }
+
 .is-hidden {
   display: none;
+.prev {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 40px solid lightgray;
+  @media screen and (max-width: 640px) {
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 30px solid lightgray;
+  }
+}
+.next {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 40px solid lightgray;
+  @media screen and (max-width: 640px) {
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 30px solid lightgray;
+  }
 }
