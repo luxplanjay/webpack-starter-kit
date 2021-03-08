@@ -1,5 +1,5 @@
 function onButtonAddToQueue(selectedFilm) {
-  const filmsArray = [];
+  let filmsArray = [];
   const currentFilmsQueue = localStorage.getItem('filmsQueue');
 
   if (currentFilmsQueue) {
@@ -7,7 +7,7 @@ function onButtonAddToQueue(selectedFilm) {
     //   'уже есть массив с сохранёнными фильмами, добавляем объект с новым фильмом',
     // );
 
-    let filmsArray = JSON.parse(currentFilmsQueue);
+    filmsArray = JSON.parse(currentFilmsQueue);
 
     if (!filmsArray.find(({ id }) => id === selectedFilm.id)) {
       filmsArray.push(selectedFilm);
