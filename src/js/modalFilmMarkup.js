@@ -21,6 +21,23 @@ function getFilmInfo(movie_id) {
       false,
     );
 
+    // AddToWatched button
+
+    const buttonAddToWatchedRef = document.querySelector(
+      '.modal__watched-button',
+    );
+    console.log(buttonAddToWatchedRef);
+
+    // Listener to click
+
+    buttonAddToWatchedRef.addEventListener(
+      'click',
+      function () {
+        onButtonAddToWatched(film);
+      },
+      false,
+    );
+
     window.addEventListener('keydown', closeModalByEscape);
     function closeModalByEscape(event) {
       if (event.code === 'Escape') {
@@ -30,6 +47,11 @@ function getFilmInfo(movie_id) {
         buttonAddToQueueRef.removeEventListener(
           'click',
           onButtonAddToQueue(film),
+        );
+
+        buttonAddToWatchedRef.removeEventListener(
+          'click',
+          onButtonAddToWatched(film),
         );
       }
     }
@@ -42,6 +64,10 @@ function getFilmInfo(movie_id) {
       buttonAddToQueueRef.removeEventListener(
         'click',
         onButtonAddToQueue(film),
+      );
+      buttonAddToWatchedRef.removeEventListener(
+        'click',
+        onButtonAddToWatched(film),
       );
     }
   });
