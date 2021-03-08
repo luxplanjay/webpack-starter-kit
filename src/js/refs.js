@@ -1,5 +1,5 @@
 const refs = {
-  headerRef: document.querySelector('.header'),
+  headerRef: document.querySelector('.header-container'),
   paginationBox: document.querySelector('.pagination'),
   paginationList: document.querySelector('.pagination__list'),
   filmListRef: document.querySelector('.films__list'),
