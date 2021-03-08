@@ -3,6 +3,7 @@ import 'basiclightbox/src/styles/main.scss';
 import searchMovie from './apiFilmFetch';
 import modalTpl from '../templates/modal.hbs';
 import onButtonAddToQueue from './onButtonAddToQueue';
+import onButtonAddToWatched from './onButtonAddToWatched';
 import refs from './refs.js';
 
 function getFilmInfo(movie_id) {
@@ -10,22 +11,49 @@ function getFilmInfo(movie_id) {
     // console.log(film);
     const markupFilm = modalTpl(film);
     const modal = basicLightbox.create(markupFilm);
-    modal.onclick = modal.show();
+    modal.show();
 
     //   добавление onbuttonAddToQueue
-    // console.log(film);
     const buttonAddToQueueRef = document.querySelector('.modal__queue-button');
-    // console.log(buttonAddToQueueRef);
-    buttonAddToQueueRef.addEventListener('click', onButtonAddToQueue(film));
+    buttonAddToQueueRef.addEventListener(
+      'click',
+      function () {
+        onButtonAddToQueue(film);
+      },
+      false,
+    );
+
+    // AddToWatched button
+
+    const buttonAddToWatchedRef = document.querySelector(
+      '.modal__watched-button',
+    );
+    console.log(buttonAddToWatchedRef);
+
+    // Listener to click
+
+    buttonAddToWatchedRef.addEventListener(
+      'click',
+      function () {
+        onButtonAddToWatched(film);
+      },
+      false,
+    );
 
     window.addEventListener('keydown', closeModalByEscape);
     function closeModalByEscape(event) {
       if (event.code === 'Escape') {
         modal.close();
+        window.removeEventListener('keydown', closeModalByEscape);
         //   снимаю слушатель с кнопки
         buttonAddToQueueRef.removeEventListener(
           'click',
           onButtonAddToQueue(film),
+        );
+
+        buttonAddToWatchedRef.removeEventListener(
+          'click',
+          onButtonAddToWatched(film),
         );
       }
     }
@@ -38,6 +66,10 @@ function getFilmInfo(movie_id) {
       buttonAddToQueueRef.removeEventListener(
         'click',
         onButtonAddToQueue(film),
+      );
+      buttonAddToWatchedRef.removeEventListener(
+        'click',
+        onButtonAddToWatched(film),
       );
     }
   });
