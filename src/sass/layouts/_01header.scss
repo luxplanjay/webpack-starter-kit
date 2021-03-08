@@ -172,13 +172,13 @@
 .logo-container {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .header__logo {
   width: 24px;
   height: 24px;
   background-image: url(../images/film.svg);
-  cursor: pointer;
 }
 
 @include for-size(tablet-plus) {
