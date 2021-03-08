@@ -16,6 +16,7 @@ import renderMovies from '../js/fetchAPIandMovieList/renderMovies.js';
 import '../js/fetchAPIandMovieList/moviesListEventsHandler.js';
 import '../js/fetchAPIandMovieList/renderMovies.js';
 import '../js/fetchAPIandMovieList/fetchAPI.js';
+import localStorageUtil from './localStorage';
 
 //test
 import modalMovieTemplate from '../template/movieModal.hbs';
@@ -23,36 +24,47 @@ const debounce = require('lodash.debounce');
 refs.movieContainer.addEventListener('click', debounce(openModal, 100));
 
 //test
-function openModal() {
+function openModal(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
   refs.movieModal.classList.remove('is-hidden');
   refs.body.classList.add('modal-overflow');
   window.addEventListener('keydown', pressEscape);
   refs.closeModalBtn.addEventListener('click', closeModal);
   refs.backdrop.addEventListener('click', closeModal);
 
-  // refs.filmCard.insertAdjacentHTML('beforeend', modalMovieTemplate(
-  //   await fetchMovie(event.target.closest('.movies-item').getAttribute('id')),
-  // ));
-
-  //     refs.filmCard.insertAdjacentHTML('beforeend', modalMovieTemplate(
-  //   getFullMovieInfo('id')),
-  // ));
-
-  const testMovieObj = {
-    poster_path: '/wVbeL6fkbTKSmNfalj4VoAUUqJv.jpg',
-    original_title: 'Test Total Recall',
-    vote_average: '7.2',
-    vote_count: '3950',
-    popularity: '20.87',
-    genres: 'xz',
-    overview:
-      'Construction worker Douglas Quaid discovers a memory chip in his brain during a virtual-reality trip. He also finds that his past has been invented to conceal a plot of planetary domination. Soon, hes off to Mars to find out who he is and who planted the chip.',
-  };
-
-  refs.filmCard.insertAdjacentHTML(
-    'beforeend',
-    modalMovieTemplate(testMovieObj),
+  const fullInfoPromise = fetchAPI.getFullMovieInfo(
+    event.target.dataset.movieid,
   );
+  fullInfoPromise.then(fullInfo => {
+    const filmsWatchedStore = localStorageUtil.getFilms('watched');
+    const filmsQueuedStore = localStorageUtil.getFilms('queue');
+
+    refs.filmCard.insertAdjacentHTML('beforeend', modalMovieTemplate(fullInfo));
+    const addToWatchCheckbox = document.querySelector('.watched-checkbox');
+    const addToWatchButton = document.querySelector('.add-watched-button');
+    const addToQueueCheckbox = document.querySelector('.queue-checkbox');
+    const addToQueueButton = document.querySelector('.add-queue-button');
+
+    checkAddedFilms(
+      filmsWatchedStore,
+      fullInfo,
+      addToWatchCheckbox,
+      addToWatchButton,
+      'watched',
+    );
+    checkAddedFilms(
+      filmsQueuedStore,
+      fullInfo,
+      addToQueueCheckbox,
+      addToQueueButton,
+      'queue',
+    );
+
+    addToWatchButton.onclick = event => onAddButtonClick(event, 'watched');
+    addToQueueButton.onclick = event => onAddButtonClick(event, 'queue');
+  });
 }
 
 function pressEscape(event) {
@@ -66,4 +78,29 @@ function closeModal() {
   refs.body.classList.remove('modal-overflow');
   window.removeEventListener('keydown', pressEscape);
   refs.filmCard.innerHTML = '';
+}
+
+function checkAddedFilms(filmsStore, filmInfo, checkbox, button, key) {
+  if (filmsStore.indexOf(JSON.stringify(filmInfo.id)) === -1) {
+    checkbox.checked = false;
+    button.classList.remove('active');
+    button.textContent = `ADD TO ${key}`;
+  } else {
+    checkbox.checked = true;
+    button.classList.add('active');
+    button.textContent = `REMOVE FROM ${key}`;
+  }
+}
+function onAddButtonClick(event, key) {
+  const { pushFilm, films } = localStorageUtil.putFilms(
+    key,
+    event.target.dataset.movieid,
+  );
+  if (pushFilm) {
+    event.target.textContent = `REMOVE FROM ${key}`;
+    event.target.classList.add('active');
+  } else {
+    event.target.textContent = `ADD TO ${key}`;
+    event.target.classList.remove('active');
+  }
 }
