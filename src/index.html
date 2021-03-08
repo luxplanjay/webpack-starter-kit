@@ -6,11 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmoteka</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+</head>
 
 <body>
     <header class="header">
@@ -20,7 +17,7 @@
         <div class="theme-switch__control">
             <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle" aria-label="Change theme" />
             <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
-      </label>
+            </label>
             <div aria-hidden="true" class="theme-switch__marker"></div>
         </div>
         <section class="films">
@@ -43,76 +40,67 @@
 
     <!-- Modal from Olga + Lekasey-->
     <div class="backdrop visually-hidden">
-      <div class="modal">
-        <button class="btn__close" data-action="close" aria-label="close-button">
-          <!-- <svg class="btn__cross" width="20" height="20">
-            <use
-              href="./images/sprite.svg#icon-close"
-            ></use>
-          </svg> -->
-          X
-        </button>
-        <div class="modal__content">
-          <div class="modal__block image__block">
-            <img class="modal__image" src="./images/desktop/GREYHOUND.jpg" alt="">
-          </div>
-          <div class="modal__block">
-            <h2 class="modal__title">A FISTFUL OF LEAD</h2>
-            <div class="film-info">
-              <ul class="list film-info__names">
-                <li class="film-info__name">
-                  <p class="content-list__item">Vote/Votes</p>
+        <div class="modal">
+            <button class="btn__close" data-action="close" aria-label="close-button">
+                <svg class="icon"  height="20" width="20">
+                    <use href="./images/sprite.svg#icon-close "></use>
+                </svg>
+            </button>
+            <div class="modal__content">
+                <div class="modal__block image__block">
+                    <img class="modal__image" src="./images/desktop/GREYHOUND.jpg" alt="">
+                </div>
+                <div class="modal__block">
+                    <h2 class="modal__title">A FISTFUL OF LEAD</h2>
+                    <div class="film-info">
+                        <ul class="list film-info__names">
+                            <li class="film-info__name">
+                                <p class="content-list__item">Vote/Votes</p>
 
-                </li>
-                <li class="film-info__name">
-                  <p class="content-list__item">Popularity</p>
+                            </li>
+                            <li class="film-info__name">
+                                <p class="content-list__item">Popularity</p>
 
-                </li>
-                <li class="film-info__name">
-                  <p class="content-list__item">Original Title</p>
+                            </li>
+                            <li class="film-info__name">
+                                <p class="content-list__item">Original Title</p>
 
-                </li>
-                <li class="film-info__name">
-                  <p class="content-list__item">Genre</p>
-                </li>
-              </ul>
-              <ul class="list film-info__values">
-                <li class="film-info__value">
-                  <span class="film-info__rate">7.3/</span> / <span class="content-list__item--value" data-attribute="votes">1260</span>
-                </li>
-                <li class="film-info__value">
-                  <span class="content-list__item--value" data-attribute="popularity">100.2</span>
-                </li>
-                <li class="film-info__value">
-                  <span class="content-list__item--value" data-attribute="title">A FISTFUL OF LEAD</span>
-                </li>
-                <li class="film-info__value">
-                  <span class="content-list__item--value" data-attribute="genre">Western</span>
-                </li>
-              </ul>
+                            </li>
+                            <li class="film-info__name">
+                                <p class="content-list__item">Genre</p>
+                            </li>
+                        </ul>
+                        <ul class="list film-info__values">
+                            <li class="film-info__value">
+                                <span class="film-info__rate">7.3/</span> / <span class="content-list__item--value" data-attribute="votes">1260</span>
+                            </li>
+                            <li class="film-info__value">
+                                <span class="content-list__item--value" data-attribute="popularity">100.2</span>
+                            </li>
+                            <li class="film-info__value">
+                                <span class="content-list__item--value" data-attribute="title">A FISTFUL OF LEAD</span>
+                            </li>
+                            <li class="film-info__value">
+                                <span class="content-list__item--value" data-attribute="genre">Western</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3 class="description-title">ABOUT</h3>
+                    <p class="description-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione autem, reprehenderit magni adipisci temporibus commodi beatae repudiandae? Similique quidem labore expedita doloremque fuga, aliquam sint voluptatem officiis eos hic dolorum? Velit alias
+                        officia similique fuga, repudiandae cumque debitis dolore veniam obcaecati. Quas, minima aperiam! Voluptatum fugit laboriosam inventore qui quae voluptate dolore. veniam obcaecati. Quas, minima aperiam! Voluptatum fugit laboriosam
+                        inventore qui quae voluptate dolore.
+                    </p>
+                    <ul class="list button-list">
+                        <button class="button modal__btn modal__btn--watched">ADD TO WATCHED</button>
+                        <button class="button modal__btn modal__btn--queue">ADD TO QUEUE</button>
+                    </ul>
+                </div>
+
             </div>
-            <h3 class="description-title">ABOUT</h3>
-            <p class="description-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              autem, reprehenderit magni adipisci temporibus commodi beatae
-              repudiandae? Similique quidem labore expedita doloremque fuga,
-              aliquam sint voluptatem officiis eos hic dolorum? Velit alias
-              officia similique fuga, repudiandae cumque debitis dolore veniam
-              obcaecati. Quas, minima aperiam! Voluptatum fugit laboriosam
-              inventore qui quae voluptate dolore. veniam obcaecati. Quas,
-              minima aperiam! Voluptatum fugit laboriosam inventore qui quae
-              voluptate dolore.
-            </p>
-            <ul class="list button-list">
-              <button class="button modal__btn modal__btn--watched">ADD TO WATCHED</button>
-              <button class="button modal__btn modal__btn--queue">ADD TO QUEUE</button>
-            </ul>
-          </div>
-
         </div>
-      </div>
     </div>
-  <!-- modal end -->
+    <!-- modal end -->
 
     <footer class="footer">
         <div class="footer__flex">
@@ -122,10 +110,11 @@
             <div class="footer__flex--dev">
                 <p class="footer__text">&thinsp;Developed with</p>
                 <svg class="footer__heart" height="12.88" width="14">
-          <use href="./images/sprite.svg#icon-heart"></use>
-        </svg>
+                    <use href="./images/sprite.svg#icon-heart"></use>
+                </svg>
                 <p class="footer__text">
-                    by&thinsp;<a href="#" class="footer__text js-footer__text">GoIT Students | команда: "JS survivors"</a>
+                    by&thinsp;<a href="#" class="footer__text js-footer__text">GoIT Students | команда: "JS
+                        survivors"</a>
                 </p>
             </div>
             <!-- modal -->
@@ -146,15 +135,15 @@
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://github.com/Viktor-V72" aria-label="Github">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://www.linkedin.com/in/viktor-v-6b87ab208/" aria-label="Linkedin">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -171,15 +160,15 @@
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://github.com/digtiarenko" aria-label="Github">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://www.linkedin.com/in/valentyn-digtiarenko/" aria-label="Linkedin">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -194,15 +183,15 @@
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://github.com/OksanaStezhko" aria-label="Github">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://www.linkedin.com/in/%D0%BE%D0%BA%D1%81%D0%B0%D0%BD%D0%B0-%D1%81%D1%82%D0%B5%D0%B6%D0%BA%D0%BE-48a890208/" aria-label="Linkedin">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -217,15 +206,15 @@
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://github.com/Goobka" aria-label="Github">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://www.linkedin.com/in/oleksandra-peleno-72a033202/" aria-label="Linkedin">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -240,15 +229,15 @@
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://github.com/AlexSytsenko" aria-label="Github">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://www.linkedin.com/" aria-label="Linkedin">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -263,15 +252,15 @@
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://github.com/VeraKhomenko" aria-label="Github">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://www.linkedin.com/in/vera-khomenko-88599b1b9/" aria-label="Linkedin">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -286,16 +275,16 @@
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://github.com/Olha-Starykova" aria-label="Github">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#github"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks">
                                         <a class="sociallinks__icon" href="https://www.linkedin.com/in/%D0%BE%D0%BB%D1%8C%D0%B3%D0%B0-%D1%81%D1%82%D0%B0%D1%80%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0-0a76a9181?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BXbUgLQFIQxeGzv0a8LMQSQ%3D%3D"
                                             aria-label="Linkedin">
                                             <svg height="20" width="20">
-                        <use href="./images/sprite1.svg#linkedin"></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin"></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -310,15 +299,15 @@
                                     <li class="sociallinks ">
                                         <a class="sociallinks__icon " href="https://github.com/Lekasey " aria-label="Github ">
                                             <svg height="20 " width="20 ">
-                        <use href="./images/sprite1.svg#github "></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github "></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks ">
                                         <a class="sociallinks__icon " href="https://www.linkedin.com/in/oleksii-yarmolenko-4b45a7208/ " aria-label="Linkedin ">
                                             <svg height="20 " width="20 ">
-                        <use href="./images/sprite1.svg#linkedin "></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin "></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -333,15 +322,15 @@
                                     <li class="sociallinks ">
                                         <a class="sociallinks__icon " href="https://github.com/VlasovaAlexsandra " aria-label="Github ">
                                             <svg height="20 " width="20 ">
-                        <use href="./images/sprite1.svg#github "></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github "></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks ">
                                         <a class="sociallinks__icon " href="https://www.linkedin.com/ " aria-label="Linkedin ">
                                             <svg height="20 " width="20 ">
-                        <use href="./images/sprite1.svg#linkedin "></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#linkedin "></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -356,15 +345,15 @@
                                     <li class="sociallinks ">
                                         <a class="sociallinks__icon " href="https://github.com/Hopatsa-Oleksandr " aria-label="Github ">
                                             <svg height="20 " width="20 ">
-                        <use href="./images/sprite1.svg#github "></use>
-                      </svg>
+                                                <use href="./images/sprite1.svg#github "></use>
+                                            </svg>
                                         </a>
                                     </li>
                                     <li class="sociallinks ">
                                         <a class="sociallinks__icon " href="https://www.linkedin.com/ " aria-label="Linkedin ">
-                                            <svg height="20 " width="20 ">
-                        <use href="./images/sprite1.svg#linkedin "></use>
-                      </svg>
+                                            <svg height="20" width="20">
+                                                <use href="./images/sprite1.svg#linkedin "></use>
+                                            </svg>
                                         </a>
                                     </li>
                                 </ul>
@@ -372,10 +361,10 @@
                         </ul>
 
                         <button type="button " class="lightbox__button " data-action="close-lightbox ">
-              <svg class="icon ">
-                <use href="./images/sprite.svg#icon-close "></use>
-              </svg>
-            </button>
+                            <svg class="icon ">
+                                <use href="./images/sprite.svg#icon-close "></use>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
