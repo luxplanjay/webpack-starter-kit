@@ -9,18 +9,23 @@ function getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
     const markupFilm = modalTpl(film);
     const modal = basicLightbox.create(markupFilm);
-    modal.onclick = modal.show();
+    modal.show();
 
     //   добавление onbuttonAddToQueue
-    // console.log(film);
     const buttonAddToQueueRef = document.querySelector('.modal__queue-button');
-    // console.log(buttonAddToQueueRef);
-    buttonAddToQueueRef.addEventListener('click', onButtonAddToQueue(film));
+    buttonAddToQueueRef.addEventListener(
+      'click',
+      function () {
+        onButtonAddToQueue(film);
+      },
+      false,
+    );
 
     window.addEventListener('keydown', closeModalByEscape);
     function closeModalByEscape(event) {
       if (event.code === 'Escape') {
         modal.close();
+        window.removeEventListener('keydown', closeModalByEscape);
         //   снимаю слушатель с кнопки
         buttonAddToQueueRef.removeEventListener(
           'click',
