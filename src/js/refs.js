@@ -6,6 +6,7 @@ const refs = {
   myLibraryGallery: document.querySelector('.library__container'),
   myLibraryCard: document.querySelector('#lib-card'),
   libraryList: document.querySelector('#my-library'),
+  libraryPaginationContainer: document.querySelector('#library__page-selector'),
   homeGallery: document.querySelector('.movie-cards'),
   buttonWatched: document.querySelector('#watched'),
   buttonQueue: document.querySelector('#queue'),

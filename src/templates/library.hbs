@@ -1,7 +1,7 @@
 {{#each this}}
 <li class="library__card-container">
-  <article class="lib-card">
-    <a class="lib-card__link" href="">
+  <article class="lib-card" id="lib-card">
+    <a class="lib-card__link" href="#" data-id="{{this.id}}">
       <div class="lib-card__image-container">
         <img class="lib-card__image" src="{{this.poster_path}}" alt="movie-cover" />
       </div>
@@ -11,7 +11,7 @@
       <div class="lib-card__info">
         <span>
           {{! ToDo: get ganre list by ganre_id  }}
-          {{this.genre_ids}}
+          {{this.genres}}
         </span>
         <span>&nbsp; | &nbsp;</span>
         <span>
