@@ -25,7 +25,7 @@ export default {
     return response.total_pages;
   },
   pageSize: 1, //pageSizeCalc(window.innerWidth), // количество объектов-элементов на страницу
-  pageRange: 1,
+  pageRange: 2,
   //форматирование результатов данных из джсона
   formatResult: function (data) {
     for (var i = 0, len = data.length; i < len; i++) {
@@ -51,7 +51,7 @@ export default {
   //   },
   showPrevious: true, // показать стрелочку предыдущее
   showNext: true, //показать стрелочку следующее
-  autoHidePrevious: true, // авто спрятать кнопку предыдущее
+  autoHidePrevious: false, // авто спрятать кнопку предыдущее
   autoHideNext: false, //авто спрятать кнопку следующее
   // showGoInput: true, //показать Гоинпут для ввода страницы
   // showGoButton: true, // показать кнопку Го для перехода к введенной в инпуте странице
