@@ -156,3 +156,40 @@
 .is-hidden {
   display: none;
 }
+// button header check-in
+
+.selected {
+  .check-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 36px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .icon-check-in {
+      margin-right: 2px;
+      margin-left: 37px;
+      fill: #fff;
+    }
+    &:hover {
+      .icon-check-in {
+        transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        fill: $accent-color;
+      }
+    }
+    &:hover .check-in-text {
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      color: $accent-color;
+    }
+  }
+  .check-in-text {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16px;
+    text-transform: uppercase;
+    color: $primary-white-color;
+  }
+}
