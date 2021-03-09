@@ -3,6 +3,7 @@ import './scss/main.scss';
 import './js/pagination';
 import './js/modal';
 import './js/modal-minor';
+import './js/our-team';
 import './js/navigation';
 //import './js/lib';
 import './js/themes';

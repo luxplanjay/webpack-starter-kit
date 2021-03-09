@@ -1,4 +1,7 @@
-import refs from './refs'
+import refs from './refs';
+
+import ourTeamTemplate from '../template/ourTeam.hbs';
+import ourTeam from './our-team';
 
 // listener header
 refs.openModalHeaderBtn.addEventListener('click', onOpenModalHeader);
@@ -57,4 +60,5 @@ function onClickOverlay(e) {
   }
 }
 
-
+const markupTeam = ourTeamTemplate(ourTeam);
+refs.ourTeamRefs.insertAdjacentHTML('beforeend', markupTeam);
