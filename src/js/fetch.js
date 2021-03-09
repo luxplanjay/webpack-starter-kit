@@ -2,6 +2,7 @@ import addContent from './addContent';
 import apiService from './apiService.js';
 import pagination from './pagination.js';
 import updateModalValue from './modal';
+import refs from './refs';
 
 export default {
   async fetchData(
@@ -11,10 +12,8 @@ export default {
     try {
       let resultArray = [];
       let totalResults;
-      console.log('fetchSettings', fetchSettings);
       for (let set of fetchSettings) {
         const resAwait = await apiService.fetchData(set);
-        console.log('resAwait', resAwait);
         totalResults = resAwait.total_results;
         resultArray = [
           ...resultArray,
@@ -27,6 +26,8 @@ export default {
       const resultArrayDetalsFilm = await Promise.all(promisesIdFilms);
 
       addContent.additemList(resultArray, resultArrayDetalsFilm);
+      console.log('totalres', totalResults);
+   
       pagination.addPaginationList(totalResults, pagePagination);
     } catch (error) {
       throw error;

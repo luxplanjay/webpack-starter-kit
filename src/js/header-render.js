@@ -2,6 +2,7 @@ import headerHomeTemplate from '../templates/header-home-template.hbs';
 import headerLibraryTemplate from '../templates/header-lib-template.hbs';
 import refs from './refs';
 import fnFetch from './fetch.js';
+import fnHendler from './fnHendler';
 import { HOME, SEARCH, WATCHED, QUEUE } from './request.js';
 import { load, save, remove } from './storage';
 
@@ -21,6 +22,10 @@ function createHeaderHomeMarkup() {
 
   save('currentRequest', 'home');
   fnFetch.fetchData();
+  const searchFormRef = document.querySelector('.search-form');
+  const errorNoteRef = document.querySelector('.header__error');
+  save('currentRequest', HOME);
+  searchFormRef.addEventListener('submit', fnHendler.onSubmitSearchForm);
 }
 
 function createHeaderLibraryrMarkup() {
