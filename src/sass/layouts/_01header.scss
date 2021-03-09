@@ -229,17 +229,6 @@
 
   &.is-active {
     opacity: 1;
-    // Пока что не получилось сделать подчеркивание псевдо элементом :(
-    // &::after {
-    //   position: absolute;
-    //   display: inline-block;
-    //   bottom: -3px;
-    //   left: 0;
-    //   content: ' ';
-    //   width: 100%;
-    //   height: 30px;
-    //   color: white;
-    // }
     border-bottom: 3px solid $text-accent;
   }
 }
@@ -290,12 +279,16 @@
 
 .error-container {
   position: relative;
-  max-width: 336px;
-  margin-right: auto;
-  margin-left: auto;
+  // margin-right: auto;
+  // margin-left: auto;
+  display: flex;
+    justify-content: center;
+    text-align: center;
 
   @include for-size(tablet-plus) {
     max-width: none;
+    // display: flex;
+    // justify-content: center
   }
 }
 
@@ -308,15 +301,12 @@
   line-height: 1.14;
   text-align: left;
   color: $text-error;
-  text-align: left;
+  // text-align: left;
 
-  @include for-size(tablet-plus) {
-    position: static;
-    max-width: inherit;
-    margin-top: 22px;
-    margin-bottom: -37px;
-    text-align: center;
-  }
+  // @include for-size(tablet-plus) {
+   
+  //   text-align: center;
+  // }
 }
 
 .library__list {
