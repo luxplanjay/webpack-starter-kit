@@ -2,8 +2,6 @@ import addContent from './addContent';
 import apiService from './apiService.js';
 import pagination from './pagination.js';
 import updateModalValue from './modal';
-import { HOME, LIBRARY, SEARCH, FILM } from './request.js';
-import { load, save, remove } from './storage';
 
 export default {
   async fetchData(
@@ -34,9 +32,16 @@ export default {
     }
   },
 
-  async fetchDataLibrary(pagePagination = 1) {
+  async fetchDataLibrary(pagePagination = 1, listFilms) {
     const perPage = apiService.perPage;
-    const resultArray = load('watched').map(elem => Number(elem));
+    console.log(listFilms);
+
+    if (!listFilms || !listFilms.length) {
+      addContent.addLibraryList(listFilms);
+      return;
+    }
+
+    const resultArray = listFilms.map(elem => Number(elem));
     const promisesIdFilms = resultArray.map(elem =>
       apiService.fetchDetalsFilm(elem, pagePagination),
     );
