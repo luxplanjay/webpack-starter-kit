@@ -36,6 +36,16 @@ const genres = {
 const inputSearch = document.querySelector('.search__input');
 inputSearch.addEventListener('input', debounce(onSearch, 500));
 
+const search = document.querySelector('.search__container');
+search.addEventListener('click', openInputSearch)
+
+//кнопка поиска закрывается только при пустом инпуте
+function openInputSearch(){
+ if(inputSearch.value === ''){
+  inputSearch.classList.toggle('search__input--active');}
+  
+}
+
 //предупредительное сообщение об ошибке
 const errorWarning = document.querySelector('.search__warning');
 const message = {
@@ -96,43 +106,22 @@ function onSearch() {
 }
 //функция запроса информации о фильме
 
-const fetchInfoFilm = async movieID => {
-  const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
-  const response = await axios
-    .get(infoMovieURL)
-    .then(({ data }) => {
-      console.log(data);
-
-      //здесь передавать результат в шаблон или во внешнюю функцию
-      // const qwe = test(response);
-      // console.log(qwe);
-      //==========================
-      const markupModal = modalTpl(data);
-      console.log(`markupModal: `, markupModal);
-
-      // return markupModal;
-      //==========================
-    })
-    .catch(error => {
-      if (error.response.status === 404) {
-        console.log(message.notFound);
-      }
-      if (error.response.status >= 500) {
-        console.log(message.serverError);
-      } else {
-        console.log(error);
-      }
-    });
-};
 // const fetchInfoFilm = async movieID => {
 //   const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
 //   const response = await axios
 //     .get(infoMovieURL)
 //     .then(({ data }) => {
-//       renderInfoFilm(data);
+//       console.log(data);
+
 //       //здесь передавать результат в шаблон или во внешнюю функцию
 //       // const qwe = test(response);
 //       // console.log(qwe);
+//       //==========================
+//       const markupModal = modalTpl(data);
+//       console.log(`markupModal: `, markupModal);
+
+//       // return markupModal;
+//       //==========================
 //     })
 //     .catch(error => {
 //       if (error.response.status === 404) {
@@ -145,17 +134,37 @@ const fetchInfoFilm = async movieID => {
 //       }
 //     });
 // };
-function renderInfoFilm(objFilm) {
+// const fetchInfoFilm = async (movieID) => {
+//     const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
+//     const response = await axios.get(infoMovieURL)
+//     .then(({data}) => {
+//        renderInfoFilm (data)
+//     //здесь передавать результат в шаблон или во внешнюю функцию
+//     // const qwe = test(response);
+//     // console.log(qwe);
+// })
+//     .catch (error => {
+//         if(error.response.status === 404) {
+//             console.log( message.notFound);
+//         } 
+//         if(error.response.status >= 500) {
+//             console.log( message.serverError);
+//         } 
+//         else {
+//         console.log(error)}
+//     })
+// }
+function renderInfoFilm (objFilm) {
   //вот здесь передается объект в шаблон
-  // const qwe = test(objFilm);
-  console.log(objFilm);
-  console.log('это мог бы быть ваш шаблон');
+   // const qwe = test(objFilm);
+   console.log(objFilm);
+   console.log('это мог бы быть ваш шаблон');
 }
 //в переменную movieID передавать динамические данные
 let movieID = 512896;
-fetchInfoFilm(movieID);
+//fetchInfoFilm(movieID);
 
 //стартовый запрос популярных фильмов
 fetchFilms(popularMoviesURL);
 
-export default fetchInfoFilm;
+//export default fetchInfoFilm;

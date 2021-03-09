@@ -1,13 +1,13 @@
 .search {
     position: relative;
-    height: 500px;
+    height: 200px;
     background-image: url('../images/library-mobile.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
-.search__form {
+.search__container{
     position: absolute;
-    margin: auto;
+    //margin: auto;
     top: 0;
     left: 0;
     right: 0;
@@ -23,7 +23,7 @@
       left: 0;
       width: 80px;
       height: 80px;
-      background: #FF6B08;
+      background: white;
       box-shadow: 0 0 25px 0 #FF6B08,
       0 20px 25px 0 rgba(0, 0, 0, 0.2);
       border-radius: 50%;
@@ -85,39 +85,41 @@
       &:hover {
         cursor: pointer;
       }
-      &:focus{
-        width: 236px;
-        opacity: 1;
-        cursor: text;
-      }
-      &:focus ~ .search__box{
-        right: -336px;
-        background: #FF6B08;
-        z-index: 6;
-        &::before {
-          top: 0;
-          left: 0;
-          width: 25px;
-        }
-        &::after {
-          top: 0;
-          left: 0;
-          width: 25px;
-          height: 2px;
-          border: none;
-          background: black;
-          border-radius: 0%;
-          transform: rotate(-45deg);
-        }
-      }
       &::placeholder {
         color: white;
         opacity: 0.4;
         font-weight: bolder;
       }
     }
+    .search__input--active {
+      width: 236px;
+      opacity: 1;
+      cursor: text;
+   & ~ .search__box{
+      right: -336px;
+      background: #FF6B08;
+      z-index: 6;
+      &::before {
+        top: 0;
+        left: 0;
+        width: 25px;
+      }
+      &::after {
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 2px;
+        border: none;
+        background: black;
+        border-radius: 0%;
+        transform: rotate(-45deg);
+      }
+    }
+    
   }
-  .search__warning {
+  }
+
+.search__warning {
       color: #FF001B;
       text-align: center;
       padding-top: 100px;
