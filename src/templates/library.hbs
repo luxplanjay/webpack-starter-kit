@@ -9,16 +9,16 @@
         {{this.title}}
       </h2>
       <div class="lib-card__info" data-id="{{this.id}}">
-        <span>
+        <span data-id="{{this.id}}">
           {{! ToDo: get ganre list by ganre_id  }}
           {{this.genres}}
         </span>
         <span>&nbsp; | &nbsp;</span>
-        <span>
+        <span data-id="{{this.id}}">
           {{! ToDo: get year by release_date  }}
           {{this.release_date}}
         </span>
-        <div class="lib-card__info--ratio">
+        <div class="lib-card__info--ratio" data-id="{{this.id}}">
           <span>
             {{this.vote_average}}
           </span>
