@@ -21,7 +21,7 @@
 
   &__list {
     // outline: 1px dashed greenyellow;
-    margin: 0px auto;
+    margin: 0px auto ;
     padding: 0px;
     list-style: none;
     @include CenteredFlex(flex, wrap);
