@@ -15,13 +15,13 @@
     />
   </head>
 
-  <body>
+  <body class="body">
 
     <div class="toolbar">
       <!-- Разметка переключателя темы -->
       <div class="theme-switch">
         <img src="https://cdn2.iconfinder.com/data/icons/gardening-flat-colorful/2048/1954_-_Sun_II-512.png" height="24"
-  width="24" alt="" aria-label="Иконка солнца"
+    width="24" alt="" aria-label="Иконка солнца"
     class="theme-switch__icon">
         
 
@@ -149,10 +149,26 @@
           >Developed with
           <i class="material-icons">favorite</i>
           by
-          <a href class="footer-link">GoIT Students</a></span
+          <a data-modal-footer-open href="#" class="footer-link">GoIT Students</a></span
         >
       </div>
     </footer>
+
+    <!-- modal footer -->
+    <div class="lightbox js-lightbox">
+      <div class="lightbox-overlay">
+        <div class="lightbox-content">
+          <h2 class="title-header">Our team</h2>
+          <ul class="footer-team-link">
+          </ul>
+          <a class="lightbox-button" data-action="close-lightbox">
+            <svg width='24' height='24'>
+              <use href="./images/symbol-defs.svg#icon-close"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
     <!-- script -->
   </body>
 </html>
