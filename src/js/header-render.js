@@ -42,11 +42,12 @@ function setHeaderMarkup(value) {
 
 function handlerSiteNavButtonsClick(event) {
     const element = event.target;
-    // console.log(element.parentNode);
+
     if (element.nodeName === "BUTTON" && !element.classList.contains('is-active')) {
+
         element.textContent === 'My library' ? createHeaderLibraryrMarkup() : createHeaderHomeMarkup();
-    } else  {
-        !buttonHomeRef.classList.contains('is-active') ? createHeaderHomeMarkup() : console.log(5);
+    } else if (element.parentElement === logoNavRef && !buttonHomeRef.classList.contains('is-active')) {
+        createHeaderHomeMarkup();
     } 
 }
 
