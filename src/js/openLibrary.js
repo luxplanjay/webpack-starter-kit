@@ -11,7 +11,7 @@ refs.navLibrary.addEventListener('click', openLibrary);
 
 function openLibrary(event) {
   event.preventDefault();
-  const watchedFilms = JSON.parse(localStorage.getItem('filmsQueue'));
+  const watchedFilms = JSON.parse(localStorage.getItem('filmsWatched'));
   const queueFilms = JSON.parse(localStorage.getItem('filmsQueue'));
 
   refs.searchForm.classList.add('is-hidden');
