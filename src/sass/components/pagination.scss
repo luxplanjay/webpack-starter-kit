@@ -59,4 +59,8 @@
   &__item.active {
     width: 40px;
   }
+
+  &.is-hidden {
+    display: none;
+  }
 }

@@ -66,6 +66,13 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
 
 export default {
   addPaginationList(totalHits, activePage) {
+    if (!totalHits || totalHits <= apiService.perPage) {
+      refs.paginationBox.classList.add('is-hidden');
+      return;
+    }
+
+    console.log(refs.paginationBox);
+
     totalPages =
       totalHits / apiService.perPage <= 20
         ? Math.ceil(totalHits / apiService.perPage)
