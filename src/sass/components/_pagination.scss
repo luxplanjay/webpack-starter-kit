@@ -2,24 +2,58 @@
 
 @import '../utils/variables';
 
-.paginationjs{
+.paginationjs {
+  height: 40px;
+  width: 280px;
+  margin: 0px auto;
+  padding: 0px;
+  @include for-size(tablet) {
+    width: 375px;
+  }
+  @include for-size(desktop) {
+    width: 375px;
+  }
+  // outline: 2px dashed red;
+}
+.paginationjs {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  &-pages {
     width: 100%;
     height: 100%;
-    // outline: 2px dashed red;
-}
-.paginationjs{
-    &-pages{
-        width: 100%;
-        height: 100%;
-        outline: 2px dashed red;
-        ul{
-            list-style: none;
-            width: 100%;
-            height: 100%;
-            @include CenteredFlex(flex, nowrap, center, space-between)
-    
-        }
+    outline: 2px dashed red;
+    ul {
+      list-style: none;
+      width: 100%;
+      height: 100%;
+      @include CenteredFlex(flex, nowrap, center, space-between);
     }
-    
-
+    a {
+      @include CenteredFlex(flex, nowrap, center);
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  &-page {
+    height: 100%;
+    color: black;
+    &.active {
+      width: 40px;
+      color: white;
+      background-color: #ff6b08;
+      border-radius: 5px;
+    }
+  }
+  &-next {
+    height: 100%;
+    width: 40px;
+  }
+  &-prev {
+    height: 100%;
+    width: 40px;
+  }
 }
