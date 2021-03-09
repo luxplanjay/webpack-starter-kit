@@ -1,6 +1,6 @@
 import apiSearch from './apiSearchFetch';
 import gridTemplate from '../templates/movie-grid.hbs';
-
+import refs from './refs.js';
 export default {
   dataSource: '', // стек данных для пагинации, может быть функция возвращающая массив объектов, куча возможностей
 
@@ -19,10 +19,18 @@ export default {
   // общее количество страниц, почеммуто ломает pageSize
   // totalNumber: 7,
   totalNumberLocator: function (response) {
+
+    if(response.total_pages === 0){
+      refs.errorWarning.classList.remove("is-hidden")
+        return;
+      } else{
+        refs.errorWarning.classList.add("is-hidden");
+    }
+  
     // you can return totalNumber by analyzing response content
     console.log(response.total_pages);
 
-    return response.total_pages;
+    return response.total_pages; 
   },
   pageSize: 1, //pageSizeCalc(window.innerWidth), // количество объектов-элементов на страницу
   pageRange: 2,
