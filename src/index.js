@@ -55,7 +55,6 @@ function onClickPaginate(event) {
       fnFetch.fetchData(pagePagination);
       break;
     case WATCHED:
-      console.log(load('watched'));
       fnFetch.fetchDataLibrary(pagePagination, load('watched'));
       break;
     case QUEUE:
@@ -74,25 +73,11 @@ function onClickFilm(event) {
 }
 
 function onClickLibrary() {
-  save('currentRequest', WATCHED);
-  console.log(load('watched'));
-  fnFetch.fetchDataLibrary(1, load('watched'));
+  save('currentRequest', QUEUE);
+  fnFetch.fetchDataLibrary(1, load('queue'));
 }
-
-// function onClickHome() {
-//   console.log('мы тут?');
-
-//   save('currentRequest', HOME);
-// }
-// function onClickWatched() {
-//   save('currentRequest', WATCHED);
-// }
-// function onClickQueue() {
-//   save('currentRequest', QUEUE);
-// }
 
 searchFormRef.addEventListener('submit', onSubmitSearchForm);
 refs.paginationBox.addEventListener('click', onClickPaginate);
 refs.filmListRef.addEventListener('click', onClickFilm);
 refs.pageLibraryRef().addEventListener('click', onClickLibrary);
-// refs.pageHomeRef().addEventListener('click', onClickHome);

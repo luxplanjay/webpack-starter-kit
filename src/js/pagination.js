@@ -151,4 +151,8 @@ export default {
     ];
     return resultArray;
   },
+
+  getActivePage() {
+    return +refs.paginationBox.querySelector('.active').textContent;
+  },
 };

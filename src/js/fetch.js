@@ -34,7 +34,6 @@ export default {
 
   async fetchDataLibrary(pagePagination = 1, listFilms) {
     const perPage = apiService.perPage;
-    console.log(listFilms);
 
     if (!listFilms || !listFilms.length) {
       addContent.addLibraryList(listFilms);
