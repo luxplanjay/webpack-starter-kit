@@ -1,34 +1,28 @@
-const divLightbox = document.querySelector('.lightbox');
-// const largeImage = document.querySelector('.lightbox__image');
-const btnClose = document.querySelector('.lightbox__button');
-const modalClose = document.querySelector('.lightbox__body');
-const openModal = document.querySelector('.js-footer__text');
+import refs from './refs';
 
-openModal.addEventListener('click', onOpenModal);
-btnClose.addEventListener('click', onModalClose);
-modalClose.addEventListener('click', onModalCloseDiv);
+refs.openModal.addEventListener('click', onOpenModal);
+refs.btnClose.addEventListener('click', onModalClose);
+refs.modalClose.addEventListener('click', onModalCloseDiv);
 document.addEventListener('keydown', onModalCloseEsc);
 
 
 function onModalCloseDiv(event) {
-  divLightbox.classList.remove('is-open');
- }
+    refs.divLightbox.classList.remove('is-open');
+}
 
 function onModalClose(event) {
-  if (event.target.nodeName === 'BUTTON') {
-    onModalCloseDiv();
-  }
+    if (event.target.nodeName === 'BUTTON') {
+        onModalCloseDiv();
+    }
 }
 
 function onModalCloseEsc(event) {
-  if (event.key === 'Escape') {
-    onModalCloseDiv();
-  }
+    if (event.key === 'Escape') {
+        onModalCloseDiv();
+    }
 }
 
 function onOpenModal(event) {
-    divLightbox.classList.add('is-open');
+    refs.divLightbox.classList.add('is-open');
+    refs.bodyEl.classList.add('is-open');
 }
-
-
- 
