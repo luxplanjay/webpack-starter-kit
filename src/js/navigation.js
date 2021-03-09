@@ -16,7 +16,7 @@ refs.home.addEventListener('click', activeHome);
 refs.library.addEventListener('click', activelibrary);
 
 function activeHome(e) {
-  e.preventDefault();
+  // e.preventDefault();
 
   refs.header.classList.replace('header-lib', 'header-home');
   refs.search.classList.remove('is-hidden');
