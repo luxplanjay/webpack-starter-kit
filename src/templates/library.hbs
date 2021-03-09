@@ -3,12 +3,12 @@
   <article class="lib-card" id="lib-card">
     <a class="lib-card__link" href="#" data-id="{{this.id}}">
       <div class="lib-card__image-container">
-        <img class="lib-card__image" src="{{this.poster_path}}" alt="movie-cover" />
+        <img class="lib-card__image" src="{{this.poster_path}}" alt="movie-cover" data-id="{{this.id}}"/>
       </div>
-      <h2 class="lib-card__title">
+      <h2 class="lib-card__title" data-id="{{this.id}}">
         {{this.title}}
       </h2>
-      <div class="lib-card__info">
+      <div class="lib-card__info" data-id="{{this.id}}">
         <span>
           {{! ToDo: get ganre list by ganre_id  }}
           {{this.genres}}
