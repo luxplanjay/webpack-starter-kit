@@ -6,6 +6,10 @@ const refs = {
   buttonHeader: document.querySelector('.button-header'),
   watchedBtn: document.querySelector('button-watched'),
   queueBtn: document.querySelector('button-queque'),
+  gallery: document.querySelector('.movies-container'),
+  hits: document.querySelector('movie-searchTag'),
+  headerTitle: document.querySelector('.link-title'),
+  logo: document.querySelector('.logo-icon'),
 };
 
 refs.home.addEventListener('click', activeHome);
