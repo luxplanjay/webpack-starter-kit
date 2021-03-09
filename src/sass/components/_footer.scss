@@ -1,5 +1,5 @@
 .footer {
-   width: 100%;
+    width: 100%;
     background-color: $color-footer;
     color: $text-footer;
     text-align: center;
@@ -13,19 +13,19 @@
         @include font(normal, 14px, 1.14);
         padding-top: 29px;
         padding-bottom: 30px;
-          height: 100px;
+        height: 100px;
     }
     @include for-size(tablet) {
         @include font(normal, 16px, 1.19);
         padding-top: 30px;
         padding-bottom: 28px;
-          height: 77px;
+        height: 77px;
     }
     @include for-size(desktop) {
         @include font(normal, 16px, 1.19);
         padding-top: 30px;
         padding-bottom: 28px;
-          height: 77px;
+        height: 77px;
     }
     &__flex {
         @include for-size(mobile-only) {
@@ -50,13 +50,13 @@
     &__flex--dev {
         @include for-size(mobile-only) {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             justify-content: center;
             // padding-top: 10px;
         }
         @include for-size(mobile) {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             justify-content: center;
             // padding-top: 10px;
         }
