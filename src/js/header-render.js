@@ -5,10 +5,13 @@ import fnFetch from './fetch.js';
 import { HOME, SEARCH, WATCHED, QUEUE } from './request.js';
 import { load, save, remove } from './storage';
 
+
+
 let logoNavRef;
 let siteNavButtonsRef;
-let buttonHomeRef;
+// let buttonHomeRef;
 let markup;
+
 
 function createHeaderHomeMarkup() {
   markup = headerHomeTemplate();
@@ -41,26 +44,43 @@ function setHeaderMarkup(value, page) {
 
   siteNavButtonsRef = document.querySelector('.site-nav__list');
   logoNavRef = document.querySelector('.logo-container');
-  buttonHomeRef = document.querySelector('.js-home');
+//   buttonHomeRef = document.querySelector('.js-home');
 
   logoNavRef.addEventListener('click', handlerSiteNavButtonsClick);
   siteNavButtonsRef.addEventListener('click', handlerSiteNavButtonsClick);
+    // bodyEl = document.querySelector('body');
+    // checkboxEl = document.querySelector(
+    //       '#theme-switch-toggle');
+    //   checkboxEl.addEventListener('change', () => console.log('меняем тему'));
 
   if (page === 'library') {
     const watchedButtonRef = document.querySelector(
       '.button[data-request="watched"]',
     );
-    const libraryButtonRef = document.querySelector(
+    const queueButtonRef = document.querySelector(
       '.button[data-request="queue"]',
-    );
-
-    watchedButtonRef.addEventListener('click', () => {
-      save('currentRequest', WATCHED);
-      fnFetch.fetchDataLibrary(1, load(WATCHED));
-    });
-    libraryButtonRef.addEventListener('click', () => {
-      save('currentRequest', QUEUE);
-      fnFetch.fetchDataLibrary(1, load(QUEUE));
+      );
+      
+      watchedButtonRef.addEventListener('click', () => {
+        
+          if (watchedButtonRef.classList.contains('is-active')) return;
+          else {
+              toggleButtonsClass(watchedButtonRef, queueButtonRef);
+              save('currentRequest', WATCHED);
+              fnFetch.fetchDataLibrary(1, load(WATCHED));
+              
+            }
+      });
+      
+      queueButtonRef.addEventListener('click', () => {
+         if (queueButtonRef.classList.contains('is-active')) return;
+            else {
+              toggleButtonsClass(watchedButtonRef, queueButtonRef);
+              save('currentRequest', QUEUE);
+              fnFetch.fetchDataLibrary(1, load(QUEUE));
+              
+            }
+        
     });
   }
 }
@@ -69,18 +89,20 @@ function handlerSiteNavButtonsClick(event) {
   const element = event.target;
 
   if (
-    element.nodeName === 'BUTTON' &&
-    !element.classList.contains('is-active')
-  ) {
+    element.nodeName === 'BUTTON') {
     element.textContent === 'My library'
       ? createHeaderLibraryrMarkup()
       : createHeaderHomeMarkup();
   } else if (
-    element.parentElement === logoNavRef &&
-    !buttonHomeRef.classList.contains('is-active')
+    element.parentElement === logoNavRef
   ) {
     createHeaderHomeMarkup();
-  }
+  } 
+}
+
+function toggleButtonsClass(watch, queue) {
+    watch.classList.toggle('is-active');
+    queue.classList.toggle('is-active');
 }
 
 export default createHeaderHomeMarkup;
