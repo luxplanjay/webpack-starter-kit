@@ -2,6 +2,7 @@ import axios from 'axios';
 import updateMarkupGallery from './updateMarkup';
 import modalTpl from '../templates/modal.hbs';
 import debounce from 'lodash.debounce';
+import renderOnSearch from './renderOnSearch'
 
 // данные для запроса
 const token = '6b8ef447c2ce3d010bfcc7f710d71588';
@@ -105,7 +106,7 @@ function onSearch() {
     const searchMoviesURL = `https://api.themoviedb.org/3/search/movie?${baseURL}&query=${searchQuery}`;
     
     //вторым аргументом передать новый колбэк с новым шаблоном для картинок по ключевому слову (но по факту прос то у некоторых фильмов нет картинок, возможно в шаблоне в теге img прописать ширину и высоту картинки, и будет прописываться альт)
-    fetchFilms(searchMoviesURL, updateMarkupGallery);
+    fetchFilms(searchMoviesURL, renderOnSearch);
   }
 }
 

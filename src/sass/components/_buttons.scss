@@ -1,0 +1,41 @@
+.nav__button {
+    display: inline-block;
+    padding-top: 14px;
+    padding-bottom: 12px;
+    padding-left: 37px;
+    padding-right: 37px;
+    min-width: 130px;
+  
+    @media screen and (min-width: $tablet) {
+      padding-left: 38px;
+      padding-right: 38px;
+      min-width: 136px;
+    }
+  
+  
+    text-align: center;
+    text-transform: uppercase;
+  
+    color: getColor(white-text);
+    background: transparent;
+    border: 1px solid getColor(white-text);
+    border-radius: 5px;
+  
+    &:hover,
+    :focus,
+    :active {
+      border: 1px solid getColor(accent);
+      background: getColor(accent);
+  
+      transition-property: background-color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
+      cursor: pointer;
+    }
+
+    &__active {
+      border: transparent;
+      background: getColor(accent);
+    }
+  }
