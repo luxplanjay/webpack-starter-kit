@@ -342,3 +342,28 @@
 //   background-color: transparent;
 //   color: rgba(0, 0, 0, 0.5);
 // }
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.add-watched-button {
+  padding: 14px 30px 12px;
+  margin-right: 10px;
+  color: #000000;
+  border: 1px solid #000000;
+  text-transform: uppercase;
+}
+.add-queue-button {
+  padding: 14px 20px 12px;
+
+  color: #000000;
+  border: 1px solid #000000;
+  text-transform: uppercase;
+}
