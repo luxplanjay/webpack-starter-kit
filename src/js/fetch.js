@@ -11,9 +11,10 @@ export default {
     try {
       let resultArray = [];
       let totalResults;
-
+      console.log('fetchSettings', fetchSettings);
       for (let set of fetchSettings) {
         const resAwait = await apiService.fetchData(set);
+        console.log('resAwait', resAwait);
         totalResults = resAwait.total_results;
         resultArray = [
           ...resultArray,

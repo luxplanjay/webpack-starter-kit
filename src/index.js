@@ -52,7 +52,7 @@ function onClickPaginate(event) {
       fnFetch.fetchData(fetchSettings, pagePagination);
       break;
     case SEARCH:
-      fnFetch.fetchData(pagePagination);
+      fnFetch.fetchData(fetchSettings, pagePagination);
       break;
     case WATCHED:
       fnFetch.fetchDataLibrary(pagePagination, load('watched'));
