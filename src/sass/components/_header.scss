@@ -16,7 +16,8 @@
   height: 3px;
   background-color: $color-orange;
   &.is-hidden {
-    display: none;
+    display: block;
+    opacity: 0;
   }
   &.lib {
     width: 69px;
