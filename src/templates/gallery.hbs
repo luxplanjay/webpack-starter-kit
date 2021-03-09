@@ -1,0 +1,9 @@
+    {{#each this}}
+    <li class="image-slider__slide swiper-slide">
+        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" alt="" class="image-slider__image">
+        <h4 class="image-slider__title">{{title}}</h4>
+        <span class="image-slider__info">{{genre_ids}}</span>
+        <span class="image-slider__info">{{release_date}}</span>
+        <span class="image-slider__info--votes">{{vote_average}}</span>
+    </li>
+    {{/each}}

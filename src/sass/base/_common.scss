@@ -1,0 +1,83 @@
+body {
+	font-family: "Roboto", sans-serif;
+	background-color: getColor(white-text);
+	color: getColor(primary-text);
+}
+
+body.modal-open{
+	overflow: hidden;
+}
+
+p {
+	margin: 0;
+	color: getColor(primary-text);
+}
+
+img {
+	display: block;
+	// min-width: 100%;
+	height: auto;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	border: none;
+	font: inherit;
+	cursor: pointer;
+}
+
+textarea {
+	resize: none;
+	height: 120px;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.container {
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (min-width: 480px) {
+		width: $mobile;
+	}
+
+	@media screen and (min-width: 768px) {
+		width: $tablet;
+	}
+
+	@media screen and (min-width: 1200px) {
+		width: $desktop;
+	}
+}
+
+.section {
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	&__title {
+		margin-top: 0;
+		margin-bottom: 30px;
+		color: getColor(title-text);
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 1.16;
+		text-align: center;
+		letter-spacing: 0.03em;
+	}
+
+	&__subtitle {
+		margin: 0;
+		margin-bottom: 10px;
+		color: getColor(title-text);
+	}
+}

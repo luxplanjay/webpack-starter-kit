@@ -1,9 +1,7 @@
 import axios from 'axios';
-
+import updateMarkupGallery from './updateMarkup';
 import modalTpl from '../templates/modal.hbs';
 import debounce from 'lodash.debounce';
-
-
 
 // данные для запроса
 const token = '6b8ef447c2ce3d010bfcc7f710d71588';
@@ -59,7 +57,7 @@ const fetchFilms = async moviesURL => {
       }
       const changeGenre = [...results].map(el => genresMovie(el));
       page += 1;
-      renderFilms(changeGenre);
+      updateMarkupGallery(changeGenre);
       return;
     })
     .catch(error => {
@@ -73,12 +71,6 @@ const fetchFilms = async moviesURL => {
       }
     });
 };
-function renderFilms(arrayFilms) {
-  //вот здесь передается changeGenre в шаблон
-  // const qwe = test(arrayFilms);
-  console.log(arrayFilms);
-  console.log('это мог бы быть ваш шаблон');
-}
 
 //преобразование id жанров в названия
 function genresMovie(element) {
@@ -132,32 +124,33 @@ const fetchInfoFilm = async movieID => {
       }
     });
 };
-const fetchInfoFilm = async (movieID) => {
-    const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
-    const response = await axios.get(infoMovieURL)
-    .then(({data}) => {
-       renderInfoFilm (data)
-    //здесь передавать результат в шаблон или во внешнюю функцию
-    // const qwe = test(response);
-    // console.log(qwe);
-})
-    .catch (error => {
-        if(error.response.status === 404) {
-            console.log( message.notFound);
-        } 
-        if(error.response.status >= 500) {
-            console.log( message.serverError);
-        } 
-        else {
-        console.log(error)}
-    })
+// const fetchInfoFilm = async movieID => {
+//   const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
+//   const response = await axios
+//     .get(infoMovieURL)
+//     .then(({ data }) => {
+//       renderInfoFilm(data);
+//       //здесь передавать результат в шаблон или во внешнюю функцию
+//       // const qwe = test(response);
+//       // console.log(qwe);
+//     })
+//     .catch(error => {
+//       if (error.response.status === 404) {
+//         console.log(message.notFound);
+//       }
+//       if (error.response.status >= 500) {
+//         console.log(message.serverError);
+//       } else {
+//         console.log(error);
+//       }
+//     });
+// };
+function renderInfoFilm(objFilm) {
+  //вот здесь передается объект в шаблон
+  // const qwe = test(objFilm);
+  console.log(objFilm);
+  console.log('это мог бы быть ваш шаблон');
 }
-function renderInfoFilm (objFilm) {
-    //вот здесь передается объект в шаблон
-     // const qwe = test(objFilm);
-     console.log(objFilm);
-     console.log('это мог бы быть ваш шаблон');
- }
 //в переменную movieID передавать динамические данные
 let movieID = 512896;
 fetchInfoFilm(movieID);
