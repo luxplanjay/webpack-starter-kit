@@ -76,7 +76,7 @@ body.dark-theme {
   z-index: 0;
   pointer-events: none;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-  transform: translateX(3px);
+  transform: translateX;
   transition: transform 250ms var(--timing-function);
 }
 
@@ -92,7 +92,7 @@ body.dark-theme {
   + .theme-switch__track8
   .theme-switch__toggle:active
   + .theme-switch__track {
-  box-shadow: 0 0 0 2px solid $accent-color;
+  box-shadow: 2px solid $accent-color;
 }
 
 .button__icon {
