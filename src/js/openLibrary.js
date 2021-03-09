@@ -33,20 +33,29 @@ const container = $('#library__page-selector');
 // temporary data:
 const currentPageIDs = [793723, 527774, 9602, 580532];
 
-
 //----------
 // console.log(watchedData);
+
+refs.buttonQueue.addEventListener('click', event => {
+  refs.buttonWatched.classList.remove('library__button--active');
+  refs.buttonQueue.classList.add('library__button--active');
+});
+
+refs.buttonWatched.addEventListener('click', event => {
+  refs.buttonQueue.classList.remove('library__button--active');
+  refs.buttonWatched.classList.add('library__button--active');
+});
 
 refs.navLibrary.addEventListener('click', openLibrary);
 
 function openLibrary(event) {
   event.preventDefault();
-const watchedItems = localStorage.getItem('filmsWatched');
-const parsedWatchedItems = JSON.parse(watchedItems);
+  const watchedItems = localStorage.getItem('filmsWatched');
+  const parsedWatchedItems = JSON.parse(watchedItems);
 
-const watchedData = {
-  results: parsedWatchedItems,
-};
+  const watchedData = {
+    results: parsedWatchedItems,
+  };
 
   refs.searchForm.classList.add('is-hidden');
   refs.homeGallery.classList.add('is-hidden');
@@ -107,6 +116,7 @@ const watchedData = {
         // );
         // apiSearch.page = this.pageNumber;
         //--------------------------------------------
+
         const html = libraryTemplate(data);
         $('#my-library').html(html);
       },
@@ -132,6 +142,7 @@ const watchedData = {
       // );
       // apiSearch.page = this.pageNumber;
       //--------------------------------------------
+
       const html = libraryTemplate(data);
       $('#my-library').html(html);
     },
