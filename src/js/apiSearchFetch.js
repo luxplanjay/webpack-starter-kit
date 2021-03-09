@@ -12,6 +12,13 @@ export default {
       .then(res => res.json())
       .then(({ results }) => results);
   },
+  fetchGenres() {
+    const genresUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${this.apiKey}&language=en-US`;
+    return fetch(genresUrl)
+      .then(response => response.json())
+      .then(({ genres }) => genres)
+      .catch(error => console.log(error));
+  },
 
   get query() {
     return this.searchQuery;

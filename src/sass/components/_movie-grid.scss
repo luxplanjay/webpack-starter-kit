@@ -65,15 +65,24 @@ h3 {
 
   &__item > a {
     text-decoration: none;
+    height: 100%;
   }
 
   &__poster-container {
     text-align: center;
+    height: 420px;
+    @media screen and (min-width: $tablet) {
+      height: 439px;
+    }
+    @media screen and (min-width: $desktop) {
+      height: 411px;
+    }
   }
 
   &__poster-img {
     border-radius: 5px;
     width: 280px;
+    height: 100%;
     @media screen and (min-width: $tablet) {
       width: 293px;
     }
