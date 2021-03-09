@@ -8,25 +8,17 @@ const swiper = new Swiper('.swiper-container', {
   spaceBetween: 20,
   autoHeight: false,
   slidesPerColumnFill: 'row',
-  // effect: 'fade',
-  // fadeEffect:{
-  //   crossFade: true,
-  // },
-  // slidesPerGroupSkip: 1,
-  // virtualTranslate: false,
-  // watchOverflow: true,
-  // updateOnWindowResize: true,
   breakpoints: {
     320: {
       slidesPerGroupSkip: 1,
-      // slidesPerGroup: 4,
+      slidesPerGroup: 4,
       slidesPerView: 1,
       slidesPerColumn: 4,
       slidesPerRow: 1,
     },
     768: {
       slidesPerGroupSkip: 1,
-      // slidesPerGroup: 6,
+      slidesPerGroup: 6,
       slidesPerView: 2,
       slidesPerColumn: 3,
       spaceBetween: 30,
@@ -34,7 +26,7 @@ const swiper = new Swiper('.swiper-container', {
     },
     1030: {
       slidesPerGroupSkip: 1,
-      // slidesPerGroup: 9,
+      slidesPerGroup: 9,
       slidesPerView: 3,
       slidesPerColumn: 3,
       slidesPerRow: 3,
