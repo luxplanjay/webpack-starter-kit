@@ -1,0 +1,19 @@
+@import '../utils/mixins';
+
+@import '../utils/variables';
+
+.paginationjs{
+    width: 100%;
+    height: 100%;
+    // outline: 2px dashed red;
+}
+.paginationjs-pages{
+    width: 100%;
+    height: 100%;
+    outline: 2px dashed red;
+    ul{
+        list-style: none;
+        @include CenteredFlex(flex, nowrap, center, space-between)
+
+    }
+}
