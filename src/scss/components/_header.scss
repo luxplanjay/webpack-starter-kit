@@ -4,8 +4,7 @@
   flex-direction: column;
   max-width: 100%;
   height: 320px;
-  padding-top: 48px;
-  padding-bottom: 65px;
+  padding-top: 55px;
   background-color: $primary-text-color;
 }
 .header-home {
@@ -108,7 +107,7 @@
 }
 .nav-list {
   display: flex;
-  margin: 0px;
+  margin: 0 auto;
   padding: 0px;
   .link-nav {
     padding: 2px;
@@ -135,9 +134,13 @@
 }
 
 .nav-item {
-  margin-left: 37px;
+  margin-left: 20px;
   padding-top: 12px;
   padding-bottom: 38px;
+
+  @include for-size(tablet-landscape) {
+    margin-left: 40px;
+  }
 }
 
 .link-logo {
@@ -170,8 +173,11 @@
 
     .icon-check-in {
       margin-right: 2px;
-      margin-left: 37px;
+      margin-left: 20px;
       fill: #fff;
+      @include for-size(tablet-landscape) {
+        margin-left: 40px;
+      }
     }
     &:hover {
       .icon-check-in {

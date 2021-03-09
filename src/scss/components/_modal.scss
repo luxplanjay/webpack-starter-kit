@@ -106,44 +106,57 @@
   transform: translateX(-50%);
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 48px 20px 41px;
+  padding: 48px 20px 40px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   max-height: 95vh;
+  //height: auto;
+
+  width: 280px;
   overflow-y: auto;
 
   @media screen and (min-width: 768px) {
     display: flex;
-    width: 668px;
+    width: 618px;
+    padding: 42px 28px 40px;
   }
 
   @media screen and (min-width: 1024px) {
-    width: 886px;
-    padding: 50px;
+    width: 882px;
+    padding: 50px 30px 40px;
   }
 }
 
 // ======= modal window =============================
+.movie-modal-full-description {
+  width: 240px;
+  height: auto;
+
+  @media screen and (min-width: 768px) {
+    width: 264px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 396px;
+  }
+}
 
 .movie-modal-image {
   margin-bottom: 30px;
-  width: 280px;
+  width: 240px;
   height: auto;
   border-radius: 5px;
 
   @media screen and (min-width: 768px) {
     margin-right: 30px;
     margin-bottom: 0px;
-    width: 280px;
-    height: auto;
+    width: 264px;
   }
 
   @media screen and (min-width: 1024px) {
     margin-right: 50px;
-    width: 380px;
-    width: auto;
-    height: 500px;
+    width: 396px;
   }
 }
 
@@ -182,7 +195,6 @@
 }
 
 .movie-modal-values {
-  //
   font-size: 12px;
 
   list-style: none;
@@ -264,84 +276,77 @@
   justify-content: left;
 }
 
-.movie-modal-full-description {
-  width: 279px;
+// ============= buttons ===============
 
-  @media screen and (min-width: 768px) {
-    width: 294px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 426px;
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  &.is-hidden {
+    display: none;
   }
 }
 
-// ============= buttons ===============
+.button {
+  cursor: pointer;
+  font-size: 12px;
+  border: transparent;
+  border-radius: 5px;
+  width: 113px;
+  height: 44px;
 
-// div.buttons-wrapper {
-//   display: flex;
-//   justify-content: center;
-//   &.is-hidden {
-//     display: none;
-//   }
-// }
+  font-weight: 500;
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: $primary-white-color;
+  background-color: $accent-color;
 
-// .button {
-//   cursor: pointer;
-//   font-size: 12px;
+  @media screen and (min-width: 768px) {
+    width: 125px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 136px;
+  }
 
-//   border: transparent;
-//   border-radius: 5px;
-//   max-width: 136px;
-//   width: 100%;
-//   height: 44px;
+  &.noactive {
+    border: 1px solid $primary-white-color;
+    background-color: transparent;
+  }
+}
 
-//   font-weight: 500;
-//   line-height: 1.33;
-//   text-transform: uppercase;
-//   color: $primary-white-color;
-//   background-color: #ff6b01;
+.button:not(:last-child) {
+  margin-right: 15px;
+}
 
-//   &.noactive {
-//     border: 1px solid #ffffff;
-//     background-color: transparent;
-//   }
-// }
+.modal-light-btn {
+  border: 1px solid #000000;
+  color: $primary-text-color;
+  background-color: transparent;
+}
 
-// .button:not(:last-child) {
-//   margin-right: 15px;
-// }
+.button:hover,
+.button:focus {
+  background-color: $accent-color;
+}
 
-// .modal-light-btn {
-//   border: 1px solid #000000;
-//   color: $primary-text-color;
-//   background-color: transparent;
-// }
+.header-light-btn:hover,
+.header-light-btn:focus {
+  background-color: rgba(140, 140, 140, 0.4);
+}
 
-// .button:hover,
-// .button:focus {
-//   background-color: rgba(255, 107, 1, 0.8);
-// }
+.modal-light-btn:hover,
+.modal-light-btn:focus {
+  background-color: rgba(255, 107, 1, 0.1);
+}
 
-// .header-light-btn:hover,
-// .header-light-btn:focus {
-//   background-color: rgba(140, 140, 140, 0.4);
-// }
+.button[disabled] {
+  background-color: rgba(255, 107, 1, 0.5);
+}
 
-// .modal-light-btn:hover,
-// .modal-light-btn:focus {
-//   background-color: rgba(255, 107, 1, 0.1);
-// }
-
-// .button[disabled] {
-//   background-color: rgba(255, 107, 1, 0.5);
-// }
-
-// .button.modal-light-btn[disabled] {
-//   border: 1px solid rgba(0, 0, 0, 0.5);
-//   background-color: transparent;
-//   color: rgba(0, 0, 0, 0.5);
-// }
+.button.modal-light-btn[disabled] {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+}
 .visuallyhidden {
   position: absolute;
   overflow: hidden;
@@ -359,6 +364,7 @@
   color: #000000;
   border: 1px solid #000000;
   text-transform: uppercase;
+  align-items: center;
 }
 .add-queue-button {
   padding: 14px 20px 12px;

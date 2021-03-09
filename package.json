@@ -19,7 +19,8 @@
   "bugs": {
     "url": "https://github.com/Yuliana-vish/project_filmoteka/issues"
   },
-  "homepage": "https://github.com/Yuliana-vish/project_filmoteka#readme",
+  
+  "homepage": "https://Yuliana-vish.github.io/project_filmoteka",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
