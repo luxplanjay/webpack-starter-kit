@@ -15,6 +15,7 @@ const refs = {
   underscoreOnMyLibrary: document.querySelector('.lib'),
   underscoreOnHome: document.querySelector('.underscore'),
   navHome: document.querySelector('#home'),
+  headerHomeOrMyLibrary: document.querySelector('.home'),
 };
 
 export default refs;
