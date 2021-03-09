@@ -17,7 +17,7 @@ createHeaderHomeMarkup();
 import apiService from './js/apiService.js';
 import pagination from './js/pagination.js';
 import fnFetch from './js/fetch.js';
-import { HOME, LIBRARY, SEARCH, WATCHED, QUEUE, FILM } from './js/request.js';
+import { HOME, SEARCH, WATCHED, QUEUE } from './js/request.js';
 import { load, save, remove } from './js/storage';
 // import modal from './js/modal';
 
@@ -55,10 +55,12 @@ function onClickPaginate(event) {
       fnFetch.fetchData(pagePagination);
       break;
     case WATCHED:
-      fnFetch.fetchDataLibrary(pagePagination);
+      console.log(load('watched'));
+      fnFetch.fetchDataLibrary(pagePagination, load('watched'));
       break;
     case QUEUE:
-      fnFetch.fetchDataLibrary(pagePagination);
+      fnFetch.fetchDataLibrary(pagePagination, load('queue'));
+      break;
     default:
       console.log(Error('Не найден тип текущего запроса'));
   }
@@ -73,7 +75,8 @@ function onClickFilm(event) {
 
 function onClickLibrary() {
   save('currentRequest', WATCHED);
-  fnFetch.fetchDataLibrary();
+  console.log(load('watched'));
+  fnFetch.fetchDataLibrary(1, load('watched'));
 }
 
 // function onClickHome() {

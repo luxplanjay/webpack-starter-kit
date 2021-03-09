@@ -1,5 +1,5 @@
 import { load, save, remove } from './storage';
-import { HOME, LIBRARY, QUEUE, SEARCH, WATCHED } from './request.js';
+import { HOME, SEARCH } from './request.js';
 
 export default {
   ulrApi: '',
