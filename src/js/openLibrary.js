@@ -27,7 +27,7 @@ function openLibrary(event) {
   refs.searchForm.classList.add('is-hidden');
   refs.homeGallery.classList.add('is-hidden');
   refs.buttons.classList.remove('is-hidden');
-
+  refs.headerHomeOrMyLibrary.classList.add('lib');
   //слушатель кнопки очередь
 
   refs.buttonQueue.addEventListener('click', event => {

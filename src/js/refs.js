@@ -14,6 +14,7 @@ const refs = {
   errorWarning: document.querySelector('.form__warning'),
   underscoreOnMyLibrary: document.querySelector('.lib'),
   underscoreOnHome: document.querySelector('.underscore'),
+  headerHomeOrMyLibrary: document.querySelector('.home'),
 };
 
 export default refs;
