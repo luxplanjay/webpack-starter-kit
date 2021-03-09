@@ -6,7 +6,7 @@ import onButtonAddToQueue from './onButtonAddToQueue';
 import onButtonAddToWatched from './onButtonAddToWatched';
 import refs from './refs.js';
 
-function getFilmInfo(movie_id) {
+function  getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
     // console.log(film);
     const markupFilm = modalTpl(film);
@@ -76,7 +76,7 @@ function getFilmInfo(movie_id) {
 }
 
 const lightBox = () => {
-  //refs.libraryList.addEventListener('click', openModal);
+refs.libraryList.addEventListener('click', openModal);
   refs.movieGrid.addEventListener('click', openModal);
   function openModal(event) {
     event.preventDefault();
