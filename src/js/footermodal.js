@@ -8,6 +8,7 @@ document.addEventListener('keydown', onModalCloseEsc);
 
 function onModalCloseDiv(event) {
     refs.divLightbox.classList.remove('is-open');
+    refs.bodyEl.classList.remove('is-open');
 }
 
 function onModalClose(event) {
