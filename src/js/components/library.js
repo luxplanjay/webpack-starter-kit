@@ -9,8 +9,8 @@ import libraryCardTemplate from '../../templates/library__card.hbs';
 export const paginationParametersCommon = {
   locator: 'results',
   totalNumberLocator: 2,
-  pageSize: 3,
-  pageRange: 1,
+  pageSize: 2,
+  pageRange: 2,
   formatResult: function (data) {
     // console.log(data);
     return data.map(obj => {
@@ -35,8 +35,8 @@ export const paginationParametersCommon = {
   },
   showPrevious: true, // показать стрелочку "предыдущее"
   showNext: true, //показать стрелочку "следующее"
-  autoHidePrevious: true, // авто спрятать кнопку "предыдущее"
-  autoHideNext: true, // авто спрятать кнопку "следующее"
+  autoHidePrevious: false, // авто спрятать кнопку "предыдущее"
+  autoHideNext: false, // авто спрятать кнопку "следующее"
   beforePaging: function (arg) {
     // console.log(arg);obj.genres
     // apiService.page = arg;

@@ -21,7 +21,7 @@
 
   &__list {
     // outline: 1px dashed greenyellow;
-    margin: 0px auto;
+    margin: 0px auto ;
     padding: 0px;
     list-style: none;
     @include CenteredFlex(flex, wrap);
@@ -63,10 +63,11 @@
   &__page-selector {
     // outline: 2px solid green;
     margin: 40px auto 0px;
-    width: 280px;
-    height: 40px;
+    width: auto;
+    height: auto;
     background-color: #f7f7f7;
   }
+  
   @include for-size(mobile) {
     &__container {
       // outline: 1px dashed red;
@@ -155,12 +156,8 @@
     }
 
     &__page-selector {
-      // outline: 2px solid green;
       margin: 50px auto 0px;
-      width: 375px;
-      height: 40px;
-      // background-color: #f7f7f7;
-    }
+    }  
   }
   @include for-size(desktop) {
     &__container {
@@ -206,14 +203,9 @@
       // background-color: wheat;
       // outline: 1px solid yellow;
     }
-
     &__page-selector {
-      // outline: 2px solid green;
       margin: 50px auto 0px;
-      width: 375px;
-      height: 40px;
-      // background-color: #f7f7f7;
-    }
+    }    
   }
 }
 @import '../components/lib-card'
