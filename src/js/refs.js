@@ -11,6 +11,17 @@ const refs = {
   watchedBtn: document.querySelector('.button-watched'),
   queueBtn: document.querySelector('.button-queque'),
   body: document.querySelector('body'),
+
+  // modal header
+  openModalHeaderBtn: document.querySelector('[data-modal-header-open]'),
+  modalHeader: document.querySelector('.js-lightbox-header'),
+  closeModalHeaderBtn: document.querySelector('.lightbox-button-header'),
+  overlayHeader: document.querySelector('.lightbox-overlay-header'),
+  // modal footer
+  openModalFooterBtn: document.querySelector('[data-modal-footer-open]'),
+  modalFooter: document.querySelector('.js-lightbox'),
+  closeModalFooterBtn: document.querySelector('.lightbox-button'),
+  overlayFooter: document.querySelector('.lightbox-overlay'),
 };
 
 export default refs;

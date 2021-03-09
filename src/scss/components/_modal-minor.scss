@@ -1,0 +1,221 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+.modal-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+}
+.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content-modal {
+  display: flex;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  transition: transform var(--animation-duration) var(--timing-function);
+  @media screen and (max-width: 319px) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: 320px) {
+    margin-top: 231px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
+  }
+}
+
+.lightbox-content {
+  background-color: #f7f7f7;
+
+  @media screen and (min-width: 320px) {
+    margin-left: 75px;
+    margin-right: 75px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: 71px;
+    margin-right: 71px;
+  }
+  @media screen and (max-width: 319px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.modal-form {
+  padding: 30px;
+}
+
+.lightbox-content-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 270px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 360px;
+
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  @media screen and (min-width: 320px) {
+    margin-top: 170px;
+  }
+  @media screen and (max-width: 319px) {
+    margin-top: 30px;
+  }
+
+  :not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.modal-form-title-header {
+  color: $primary-white-color;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.16;
+  text-align: center;
+}
+
+.button-check-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-modal-close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  border-radius: 50%;
+}
+.lightbox-button-header {
+  top: 180px;
+  right: 38%;
+  border-radius: 50%;
+  background-color: #fff;
+  :hover,
+  :focus {
+    border-radius: 50%;
+    background-color: $accent-color;
+  }
+
+  @media screen and (max-width: 1024px) {
+    top: 180px;
+    right: 35%;
+  }
+  @media screen and (max-width: 767px) {
+    top: 180px;
+    right: 20%;
+  }
+  @media screen and (max-width: 319px) {
+    top: 30px;
+    right: 25%;
+  }
+}
+
+.button-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  border: 1px solid #fff;
+  box-sizing: border-box;
+
+  border-radius: 5px;
+  background-color: transparent;
+
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16px;
+
+  text-transform: uppercase;
+  color: $primary-white-color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+  // &:focus {
+  //   background-color: $accent-color;
+  // }
+}
+.modal-form-input {
+  display: block;
+  text-align: center;
+
+  min-width: 300px;
+  height: 30px;
+
+  background: transparent;
+  border: transparent;
+  border-bottom: 1px solid #fff;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $primary-white-color;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border-bottom: 1px solid $accent-color;
+  }
+  &::placeholder {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+.modal-form-label {
+  display: block;
+
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16px;
+
+  text-align: center;
+  text-transform: uppercase;
+  color: $primary-white-color;
+  :not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
