@@ -7,6 +7,16 @@ import './pagination.min';
 //
 const container = $(refs.libraryPaginationContainer);
 
+refs.buttonQueue.addEventListener('click', event => {
+  refs.buttonWatched.classList.remove('library__button--active');
+  refs.buttonQueue.classList.add('library__button--active');
+});
+
+refs.buttonWatched.addEventListener('click', event => {
+  refs.buttonQueue.classList.remove('library__button--active');
+  refs.buttonWatched.classList.add('library__button--active');
+});
+
 refs.navLibrary.addEventListener('click', openLibrary);
 
 function openLibrary(event) {
