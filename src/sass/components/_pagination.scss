@@ -34,14 +34,22 @@
     a {
       @include CenteredFlex(flex, nowrap, center);
       height: 100%;
+      width: 30px;
       text-decoration: none;
       color: inherit;
+      &:hover {
+        width: 40px;
+        color: white;
+        background-color: #ff6b08;
+        border-radius: 5px;
+      }
     }
   }
   &-page {
     height: 100%;
     color: black;
     &.active {
+      @include CenteredFlex(flex, nowrap, center);
       width: 40px;
       color: white;
       background-color: #ff6b08;
@@ -49,11 +57,17 @@
     }
   }
   &-next {
+    @include CenteredFlex(flex, nowrap, center);
     height: 100%;
     width: 40px;
   }
   &-prev {
+    @include CenteredFlex(flex, nowrap, center);
     height: 100%;
     width: 40px;
+  }
+  &-ellipsis {
+    @include CenteredFlex(flex, nowrap, center);
+    height: 100%;
   }
 }
