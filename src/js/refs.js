@@ -20,11 +20,15 @@ const refs = {
 
   addToWatchedBtn: document.querySelector('.modal__btn--watched'),
   addToQueueBtn: document.querySelector('.modal__btn--queue'),
+
+//  =======
+  
   pageNavRef: () => document.querySelector('.site-nav__list'),
   pageHomeRef: () => document.querySelector('[data-request="home"]'),
   pageLibraryRef: () => document.querySelector('[data-request="library"]'),
   pageWatchedRef: () => document.querySelector('[data-request="watched"]'),
   pageQueueRef: () => document.querySelector('[data-request="queue"]'),
+
 };
 
 export default refs;
