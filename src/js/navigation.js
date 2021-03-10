@@ -1,19 +1,5 @@
-
-// const refs = {
-//   home: document.querySelector('.home-link'),
-//   library: document.querySelector('.lib-link'),
-//   header: document.querySelector('.header'),
-//   search: document.querySelector('.form-search'),
-//   buttonHeader: document.querySelector('.button-header'),
-//   watchedBtn: document.querySelector('button-watched'),
-//   queueBtn: document.querySelector('button-queque'),
-//   gallery: document.querySelector('.movies-container'),
-//   hits: document.querySelector('movie-searchTag'),
-//   headerTitle: document.querySelector('.link-title'),
-//   logo: document.querySelector('.logo-icon'),
-// };
-
 import refs from './refs';
+import initProgramFilmoteka from './fetchAPIandMovieList/moviesListEventsHandler';
 
 refs.home.addEventListener('click', activeHome);
 refs.home.addEventListener('click', initProgramFilmoteka);
