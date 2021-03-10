@@ -2,11 +2,9 @@ import Pagination from 'tui-pagination';
 import { initProgramFilmoteka } from './moviesListEventsHandler';
 import movieListTmp from '../../template/moviesListTemplate.hbs';
 import renderMovies from './renderMovies.js';
+import refs from '../refs.js';
 const myKey = '1690d1319b4e719ac3308f10c68ac649';
-const moviesContainerRef = document.querySelector('.movies-container-js');
-const movieInputRef = document.querySelector('.movie-searchTag-js');
-const eContainerRef = document.querySelector('.error-container-js');
-const pagRef = document.querySelector('.pagination-container-js');
+
 export default {
   moviesSearchActive: false, // ищем фильмы или рендер трендовых
   searchTag: '',
@@ -19,14 +17,14 @@ export default {
   genresArray: [], // массив ид и имен жанров
   errorHandler(error) {
     //обработчик ошибок ( кетчей )
-    pagRef.classList.add('is-hidden');
-    eContainerRef.innerHTML =
+    refs.pagination.classList.add('is-hidden');
+    refs.errorContainerRef.innerHTML =
       error + '. It is a server error , Pls just try again!';
   },
   fetchGenres() {
     //Функция забирает с сервера массив с именами и ид жанров
     const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${myKey}&language=${this.language}`;
-    const fetchedGenres = fetch(url)
+    const fetchedGenresArray = fetch(url)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -34,7 +32,7 @@ export default {
       })
       .then(response => response.genres)
       .catch(this.errorHandler);
-    fetchedGenres.then(res => {
+    fetchedGenresArray.then(res => {
       this.genresArray = res.slice();
     });
   },
@@ -45,8 +43,10 @@ export default {
         movie.genre_ids.push('Genre');
       } else {
         const genresNamesArr = movie.genre_ids.map(movieGenre => {
-          const newEl = this.genresArray.find(genre => genre.id === movieGenre);
-          return newEl.name;
+          const updatedGenre = this.genresArray.find(
+            genre => genre.id === movieGenre,
+          );
+          return updatedGenre.name;
         });
         movie.genre_ids = genresNamesArr.slice();
       }
@@ -83,10 +83,10 @@ export default {
       .then(response => {
         //console.log(response); // в консоле можно посмотреть что пришло нам
         if (response.results.length === 0) {
-          eContainerRef.innerHTML =
+          refs.errorContainerRef.innerHTML =
             'Search result not successful. Enter the correct movie name and try again';
-          pagRef.classList.add('is-hidden');
-          moviesContainerRef.innerHTML =
+          refs.pagination.classList.add('is-hidden');
+          refs.gallery.innerHTML =
             'Search result not successful. Enter the correct movie name and try again';
           return;
         }
@@ -99,7 +99,7 @@ export default {
   getTrendingMovies(page = 1) {
     //Забирает с сервера трендовые фильмы , по умолчанию за день
     this.moviesSearchActive = false;
-    movieInputRef.value = '';
+    refs.movieInputRef.value = '';
     const url = `https://api.themoviedb.org/3/trending/${this.validMediaType}/${this.validTimeWindow}?api_key=${myKey}&language=${this.language}&page=${page}&per_page=${this.itemsPerPage}`;
     this.fetchGenres();
     return fetch(url)
@@ -135,8 +135,9 @@ export default {
   async searchMovies(page = 1) {
     //рендер результата поиска возвращает промис
     //moviesContainerRef.innerHTML = '';
+    refs.pagination.classList.remove('is-hidden');
     return this.searchMoviesbyTag(page).then(response => {
-      renderMovies(response.results, moviesContainerRef, movieListTmp);
+      renderMovies(response.results, refs.gallery, movieListTmp);
       //console.log(response);
       return response;
     });
@@ -144,8 +145,9 @@ export default {
   async showMoviesInTrend(page = 1) {
     //рендер трендовых возвращает промис
     //moviesContainerRef.innerHTML = '';
+    refs.pagination.classList.remove('is-hidden');
     return this.getTrendingMovies(page).then(response => {
-      renderMovies(response.results, moviesContainerRef, movieListTmp);
+      renderMovies(response.results, refs.gallery, movieListTmp);
       //console.log(response);
       return response;
     });

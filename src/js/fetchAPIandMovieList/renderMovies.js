@@ -1,10 +1,8 @@
-const moviesContainerRef = document.querySelector('.movies-container-js');
-const eContainerRef = document.querySelector('.error-container-js');
-const pagRef = document.querySelector('.pagination-container-js');
+import refs from '../refs.js';
 export default function renderMovies(movies, ref, template) {
-  moviesContainerRef.innerHTML = '';
-  eContainerRef.innerHTML = '';
+  ref.innerHTML = '';
+  refs.errorContainerRef.innerHTML = '';
   const markup = template(movies);
-  pagRef.classList.remove('is-hidden');
+  //refs.pagination.classList.remove('is-hidden');
   ref.insertAdjacentHTML('beforeend', markup);
 }

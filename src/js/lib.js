@@ -2,6 +2,7 @@ import fetchApi from './fetchAPIandMovieList/fetchAPI';
 import localStorageUtil from './localStorage';
 import renderMovies from './fetchAPIandMovieList/renderMovies';
 import temp from '../template/moviesListTemplate.hbs';
+
 import Pagination from 'tui-pagination';
 import refs from './refs'
 
@@ -33,6 +34,7 @@ function renderLibraryFilms(key) {
   moviesContainerRef.innerHTML = '<p>Movie list is empty</p>';
 
     libraryFilms.map(id => {
+
     const promId = fetchApi.getFullMovieInfo(id);
     promId.then(fullInfo => {
       arrayFilms.push(fullInfo);
@@ -40,8 +42,10 @@ function renderLibraryFilms(key) {
       renderPagLibrary(arrayFilms, key)
       renderMovies(filmPerCurrentPage(arrayFilms, 1), moviesContainerRef, temp);
       });
+
     });
 }
+
 
 console.log(filmToCurrentPage)
 
@@ -88,4 +92,5 @@ function filmPerCurrentPage(arr, page) {
     } else return newArr
   }
   return newArr
+
 }
