@@ -13,10 +13,14 @@ const container = $('#pagination-container');
 refs.inputForm.addEventListener('submit', event => {
   event.preventDefault();
   const form = event.currentTarget;
+  if (form.elements.query.value < 1) {
+    return;
+  }
   apiService.query = form.elements.query.value;
   console.log(apiService.searchUrl);
   refs.movieGrid.innerHTML = '';
   form.reset(); //чистим форму
+  
 
   container.pagination({
     ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!
