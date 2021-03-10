@@ -62,15 +62,15 @@ function openLibrary(event) {
   refs.underscoreOnMyLibrary.classList.remove('is-hidden');
   refs.underscoreOnHome.classList.add('is-hidden');
 
-  function pageSizeCalc(innerWidth) {
-    if (innerWidth < 768) {
-      return 4;
-    }
-    if (innerWidth < 1024) {
-      return 8;
-    }
-    return 9;
-  }
+  // function pageSizeCalc(innerWidth) {
+  //   if (innerWidth < 768) {
+  //     return 4;
+  //   }
+  //   if (innerWidth < 1024) {
+  //     return 8;
+  //   }
+  //   return 9;
+  // }
 }
 
 //Добавляем слушателя на кнопку Home
@@ -84,7 +84,7 @@ function openHome(event) {
   refs.myLibraryGallery.classList.add('is-hidden');
   refs.underscoreOnMyLibrary.classList.add('is-hidden');
   refs.underscoreOnHome.classList.remove('is-hidden');
- 
+  refs.headerHomeOrMyLibrary.classList.remove('lib');
   // refs.myHomeGallery.classList.remove('is-hidden');
   //refs.errorWarning.classList.add('is-hidden');
 }
