@@ -13,64 +13,81 @@
 
   <body>
     <header class="header">
-        <div class="container header-container">
-            <div class="header-nav-container">
-        <div class="logo-container">
+      <div class="container header-container">
+        <div class="header-nav-container">
+          <div class="logo-container">
             <span class="header__logo"></span>
-            <h1 class="header__title">
-                Filmoteka
-            </h1>
-        </div>
-        <nav>
+            <h1 class="header__title">Filmoteka</h1>
+          </div>
+          <nav>
             <ul class="site-nav__list">
-                <li class="site-nav__item">
-                    <button class="site-nav__button is-active js-home" data-request="home">Home</button>
-                </li>
-                <li class="site-nav__item">
-                    <button class="site-nav__button js-library" data-request="library">My library</button>
-                </li>
+              <li class="site-nav__item">
+                <button
+                  class="site-nav__button is-active js-home"
+                  data-request="home"
+                >
+                  Home
+                </button>
+              </li>
+              <li class="site-nav__item">
+                <button
+                  class="site-nav__button js-library"
+                  data-request="library"
+                >
+                  My library
+                </button>
+              </li>
             </ul>
-        </nav>
-    </div>
-    <form class="search-form">
-        <input class="search-form__input" type="text" name="query" placeholder="Movie search" autocomplete="off" />
-        <button type="submit" class="search-form__button" aria-label="Search">
+          </nav>
+        </div>
+        <form class="search-form">
+          <input
+            class="search-form__input"
+            type="text"
+            name="query"
+            placeholder="Movie search"
+            autocomplete="off"
+          />
+          <button type="submit" class="search-form__button" aria-label="Search">
             <span class="search-form__icon"></span>
-        </button>
+          </button>
+        </form>
+        <div class="error-container">
+          <p class="header__error">
+            Search result not successful. Enter the correct movie name and press
+            enter
+          </p>
+        </div>
 
+        <ul class="library__list">
+          <li class="library__item">
+            <button class="button button--library" data-request="watched">
+              Watched
+            </button>
+          </li>
+          <li class="library__item">
+            <button
+              class="button button--library is-active"
+              data-request="queue"
+            >
+              Queue
+            </button>
+          </li>
+        </ul>
 
-    </form>
-    <div class="error-container">
-        <p class="header__error">Search result not successful. Enter the correct movie name and press enter</p>
-    </div>
-
-
-    <ul class="library__list">
-        <li class="library__item">
-            <button class="button button--library" data-request="watched">Watched</button>
-        </li>
-        <li class="library__item">
-            <button class="button button--library is-active" data-request="queue">Queue</button>
-        </li>
-    </ul>
-
-
-    <!-- <div class="theme-switch__control">
+        <!-- <div class="theme-switch__control">
         <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
                 aria-label="Change theme" />
         <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
         </label>
         <div aria-hidden="true" class="theme-switch__marker"></div> -->
-
-
-    </div>
-            <!-- <div class="theme-switch__control">
+      </div>
+      <!-- <div class="theme-switch__control">
             <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle" aria-label="Change theme" />
             <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
             </label>
             <div aria-hidden="true" class="theme-switch__marker"></div>
           </div> -->
-      
     </header>
     <main>
       <section class="films">
@@ -103,11 +120,7 @@
         </button>
         <div class="modal__content">
           <div class="modal__block image__block">
-            <img
-              class="modal__image"
-              src="./images/desktop/GREYHOUND.jpg"
-              alt=""
-            />
+            <img class="modal__image" src="./images/default-opt.jpg" alt="" />
           </div>
           <div class="modal__block">
             <h2 class="modal__title"></h2>
