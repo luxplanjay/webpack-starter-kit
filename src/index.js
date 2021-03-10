@@ -10,6 +10,7 @@ import './js/footermodal.js';
 import './js/modal';
 import './js/modal-close';
 import './js/movieLibrary';
+import '../node_modules/spinkit/spinkit.css';
 
 // import createHeaderHomeMarkup from './js/header-render';
 // createHeaderHomeMarkup();
@@ -23,6 +24,8 @@ import { save } from './js/storage';
 
 import './js/change-header-theme';
 import './js/library-list-hendler';
+import './js/spinner';
+
 
 const searchFormRef = document.querySelector('.search-form');
 const errorNoteRef = document.querySelector('.header__error');
@@ -34,3 +37,6 @@ searchFormRef.addEventListener('submit', fnHendler.onSubmitSearchForm);
 refs.paginationBox.addEventListener('click', fnHendler.onClickPaginate);
 refs.filmListRef.addEventListener('click', fnHendler.onClickFilm);
 refs.pageLibraryRef().addEventListener('click', fnHendler.onClickLibrary);
+
+
+
