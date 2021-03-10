@@ -37,6 +37,7 @@ body.is-open {
 // theme
 body.dark-theme {
     background-color: $color-bg-dark-theme;
+  
     .film__title {
         color: $text-header;
     }
@@ -71,7 +72,7 @@ body.dark-theme {
     }
     .btn__close {
         background-color: $color-bg-dark-theme;
-        fill: $color-light-background;
+        stroke: $color-light-background;
     }
     .modal__title {
         color: $color-light-background;
