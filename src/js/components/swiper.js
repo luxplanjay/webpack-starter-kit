@@ -5,7 +5,6 @@ import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 
 SwiperCore.use([Navigation, Pagination]);
 const swiper = new Swiper('.image-container', {
-  
   speed: 0,
   direction: 'vertical',
   autoHeight: false,

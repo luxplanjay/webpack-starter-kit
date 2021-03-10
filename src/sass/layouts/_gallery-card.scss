@@ -1,0 +1,56 @@
+.card {
+  height: 439px;
+  width: 274px;
+  margin-bottom: 30px;
+  margin-right: 30px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+
+  &__image {
+    border-radius: 5px;
+    height: 398px;
+    background-color: getColor(accent);
+  }
+
+  &__title {
+    color: getColor(black-text);
+    text-transform: uppercase;
+  }
+
+  &__info--container {
+    display: flex;
+  }
+
+  &__info {
+    color: getColor(accent);
+    margin-right: 5px;
+  }
+
+  &__info--votes {
+    margin-left: 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    background-color: getColor(accent);
+    color: getColor(white-text);
+  }
+}
+
+@media screen and (max-width: $to-tablet) {
+  .card__image {
+    width: 280px;
+  }
+}
+
+@media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+  .card__image {
+    width: 294px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .card__image {
+    width: 274px;
+  }
+}

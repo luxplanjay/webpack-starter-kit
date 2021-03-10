@@ -2,9 +2,11 @@
 @import './utils/breakpoints';
 @import './utils/colors';
 @import './base/common';
-@import './components/library_header';
-@import './components/footer';
-@import './components/search';
+@import './layouts/main-header';
+@import './layouts/library_header';
+@import './layouts/footer';
+@import './layouts/search';
+@import './layouts/gallery-card';
 @import './components/modal';
 @import './components/buttons';
 @import './components/swiper';
