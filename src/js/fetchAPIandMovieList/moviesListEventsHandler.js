@@ -3,31 +3,7 @@ import debounce from 'lodash.debounce';
 import renderMovies from './renderMovies.js';
 import movieListTmp from '../../template/moviesListTemplate.hbs';
 import renderPagination from '../pagination';
-const refs = {
-  movieInputRef: document.querySelector('.movie-searchTag-js'),
-  moviesContainerRef: document.querySelector('.movies-container-js'),
-};
-// export async function searchMovies(page = 1) {
-//   refs.moviesContainerRef.innerHTML = '';
-//   return fetchAPI.searchMoviesbyTag(page).then(response => {
-//     renderMovies(response.results, refs.moviesContainerRef, movieListTmp);
-//     //console.log(response);
-//     return response;
-//   });
-// }
-
-// export async function showMoviesInTrend(page = 1) {
-//   //fetchAPI.resetPageToFirst();
-
-//   refs.moviesContainerRef.innerHTML = '';
-//   return fetchAPI.getTrendingMovies(page).then(response => {
-//     renderMovies(response.results, refs.moviesContainerRef, movieListTmp);
-//     //console.log(response);
-//     return response;
-//     //renderPagination(response.total_results);
-//     //console.log(results);
-//   });
-// }
+import refs from '../refs.js';
 
 function inputHandler(event) {
   const movieName = event.target.value;

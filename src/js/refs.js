@@ -11,7 +11,8 @@ const refs = {
   watchedBtn: document.querySelector('.button-watched'),
   queueBtn: document.querySelector('.button-queque'),
   body: document.querySelector('body'),
-
+  errorContainerRef: document.querySelector('.error-container-js'),
+  movieInputRef: document.querySelector('.movie-searchTag-js'),
   // modal header
   openModalHeaderBtn: document.querySelector('[data-modal-header-open]'),
   modalHeader: document.querySelector('.js-lightbox-header'),
@@ -23,7 +24,7 @@ const refs = {
   closeModalFooterBtn: document.querySelector('.lightbox-button'),
   overlayFooter: document.querySelector('.lightbox-overlay'),
   // team
-  ourTeamRefs: document.querySelector('.footer-team-link'), 
+  ourTeamRefs: document.querySelector('.footer-team-link'),
 };
 
 export default refs;
