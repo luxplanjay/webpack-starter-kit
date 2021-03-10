@@ -1,0 +1,26 @@
+<svg width="0" height="0" class="hidden" 
+xmlns="http://www.w3.org/2000/svg">
+<defs>
+<symbol id="icon-arrow-left" viewBox="0 0 16 16">
+<path  fill="none" stroke="black" d="M8.00001 12.6667L3.33334 8.00004L8.00001 3.33337 M12.6667 8H3.33334" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="icon-arrow-right" viewBox="0 0 32 32">
+<path fill="none" stroke="black" d="M6.666 16h18.668M16 25.334L25.334 16 16 6.666" stroke-width="2.666" stroke-linecap="round" stroke-linejoin="round" />
+</symbol>
+<symbol id="icon-close" viewBox="0 0 32 32">
+<path fill="none" stroke="black" stroke-width="2.133" d="M8.533 8.533l14.933 14.933m-14.933.001L23.466 8.534"/>
+</symbol>
+<symbol id="icon-favorite" viewBox="0 0 32 32">
+<path fill="var(--color1, #ff6b08)" d="M16 30.583l-2.24-2.24C5.44 20.983 0 16.023 0 9.943c0-4.96 3.84-8.8 8.8-8.8 2.72 0 5.44 1.28 7.2 3.36 1.76-2.08 4.48-3.36 7.2-3.36 4.96 0 8.8 3.84 8.8 8.8 0 6.08-5.44 11.04-13.76 18.4L16 30.583z"/>
+</symbol>
+<symbol id="icon-film" viewBox="0 0 32 32">
+<path fill="none" stroke="var(--color2, #818181)" stroke-width="2.667" stroke-linecap="round" stroke-linejoin="round" d="M26.427 2.667H5.574a2.907 2.907 0 00-2.907 2.907v20.853a2.907 2.907 0 002.907 2.907v0h20.853a2.907 2.907 0 002.907-2.907v0V5.574a2.907 2.907 0 00-2.907-2.907v0zm-17.094 0v26.667M22.667 2.667v26.667M2.667 16h26.667M2.667 9.333h6.667M2.667 22.667h6.667m13.333 0h6.667M22.667 9.333h6.667"/>
+</symbol>
+<symbol id="icon-search" viewBox="0 0 32 32">
+<path fill="none" stroke="var(--color3, #fff)" stroke-width="2.667" stroke-linecap="round" stroke-linejoin="round" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667S20.558 3.999 14.667 3.999v0C8.776 3.999 4 8.775 4 14.666s4.776 10.667 10.667 10.667v0zM28 28l-5.8-5.8"/>
+</symbol>
+<symbol id="icon-heart" viewBox="0 0 32 32">
+<path fill="var(--color1, #ff6b08)" d="M16 30.144l-2.24-2.218C5.44 20.639 0 15.728 0 9.708 0 4.797 3.84.995 8.8.995c2.72 0 5.44 1.267 7.2 3.327C17.76 2.263 20.48.995 23.2.995c4.96 0 8.8 3.802 8.8 8.713 0 6.02-5.44 10.931-13.76 18.218L16 30.144z"/>
+</symbol>
+</defs>
+</svg>

@@ -34,11 +34,11 @@
     a {
       @include CenteredFlex(flex, nowrap, center);
       height: 100%;
-      width: 40px; // По макету должно быть 40, посмотри пожалуйста!
+      width: 100%; // По макету должно быть 40, посмотри пожалуйста!
       text-decoration: none;
       color: inherit;
       &:hover {
-        // width: 30px;
+        width: 100%;
         color: white;
         background-color: #ff6b08;
         border-radius: 5px;
@@ -47,6 +47,7 @@
   }
   &-page {
     height: 100%;
+    width: 32px;
     color: black;
     &.active {
       @include CenteredFlex(flex, nowrap, center);
@@ -58,28 +59,54 @@
   }
   &-next {
     @include CenteredFlex(flex, nowrap, center);
+    background: url('./../img/arrow-right-dark.svg') no-repeat center;
     height: 100%;
     width: 40px;
-    &:hover {
-      width: 40px;
-      color: white;
-      background-color: #ff6b08;
-      border-radius: 5px;
+    a {
+      background: url('./../img/arrow-right-dark.svg') no-repeat center;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        width: inherit;
+        background: #ff6b08 url('./../img/arrow-right-light.svg') no-repeat
+          center;
+        border-radius: 5px;
+      }
     }
   }
   &-prev {
     @include CenteredFlex(flex, nowrap, center);
     height: 100%;
     width: 40px;
-    &:hover {
-      width: 40px;
-      color: white;
-      background-color: #ff6b08;
-      border-radius: 5px;
+    a {
+      background: url('./../img/arrow-left-dark.svg') no-repeat center;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        width: inherit;
+        background: #ff6b08 url('./../img/arrow-left-light.svg') no-repeat
+          center;
+        border-radius: 5px;
+      }
     }
   }
   &-ellipsis {
     @include CenteredFlex(flex, nowrap, center);
     height: 100%;
+    width: 32px;
+    color: black;
+    a {
+      @include CenteredFlex(flex, nowrap, center);
+      height: 100%;
+      width: 100%; // По макету должно быть 40, посмотри пожалуйста!
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        width: 100%;
+        color: white;
+        background-color: #ff6b08;
+        border-radius: 5px;
+      }
+    }
   }
 }

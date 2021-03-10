@@ -9,7 +9,7 @@ import libraryCardTemplate from '../../templates/library__card.hbs';
 export const paginationParametersCommon = {
   locator: 'results',
   totalNumberLocator: 2,
-  pageSize: 2,
+  pageSize: 4,
   pageRange: 2,
   formatResult: function (data) {
     // console.log(data);
@@ -34,7 +34,9 @@ export const paginationParametersCommon = {
     });
   },
   showPrevious: true, // показать стрелочку "предыдущее"
+  prevText: '',
   showNext: true, //показать стрелочку "следующее"
+  nextText: '',
   autoHidePrevious: false, // авто спрятать кнопку "предыдущее"
   autoHideNext: false, // авто спрятать кнопку "следующее"
   beforePaging: function (arg) {

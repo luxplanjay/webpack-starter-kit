@@ -29,11 +29,13 @@ function openLibrary(event) {
   //слушатель кнопки очередь
 
   refs.buttonQueue.addEventListener('click', event => {
-    // console.log(event);
-    // const queueFilms = JSON.parse(localStorage.getItem('filmsQueue'));
+//     console.log(event);
+//     console.log(cardsPerPage());
     container.pagination({
       ...paginationParametersCommon,
-      dataSource: JSON.parse(localStorage.getItem('filmsQueue')),
+      dataSource: JSON.parse(localStorage.getItem('filmsQueue')), //queueFilms,
+      pageSize: cardsPerPage(),
+  
     });
   });
   /*
@@ -46,7 +48,8 @@ function openLibrary(event) {
     container.pagination({
       ...paginationParametersCommon,
       // ToDo: change "queueFilms" to "watchedFilms"
-      dataSource: JSON.parse(localStorage.getItem('filmsWatched')),
+      dataSource: JSON.parse(localStorage.getItem('filmsWatched')), //watchedFilms,
+      pageSize: cardsPerPage(),
     });
   });
 
@@ -55,13 +58,23 @@ function openLibrary(event) {
 
   container.pagination({
     ...paginationParametersCommon,
-    dataSource: JSON.parse(localStorage.getItem('filmsWatched')),
+    dataSource: JSON.parse(localStorage.getItem('filmsWatched')), //queueFilms,
+    pageSize: cardsPerPage(),
+
   });
 
   refs.myLibraryGallery.classList.remove('is-hidden');
   refs.errorWarning.classList.add('is-hidden');
   refs.underscoreOnMyLibrary.classList.remove('is-hidden');
   refs.underscoreOnHome.classList.add('is-hidden');
+}
+function cardsPerPage() {
+  const currentWidthMode = window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue('--currentWidthMode');
+  console.log(currentWidthMode);
+  return currentWidthMode;
+
 
   // function pageSizeCalc(innerWidth) {
   //   if (innerWidth < 768) {
