@@ -19,7 +19,7 @@ export const paginationParametersCommon = {
       } else {
         obj.release_date = 'unknown';
       }
-      obj.poster_path = 'https://image.tmdb.org/t/p/original' + obj.poster_path;
+      obj.poster_path = 'https://image.tmdb.org/t/p/w342' + obj.poster_path;
 
       obj.genres = obj.genres
         .map(obj => obj.name)
