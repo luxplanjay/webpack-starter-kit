@@ -17,6 +17,10 @@ const refs = {
     title: document.querySelector('[data-attribute="title"]'),
     genre: document.querySelector('[data-attribute="genre"]'),
     descr: document.querySelector('.description-text'),
+    votesTitle: document.querySelector('[data-attribute="votesTitle"]'),
+    popularityTitle: document.querySelector('[data-attribute="popularityTitle"]'),
+    originalTitle: document.querySelector('[data-attribute="originalTitle"]'),
+    genresTitle: document.querySelector('[data-attribute="genresTitle"]'),
 
     addToWatchedBtn: document.querySelector('.modal__btn--watched'),
     addToQueueBtn: document.querySelector('.modal__btn--queue'),
