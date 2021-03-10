@@ -6,36 +6,48 @@ import onButtonAddToQueue from './onButtonAddToQueue';
 import onButtonAddToWatched from './onButtonAddToWatched';
 import refs from './refs.js';
 import onButtonRemoveFromWatched from './onButtonRemoveFromWatched';
-import checkButtonWatchedActive from './buttonCheckActive';
+import checkButtonWatchedActive from './buttonWatchedCheckActive';
+import checkButtonQueueActive from './buttonQueueCheckActive';
 
-
-function  getFilmInfo(movie_id) {
+function getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
     // console.log(film);
     const markupFilm = modalTpl(film);
     const modal = basicLightbox.create(markupFilm);
     modal.show();
-    // ================
-
+    // ===============================================
+    // Проверка есть ли фильм в Watched
     const currentFilmsWatched = localStorage.getItem('filmsWatched');
-    if (currentFilmsWatched){
+    if (currentFilmsWatched) {
       let filmsArray = JSON.parse(currentFilmsWatched);
       if (filmsArray.find(({ id }) => id === film.id)) {
         const buttonAddToWatchedRef = document.querySelector(
-          '.modal__watched-button');
+          '.modal__watched-button',
+        );
         buttonAddToWatchedRef.classList.add('active');
         buttonAddToWatchedRef.textContent = 'WATCHED';
-            
       }
     }
-     // ================
+    // Проверка есть ли фильм в Queue
+    const currentFilmsQueue = localStorage.getItem('filmsQueue');
+    if (currentFilmsQueue) {
+      let filmsQueue = JSON.parse(currentFilmsQueue);
+      if (filmsQueue.find(({ id }) => id === film.id)) {
+        const buttonAddToQueueRef = document.querySelector(
+          '.modal__queue-button',
+        );
+        buttonAddToQueueRef.classList.add('active');
+        buttonAddToQueueRef.textContent = 'QUEUE';
+      }
+    }
+    // ==================================================
 
     //   добавление onbuttonAddToQueue
     const buttonAddToQueueRef = document.querySelector('.modal__queue-button');
     buttonAddToQueueRef.addEventListener(
       'click',
       function () {
-        onButtonAddToQueue(film);
+        checkButtonQueueActive(film);
       },
       false,
     );
@@ -65,12 +77,12 @@ function  getFilmInfo(movie_id) {
         //   снимаю слушатель с кнопки
         buttonAddToQueueRef.removeEventListener(
           'click',
-          onButtonAddToQueue(film),
+          checkButtonQueueActive(film),
         );
 
         buttonAddToWatchedRef.removeEventListener(
           'click',
-          onButtonAddToWatched(film),
+          checkButtonWatchedActive(film),
         );
       }
     }
@@ -82,18 +94,18 @@ function  getFilmInfo(movie_id) {
       //   снимаю слушатель с кнопки
       buttonAddToQueueRef.removeEventListener(
         'click',
-        onButtonAddToQueue(film),
+        checkButtonQueueActive(film),
       );
       buttonAddToWatchedRef.removeEventListener(
         'click',
-        onButtonAddToWatched(film),
+        checkButtonWatchedActive(film),
       );
     }
   });
 }
 
 const lightBox = () => {
-refs.libraryList.addEventListener('click', openModal);
+  refs.libraryList.addEventListener('click', openModal);
   refs.movieGrid.addEventListener('click', openModal);
   function openModal(event) {
     event.preventDefault();
