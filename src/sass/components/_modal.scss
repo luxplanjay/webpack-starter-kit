@@ -217,8 +217,9 @@
 
   &__watched-button:hover,
   // &__watched-button:focus,
-  &__queue-button:hover,
-  &__queue-button:focus {
+  &__queue-button:hover
+  // &__queue-button:focus
+   {
     background: $color-bcg-btn;
     color: $color-white;
     border: none;
