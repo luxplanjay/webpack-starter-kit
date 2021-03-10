@@ -73,3 +73,19 @@ function cardsPerPage() {
   console.log(currentWidthMode);
   return currentWidthMode;
 }
+
+//Добавляем слушателя на кнопку Home
+
+refs.navHome.addEventListener('click', openHome);
+function openHome(event) {
+  event.preventDefault(event);
+  refs.searchForm.classList.remove('is-hidden');
+  refs.homeGallery.classList.remove('is-hidden');
+  refs.buttons.classList.add('is-hidden');
+  refs.myLibraryGallery.classList.add('is-hidden');
+  refs.underscoreOnMyLibrary.classList.add('is-hidden');
+  refs.underscoreOnHome.classList.remove('is-hidden');
+ 
+  // refs.myHomeGallery.classList.remove('is-hidden');
+  //refs.errorWarning.classList.add('is-hidden');
+}

@@ -2,6 +2,9 @@ import apiSearch from './apiSearchFetch';
 import gridTemplate from '../templates/movie-grid.hbs';
 import refs from './refs.js';
 import getCardData from './cardDataHandler.js';
+import './components/pnotifyInclude.js';
+import { notice, error, } from '@pnotify/core/dist/PNotify.js';
+
 export default {
   dataSource: '', // стек данных для пагинации, может быть функция возвращающая массив объектов, куча возможностей
 
@@ -19,15 +22,13 @@ export default {
   // общее количество страниц, почеммуто ломает pageSize
   // totalNumber: 7,
   totalNumberLocator: function (response) {
-    if (response.total_pages === 0) {
-      refs.errorWarning.classList.remove('is-hidden');
-      return;
-    } else {
-      refs.errorWarning.classList.add('is-hidden');
-    }
-    // you can return totalNumber by analyzing response content
-    return response.total_pages;
-  },
+    if (response.total_pages === 0){
+      error({
+      text: "Search result not successful. Enter the correct movie name and try again!"   
+  });
+}    
+return response.total_pages;
+},
   pageSize: 1, //pageSizeCalc(window.innerWidth), // количество объектов-элементов на страницу
   pageRange: 2,
   //форматирование результатов данных из джсона
