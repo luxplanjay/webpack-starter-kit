@@ -9,9 +9,17 @@ function onButtonAddToWatched(selectedFilm) {
 
     let filmsArray = JSON.parse(currentFilmsWatched);
 
+    // =================
+    const buttonAddToWatchedRef = document.querySelector(
+      '.modal__watched-button');
+    buttonAddToWatchedRef.classList.add('active');
+    buttonAddToWatchedRef.textContent = 'WATCHED';
+     // =================
+
     if (!filmsArray.find(({ id }) => id === selectedFilm.id)) {
       filmsArray.push(selectedFilm);
       localStorage.setItem('filmsWatched', JSON.stringify(filmsArray));
+   
     }
   } else {
     // console.log('массива с сохранёнными фильмами пока нет, создаём');

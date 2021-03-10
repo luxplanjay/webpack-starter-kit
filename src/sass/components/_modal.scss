@@ -216,7 +216,7 @@
   }
 
   &__watched-button:hover,
-  &__watched-button:focus,
+  // &__watched-button:focus,
   &__queue-button:hover,
   &__queue-button:focus {
     background: $color-bcg-btn;
@@ -224,6 +224,14 @@
     border: none;
   }
 }
+
+// =======
+.active {
+  background-color:$color-orange;
+  border-color:transparent;
+  color: $color-white;
+ }
+// =======
 
 .icon-close {
   width: 30px;

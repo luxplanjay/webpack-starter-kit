@@ -5,6 +5,9 @@ import modalTpl from '../templates/modal.hbs';
 import onButtonAddToQueue from './onButtonAddToQueue';
 import onButtonAddToWatched from './onButtonAddToWatched';
 import refs from './refs.js';
+import onButtonRemoveFromWatched from './onButtonRemoveFromWatched';
+import checkButtonWatchedActive from './buttonCheckActive';
+
 
 function  getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
@@ -12,6 +15,20 @@ function  getFilmInfo(movie_id) {
     const markupFilm = modalTpl(film);
     const modal = basicLightbox.create(markupFilm);
     modal.show();
+    // ================
+
+    const currentFilmsWatched = localStorage.getItem('filmsWatched');
+    if (currentFilmsWatched){
+      let filmsArray = JSON.parse(currentFilmsWatched);
+      if (filmsArray.find(({ id }) => id === film.id)) {
+        const buttonAddToWatchedRef = document.querySelector(
+          '.modal__watched-button');
+        buttonAddToWatchedRef.classList.add('active');
+        buttonAddToWatchedRef.textContent = 'WATCHED';
+            
+      }
+    }
+     // ================
 
     //   добавление onbuttonAddToQueue
     const buttonAddToQueueRef = document.querySelector('.modal__queue-button');
@@ -35,7 +52,7 @@ function  getFilmInfo(movie_id) {
     buttonAddToWatchedRef.addEventListener(
       'click',
       function () {
-        onButtonAddToWatched(film);
+        checkButtonWatchedActive(film);
       },
       false,
     );
