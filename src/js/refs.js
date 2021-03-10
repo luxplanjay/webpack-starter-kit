@@ -6,6 +6,7 @@ const refs = {
   myLibraryGallery: document.querySelector('.library__container'),
   myLibraryCard: document.querySelector('#lib-card'),
   libraryList: document.querySelector('#my-library'),
+  libraryPaginationContainer: document.querySelector('#library__page-selector'),
   homeGallery: document.querySelector('.movie-cards'),
   buttonWatched: document.querySelector('#watched'),
   buttonQueue: document.querySelector('#queue'),
@@ -13,6 +14,8 @@ const refs = {
   errorWarning: document.querySelector('.form__warning'),
   underscoreOnMyLibrary: document.querySelector('.lib'),
   underscoreOnHome: document.querySelector('.underscore'),
+  navHome: document.querySelector('#home'),
+  headerHomeOrMyLibrary: document.querySelector('.home'),
 };
 
 export default refs;

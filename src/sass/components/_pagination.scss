@@ -1,0 +1,112 @@
+@import '../utils/mixins';
+
+@import '../utils/variables';
+
+.paginationjs {
+  height: 40px;
+  width: 280px;
+  margin: 0px auto;
+  padding: 0px;
+  @include for-size(tablet) {
+    width: 375px;
+  }
+  @include for-size(desktop) {
+    width: 375px;
+  }
+  // outline: 2px dashed red;
+}
+.paginationjs {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  &-pages {
+    width: 100%;
+    height: 100%;
+    // outline: 2px dashed red;
+    ul {
+      list-style: none;
+      width: 100%;
+      height: 100%;
+      @include CenteredFlex(flex, nowrap, center, space-between);
+    }
+    a {
+      @include CenteredFlex(flex, nowrap, center);
+      height: 100%;
+      width: 100%; // По макету должно быть 40, посмотри пожалуйста!
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        width: 100%;
+        color: white;
+        background-color: #ff6b08;
+        border-radius: 5px;
+      }
+    }
+  }
+  &-page {
+    height: 100%;
+    width: 32px;
+    color: black;
+    &.active {
+      @include CenteredFlex(flex, nowrap, center);
+      width: 40px;
+      color: white;
+      background-color: #ff6b08;
+      border-radius: 5px;
+    }
+  }
+  &-next {
+    @include CenteredFlex(flex, nowrap, center);
+    background: url('./../img/arrow-right-dark.svg') no-repeat center;
+    height: 100%;
+    width: 40px;
+    a {
+      background: url('./../img/arrow-right-dark.svg') no-repeat center;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        width: inherit;
+        background: #ff6b08 url('./../img/arrow-right-light.svg') no-repeat
+          center;
+        border-radius: 5px;
+      }
+    }
+  }
+  &-prev {
+    @include CenteredFlex(flex, nowrap, center);
+    height: 100%;
+    width: 40px;
+    a {
+      background: url('./../img/arrow-left-dark.svg') no-repeat center;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        width: inherit;
+        background: #ff6b08 url('./../img/arrow-left-light.svg') no-repeat
+          center;
+        border-radius: 5px;
+      }
+    }
+  }
+  &-ellipsis {
+    @include CenteredFlex(flex, nowrap, center);
+    height: 100%;
+    width: 32px;
+    color: black;
+    a {
+      @include CenteredFlex(flex, nowrap, center);
+      height: 100%;
+      width: 100%; // По макету должно быть 40, посмотри пожалуйста!
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        width: 100%;
+        color: white;
+        background-color: #ff6b08;
+        border-radius: 5px;
+      }
+    }
+  }
+}

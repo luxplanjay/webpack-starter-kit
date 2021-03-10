@@ -1,5 +1,5 @@
 function onButtonAddToQueue(selectedFilm) {
-  let filmsArray = [];
+  let filmsQueue = [];
   const currentFilmsQueue = localStorage.getItem('filmsQueue');
 
   if (currentFilmsQueue) {
@@ -7,17 +7,21 @@ function onButtonAddToQueue(selectedFilm) {
     //   'уже есть массив с сохранёнными фильмами, добавляем объект с новым фильмом',
     // );
 
-    filmsArray = JSON.parse(currentFilmsQueue);
+    filmsQueue = JSON.parse(currentFilmsQueue);
 
-    if (!filmsArray.find(({ id }) => id === selectedFilm.id)) {
-      filmsArray.push(selectedFilm);
-      localStorage.setItem('filmsQueue', JSON.stringify(filmsArray));
+     const buttonAddToQueueRef = document.querySelector('.modal__queue-button');
+     buttonAddToQueueRef.classList.add('active');
+     buttonAddToQueueRef.textContent = 'QUEUE';
+
+    if (!filmsQueue.find(({ id }) => id === selectedFilm.id)) {
+      filmsQueue.push(selectedFilm);
+      localStorage.setItem('filmsQueue', JSON.stringify(filmsQueue));
     }
   } else {
     // console.log('массива с сохранёнными фильмами пока нет, создаём');
 
-    filmsArray.push(selectedFilm);
-    localStorage.setItem('filmsQueue', JSON.stringify(filmsArray));
+    filmsQueue.push(selectedFilm);
+    localStorage.setItem('filmsQueue', JSON.stringify(filmsQueue));
   }
 }
 

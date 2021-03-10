@@ -1,5 +1,9 @@
 import apiSearch from './apiSearchFetch';
 import gridTemplate from '../templates/movie-grid.hbs';
+import refs from './refs.js';
+import getCardData from './cardDataHandler.js';
+import './components/pnotifyInclude.js';
+import { notice, error, } from '@pnotify/core/dist/PNotify.js';
 
 export default {
   dataSource: '', // стек данных для пагинации, может быть функция возвращающая массив объектов, куча возможностей
@@ -10,7 +14,6 @@ export default {
   //     url: `https://api.themoviedb.org/3/search/movie?query=${apiService.query}&page=${apiService.page}`,
   //     success: function (response) {
   //       done(response.results);
-  //       // console.log(response);
   //     },
   //   });
   // },
@@ -19,24 +22,18 @@ export default {
   // общее количество страниц, почеммуто ломает pageSize
   // totalNumber: 7,
   totalNumberLocator: function (response) {
-    // you can return totalNumber by analyzing response content
-    console.log(response.total_pages);
-
-    return response.total_pages;
-  },
+    if (response.total_pages === 0){
+      error({
+      text: "Search result not successful. Enter the correct movie name and try again!"   
+  });
+}    
+return response.total_pages;
+},
   pageSize: 1, //pageSizeCalc(window.innerWidth), // количество объектов-элементов на страницу
-  pageRange: 1,
+  pageRange: 2,
   //форматирование результатов данных из джсона
   formatResult: function (data) {
-    for (var i = 0, len = data.length; i < len; i++) {
-      if (data[i].release_date) {
-        data[i].release_date = data[i].release_date.slice(0, 4);
-      } else data[i].release_date = 'unknown';
-      // console.log(data[i].poster_path);
-      data[i].poster_path =
-        'https://image.tmdb.org/t/p/original' + data[i].poster_path;
-    }
-    // console.log(this.pageSize);
+    getCardData(data);
   },
   // то что отображается прежде чем вернется ответ от сервера - спинер совать сюда
   //   ajax: {
@@ -49,14 +46,15 @@ export default {
   //       $('#js-grid').html(spinner());
   //     },
   //   },
-  showPrevious: true, // показать стрелочку предыдущее
-  showNext: true, //показать стрелочку следующее
-  autoHidePrevious: true, // авто спрятать кнопку предыдущее
-  autoHideNext: false, //авто спрятать кнопку следующее
+  showPrevious: true, // показать стрелочку "предыдущее"
+  prevText: '',
+  showNext: true, //показать стрелочку "следующее"
+  nextText: '',
+  autoHidePrevious: false, // авто спрятать кнопку "предыдущее"
+  autoHideNext: false, // авто спрятать кнопку "следующее"
   // showGoInput: true, //показать Гоинпут для ввода страницы
   // showGoButton: true, // показать кнопку Го для перехода к введенной в инпуте странице
   beforePaging: function (arg) {
-    console.log(arg);
     // apiService.page = arg;
   },
   // beforeNextOnClick: function () {
