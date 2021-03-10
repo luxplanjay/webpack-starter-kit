@@ -8,7 +8,7 @@
   color: $text-header;
 }
 
-.header-container {
+.header-container--home {
   // width: 100%;
   padding: 46px 20px 97px;
 
@@ -80,10 +80,11 @@
       }
     }
   }
-
   // library
+}
 
-  &--library {
+
+.header-container--library {
     padding: 46px 20px 65px;
 
     background-position: center;
@@ -155,7 +156,10 @@
       }
     }
   }
-}
+
+
+
+
 
 .header-nav-container {
   display: flex;
