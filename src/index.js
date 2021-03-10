@@ -36,7 +36,11 @@ fnFetch.fetchData();
 searchFormRef.addEventListener('submit', fnHendler.onSubmitSearchForm);
 refs.paginationBox.addEventListener('click', fnHendler.onClickPaginate);
 refs.filmListRef.addEventListener('click', fnHendler.onClickFilm);
-refs.pageLibraryRef().addEventListener('click', fnHendler.onClickLibrary);
+refs.libraryHeaderBtn.addEventListener('click', fnHendler.onClickLibrary);
+refs.watchedBtn.addEventListener('click', fnHendler.onClickWatched);
+refs.queueBtn.addEventListener('click', fnHendler.onClickQueue);
+refs.logoNav.addEventListener('click', fnHendler.onClickLogoHome);
+refs.homeHeaderBtn.addEventListener('click', fnHendler.onClickLogoHome);
 
 
 

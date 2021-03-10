@@ -55,4 +55,17 @@ export default {
     save('currentRequest', QUEUE);
     fnFetch.fetchDataLibrary(1, load('queue'));
   },
+  onClickWatched() {
+    save('currentRequest', WATCHED);
+    fnFetch.fetchDataLibrary(1, load('watched'));
+  },
+
+  onClickQueue() {
+    save('currentRequest', QUEUE);
+    fnFetch.fetchDataLibrary(1, load('queue'));
+  },
+  onClickLogoHome() {
+    save('currentRequest', HOME);
+    fnFetch.fetchData();
+  },
 };
