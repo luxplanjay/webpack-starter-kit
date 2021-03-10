@@ -26,7 +26,7 @@ export default {
   fetchGenres() {
     //Функция забирает с сервера массив с именами и ид жанров
     const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${myKey}&language=${this.language}`;
-    const f = fetch(url)
+    const fetchedGenres = fetch(url)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -34,13 +34,12 @@ export default {
       })
       .then(response => response.genres)
       .catch(this.errorHandler);
-    f.then(res => {
+    fetchedGenres.then(res => {
       this.genresArray = res.slice();
     });
   },
   getMoviesWithGenreNames(response) {
     //Функция заменяет для фильма ид жанров на их имена
-
     response.results.map(movie => {
       if (movie.genre_ids.length === 0) {
         movie.genre_ids.push('Genre');
@@ -73,7 +72,6 @@ export default {
   searchMoviesbyTag(page = 1) {
     //Поиск фильма по тому что ввели в инпут
     this.moviesSearchActive = true;
-
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${myKey}&language=${this.language}&query=${this.searchTag}&page=${page}&per_page=${this.itemsPerPage}&include_adult=${this.adult}`;
     this.fetchGenres();
     return fetch(url)
