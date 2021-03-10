@@ -2,14 +2,11 @@
   display: none;
   position: fixed;
   text-align: center;
-  bottom: 100px;
-  right: 50px;
-  width: 40px;
-  height: 40px;
+  bottom: 145px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
   opacity: 0.5;
-  z-index: 9999;
-  background: $text-accent;
-  border-radius: 5px;
   cursor: pointer;
   &:hover {
     opacity: 1;
@@ -18,11 +15,4 @@
 }
 .back_to_top-show {
   display: block;
-}
-.btn-up {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-top: 10px;
-      // background: url('../images/arrow-theme.svg') no-repeat center center;
 }

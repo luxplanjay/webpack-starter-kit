@@ -2,17 +2,25 @@ import paginationList from '../templates/pagination.hbs';
 import apiService from './apiService.js';
 import refs from './refs';
 let numberOfPagesPagination;
-let totalPages;
+
 const FETCH = 20;
 const screenWidth = 580;
+const limit = 20;
+let totalPages;
 
 function createArrayPaginationMobile(numberOfPages, activePage, totalPages) {
   let arrayOfPages;
   const centerOfPages = Math.ceil(numberOfPages / 2);
+
   if (numberOfPages >= totalPages || activePage <= centerOfPages) {
     arrayOfPages = Array.from({ length: numberOfPages }, (v, k) => {
       return k + 1;
     });
+  } else if (activePage >= limit - 2) {
+    arrayOfPages = Array.from(
+      { length: numberOfPages },
+      (v, k) => limit - numberOfPages + k + 1,
+    );
   } else {
     arrayOfPages = Array.from(
       { length: numberOfPages },
@@ -47,6 +55,15 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
         return activePage - numberOfPages + 3 + k;
       }),
     ];
+  } else if (activePage >= totalPages - 4) {
+    arrayOfPages = [
+      1,
+      '...',
+      ...Array.from({ length: 7 }, (v, k) => {
+        return limit - numberOfPages + 3 + k;
+      }),
+    ];
+    console.log(arrayOfPages);
   } else {
     arrayOfPages = [
       1,
@@ -66,19 +83,23 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
 
 export default {
   addPaginationList(totalHits, activePage) {
+    if (!totalHits || totalHits <= apiService.perPage) {
+      refs.paginationBox.classList.add('is-hidden');
+      return;
+    }
+
     totalPages =
-      totalHits / apiService.perPage <= 20
+      totalHits / apiService.perPage <= limit
         ? Math.ceil(totalHits / apiService.perPage)
-        : 20;
+        : limit;
 
     if (!totalHits) return;
     let arrayPagination;
-    // debugger;
 
     if (totalPages <= 5) {
       numberOfPagesPagination = totalPages;
     } else {
-      if (document.body.clientWidth < 768) {
+      if (document.body.clientWidth < screenWidth) {
         numberOfPagesPagination = 5;
       } else {
         numberOfPagesPagination = 9;
@@ -107,12 +128,14 @@ export default {
   },
 
   getActivePageForFetch(eventTarget) {
+    console.log(totalPages);
     let activePage = +refs.paginationBox.querySelector('.active').textContent;
 
     if (eventTarget.classList.contains('prev')) {
       return activePage > 1 ? activePage - 1 : 1;
     }
     if (eventTarget.classList.contains('next')) {
+      console.log(activePage, totalPages);
       return activePage < totalPages ? activePage + 1 : totalPages;
     }
     return +eventTarget.textContent;
