@@ -1,13 +1,19 @@
 import filmCard from '../templates/film-card.hbs';
-import apiService from './apiService';
 import refs from './refs';
-// import keyWords from './keyWords';
+import showErrorNote from './error-notification';
+import messageLibrary from './key-words';
 
 const pathForImg = 'https://image.tmdb.org/t/p/w342/';
 const imgDefault = './images/default-opt.jpg';
 
 export default {
   additemList(listFilms, detalsFilms) {
+    if (!listFilms || !listFilms.length) {
+      showErrorNote(refs.errorNoteRef);
+      refs.filmListRef.innerHTML = '';
+      refs.paginationList.innerHTML = '';
+      return;
+    }
     const resultForMarkup = listFilms.map(elem => {
       const genresFilm = detalsFilms.find(item => item.id === elem.id).genres;
 
@@ -26,13 +32,13 @@ export default {
 
     refs.filmListRef.innerHTML = '';
     refs.filmListRef.insertAdjacentHTML('beforeend', filmCard(resultForMarkup));
-    console.log(refs.filmListRef);
   },
 
   addLibraryList(listFilms) {
     if (!listFilms || !listFilms.length) {
       refs.filmListRef.innerHTML = '';
       refs.paginationList.innerHTML = '';
+      messageLibrary();
       return;
     }
     const resultForMarkup = listFilms.map(elem => {

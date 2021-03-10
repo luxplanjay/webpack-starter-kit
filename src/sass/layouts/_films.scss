@@ -12,10 +12,7 @@
     display: grid;
     padding: 60px auto;
     justify-content: center;
-  // @include for-size(tablet) {
-  //   grid-gap: 30px;
-  //   grid-template-columns: repeat(2, 1fr);
-  // }
+
   @media (min-width: 768px) {
     grid-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
@@ -27,4 +24,16 @@
     grid-template-columns: repeat(3, 1fr);
     min-width: 882px;
   }
+}
+
+.films__message {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  color: $text-accent;
+}
+
+.films__message.is-hidden {
+  display: none;
 }

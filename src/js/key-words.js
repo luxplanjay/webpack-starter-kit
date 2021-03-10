@@ -1,11 +1,7 @@
 import refs from './refs';
-
-export default {
-  keyWords(listFilms) {
-    if (listFilms.length === 0) {
-      refs.errorNoteRef.textContent = `Sorry, there no results found. Try searching for something else!`;
-      refs.searchFormRef.textContent = '';
-      return;
-    }
-  },
-};
+import { load } from './storage';
+export default function messageAboutLibrary() {
+  const nameLibrary = load('currentRequest');
+  refs.messageLibRef.classList.remove('is-hidden');
+  refs.messageLibRef.textContent = `Oops! Your "${nameLibrary}" library is empty!`;
+}
