@@ -1,51 +1,80 @@
-{{!-- <div data-id={{id}}> --}}
-    <div>
-        <div>
-            {{#if poster_path}}
-            <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}"
-                data-source="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" alt="{{title}}" />
-            {{else}}
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg" alt="{{title}}" />
-            {{/if}}
-        </div>
+<div class="modal">
+    <div class="modal__img-container">
+        {{#if poster_path}}
+        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}"
+            data-source="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" alt="{{title}}"
+            class="modal__img-container--image" />
+        {{else}}
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg" alt="{{title}}"
+            class="modal__img-container--image" />
+        {{/if}}
+    </div>
 
-        <div>
-            <h2>{{title}}</h2>
-            <ul>
-                <li>
-                    <p>Vote / Votes</p>
-                    <p>
-                        <span>{{vote_average}}</span> / <span>{{vote_count}}</span>
-                    </p>
+    <div class="modal-info">
+        <h2 class="modal-info__movie-title">{{title}}</h2>
+        {{!-- <ul class="modal-info__list">
+            <li class="modal-info__item">
+                <p class="modal-info__item-title">Vote / Votes</p>
+                <p class="modal-info__item-text">
+                    <span class="modal-info__item-text--orange-bgr">{{vote_average}}</span> <span
+                        class="modal-info__item-title">/</span>
+                    <span>{{vote_count}}</span>
+                </p>
+            </li>
+            <li class="modal-info__item">
+                <p class="modal-info__item-title">Popularity</p>
+                <p class="modal-info__item-text">{{popularity}}</p>
+            </li>
+            <li class="modal-info__item">
+                <p class="modal-info__item-title">Original title</p>
+                <p class="modal-info__item-text">{{original_title}}</p>
+            </li>
+            <li class="modal-info__item">
+                <p class="modal-info__item-title">Genre</p>
+                <p class="modal-info__item-text">
+                    {{#each this.genres}}
+                    <span>{{this.name}}</span>
+                    {{/each}}
+                </p>
+            </li>
+        </ul> --}}
+        <div class="modal-info__lists">
+            <ul class="modal-info__list">
+                <li class="modal-info__item-title">Vote / Votes</li>
+                <li class="modal-info__item-title">Popularity</li>
+                <li class="modal-info__item-title">Original title</li>
+                <li class="modal-info__item-title">Genre</li>
+            </ul>
+            <ul class="modal-info__list">
+                <li class="modal-info__item-text"><span
+                        class="modal-info__item-text--orange-bgr">{{vote_average}}</span>
+                    <span class="modal-info__item-title">/</span>
+                    <span>{{vote_count}}</span>
                 </li>
-                <li>
-                    <p>Popularity</p>
-                    <p>{{popularity}}</p>
-                </li>
-                <li>
-                    <p>Original title</p>
-                    <p>{{orifinal_title}}</p>
-                </li>
-                <li>
-                    <p>Genre</p>
-                    <p>
-                        {{#each genre_ids}}
-                        <span>{{genre_ids.name}}</span>
-                        {{/each}}
-                    </p>
+                <li class="modal-info__item-text">{{popularity}}</li>
+                <li class="modal-info__item-text">{{original_title}}</li>
+                <li class="modal-info__item-text modal-info__item-text--genres">{{#each this.genres}}
+                    <span>{{this.name}}</span>
+                    {{/each}}
                 </li>
             </ul>
-            <h3>About</h3>
-            <p>
+        </div>
+        <div class="modal-info__about">
+            <h3 class="modal-info__about-title">About</h3>
+            <p class="modal-info__about-overview">
                 {{overview}}
             </p>
-            <div>
-                <button type='button'>add to watched</button>
-                <button type='button'>add to queue</button>
-            </div>
         </div>
 
-        <button type="button" class="closeModalBtn">X close</button>
+        <div class="modal-info__buttons">
+            <button type='button' class="modal-info__btn">add to watched</button>
+            <button type='button' class="modal-info__btn">add to queue</button>
+        </div>
     </div>
-    {{!--
-</div> --}}
+
+    <button type="button" class="closeModalBtn">
+        <svg class="modal__icon-close">
+            <use href="./images/symbol-defs.svg#close-modal"></use>
+        </svg>
+    </button>
+</div>

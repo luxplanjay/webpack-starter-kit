@@ -2,7 +2,7 @@ import axios from 'axios';
 import updateMarkupGallery from './updateMarkup';
 import modalTpl from '../templates/modal.hbs';
 import debounce from 'lodash.debounce';
-import renderOnSearch from './renderOnSearch'
+import renderOnSearch from './renderOnSearch';
 
 // данные для запроса
 const token = '6b8ef447c2ce3d010bfcc7f710d71588';
@@ -38,13 +38,13 @@ const inputSearch = document.querySelector('.search__input');
 inputSearch.addEventListener('input', debounce(onSearch, 500));
 
 const search = document.querySelector('.search__container');
-search.addEventListener('click', openInputSearch)
+search.addEventListener('click', openInputSearch);
 
 //кнопка поиска закрывается только при пустом инпуте
-function openInputSearch(){
- if(inputSearch.value === ''){
-  inputSearch.classList.toggle('search__input--active');}
-  
+function openInputSearch() {
+  if (inputSearch.value === '') {
+    inputSearch.classList.toggle('search__input--active');
+  }
 }
 
 //предупредительное сообщение об ошибке
@@ -59,28 +59,28 @@ const message = {
 
 //базовая функция запроса списка фильмов
 const fetchFilms = async (moviesURL, callbackTemplate) => {
-   try {
-    const { data: { results } } = await axios.get(moviesURL);
+  try {
+    const {
+      data: { results },
+    } = await axios.get(moviesURL);
     console.log(results);
     if (results.length === 0) {
-            errorWarning.textContent = message.notFound;
-            return;
-          } 
-          const changeGenre = [...results].map(el => genresMovie(el));
-          page += 1;
-          return renderListFilms(changeGenre, callbackTemplate) ;
-   }
-  catch (error) {
-      if (error.response.status === 422) {
-        errorWarning.textContent = message.incorrectQuery;
-      }
-      if (error.response.status >= 500) {
-        errorWarning.textContent = message.serverError;
-      } 
-      else {
-        console.log(error);
-      }
+      errorWarning.textContent = message.notFound;
+      return;
     }
+    const changeGenre = [...results].map(el => genresMovie(el));
+    page += 1;
+    return renderListFilms(changeGenre, callbackTemplate);
+  } catch (error) {
+    if (error.response.status === 422) {
+      errorWarning.textContent = message.incorrectQuery;
+    }
+    if (error.response.status >= 500) {
+      errorWarning.textContent = message.serverError;
+    } else {
+      console.log(error);
+    }
+  }
 };
 //преобразование id жанров в названия
 function genresMovie(element) {
@@ -90,7 +90,7 @@ function genresMovie(element) {
   return element;
 }
 function renderListFilms(arrayFilms, template) {
-  return template(arrayFilms)
+  return template(arrayFilms);
 }
 //функция поиска по ключевому слову
 function onSearch() {
@@ -104,7 +104,7 @@ function onSearch() {
   if (inputSearch.value.length >= 3) {
     let searchQuery = inputSearch.value.trim();
     const searchMoviesURL = `https://api.themoviedb.org/3/search/movie?${baseURL}&query=${searchQuery}`;
-    
+
     //вторым аргументом передать новый колбэк с новым шаблоном для картинок по ключевому слову (но по факту прос то у некоторых фильмов нет картинок, возможно в шаблоне в теге img прописать ширину и высоту картинки, и будет прописываться альт)
     fetchFilms(searchMoviesURL, renderOnSearch);
   }
@@ -120,10 +120,9 @@ function onSearch() {
 //функция запроса информации о фильме
 const fetchInfoFilm = async movieID => {
   const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
-  //console.log(infoMovieURL);
+  // console.log(infoMovieURL);
   try {
     const { data } = await axios.get(infoMovieURL);
-    //console.log(data);
     const markupModal = modalTpl(data);
     return markupModal;
   } catch (error) {
@@ -143,4 +142,4 @@ const fetchInfoFilm = async movieID => {
 //стартовый запрос популярных фильмов
 fetchFilms(popularMoviesURL, updateMarkupGallery);
 
-export {fetchInfoFilm, fetchFilms};
+export { fetchInfoFilm, fetchFilms };
