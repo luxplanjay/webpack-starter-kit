@@ -2,13 +2,11 @@ import './fetch';
 import './refs';
 import refs from './refs';
 
-
-
 function updateModalValue(obj) {
   refs.modalTitle.textContent = obj.title;
   refs.modalImg.src = obj.poster_path
     ? `https://image.tmdb.org/t/p/w500/${obj.poster_path}`
-    : './images/default.jpg';
+    : '/images/desktop/GREYHOUND.jpg';
   refs.rate.textContent = obj.vote_average;
   refs.votes.textContent = obj.vote_count;
   refs.popularity.textContent = obj.popularity;
@@ -19,16 +17,16 @@ function updateModalValue(obj) {
   refs.addToWatchedBtn.dataset.id = obj.id;
   refs.addToQueueBtn.dataset.id = obj.id;
   genresSep(obj);
-  alignHeight()
+  alignHeight();
 }
 
 //  fn для выравнивания элементов списка в модалке при длинном названии фильма
-function alignHeight () {
+function alignHeight() {
   const item = refs.originalTitle;
-  const valueHeight = refs.title.offsetHeight
-    if (item.offsetHeight !== valueHeight) {
-      item.style = `margin-bottom: ${valueHeight - 15}px`
-    }
+  const valueHeight = refs.title.offsetHeight;
+  if (item.offsetHeight !== valueHeight) {
+    item.style = `margin-bottom: ${valueHeight - 15}px`;
+  }
 }
 
 function genresSep(object) {
