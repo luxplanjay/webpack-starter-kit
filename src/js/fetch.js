@@ -28,7 +28,6 @@ export default {
       const resultArrayDetalsFilm = await Promise.all(promisesIdFilms);
 
       addContent.additemList(resultArray, resultArrayDetalsFilm);
-      console.log('totalres', totalResults);
 
       pagination.addPaginationList(totalResults, pagePagination);
       spinner.spinnerClose();
@@ -38,7 +37,7 @@ export default {
   },
 
   async fetchDataLibrary(pagePagination = 1, listFilms) {
-          spinner.spinnerShow();
+    spinner.spinnerShow();
     const perPage = apiService.perPage;
 
     if (!listFilms || !listFilms.length) {
@@ -56,7 +55,7 @@ export default {
     const numLast = pagePagination * perPage;
     addContent.addLibraryList(resultArrayDetalsFilm.slice(numFirst, numLast));
     pagination.addPaginationList(resultArrayDetalsFilm.length, pagePagination);
-          spinner.spinnerClose();
+    spinner.spinnerClose();
   },
 
   async fetchDataFilm(movieId) {
