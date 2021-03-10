@@ -32,9 +32,11 @@ function openLibrary(event) {
 
   refs.buttonQueue.addEventListener('click', event => {
     console.log(event);
+    console.log(cardsPerPage());
     container.pagination({
       ...paginationParametersCommon,
       dataSource: queueFilms,
+      pageSize: cardsPerPage(),
     });
   });
   /*
@@ -47,6 +49,7 @@ function openLibrary(event) {
       ...paginationParametersCommon,
       // ToDo: change "queueFilms" to "watchedFilms"
       dataSource: watchedFilms,
+      pageSize: cardsPerPage(),
     });
   });
 
@@ -55,20 +58,18 @@ function openLibrary(event) {
   container.pagination({
     ...paginationParametersCommon,
     dataSource: queueFilms,
+    pageSize: cardsPerPage(),
   });
 
   refs.myLibraryGallery.classList.remove('is-hidden');
   refs.errorWarning.classList.add('is-hidden');
   refs.underscoreOnMyLibrary.classList.remove('is-hidden');
   refs.underscoreOnHome.classList.add('is-hidden');
-
-  function pageSizeCalc(innerWidth) {
-    if (innerWidth < 768) {
-      return 4;
-    }
-    if (innerWidth < 1024) {
-      return 8;
-    }
-    return 9;
-  }
+}
+function cardsPerPage() {
+  const currentWidthMode = window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue('--currentWidthMode');
+  console.log(currentWidthMode);
+  return currentWidthMode;
 }

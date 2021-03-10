@@ -45,10 +45,12 @@ export default {
   //       $('#js-grid').html(spinner());
   //     },
   //   },
-  showPrevious: true, // показать стрелочку предыдущее
-  showNext: true, //показать стрелочку следующее
-  autoHidePrevious: false, // авто спрятать кнопку предыдущее
-  autoHideNext: false, //авто спрятать кнопку следующее
+  showPrevious: true, // показать стрелочку "предыдущее"
+  prevText: '',
+  showNext: true, //показать стрелочку "следующее"
+  nextText: '',
+  autoHidePrevious: false, // авто спрятать кнопку "предыдущее"
+  autoHideNext: false, // авто спрятать кнопку "следующее"
   // showGoInput: true, //показать Гоинпут для ввода страницы
   // showGoButton: true, // показать кнопку Го для перехода к введенной в инпуте странице
   beforePaging: function (arg) {
