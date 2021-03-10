@@ -126,7 +126,7 @@ export default {
         }
       })
       .then(response => {
-        console.log(response);
+        // console.log(response);
         return response;
       })
       .catch(this.errorHandler);

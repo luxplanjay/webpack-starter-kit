@@ -23,7 +23,9 @@ const refs = {
   closeModalFooterBtn: document.querySelector('.lightbox-button'),
   overlayFooter: document.querySelector('.lightbox-overlay'),
   // team
-  ourTeamRefs: document.querySelector('.footer-team-link'), 
+  ourTeamRefs: document.querySelector('.footer-team-link'),
+  pagination: document.getElementById('pagination')
 };
+
 
 export default refs;
