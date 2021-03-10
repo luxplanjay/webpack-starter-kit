@@ -22,6 +22,8 @@ const refs = {
   modalFooter: document.querySelector('.js-lightbox'),
   closeModalFooterBtn: document.querySelector('.lightbox-button'),
   overlayFooter: document.querySelector('.lightbox-overlay'),
+  // team
+  ourTeamRefs: document.querySelector('.footer-team-link'), 
 };
 
 export default refs;
