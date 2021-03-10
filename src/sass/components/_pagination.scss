@@ -34,7 +34,7 @@
     a {
       @include CenteredFlex(flex, nowrap, center);
       height: 100%;
-      width: 30px; // По макету должно быть 40, посмотри пожалуйста!
+      width: 40px; // По макету должно быть 40, посмотри пожалуйста!
       text-decoration: none;
       color: inherit;
       &:hover {
