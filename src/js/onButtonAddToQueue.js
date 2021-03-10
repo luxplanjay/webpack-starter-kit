@@ -11,7 +11,7 @@ function onButtonAddToQueue(selectedFilm) {
 
      const buttonAddToQueueRef = document.querySelector('.modal__queue-button');
      buttonAddToQueueRef.classList.add('active');
-     buttonAddToQueueRef.textContent = 'QUEUE';
+     buttonAddToQueueRef.textContent = 'IN QUEUE';
 
     if (!filmsQueue.find(({ id }) => id === selectedFilm.id)) {
       filmsQueue.push(selectedFilm);
