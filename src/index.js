@@ -5,6 +5,6 @@ import './js/modal';
 import './js/modal-minor';
 import './js/our-team';
 import './js/navigation';
-//import './js/lib';
+import './js/lib';
 import './js/themes';
 import './js/spinner';

@@ -6,13 +6,17 @@ const refs = {
   buttonHeader: document.querySelector('.button-header'),
   watchedBtn: document.querySelector('button-watched'),
   queueBtn: document.querySelector('button-queque'),
+  gallery: document.querySelector('.movies-container'),
+  hits: document.querySelector('movie-searchTag'),
+  headerTitle: document.querySelector('.link-title'),
+  logo: document.querySelector('.logo-icon'),
 };
 
 refs.home.addEventListener('click', activeHome);
 refs.library.addEventListener('click', activelibrary);
 
 function activeHome(e) {
-  e.preventDefault();
+  // e.preventDefault();
 
   refs.header.classList.replace('header-lib', 'header-home');
   refs.search.classList.remove('is-hidden');

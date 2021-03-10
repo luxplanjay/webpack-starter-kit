@@ -16,6 +16,13 @@
   </head>
 
   <body class="body">
+    <!-- Spinner -->
+    <div class="spinner-container spinner is-hidden" id="loading">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
     <!-- header -->
     <header class="header header-home">
       <div class="container">
@@ -75,26 +82,18 @@
 
           <div class="button-header is-hidden">
             <a href="#" class="button-link"
-              ><button type="submit" class="button button-watched active-btn">
+              ><button type="submit" class="button-lib button-watched">
                 WATCHED
               </button></a
             >
             <a href="#" class="button-link"
-              ><button type="submit" class="button button-queque">
+              ><button type="submit" class="button-lib button-queque">
                 QUEQUE
               </button>
             </a>
           </div>
           <div class="error-container-js"></div>
         </div>
-      </div>
-
-      <!-- Spinner -->
-      <div class="spinner-container spinner is-hidden" id="loading">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
       </div>
     </header>
 
@@ -155,9 +154,6 @@
       <div class="movie-modal is-hidden">
         <div class="backdrop"></div>
         <div class="modal-content">
-          <button type="button" class="close-button">
-            <div class="close"></div>
-          </button>
           <div class="film-card"></div>
         </div>
       </div>
@@ -183,35 +179,44 @@
       <div class="lightbox-overlay-header overlay">
         <div class="lightbox-content-header content-modal">
           <form class="modal-form">
-            <h2 class="modal-form-title-header">
-              Sign in
-            </h2>
+
+            <h2 class="modal-form-title-header">Sign in</h2>
             <div class="button-check-in">
               <button class="form-button button-submit">Sign in from Facebook</button>
               <button class="form-button button-submit">Sign in from Gmail</button>
+            
             </div>
             <div class="modal-form-input-wrapper">
-              <label for="user-email-form" class="modal-form-label">Email</label>
-              <input 
-              type="email" 
-              name="user-email" 
-              id="user-email-form" 
-              class="modal-form-input" 
-              placeholder="exemple@gmail.com"
-              required />
+              <label for="user-email-form" class="modal-form-label"
+                >Email</label
+              >
+              <input
+                type="email"
+                name="user-email"
+                id="user-email-form"
+                class="modal-form-input"
+                placeholder="exemple@gmail.com"
+                required
+              />
             </div>
             <div class="modal-form-input-wrapper">
-              <label for="user-password-form" class="modal-form-label">Password</label>
-              </div>
-              <input 
-              type="password" 
-              name="user-password" 
-              id="user-password-form" 
-              class="modal-form-input" 
+              <label for="user-password-form" class="modal-form-label"
+                >Password</label
+              >
+            </div>
+            <input
+              type="password"
+              name="user-password"
+              id="user-password-form"
+              class="modal-form-input"
               placeholder="use a strong password"
-                required />
+              required
+            />
           </form>
-          <a class="lightbox-button-header btn-modal-close" data-action="close-lightbox-header">
+          <a
+            class="lightbox-button-header btn-modal-close"
+            data-action="close-lightbox-header"
+          >
             <svg width="24" height="24">
               <use href="./images/symbol-defs.svg#icon-close-2"></use>
             </svg>
@@ -226,8 +231,10 @@
         <div class="lightbox-content content-modal">
           <h2 class="title-header">Our team</h2>
           <ul class="footer-team-link"></ul>
+
           <a class="lightbox-button btn-modal-close" data-action="close-lightbox">
             <svg width="24" height="24">
+
               <use href="./images/symbol-defs.svg#icon-close-2"></use>
             </svg>
           </a>

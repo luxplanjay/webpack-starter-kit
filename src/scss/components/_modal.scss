@@ -1,4 +1,5 @@
 // backdrop
+
 .backdrop {
   position: absolute;
   top: 0;
@@ -8,9 +9,11 @@
   background-color: rgba(0, 0, 0, 0.8);
   overflow-y: scroll;
 }
+
 .modal-overflow {
   overflow: hidden;
 }
+
 .movie-modal {
   position: fixed;
   top: 0;
@@ -38,15 +41,26 @@
   flex-direction: column;
 }
 
+.icon-close {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  background-color: $primary-white-color;
+  border: transparent;
+}
+
+.icon-close:hover {
+   opacity: 1;
+   transform: scale(1.5);
+   border: 1px solid $accent-color;
+}
+
 .close-button {
   position: absolute;
-  top: 7px;
+  top: 7px;;
   right: 7px;
   z-index: 100;
-
   width: 35px;
   height: 35px;
-
   padding: 0;
   background-color: transparent;
   border: none;
@@ -60,288 +74,251 @@
   }
 
   @media screen and (min-width: 1024px) {
-    top: 40px;
-    right: 70px;
+    top: 10px;
+    right: 10px;
   }
 }
 
-.close {
-  bottom: 0px;
-  left: 5px;
+// ======= modal window j=============================
 
-  width: 32px;
-  height: 32px;
-  opacity: 0.5;
-  @media screen and (max-width: 767px) {
-    bottom: -5px;
-    left: 0px;
-  }
-}
-
-.close:hover {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-.close:before,
-.close:after {
-  position: absolute;
-  content: ' ';
-  height: 20px;
-  width: 2px;
-  background-color: $footer-text-color;
-}
-
-.close:before {
-  transform: rotate(45deg);
-}
-
-.close:after {
-  transform: rotate(-45deg);
-}
 .film-card {
+ padding-top: 15px;
   position: absolute;
   background-color: #fff;
+  border-radius: 5px;
   left: 50%;
   transform: translateX(-50%);
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 48px 20px 41px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  max-height: 95vh;
-  overflow-y: auto;
-
+  
   @media screen and (min-width: 768px) {
-    display: flex;
-    width: 668px;
+    padding: 42px 28px 28px 28px;
+    // width: 264px;
+    // height: auto;
+    // width: auto;
+    // height: 374px;
   }
 
   @media screen and (min-width: 1024px) {
-    width: 886px;
-    padding: 50px;
+    padding: 58px 20px 32px 30px;
+    // width: 396px;
+    // height: auto;
   }
 }
 
-// ======= modal window =============================
-
-.movie-modal-image {
-  margin-bottom: 30px;
-  width: 280px;
-  height: auto;
+.modal-movie-wrapper {
+  padding: 30px 15px;
   border-radius: 5px;
+  background-color: $primary-white-color;
+
+  @media screen and (max-width: 767px) {
+    max-width: 310px;
+  }
 
   @media screen and (min-width: 768px) {
-    margin-right: 30px;
-    margin-bottom: 0px;
-    width: 280px;
+    display: flex;
+    width: 646px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 912px;
+  }
+}
+
+.modal-movie-poster {
+  // width: 240px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  
+  @media screen and (min-width: 768px) {
+    width: 264px;
+    height: auto;
+    // width: auto;
+    // height: 374px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 396px;
+    height: auto;
+  }
+}
+
+.modal-movie-information {
+  background-color: $primary-white-color;
+  margin-top: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+    margin-left: 30px;
+  }
+}
+.modal-movie-title {
+  font-size: 20px;
+  line-height: 1.15;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    margin-top: 10px;
+    line-height: 1.16;
+  }
+}
+
+.modal-movie-data {
+  font-size: 12px;
+  margin: 0;
+  margin-top: 20px;
+}
+.modal-movie-item {
+  display: flex;
+  margin-top: 10px;
+}
+.modal-movie-data-name {
+  width: 69px;
+  margin-right: 30px;
+  color: $modal-secondary-text-color;
+}
+
+.modal-movie-data-slash {
+  color: $modal-secondary-text-color;
+}
+
+.modal-movie-description {
+  line-height: 1.16;
+}
+
+.modal-movie-description-title {
+  line-height: 1.16;
+  text-transform: uppercase;
+}
+
+.modal-movie-description-vote {
+  display: inline-block;
+  padding-top: 2px;
+  width: 36px;
+  height: 16px;
+  text-align: center;
+  color: $primary-white-color;
+  background-color: $accent-color;
+  border-radius: 5px;
+}
+
+.modal-movie-about {
+  font-size: 12px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.modal-movie-descript {
+  font-size: 12px;
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  max-width: 280px;
+  height: auto;
+  line-height: 1.66;
+
+  @media screen and (min-width: 768px) {
+    max-width: 294px;
     height: auto;
   }
 
   @media screen and (min-width: 1024px) {
-    margin-right: 50px;
-    width: 380px;
-    width: auto;
-    height: 500px;
+    max-width: 426px;
+    height: auto;
   }
 }
 
-.movie-modal-title {
-  margin-top: 0px;
-  margin-bottom: 25px;
-  font-size: 20px;
-  line-height: 1.15;
-  text-transform: uppercase;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 20px;
-    font-size: 30px;
-    line-height: 1.17;
-  }
-}
+//=================================
 
-.movie-modal-properties-values {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.list {
-  margin: 0px;
-}
-
-.movie-modal-properties {
-  list-style: none;
-  padding-left: 0px;
-
-  font-size: 12px;
-  color: $modal-secondary-text-color;
-}
-
-.movie-modal-properties li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.movie-modal-values {
-  //
-  font-size: 12px;
-
-  list-style: none;
-  padding-left: 0px;
-  margin-left: 39px;
-  line-height: 1.16;
-  @media screen and (min-width: 1024px) {
-    margin-left: 83px;
-  }
-}
-
-.modal-original-title {
-  text-transform: uppercase;
-  line-height: 1.33;
-}
-
-.modal-genre {
-  line-height: 1.33;
-}
-
-.modal-genre-item {
-  margin-right: 5px;
-}
-
-.movie-modal-values li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.modal-genre {
-  display: flex;
-}
-
-.about-modal {
-  margin-top: 0px;
-  margin-bottom: 10px;
-  font-size: 12px;
-  line-height: 1.33;
-  text-transform: uppercase;
-}
-
-.about-modal-description {
-  margin-top: 0px;
-  margin-bottom: 20px;
-
-  font-size: 12px;
-  line-height: 1.66;
-}
-
-.modal-vote {
-  display: block;
-  background-color: $accent-color;
-  width: 36px;
-  text-align: center;
-  border-radius: 5px;
-  color: $primary-white-color;
-}
-
-.modal-count {
-  display: block;
-  text-align: center;
-  background-color: #f7f7f7;
-  width: 36px;
-  border-radius: 5px;
-}
-
-.modal-line {
-  background-color: transparent;
-  display: block;
-  width: 8px;
-  text-align: center;
-  color: $modal-secondary-text-color;
-}
-
-.modal-vote-count {
-  display: flex;
-}
-
-.buttons-wrapper.movie-button {
-  justify-content: left;
-}
-
-.movie-modal-full-description {
-  width: 279px;
-
-  @media screen and (min-width: 768px) {
-    width: 294px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 426px;
-  }
-}
+// .buttons-wrapper .movie-button {
+//   justify-content: left;
+// }
 
 // ============= buttons ===============
 
-// div.buttons-wrapper {
-//   display: flex;
-//   justify-content: center;
-//   &.is-hidden {
-//     display: none;
-//   }
-// }
+.buttons-wrapper {
+  justify-content: left;
+  // .movie-button {
+  //   justify-content: left;
+  &.is-hidden {
+    display: none;
+  }
+}
 
-// .button {
-//   cursor: pointer;
-//   font-size: 12px;
+.button {
+  cursor: pointer;
+  font-size: 12px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 12px;
+  display: inline-block;
 
-//   border: transparent;
-//   border-radius: 5px;
-//   max-width: 136px;
-//   width: 100%;
-//   height: 44px;
+  border: transparent;
+  border-radius: 5px;
+  width: 100px;
+  max-height: 50px;
 
-//   font-weight: 500;
-//   line-height: 1.33;
-//   text-transform: uppercase;
-//   color: $primary-white-color;
-//   background-color: #ff6b01;
+  overflow: hidden;
 
-//   &.noactive {
-//     border: 1px solid #ffffff;
-//     background-color: transparent;
-//   }
-// }
+  font-weight: 500;
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: $primary-white-color;
+  background-color: $accent-color;
 
-// .button:not(:last-child) {
-//   margin-right: 15px;
-// }
+  @media screen and (min-width: 768px) {
+    width: 125px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 136px;
+  }
 
-// .modal-light-btn {
-//   border: 1px solid #000000;
-//   color: $primary-text-color;
-//   background-color: transparent;
-// }
+  &.noactive {
+    border: 1px solid $primary-white-color;
+    background-color: transparent;
+  }
+}
 
-// .button:hover,
-// .button:focus {
-//   background-color: rgba(255, 107, 1, 0.8);
-// }
+.button:not(:last-child) {
+  margin-right: 15px;
+}
 
-// .header-light-btn:hover,
-// .header-light-btn:focus {
-//   background-color: rgba(140, 140, 140, 0.4);
-// }
+.modal-light-btn {
+  border: 1px solid #000000;
+  color: $primary-text-color;
+  background-color: transparent;
+}
 
-// .modal-light-btn:hover,
-// .modal-light-btn:focus {
-//   background-color: rgba(255, 107, 1, 0.1);
-// }
+.button:hover,
+.button:focus {
+  background-color: $accent-color;
+  color: $primary-white-color;;
+  // color: #000000;
+  // border: 1px solid #000000;
+}
 
-// .button[disabled] {
-//   background-color: rgba(255, 107, 1, 0.5);
-// }
+.header-light-btn:hover,
+.header-light-btn:focus {
+  background-color: rgba(140, 140, 140, 0.4);
+}
 
-// .button.modal-light-btn[disabled] {
-//   border: 1px solid rgba(0, 0, 0, 0.5);
-//   background-color: transparent;
-//   color: rgba(0, 0, 0, 0.5);
-// }
+.modal-light-btn:hover,
+.modal-light-btn:focus {
+  background-color: rgba(255, 107, 1, 0.1);
+}
+
+.button[disabled] {
+  background-color: rgba(255, 107, 1, 0.5);
+}
+
+.button.modal-light-btn[disabled] {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .visuallyhidden {
   position: absolute;
   overflow: hidden;
@@ -354,16 +331,17 @@
 }
 
 .add-watched-button {
-  padding: 14px 30px 12px;
   margin-right: 10px;
   color: #000000;
+  // padding: 14px 30px 12px;
   border: 1px solid #000000;
+  background-color: transparent;
   text-transform: uppercase;
 }
 .add-queue-button {
-  padding: 14px 20px 12px;
-
   color: #000000;
+  background-color: transparent;
+  // padding: 14px 30px 12px;
   border: 1px solid #000000;
   text-transform: uppercase;
 }
