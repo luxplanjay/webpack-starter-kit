@@ -19,7 +19,7 @@ function inputHandler(event) {
 }
 
 refs.movieInputRef.addEventListener('input', debounce(inputHandler, 500));
-export async function initProgramFilmoteka() {
+export default async function initProgramFilmoteka() {
   let response;
   if (fetchAPI.moviesSearchActive === false) {
     response = await fetchAPI.showMoviesInTrend();

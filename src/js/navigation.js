@@ -1,3 +1,4 @@
+
 // const refs = {
 //   home: document.querySelector('.home-link'),
 //   library: document.querySelector('.lib-link'),
@@ -15,10 +16,12 @@
 import refs from './refs';
 
 refs.home.addEventListener('click', activeHome);
+refs.home.addEventListener('click', initProgramFilmoteka);
+
 refs.library.addEventListener('click', activelibrary);
 
 function activeHome(e) {
-  // e.preventDefault();
+  e.preventDefault();
 
   refs.header.classList.replace('header-lib', 'header-home');
   refs.search.classList.remove('is-hidden');
