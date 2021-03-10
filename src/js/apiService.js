@@ -1,5 +1,5 @@
 import { load, save, remove } from './storage';
-import { HOME, LIBRARY, QUEUE, SEARCH, WATCHED } from './request.js';
+import { HOME, SEARCH } from './request.js';
 
 export default {
   ulrApi: '',
@@ -20,7 +20,6 @@ export default {
     this.page = currentPage;
 
     this.currentRequest = load('currentRequest');
-
     switch (this.currentRequest) {
       case HOME:
         this.urlApi = `https://api.themoviedb.org/3/trending/movie/week?api_key=${this.keyApi}&page=${this.page}&language=${this.language}`;

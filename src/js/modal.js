@@ -1,7 +1,7 @@
 import './fetch';
 import './refs';
 import refs from './refs';
-import pathForModal from './addContent';
+
 
 
 function updateModalValue(obj) {
@@ -19,10 +19,19 @@ function updateModalValue(obj) {
   refs.addToWatchedBtn.dataset.id = obj.id;
   refs.addToQueueBtn.dataset.id = obj.id;
   genresSep(obj);
+  alignHeight()
+}
+
+//  fn для выравнивания элементов списка в модалке при длинном названии фильма
+function alignHeight () {
+  const item = refs.originalTitle;
+  const valueHeight = refs.title.offsetHeight
+    if (item.offsetHeight !== valueHeight) {
+      item.style = `margin-bottom: ${valueHeight - 15}px`
+    }
 }
 
 function genresSep(object) {
-  let smarray;
   const genresArray = object.genres;
   genresArray.map(({ name }) => (refs.genre.textContent += `${name} `));
 }

@@ -1,109 +1,94 @@
 .container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  @include for-size(mobile) {
-    min-width: 320px;
-  }
-
-  @include for-size(tablet) {
-    min-width: 768px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  @include for-size(desktop) {
-    max-width: 1024px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include for-size(mobile) {
+        min-width: 320px;
+    }
+    @include for-size(tablet) {
+        min-width: 768px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @include for-size(desktop) {
+        max-width: 1024px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .flexbox {
-  @include container(flex, center, center);
+    @include container(flex, center, center);
 }
 
 body {
-  margin: 0;
-  // padding: 230px 0 0 0;
-  padding: 0;
-  overflow-x: hidden;
+    margin: 0;
+    // padding: 230px 0 0 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body.is-open {
+    overflow: hidden;
 }
 
 // theme
 body.dark-theme {
-  background-color: $color-bg-dark-theme;
-  .film__title {
-    color: $text-header;
-  }
-
-  .pagination__list {
     background-color: $color-bg-dark-theme;
-  }
-
-  .pagination__item {
-    color: $color-light-background;
-  }
-
-  .prev,
-  .next {
-    background-color: unset;
-  }
-
-  .prev {
-    background: url('../images/arrow-theme.svg') no-repeat center center;
-  }
-
-  .next {
-    background: url('../images/arrow-theme.svg') no-repeat center center;
-    transform: rotate(180deg);
-  }
-
-  .footer {
-    color: $color-light-background;
-    opacity: 0.7;
-  background-image: linear-gradient(
-      to right,
-      $color-background,
-      $color-background
-    ),
-    url(../images/mobile/header.jpg);
-  }
-
-  .footer__text:last-child {
-    color: $color-accent;
-  }
-
-  .modal {
-    background-color: $color-bg-dark-theme;
-    color: $color-light-background;
-  }
-
-  .btn__close {
-    background-color: $color-bg-dark-theme;
-    stroke: $color-light-background;
-  }
-
-  .modal__title {
-    color: $color-light-background;
-  }
-
-  .film-info__value {
-    color: $color-light-background;
-  }
-  .content-list__item--value {
-    color: $color-light-background;
-    opacity: 0.7;
-  }
-
-  .modal__btn--queue {
-    color: $color-light-background;
-    background: #333;
-    border: 1px solid $color-light-background;
-  }
+  
+    .film__title {
+        color: $text-header;
+    }
+    .pagination__list {
+        background-color: $color-bg-dark-theme;
+    }
+    .pagination__item {
+        color: $color-light-background;
+    }
+    .prev,
+    .next {
+        background-color: unset;
+    }
+    .prev {
+        background: url('../images/arrow-theme.svg') no-repeat center center;
+    }
+    .next {
+        background: url('../images/arrow-theme.svg') no-repeat center center;
+        transform: rotate(180deg);
+    }
+    .footer {
+        color: $color-light-background;
+        // opacity: 0.7;
+        background-image: linear-gradient( to right, $color-background, $color-background), url(../images/mobile/header.jpg);
+    }
+    .footer__text:last-child {
+        color: $color-accent;
+    }
+    .modal {
+        background-color: $color-bg-dark-theme;
+        color: $color-light-background;
+    }
+    .btn__close {
+        background-color: $color-bg-dark-theme;
+        stroke: $color-light-background;
+    }
+    .modal__title {
+        color: $color-light-background;
+    }
+    .film-info__value {
+        color: $color-light-background;
+    }
+    .content-list__item--value {
+        color: $color-light-background;
+        opacity: 0.7;
+    }
+    .modal__btn--queue {
+        color: $color-light-background;
+        background: #333;
+        border: 1px solid $color-light-background;
+    }
 }
 
 h1,
@@ -112,27 +97,26 @@ h3,
 ul,
 p,
 b {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 // for svg icons
-
 .icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
 }

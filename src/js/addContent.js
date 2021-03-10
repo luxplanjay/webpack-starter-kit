@@ -31,6 +31,11 @@ export default {
   },
 
   addLibraryList(listFilms) {
+    if (!listFilms) {
+      refs.filmListRef.innerHTML = '';
+      refs.paginationList.innerHTML = '';
+      return;
+    }
     const resultForMarkup = listFilms.map(elem => {
       const genres =
         elem.genres.length > 2

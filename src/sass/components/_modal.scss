@@ -1,5 +1,7 @@
 /* modal from Olga (mob) fixed by lekasey*/
 
+
+
 .list {
     list-style-type: none;
     margin-top: 0;
@@ -10,30 +12,28 @@
 
 .backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     background-color: $color-background;
     height: 100%;
     width: 100%;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: auto;
+    // padding: 20px;
+    transition: 
+        // transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: scroll;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    z-index: 10000;
 }
 
 // класс утилита
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    border: 0;
-    padding: 0;
+    opacity: 0;  
 }
 
-//==========не работает свг!!! работает
 .btn__close {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 10px;
     margin: 0;
@@ -54,27 +54,76 @@
 }
 
 .modal {
-    overflow: auto;
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    // bottom: 20px;
+    transform: translate(-50%, -50%) scale(1);
     min-width: 280px;
+    // height: auto;
+    // margin: 20px;
     padding: 48px 20px 41px;
     margin-left: auto;
     margin-right: auto;
     background-color: $text-header;
     z-index: 10001;
+    opacity: 1;
+    overflow-y: scroll;
+    // overflow: hidden;
+
+    transition: 
+        scale 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include for-size (mobile-plus) {
+        top: 0;
+        transform: translate(-50%, 20px);
+    }
     @include for-size(tablet) {
         top: 50%;
+        transform: translate(-50%, -50%);
         min-width: 618px;
+        max-height: 562px;
         padding: 42px 30px 40px 28px;
     }
     @include for-size(desktop) {
+        // top: 50%;
+        // transform: translate(-50%, 50%);
         padding: 50px 30px 40.2px;
         min-width: 882px;
+        max-height: 562px;
+    }
+    &::-webkit-scrollbar {
+        width: 0px;  /* remove scrollbar space */
+        background: transparent;  /* optional: just make scrollbar invisible */
     }
 }
+
+.modal-is-open {
+    overflow: hidden
+}
+
+.modal.visually-hidden {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.backdrop.visually-hidden {
+    top: 0;
+    transform: translate(-50%, 0);
+}
+
+.backdrop.visually-hidden,
+.modal.visually-hidden {
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+    left: 50%;
+    pointer-events: none;
+    // transform: translate(-50%, 0) scale(1.1);
+    // transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
 
 .modal__content {
     @media screen and (min-width: 768px) {
@@ -83,6 +132,7 @@
 }
 
 .modal__block {
+    justify-content: center;
     @include for-size(tablet-plus) {
         width: calc((100% - 32px) / 2);
     }
@@ -92,6 +142,8 @@
         }
     }
     @include for-size(desktop) {
+        max-width: 396px;
+        max-height: 472px;
         &:not(:last-child) {
             margin-right: 30px;
         }
@@ -100,14 +152,20 @@
 
 .modal__image {
     display: block;
-    width: 100%;
-    height: auto;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+    max-height: 100%;
+    object-fit: center;
     border-radius: 5px;
     @include for-size(mobile) {
         margin-bottom: 30px;
     }
 }
 
+.content-list__item {
+    display: inline-block;
+}
 .modal__title {
     font-weight: 500;
     font-size: 20px;

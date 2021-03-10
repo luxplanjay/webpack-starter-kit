@@ -2,8 +2,7 @@ import addContent from './addContent';
 import apiService from './apiService.js';
 import pagination from './pagination.js';
 import updateModalValue from './modal';
-import { HOME, LIBRARY, SEARCH, FILM } from './request.js';
-import { load, save, remove } from './storage';
+import refs from './refs';
 
 export default {
   async fetchData(
@@ -13,7 +12,6 @@ export default {
     try {
       let resultArray = [];
       let totalResults;
-
       for (let set of fetchSettings) {
         const resAwait = await apiService.fetchData(set);
         totalResults = resAwait.total_results;
@@ -28,15 +26,23 @@ export default {
       const resultArrayDetalsFilm = await Promise.all(promisesIdFilms);
 
       addContent.additemList(resultArray, resultArrayDetalsFilm);
+      console.log('totalres', totalResults);
+   
       pagination.addPaginationList(totalResults, pagePagination);
     } catch (error) {
       throw error;
     }
   },
 
-  async fetchDataLibrary(pagePagination = 1) {
+  async fetchDataLibrary(pagePagination = 1, listFilms) {
     const perPage = apiService.perPage;
-    const resultArray = load('watched').map(elem => Number(elem));
+
+    if (!listFilms || !listFilms.length) {
+      addContent.addLibraryList(listFilms);
+      return;
+    }
+
+    const resultArray = listFilms.map(elem => Number(elem));
     const promisesIdFilms = resultArray.map(elem =>
       apiService.fetchDetalsFilm(elem, pagePagination),
     );

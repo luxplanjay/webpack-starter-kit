@@ -5,14 +5,30 @@ let numberOfPagesPagination;
 let totalPages;
 const FETCH = 20;
 const screenWidth = 580;
+const limit = 20;
 
 function createArrayPaginationMobile(numberOfPages, activePage, totalPages) {
   let arrayOfPages;
   const centerOfPages = Math.ceil(numberOfPages / 2);
+  console.log(
+    'numberOfPages',
+    numberOfPages,
+    'activePage',
+    activePage,
+    'totalPages',
+    totalPages,
+    'cent',
+    centerOfPages,
+  );
   if (numberOfPages >= totalPages || activePage <= centerOfPages) {
     arrayOfPages = Array.from({ length: numberOfPages }, (v, k) => {
       return k + 1;
     });
+  } else if (activePage >= limit - 2) {
+    arrayOfPages = Array.from(
+      { length: numberOfPages },
+      (v, k) => limit - numberOfPages + k + 1,
+    );
   } else {
     arrayOfPages = Array.from(
       { length: numberOfPages },
@@ -66,6 +82,11 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
 
 export default {
   addPaginationList(totalHits, activePage) {
+    if (!totalHits || totalHits <= apiService.perPage) {
+      refs.paginationBox.classList.add('is-hidden');
+      return;
+    }
+
     totalPages =
       totalHits / apiService.perPage <= 20
         ? Math.ceil(totalHits / apiService.perPage)
@@ -78,7 +99,7 @@ export default {
     if (totalPages <= 5) {
       numberOfPagesPagination = totalPages;
     } else {
-      if (document.body.clientWidth < 768) {
+      if (document.body.clientWidth < screenWidth) {
         numberOfPagesPagination = 5;
       } else {
         numberOfPagesPagination = 9;
@@ -107,12 +128,14 @@ export default {
   },
 
   getActivePageForFetch(eventTarget) {
+    console.log(totalPages);
     let activePage = +refs.paginationBox.querySelector('.active').textContent;
 
     if (eventTarget.classList.contains('prev')) {
       return activePage > 1 ? activePage - 1 : 1;
     }
     if (eventTarget.classList.contains('next')) {
+      console.log(activePage, totalPages);
       return activePage < totalPages ? activePage + 1 : totalPages;
     }
     return +eventTarget.textContent;
@@ -150,5 +173,9 @@ export default {
       { page: nextPage, numStart: nextNumStart, numEnd: nextNumEnd },
     ];
     return resultArray;
+  },
+
+  getActivePage() {
+    return +refs.paginationBox.querySelector('.active').textContent;
   },
 };
