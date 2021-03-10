@@ -25,7 +25,7 @@ function getFilmInfo(movie_id) {
           '.modal__watched-button',
         );
         buttonAddToWatchedRef.classList.add('active');
-        buttonAddToWatchedRef.textContent = 'WATCHED';
+        buttonAddToWatchedRef.textContent = 'IN WATCHED';
       }
     }
     // Проверка есть ли фильм в Queue
@@ -37,7 +37,7 @@ function getFilmInfo(movie_id) {
           '.modal__queue-button',
         );
         buttonAddToQueueRef.classList.add('active');
-        buttonAddToQueueRef.textContent = 'QUEUE';
+        buttonAddToQueueRef.textContent = 'IN QUEUE';
       }
     }
     // ==================================================
@@ -77,12 +77,17 @@ function getFilmInfo(movie_id) {
         //   снимаю слушатель с кнопки
         buttonAddToQueueRef.removeEventListener(
           'click',
-          checkButtonQueueActive(film),
+          function () {
+            checkButtonQueueActive(film);
+          },
+          true,
         );
-
         buttonAddToWatchedRef.removeEventListener(
           'click',
-          checkButtonWatchedActive(film),
+          function () {
+            checkButtonQueueActive(film);
+          },
+          true,
         );
       }
     }
@@ -94,11 +99,17 @@ function getFilmInfo(movie_id) {
       //   снимаю слушатель с кнопки
       buttonAddToQueueRef.removeEventListener(
         'click',
-        checkButtonQueueActive(film),
+        function () {
+          checkButtonQueueActive(film);
+        },
+        true,
       );
       buttonAddToWatchedRef.removeEventListener(
         'click',
-        checkButtonWatchedActive(film),
+        function () {
+          checkButtonQueueActive(film);
+        },
+        true,
       );
     }
   });

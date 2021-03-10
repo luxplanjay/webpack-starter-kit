@@ -13,7 +13,7 @@ function onButtonAddToWatched(selectedFilm) {
     const buttonAddToWatchedRef = document.querySelector(
       '.modal__watched-button');
     buttonAddToWatchedRef.classList.add('active');
-    buttonAddToWatchedRef.textContent = 'WATCHED';
+    buttonAddToWatchedRef.textContent = 'IN WATCHED';
      // =================
 
     if (!filmsArray.find(({ id }) => id === selectedFilm.id)) {
