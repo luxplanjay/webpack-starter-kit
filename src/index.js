@@ -24,7 +24,7 @@ import { save } from './js/storage';
 
 import './js/change-header-theme';
 import './js/library-list-hendler';
-import './js/spinner';
+import spinner from './js/spinner';
 
 
 const searchFormRef = document.querySelector('.search-form');
