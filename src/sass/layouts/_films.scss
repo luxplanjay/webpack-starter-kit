@@ -9,13 +9,10 @@
   }
 }
 .films__list {
-  display: grid;
-  padding: 60px auto;
-  justify-content: center;
-  // @include for-size(tablet) {
-  //   grid-gap: 30px;
-  //   grid-template-columns: repeat(2, 1fr);
-  // }
+    display: grid;
+    padding: 60px auto;
+    justify-content: center;
+
   @media (min-width: 768px) {
     grid-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
