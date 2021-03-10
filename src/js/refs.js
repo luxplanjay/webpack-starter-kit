@@ -45,6 +45,7 @@ const refs = {
   libraryHeaderBtn: document.querySelector('.js-library'),
   watchedBtn: document.querySelector('[data-request="watched"]'),
   queueBtn: document.querySelector('[data-request="queue"]'),
+  headerContainer: document.querySelector('.header-container'),
 
   spinner: document.querySelector('#spinner'),
   errorNoteRef: document.querySelector('.header__error'),
