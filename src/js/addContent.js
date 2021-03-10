@@ -4,7 +4,7 @@ import refs from './refs';
 // import keyWords from './keyWords';
 
 const pathForImg = 'https://image.tmdb.org/t/p/w342/';
-const imgDefault = './images/default.jpg';
+const imgDefault = './images/default-opt.jpg';
 
 export default {
   additemList(listFilms, detalsFilms) {
@@ -18,9 +18,7 @@ export default {
 
       return {
         ...elem,
-        poster_path: elem.poster_path
-          ? pathForImg + elem.poster_path
-          : imgDefault,
+        poster_path: elem.poster_path ? pathForImg + elem.poster_path : false,
         release_date: elem.release_date ? elem.release_date.slice(0, 4) : '',
         genres,
       };
@@ -28,10 +26,11 @@ export default {
 
     refs.filmListRef.innerHTML = '';
     refs.filmListRef.insertAdjacentHTML('beforeend', filmCard(resultForMarkup));
+    console.log(refs.filmListRef);
   },
 
   addLibraryList(listFilms) {
-    if (!listFilms) {
+    if (!listFilms || !listFilms.length) {
       refs.filmListRef.innerHTML = '';
       refs.paginationList.innerHTML = '';
       return;
