@@ -21,8 +21,6 @@ refs.navLibrary.addEventListener('click', openLibrary);
 
 function openLibrary(event) {
   event.preventDefault();
-  const watchedFilms = JSON.parse(localStorage.getItem('filmsWatched'));
-  const queueFilms = JSON.parse(localStorage.getItem('filmsQueue'));
 
   refs.searchForm.classList.add('is-hidden');
   refs.homeGallery.classList.add('is-hidden');
@@ -31,10 +29,11 @@ function openLibrary(event) {
   //слушатель кнопки очередь
 
   refs.buttonQueue.addEventListener('click', event => {
-    console.log(event);
+    // console.log(event);
+    // const queueFilms = JSON.parse(localStorage.getItem('filmsQueue'));
     container.pagination({
       ...paginationParametersCommon,
-      dataSource: queueFilms,
+      dataSource: JSON.parse(localStorage.getItem('filmsQueue')),
     });
   });
   /*
@@ -42,19 +41,21 @@ function openLibrary(event) {
   // слушатель кнопки просмотренные
 
   refs.buttonWatched.addEventListener('click', event => {
-    console.log(event);
+    // console.log(event);
+    // const watchedFilms = JSON.parse(localStorage.getItem('filmsWatched'));
     container.pagination({
       ...paginationParametersCommon,
       // ToDo: change "queueFilms" to "watchedFilms"
-      dataSource: watchedFilms,
+      dataSource: JSON.parse(localStorage.getItem('filmsWatched')),
     });
   });
 
   // modified by Maryasov
   // refs.libraryList.textContent = '';
+
   container.pagination({
     ...paginationParametersCommon,
-    dataSource: queueFilms,
+    dataSource: JSON.parse(localStorage.getItem('filmsWatched')),
   });
 
   refs.myLibraryGallery.classList.remove('is-hidden');
@@ -75,16 +76,14 @@ function openLibrary(event) {
 
 //Добавляем слушателя на кнопку Home
 
-refs.navHome.addEventListener('click', openHome);
-function openHome(event) {
-  event.preventDefault(event);
-  refs.searchForm.classList.remove('is-hidden');
-  refs.homeGallery.classList.remove('is-hidden');
-  refs.buttons.classList.add('is-hidden');
-  refs.myLibraryGallery.classList.add('is-hidden');
-  refs.underscoreOnMyLibrary.classList.add('is-hidden');
-  refs.underscoreOnHome.classList.remove('is-hidden');
-  refs.headerHomeOrMyLibrary.classList.remove('lib');
-  // refs.myHomeGallery.classList.remove('is-hidden');
-  //refs.errorWarning.classList.add('is-hidden');
+refs.navHome.addEventListener('click', openHome);
+function openHome(event) {
+  event.preventDefault(event);
+  refs.searchForm.classList.remove('is-hidden');
+  refs.homeGallery.classList.remove('is-hidden');
+  refs.buttons.classList.add('is-hidden');
+  refs.myLibraryGallery.classList.add('is-hidden');
+  refs.underscoreOnMyLibrary.classList.add('is-hidden');
+  refs.underscoreOnHome.classList.remove('is-hidden');
+  refs.headerHomeOrMyLibrary.classList.remove('lib'); // refs.myHomeGallery.classList.remove('is-hidden'); //refs.errorWarning.classList.add('is-hidden');
 }
