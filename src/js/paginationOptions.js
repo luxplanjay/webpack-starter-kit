@@ -3,7 +3,7 @@ import gridTemplate from '../templates/movie-grid.hbs';
 import refs from './refs.js';
 import getCardData from './cardDataHandler.js';
 import './components/pnotifyInclude.js';
-import { notice, error, } from '@pnotify/core/dist/PNotify.js';
+import { notice, error } from '@pnotify/core/dist/PNotify.js';
 
 export default {
   dataSource: '', // стек данных для пагинации, может быть функция возвращающая массив объектов, куча возможностей
@@ -22,13 +22,14 @@ export default {
   // общее количество страниц, почеммуто ломает pageSize
   // totalNumber: 7,
   totalNumberLocator: function (response) {
-    if (response.total_pages === 0){
+    if (response.total_pages === 0) {
       error({
-      text: "Search result not successful. Enter the correct movie name and try again!"   
-  });
-}    
-return response.total_pages;
-},
+        text:
+          'Search result not successful. Enter the correct movie name and try again!',
+      });
+    }
+    return response.total_pages;
+  },
   pageSize: 1, //pageSizeCalc(window.innerWidth), // количество объектов-элементов на страницу
   pageRange: 2,
   //форматирование результатов данных из джсона
@@ -48,8 +49,8 @@ return response.total_pages;
   //   },
   showPrevious: true, // показать стрелочку предыдущее
   showNext: true, //показать стрелочку следующее
-  autoHidePrevious: false, // авто спрятать кнопку предыдущее
-  autoHideNext: false, //авто спрятать кнопку следующее
+  autoHidePrevious: true, // авто спрятать кнопку предыдущее
+  autoHideNext: true, //авто спрятать кнопку следующее
   // showGoInput: true, //показать Гоинпут для ввода страницы
   // showGoButton: true, // показать кнопку Го для перехода к введенной в инпуте странице
   beforePaging: function (arg) {
