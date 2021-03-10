@@ -64,13 +64,13 @@
         @include for-size(tablet) {
             margin: 20px 20px 0 0;
             // padding-left: 10px;
-            width: 40%;
+            width: calc((100% - 40px) / 2);
             min-height: 100px;
         }
         @include for-size(desktop) {
             margin: 20px 20px 0 0;
             // padding-left: 10px;
-            width: 40%;
+            width: calc((100% - 40px) / 2);
             min-height: 100px;
         }
     }
@@ -103,8 +103,12 @@
         background-size: 30%;
         background-repeat: no-repeat;
     }
+    &__button:hover {
+        transform: rotate(135deg);
+    }
     &__img {
         border-radius: 50%;
+        border: 2px solid $text-accent;
     }
 }
 
@@ -126,7 +130,6 @@
 .sociallinks {
     border-radius: 50%;
     padding: 10px;
-    &__link:not(:last-child) {}
     &__icon {
         fill: $text-main;
     }
@@ -154,5 +157,63 @@
         @include font(normal, 14px, 1.4);
         color: $text-accent;
         padding-left: 10px;
+        padding-top: 4px;
+    }
+}
+
+// анимация
+.lightbox__body.slideUpOut {
+    animation-name: slideUpOut;
+    -webkit-animation-name: slideUpOut;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+    visibility: visible !important;
+}
+
+@keyframes slideUpOut {
+    0% {
+        transform: translateY(0%);
+    }
+    30% {
+        transform: translateY(2%);
+    }
+    55% {
+        transform: translateY(-4%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.lightbox__body.slideUpIn {
+    animation-name: slideUpIn;
+    -webkit-animation-name: slideUpIn;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+    visibility: visible !important;
+}
+
+@keyframes slideUpIn {
+    0% {
+        transform: translateY(100%);
+    }
+    50% {
+        transform: translateY(-8%);
+    }
+    65% {
+        transform: translateY(4%);
+    }
+    80% {
+        transform: translateY(-4%);
+    }
+    95% {
+        transform: translateY(2%);
+    }
+    100% {
+        transform: translateY(0%);
     }
 }

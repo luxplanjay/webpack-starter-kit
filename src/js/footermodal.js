@@ -7,8 +7,14 @@ document.addEventListener('keydown', onModalCloseEsc);
 
 
 function onModalCloseDiv(event) {
-    refs.divLightbox.classList.remove('is-open');
-    refs.bodyEl.classList.remove('is-open');
+    refs.modalClose.classList.add('slideUpOut');
+    refs.modalClose.classList.remove('slideUpIn');
+    window.setTimeout(function() {
+        refs.divLightbox.classList.remove('is-open');
+        refs.bodyEl.classList.remove('is-open');
+    }, 500);
+
+
 }
 
 function onModalClose(event) {
@@ -24,6 +30,9 @@ function onModalCloseEsc(event) {
 }
 
 function onOpenModal(event) {
+    refs.modalClose.classList.remove('slideUpOut');
     refs.divLightbox.classList.add('is-open');
     refs.bodyEl.classList.add('is-open');
+    refs.modalClose.classList.add('slideUpIn');
+
 }
