@@ -1,0 +1,106 @@
+.main-page > .page-header {
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../images/main-mobile.jpg');
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url('../images/main-mobile.jpg');
+  }
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url('../images/main-tablet.jpg');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url('../images/main-tablet.jpg');
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url('../images/main-desktop.jpg');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url('../images/main-desktop.jpg');
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  color: getColor(white-text);
+  padding-top: 40px;
+  padding-left: 70px;
+  padding-right: 70px;
+
+  &__container{
+      padding-top: 16px;
+  }
+}
+
+.logo {
+  
+
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.5;
+    // letter-spacing: 1px;
+
+    position: relative;
+
+    margin-left: 20px;
+  }
+}
+
+.nav__link,
+.nav__link--current {
+  font-size: 12px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.nav__link--current {
+  margin-right: 40px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 3px;
+    right: 180px;
+    top: 74px;
+    background-color: getColor(accent);
+  }
+}

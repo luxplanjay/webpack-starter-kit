@@ -13,95 +13,75 @@
   </head>
   <body>
     <!-- Main header -->
-    <div class="main-page" style=>
+    <div class="main-page page" style=>
       <header class="page-header">
-        <div class="container page-header__container">
           <nav class="nav">
             <div class="main-link logo">
               <svg width="24" height="24" aria-label="Logo">
                 <use
-                  class="icon-logo"
+                  class="logo__icon"
                   href="./images/symbol-defs.svg#icon-logo"
                 ></use>
               </svg>
-              <span class="logo__studio">Filmoteka</span>
+              <span class="logo__text">Filmoteka</span>
             </div>
-            <!-- Search-form --> 
-            <section class="search">
-              <div class="search__container">
-                <input
-                  class="search__input"
-                  type="text"
-                  name="query"
-                  autocomplete="off"
-                  placeholder="Поиск фильмов"
-                  id="search__input"
-                />
-                <div class="search__box" id="search__box"></div>
-                  <p class="search__warning"></p>
-                </div>
-            </section>
             <div class="nav__container" id="menu-container" data-menu>
-              <ul class="menu">
-                <li class="menu__item">
-                  <span class="link menu__link--current">HOME</span>
-                </li>
-                <li class="menu__item">
-                  <span class="link menu__link menu__link"
-                    >MY LIBRARY</span
-                  >
-                </li>
-              </ul>
+              <span class="link nav__link--current">home</span>
+              <span class="link nav__link">my library</span>
             </div>
           </nav>
-        </div>
+          <!-- Search-form --> 
+          <section class="search">
+            <div class="search__container">
+              <input
+                class="search__input"
+                type="text"
+                name="query"
+                autocomplete="off"
+                placeholder="Поиск фильмов"
+                id="search__input"
+              />
+              <div class="search__box" id="search__box"></div>
+                <p class="search__warning"></p>
+              </div>
+          </section>
       </header>
     </div>
     <!-- Library Header -->
     <div class="library-page" style="display: none">
       <header class="page-header">
-        <div class="container page-header__container">
-          <nav class="nav">
-            <div class="main-link logo">
-              <svg width="24" height="24" aria-label="Logo">
-                <use
-                  class="icon-logo"
-                  href="./images/symbol-defs.svg#icon-logo"
-                ></use>
-              </svg>
-              <span class="logo__studio">Filmoteka</span>
-            </div>
-            <button
-              type="button"
-              class="nav__button"
-              data-menu-button
-              aria-expanded="false"
-              aria-controls="menu-container"
-            >
-              WATCHED
-            </button>
-            <button
-              type="button"
-              class="nav__button"
-              data-menu-button
-              aria-expanded="false"
-              aria-controls="menu-container"
-            >
-              QUEUE
-            </button>
-            <div class="nav__container">
-              <ul class="menu">
-                <li class="menu__item">
-                  <span class="link menu__link">HOME</span>
-                </li>
-                <li class="menu__item">
-                  <span class="link menu__link menu__link--current"
-                    >MY LIBRARY</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </nav>
+        <nav class="nav">
+          <div class="main-link logo">
+            <svg width="24" height="24" aria-label="Logo">
+              <use
+                class="logo__icon"
+                href="./images/symbol-defs.svg#icon-logo"
+              ></use>
+            </svg>
+            <span class="logo__text">Filmoteka</span>
+          </div>
+          <div class="nav__container">
+            <span class="link lib__link">HOME</span>
+            <span class="link lib__link--current">MY LIBRARY</span>
+          </div>
+        </nav>
+        <div class="button-group">
+          <button
+            type="button"
+            class="nav__button"
+            data-menu-button
+            aria-expanded="false"
+            aria-controls="menu-container">
+            WATCHED
+          </button>
+          <button
+            type="button"
+            class="nav__button"
+            data-menu-button
+            aria-expanded="false"
+            aria-controls="menu-container">
+            QUEUE
+          </button>
         </div>
       </header>
     </div>
