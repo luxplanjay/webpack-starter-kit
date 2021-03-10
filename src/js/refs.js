@@ -37,8 +37,8 @@ const refs = {
     btnClose: document.querySelector('.lightbox__button'),
     modalClose: document.querySelector('.lightbox__body'),
     openModal: document.querySelector('.js-footer__text'),
-    
-    
+
+
 
 
 
@@ -52,6 +52,8 @@ const refs = {
   libraryHeaderBtn: document.querySelector('.js-library'),
   watchedBtn: document.querySelector('[data-request="watched"]'),
   queueBtn: document.querySelector('[data-request="queue"]'),
+
+  spinner: document.querySelector('#spinner'),
 };
 
 export default refs;
