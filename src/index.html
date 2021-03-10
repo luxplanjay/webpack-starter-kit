@@ -14,6 +14,12 @@
   <body>
     <header class="header">
       <div class="container header-container">
+        <div class="theme-switch__control">
+          <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle" aria-label="Change theme" />
+          <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+          </label>
+          <div aria-hidden="true" class="theme-switch__marker"></div>
+        </div>
         <div class="header-nav-container">
           <div class="logo-container">
             <span class="header__logo"></span>
@@ -37,14 +43,14 @@
           <button type="submit" class="search-form__button" aria-label="Search">
             <span class="search-form__icon"></span>
           </button>
-    
-    
+
+
         </form>
         <div class="error-container">
-          <p class="header__error">Search result not successful. Enter the correct movie name and press enter</p>
+          <p class="header__error">Search result is not successful. Enter the correct movie name and press enter</p>
         </div>
-    
-    
+
+
         <ul class="library__list">
           <li class="library__item">
             <button class="button button--library" data-request="watched">Watched</button>
@@ -53,45 +59,10 @@
             <button class="button button--library is-active" data-request="queue">Queue</button>
           </li>
         </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        <!-- <div class="theme-switch__control">
-            <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
-                    aria-label="Change theme" />
-            <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
-            </label>
-            <div aria-hidden="true" class="theme-switch__marker"></div> -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
       </div>
-      <!-- <div class="theme-switch__control">
-                <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle" aria-label="Change theme" />
-                <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
-                </label>
-                <div aria-hidden="true" class="theme-switch__marker"></div>
-              </div> -->
-     
     </header>
-    
-    
+
+
     <div class="sk-chase" id="spinner">
       <div class="sk-chase-dot"></div>
       <div class="sk-chase-dot"></div>
@@ -100,7 +71,7 @@
       <div class="sk-chase-dot"></div>
       <div class="sk-chase-dot"></div>
     </div>
-    
+
     <main>
       <section class="films">
         <div class="films__container container">
