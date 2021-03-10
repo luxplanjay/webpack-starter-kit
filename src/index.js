@@ -11,8 +11,8 @@ import './js/modal';
 import './js/modal-close';
 import './js/movieLibrary';
 
-import createHeaderHomeMarkup from './js/header-render';
-createHeaderHomeMarkup();
+// import createHeaderHomeMarkup from './js/header-render';
+// createHeaderHomeMarkup();
 
 import fnFetch from './js/fetch.js';
 import fnHendler from './js/fnHendler.js';
@@ -20,6 +20,9 @@ import fnHendler from './js/fnHendler.js';
 import { HOME } from './js/request.js';
 import { save } from './js/storage';
 // import modal from './js/modal';
+
+import './js/change-header-theme';
+import './js/library-list-hendler';
 
 const searchFormRef = document.querySelector('.search-form');
 const errorNoteRef = document.querySelector('.header__error');
