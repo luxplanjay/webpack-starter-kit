@@ -77,12 +77,17 @@ function getFilmInfo(movie_id) {
         //   снимаю слушатель с кнопки
         buttonAddToQueueRef.removeEventListener(
           'click',
-          checkButtonQueueActive(film),
+          function () {
+            checkButtonQueueActive(film);
+          },
+          true,
         );
-
         buttonAddToWatchedRef.removeEventListener(
           'click',
-          checkButtonWatchedActive(film),
+          function () {
+            checkButtonQueueActive(film);
+          },
+          true,
         );
       }
     }
@@ -94,11 +99,17 @@ function getFilmInfo(movie_id) {
       //   снимаю слушатель с кнопки
       buttonAddToQueueRef.removeEventListener(
         'click',
-        checkButtonQueueActive(film),
+        function () {
+          checkButtonQueueActive(film);
+        },
+        true,
       );
       buttonAddToWatchedRef.removeEventListener(
         'click',
-        checkButtonWatchedActive(film),
+        function () {
+          checkButtonQueueActive(film);
+        },
+        true,
       );
     }
   });
