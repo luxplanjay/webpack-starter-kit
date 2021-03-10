@@ -8,6 +8,7 @@ import refs from './refs.js';
 import onButtonRemoveFromWatched from './onButtonRemoveFromWatched';
 import checkButtonWatchedActive from './buttonWatchedCheckActive';
 import checkButtonQueueActive from './buttonQueueCheckActive';
+import { modalWatcher } from './modal-text-watcher'
 
 function getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
@@ -112,6 +113,8 @@ function getFilmInfo(movie_id) {
         true,
       );
     }
+
+    modalWatcher();
   });
 }
 
