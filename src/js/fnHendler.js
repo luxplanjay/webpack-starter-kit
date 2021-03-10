@@ -55,8 +55,9 @@ export default {
   },
 
   onClickLibrary() {
-    save('currentRequest', QUEUE);
-    fnFetch.fetchDataLibrary(1, load('queue'));
+    const req = refs.libraryList.querySelector('.is-active').dataset.request;
+    save('currentRequest', req);
+    fnFetch.fetchDataLibrary(1, load(req));
   },
   onClickWatched() {
     save('currentRequest', WATCHED);
