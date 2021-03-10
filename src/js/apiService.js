@@ -95,18 +95,25 @@ function renderListFilms(arrayFilms, template) {
 //функция поиска по ключевому слову
 function onSearch() {
   errorWarning.textContent = '';
-  if (inputSearch.value.length === 0) {
-    fetchFilms(popularMoviesURL, updateMarkupGallery);
-  }
-  if (inputSearch.value.length > 0 && inputSearch.value.length < 3) {
-    errorWarning.textContent = message.manyMatches;
-  }
+  // if (inputSearch.value.length === 0) {
+  //   fetchFilms(popularMoviesURL, updateMarkupGallery);
+  // }
+  // if (inputSearch.value.length > 0 && inputSearch.value.length < 3) {
+  //   errorWarning.textContent = message.manyMatches;
+  // }
   if (inputSearch.value.length >= 3) {
     let searchQuery = inputSearch.value.trim();
     const searchMoviesURL = `https://api.themoviedb.org/3/search/movie?${baseURL}&query=${searchQuery}`;
     
     //вторым аргументом передать новый колбэк с новым шаблоном для картинок по ключевому слову (но по факту прос то у некоторых фильмов нет картинок, возможно в шаблоне в теге img прописать ширину и высоту картинки, и будет прописываться альт)
     fetchFilms(searchMoviesURL, renderOnSearch);
+  }
+  
+  if (inputSearch.value.length > 0 && inputSearch.value.length < 3) {
+    errorWarning.textContent = message.manyMatches;
+  }
+  if (inputSearch.value === '') {
+    fetchFilms(popularMoviesURL, updateMarkupGallery);
   }
 }
 
