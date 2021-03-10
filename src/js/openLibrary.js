@@ -21,8 +21,6 @@ refs.navLibrary.addEventListener('click', openLibrary);
 
 function openLibrary(event) {
   event.preventDefault();
-  const watchedFilms = JSON.parse(localStorage.getItem('filmsWatched'));
-  const queueFilms = JSON.parse(localStorage.getItem('filmsQueue'));
 
   refs.searchForm.classList.add('is-hidden');
   refs.homeGallery.classList.add('is-hidden');
@@ -31,12 +29,13 @@ function openLibrary(event) {
   //слушатель кнопки очередь
 
   refs.buttonQueue.addEventListener('click', event => {
-    console.log(event);
-    console.log(cardsPerPage());
+//     console.log(event);
+//     console.log(cardsPerPage());
     container.pagination({
       ...paginationParametersCommon,
-      dataSource: queueFilms,
+      dataSource: JSON.parse(localStorage.getItem('filmsQueue')), //queueFilms,
       pageSize: cardsPerPage(),
+  
     });
   });
   /*
@@ -44,21 +43,24 @@ function openLibrary(event) {
   // слушатель кнопки просмотренные
 
   refs.buttonWatched.addEventListener('click', event => {
-    console.log(event);
+    // console.log(event);
+    // const watchedFilms = JSON.parse(localStorage.getItem('filmsWatched'));
     container.pagination({
       ...paginationParametersCommon,
       // ToDo: change "queueFilms" to "watchedFilms"
-      dataSource: watchedFilms,
+      dataSource: JSON.parse(localStorage.getItem('filmsWatched')), //watchedFilms,
       pageSize: cardsPerPage(),
     });
   });
 
   // modified by Maryasov
   // refs.libraryList.textContent = '';
+
   container.pagination({
     ...paginationParametersCommon,
-    dataSource: queueFilms,
+    dataSource: JSON.parse(localStorage.getItem('filmsWatched')), //queueFilms,
     pageSize: cardsPerPage(),
+
   });
 
   refs.myLibraryGallery.classList.remove('is-hidden');
@@ -72,20 +74,29 @@ function cardsPerPage() {
     .getPropertyValue('--currentWidthMode');
   console.log(currentWidthMode);
   return currentWidthMode;
+
+
+  // function pageSizeCalc(innerWidth) {
+  //   if (innerWidth < 768) {
+  //     return 4;
+  //   }
+  //   if (innerWidth < 1024) {
+  //     return 8;
+  //   }
+  //   return 9;
+  // }
 }
 
 //Добавляем слушателя на кнопку Home
 
-refs.navHome.addEventListener('click', openHome);
-function openHome(event) {
-  event.preventDefault(event);
-  refs.searchForm.classList.remove('is-hidden');
-  refs.homeGallery.classList.remove('is-hidden');
-  refs.buttons.classList.add('is-hidden');
-  refs.myLibraryGallery.classList.add('is-hidden');
-  refs.underscoreOnMyLibrary.classList.add('is-hidden');
-  refs.underscoreOnHome.classList.remove('is-hidden');
- 
-  // refs.myHomeGallery.classList.remove('is-hidden');
-  //refs.errorWarning.classList.add('is-hidden');
+refs.navHome.addEventListener('click', openHome);
+function openHome(event) {
+  event.preventDefault(event);
+  refs.searchForm.classList.remove('is-hidden');
+  refs.homeGallery.classList.remove('is-hidden');
+  refs.buttons.classList.add('is-hidden');
+  refs.myLibraryGallery.classList.add('is-hidden');
+  refs.underscoreOnMyLibrary.classList.add('is-hidden');
+  refs.underscoreOnHome.classList.remove('is-hidden');
+  refs.headerHomeOrMyLibrary.classList.remove('lib'); // refs.myHomeGallery.classList.remove('is-hidden'); //refs.errorWarning.classList.add('is-hidden');
 }
