@@ -2,24 +2,16 @@ import paginationList from '../templates/pagination.hbs';
 import apiService from './apiService.js';
 import refs from './refs';
 let numberOfPagesPagination;
-let totalPages;
+
 const FETCH = 20;
 const screenWidth = 580;
 const limit = 20;
+let totalPages;
 
 function createArrayPaginationMobile(numberOfPages, activePage, totalPages) {
   let arrayOfPages;
   const centerOfPages = Math.ceil(numberOfPages / 2);
-  console.log(
-    'numberOfPages',
-    numberOfPages,
-    'activePage',
-    activePage,
-    'totalPages',
-    totalPages,
-    'cent',
-    centerOfPages,
-  );
+
   if (numberOfPages >= totalPages || activePage <= centerOfPages) {
     arrayOfPages = Array.from({ length: numberOfPages }, (v, k) => {
       return k + 1;
@@ -63,6 +55,15 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
         return activePage - numberOfPages + 3 + k;
       }),
     ];
+  } else if (activePage >= totalPages - 4) {
+    arrayOfPages = [
+      1,
+      '...',
+      ...Array.from({ length: 7 }, (v, k) => {
+        return limit - numberOfPages + 3 + k;
+      }),
+    ];
+    console.log(arrayOfPages);
   } else {
     arrayOfPages = [
       1,
@@ -88,13 +89,12 @@ export default {
     }
 
     totalPages =
-      totalHits / apiService.perPage <= 20
+      totalHits / apiService.perPage <= limit
         ? Math.ceil(totalHits / apiService.perPage)
-        : 20;
+        : limit;
 
     if (!totalHits) return;
     let arrayPagination;
-    // debugger;
 
     if (totalPages <= 5) {
       numberOfPagesPagination = totalPages;
