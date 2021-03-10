@@ -1,7 +1,7 @@
 import filmCard from '../templates/film-card.hbs';
 import refs from './refs';
 import showErrorNote from './error-notification';
-import messageLibrary from './key-words';
+import message from './key-words';
 
 const pathForImg = 'https://image.tmdb.org/t/p/w342/';
 const imgDefault = './images/default-opt.jpg';
@@ -14,6 +14,7 @@ export default {
       refs.paginationList.innerHTML = '';
       return;
     }
+    message.messageClose();
     const resultForMarkup = listFilms.map(elem => {
       const genresFilm = detalsFilms.find(item => item.id === elem.id).genres;
 
@@ -38,9 +39,12 @@ export default {
     if (!listFilms || !listFilms.length) {
       refs.filmListRef.innerHTML = '';
       refs.paginationList.innerHTML = '';
-      messageLibrary();
+
+      message.messageAboutLibrary();
+      message.messageShow();
       return;
     }
+    message.messageClose();
     const resultForMarkup = listFilms.map(elem => {
       const genres =
         elem.genres.length > 2
