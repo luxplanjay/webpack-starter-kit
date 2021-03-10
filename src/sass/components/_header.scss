@@ -16,7 +16,8 @@
   height: 3px;
   background-color: $color-orange;
   &.is-hidden {
-    display: none;
+    display: block;
+    opacity: 0;
   }
   &.lib {
     width: 69px;
@@ -28,6 +29,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  &.lib {
+    background: url('/img/bg-library-mob.jpg'),
+      linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+  }
 }
 
 /*.my-library .page__nav {
@@ -99,6 +104,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    &.lib {
+      background: url('/img/bg-library-tab.jpg'),
+        linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+    }
   }
 
   .home-link {
@@ -128,6 +137,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    &.lib {
+      background: url('/img/bg-library-desk.jpg'),
+        linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+    }
   }
 }
 .search-form {
