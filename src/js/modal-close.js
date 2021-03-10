@@ -2,9 +2,9 @@
 import refs from './refs';
 
 function nodeCheckClosing(event) {
-  if (event.target.nodeName !== 'DIV') {
-    return;
-  }
+    if (event.target.classList.value !== 'backdrop') {
+      return
+    }
   closingModal();
 }
 
@@ -27,12 +27,22 @@ function openingModal() {
   }
 
   refs.backdropModalRef.classList.remove('visually-hidden');
+  refs.modalRef.classList.remove('visually-hidden');
+  refs.bodyEl.classList.add('modal-is-open');
+  // console.log('cliked');
   window.addEventListener('keydown', onEscPress);
+  
 }
 
 function closingModal() {
   refs.backdropModalRef.classList.add('visually-hidden');
+  refs.modalRef.classList.add('visually-hidden');
   window.removeEventListener('keydown', onEscPress);
+  refs.bodyEl.classList.remove('modal-is-open');
+  setTimeout(clearData(),100)
+}
+
+function clearData () {
   refs.modalImg.src = '';
   refs.modalTitle.textContent = '';
   refs.rate.textContent = '';
@@ -43,6 +53,7 @@ function closingModal() {
   refs.descr.textContent = '';
   refs.addToWatchedBtn.innerHTML = 'ADD TO WATCHED';
   refs.addToQueueBtn.innerHTML = 'ADD TO QUEUE';
+  
 }
 
 function onEscPress(event) {
