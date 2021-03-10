@@ -1,39 +1,31 @@
+import modalMovieTemplate from '../template/movieModal.hbs';
+import fetchAPI from '../js/fetchAPIandMovieList/fetchAPI';
+import renderMovies from '../js/fetchAPIandMovieList/renderMovies.js';
+import localStorageUtil from './localStorage';
+
 const refs = {
   body: document.querySelector('body'),
   filmCard: document.querySelector('.film-card'),
   movieModal: document.querySelector('.movie-modal'),
   backdrop: document.querySelector('.backdrop'),
-  closeModalBtn: document.querySelector('.close-button'),
-
-  //test
-  movieContainer: document.querySelector('.movies-container-js'),
-  // movieContainer: document.querySelector('.moviesList-item'),
+  // closeModalBtn: document.querySelector('.close-button'),
+  movieContainer: document.querySelector('.movies-container-js'),  
 };
 
-//test
-import fetchAPI from '../js/fetchAPIandMovieList/fetchAPI';
-import renderMovies from '../js/fetchAPIandMovieList/renderMovies.js';
-import '../js/fetchAPIandMovieList/moviesListEventsHandler.js';
-import '../js/fetchAPIandMovieList/renderMovies.js';
-import '../js/fetchAPIandMovieList/fetchAPI.js';
-import localStorageUtil from './localStorage';
-
-//test
-import modalMovieTemplate from '../template/movieModal.hbs';
 const debounce = require('lodash.debounce');
 refs.movieContainer.addEventListener('click', debounce(openModal, 100));
 
-//test
 function openModal(event) {
   if (event.target.nodeName !== 'IMG') {
     return;
   }
-  refs.movieModal.classList.remove('is-hidden');
+
+  // refs.closeModalBtn.addEventListener('click', closeModal);
+    refs.movieModal.classList.remove('is-hidden');
   refs.body.classList.add('modal-overflow');
   window.addEventListener('keydown', pressEscape);
-  refs.closeModalBtn.addEventListener('click', closeModal);
+  
   refs.backdrop.addEventListener('click', closeModal);
-
   const fullInfoPromise = fetchAPI.getFullMovieInfo(
     event.target.dataset.movieid,
   );
@@ -42,6 +34,10 @@ function openModal(event) {
     const filmsQueuedStore = localStorageUtil.getFilms('queue');
 
     refs.filmCard.insertAdjacentHTML('beforeend', modalMovieTemplate(fullInfo));
+
+    const closeModalBtn = document.querySelector('.close-button'); //+
+    closeModalBtn.addEventListener('click', closeModal); //+
+    
     const addToWatchCheckbox = document.querySelector('.watched-checkbox');
     const addToWatchButton = document.querySelector('.add-watched-button');
     const addToQueueCheckbox = document.querySelector('.queue-checkbox');
@@ -54,6 +50,7 @@ function openModal(event) {
       addToWatchButton,
       'watched',
     );
+
     checkAddedFilms(
       filmsQueuedStore,
       fullInfo,
