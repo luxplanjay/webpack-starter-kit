@@ -2,15 +2,7 @@ import modalMovieTemplate from '../template/movieModal.hbs';
 import fetchAPI from '../js/fetchAPIandMovieList/fetchAPI';
 import renderMovies from '../js/fetchAPIandMovieList/renderMovies.js';
 import localStorageUtil from './localStorage';
-
-const refs = {
-  body: document.querySelector('body'),
-  filmCard: document.querySelector('.film-card'),
-  movieModal: document.querySelector('.movie-modal'),
-  backdrop: document.querySelector('.backdrop'),
-  // closeModalBtn: document.querySelector('.close-button'),
-  movieContainer: document.querySelector('.movies-container-js'),  
-};
+import refs from './refs.js';
 
 const debounce = require('lodash.debounce');
 refs.movieContainer.addEventListener('click', debounce(openModal, 100));
@@ -21,10 +13,10 @@ function openModal(event) {
   }
 
   // refs.closeModalBtn.addEventListener('click', closeModal);
-    refs.movieModal.classList.remove('is-hidden');
+  refs.movieModal.classList.remove('is-hidden');
   refs.body.classList.add('modal-overflow');
   window.addEventListener('keydown', pressEscape);
-  
+
   refs.backdrop.addEventListener('click', closeModal);
   const fullInfoPromise = fetchAPI.getFullMovieInfo(
     event.target.dataset.movieid,
@@ -37,7 +29,7 @@ function openModal(event) {
 
     const closeModalBtn = document.querySelector('.close-button'); //+
     closeModalBtn.addEventListener('click', closeModal); //+
-    
+
     const addToWatchCheckbox = document.querySelector('.watched-checkbox');
     const addToWatchButton = document.querySelector('.add-watched-button');
     const addToQueueCheckbox = document.querySelector('.queue-checkbox');

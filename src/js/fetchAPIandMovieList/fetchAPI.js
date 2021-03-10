@@ -24,7 +24,7 @@ export default {
   fetchGenres() {
     //Функция забирает с сервера массив с именами и ид жанров
     const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${myKey}&language=${this.language}`;
-    const fetchedGenres = fetch(url)
+    const fetchedGenresArray = fetch(url)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -32,7 +32,7 @@ export default {
       })
       .then(response => response.genres)
       .catch(this.errorHandler);
-    fetchedGenres.then(res => {
+    fetchedGenresArray.then(res => {
       this.genresArray = res.slice();
     });
   },
@@ -135,6 +135,7 @@ export default {
   async searchMovies(page = 1) {
     //рендер результата поиска возвращает промис
     //moviesContainerRef.innerHTML = '';
+    refs.pagination.classList.remove('is-hidden');
     return this.searchMoviesbyTag(page).then(response => {
       renderMovies(response.results, refs.gallery, movieListTmp);
       //console.log(response);
@@ -144,6 +145,7 @@ export default {
   async showMoviesInTrend(page = 1) {
     //рендер трендовых возвращает промис
     //moviesContainerRef.innerHTML = '';
+    refs.pagination.classList.remove('is-hidden');
     return this.getTrendingMovies(page).then(response => {
       renderMovies(response.results, refs.gallery, movieListTmp);
       //console.log(response);

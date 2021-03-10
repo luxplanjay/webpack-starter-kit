@@ -1,6 +1,4 @@
 import Pagination from 'tui-pagination';
-// import { showMoviesInTrend } from './fetchAPIandMovieList/moviesListEventsHandler';
-// import { searchMovies } from './fetchAPIandMovieList/moviesListEventsHandler';
 import fetchAPI from '../js/fetchAPIandMovieList/fetchAPI';
 //import 'tui-pagination/dist/tui-pagination.css';
 

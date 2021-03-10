@@ -1,4 +1,11 @@
 const refs = {
+  //navigation
+  home: document.querySelector('.home-link'),
+  library: document.querySelector('.lib-link'),
+  header: document.querySelector('.header'),
+  search: document.querySelector('.form-search'),
+  buttonHeader: document.querySelector('.button-header'),
+  hits: document.querySelector('movie-searchTag'),
   logo: document.querySelector('.logo-icon'),
   headerTitle: document.querySelector('.link-title'),
   backgroundHome: document.querySelector('.header-home'),
@@ -13,6 +20,13 @@ const refs = {
   body: document.querySelector('body'),
   errorContainerRef: document.querySelector('.error-container-js'),
   movieInputRef: document.querySelector('.movie-searchTag-js'),
+  myLibraryButton: document.querySelector('.lib-link'),
+  //modal
+  filmCard: document.querySelector('.film-card'),
+  movieModal: document.querySelector('.movie-modal'),
+  backdrop: document.querySelector('.backdrop'),
+  // closeModalBtn: document.querySelector('.close-button'),
+  movieContainer: document.querySelector('.movies-container-js'),
   // modal header
   openModalHeaderBtn: document.querySelector('[data-modal-header-open]'),
   modalHeader: document.querySelector('.js-lightbox-header'),
