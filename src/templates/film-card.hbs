@@ -1,10 +1,10 @@
         {{#each this}}
         <li class="film item" data-movieId={{id}}>
-          <a href="" class="film__link link">
+          <div href="" class="film__link link">
             {{#if poster_path}}
              <img src={{poster_path}} class="film__img" alt="">
             {{else}}
-             <img src="./images/default-opt.jpg" class="film__img" alt="">
+             <img src="/images/default-opt.jpg" class="film__img" alt="">
              {{/if}}
 
             <div class="film__content"}>
@@ -19,6 +19,6 @@
                  {{/each}}|&ensp;{{release_date}}&ensp;</ul>
                   <span class="film__average">{{vote_average}}</span></div>
             </div>
-          </a>
+          </вa>
         </li>
         {{/each}}
