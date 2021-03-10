@@ -1,5 +1,5 @@
 const refs = {
-    headerRef: document.querySelector('.header-container'),
+    headerNavContainer: document.querySelector('.header-nav-container'),
     paginationBox: document.querySelector('.pagination'),
     paginationList: document.querySelector('.pagination__list'),
     filmListRef: document.querySelector('.films__list'),
@@ -37,6 +37,21 @@ const refs = {
     btnClose: document.querySelector('.lightbox__button'),
     modalClose: document.querySelector('.lightbox__body'),
     openModal: document.querySelector('.js-footer__text'),
+    
+    
+
+
+
+  // ========= после перемены Хедера!
+
+  siteNavButtons: document.querySelector('.site-nav__list'),
+  logoNav: document.querySelector('.logo-container'),
+  libraryList: document.querySelector('.library__list'),
+  searchForm: document.querySelector('.search-form'),
+  homeHeaderBtn: document.querySelector('.js-home'),
+  libraryHeaderBtn: document.querySelector('.js-library'),
+  watchedBtn: document.querySelector('[data-request="watched"]'),
+  queueBtn: document.querySelector('[data-request="queue"]'),
 };
 
 export default refs;
