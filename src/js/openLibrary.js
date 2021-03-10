@@ -109,7 +109,7 @@ function openHome(event) {
 
 // refactoring event listeners
 refs.header.addEventListener('click', event => {
-  console.dir(event.target.id === 'home');
+  // console.dir(event.target.id === 'home');
   if (event.target.id === 'library') {
     openLibrary(event);
     watchedPaginate();
