@@ -7,7 +7,7 @@
     </button>
     <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}"
         data-source="https://image.tmdb.org/t/p/w500/{{backdrop_path}}" alt="film poster" class="modal__image"
-       width="240px"/>
+        width="240px" />
     <div class="modal__info-box">
         <h2 class="modal__film-title">{{title}}</h2>
         <div class="modal__rating-box">
@@ -40,9 +40,12 @@
 
         </div>
         <h3 class="modal__title-about">About</h3>
-        <p class="modal__text-about">
-            {{overview}}
-        </p>
+        <div class="modal__text-about-box" data-size="min">
+            <p class="modal__text-about">
+                {{overview}}
+            </p>
+            <p class="modal__more">&#8693</p>
+        </div>
         <div class="modal__button-box">
             <button class="modal__watched-button" type="button">add to <br> watched</button>
             <button class="modal__queue-button" type="button">add to queue</button>

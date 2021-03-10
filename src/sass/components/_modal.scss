@@ -134,10 +134,10 @@
 
   &__rating-name-box,
   &__rating-genre-box {
-    width: 132px;
+    width: 122px;
 
     @media screen and (min-width: $tablet) {
-      width: 156px;
+      width: 148px;
     }
   }
 
@@ -154,7 +154,7 @@
   }
 
   &__rating-name {
-    margin-right: 39px;
+    margin-right: 38px;
   }
 
   &__rating-genre {
@@ -170,12 +170,49 @@
     text-transform: uppercase;
   }
 
+  &__text-about-box {
+    @media screen and(min-width: 1px) and(max-width: $tablet) {
+      position: relative;
+      overflow-y: hidden;
+    }
+  }
+
   &__text-about {
     margin-top: 10px;
     font-style: normal;
     font-weight: $main-font-weight;
     font-size: $main-font-size;
     line-height: $modal-text-line-height;
+  }
+
+  @media screen and(min-width: 1px) and(max-width: $tablet) {
+    &__text-about {
+      height: 40px;
+    }
+  }
+
+  @media screen and(min-width: 1px) and(max-width: $tablet) {
+    &__more {
+      position: absolute;
+      top: -10px;
+      right: 0;
+
+      font-style: normal;
+      font-weight: $main-font-weight;
+      font-size: 18px;
+      line-height: $modal-text-line-height;
+      color: $color-orange;
+    }
+
+    &__more:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media screen and(min-width: $tablet) {
+    &__more {
+      display: none;
+    }
   }
 
   &__button-box {
@@ -219,7 +256,7 @@
   // &__watched-button:focus,
   &__queue-button:hover
   // &__queue-button:focus
-   {
+  {
     background: $color-bcg-btn;
     color: $color-white;
     border: none;
