@@ -63,7 +63,7 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
         return limit - numberOfPages + 3 + k;
       }),
     ];
-    console.log(arrayOfPages);
+
   } else {
     arrayOfPages = [
       1,
@@ -83,6 +83,7 @@ function createArrayPagination(numberOfPages, activePage, totalPages) {
 
 export default {
   addPaginationList(totalHits, activePage) {
+    // console.log('totalHits',totalHits,'activePage',activePage);
     if (!totalHits || totalHits <= apiService.perPage) {
       refs.paginationBox.classList.add('is-hidden');
       return;
@@ -128,20 +129,21 @@ export default {
   },
 
   getActivePageForFetch(eventTarget) {
-    console.log(totalPages);
+
     let activePage = +refs.paginationBox.querySelector('.active').textContent;
 
     if (eventTarget.classList.contains('prev')) {
       return activePage > 1 ? activePage - 1 : 1;
     }
     if (eventTarget.classList.contains('next')) {
-      console.log(activePage, totalPages);
+      // console.log(activePage, totalPages);
       return activePage < totalPages ? activePage + 1 : totalPages;
     }
     return +eventTarget.textContent;
   },
 
   getSettingForFetch(activePage) {
+
     let resultArray = [];
     const perPage = apiService.perPage;
 

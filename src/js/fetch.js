@@ -13,6 +13,7 @@ export default {
     try {
       let resultArray = [];
       let totalResults;
+      // console.log('fetchSettings',fetchSettings);
       spinner.spinnerShow();
       for (let set of fetchSettings) {
         const resAwait = await apiService.fetchData(set);
