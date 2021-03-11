@@ -43,6 +43,7 @@ export default {
 
     if (!listFilms || !listFilms.length) {
       addContent.addLibraryList(listFilms);
+      spinner.spinnerClose();
       return;
     }
 
