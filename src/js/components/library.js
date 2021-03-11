@@ -54,6 +54,5 @@ export const paginationParametersCommon = {
     pageNumber: 'page',
     // pageSize: 'limit',
   },
-  dataSource: "",
+  dataSource: '',
 };
-

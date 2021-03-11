@@ -22,25 +22,11 @@ function buttonWatchedActive() {
 
 // refs.navLibrary.addEventListener('click', openLibrary);
 function queuePaginate() {
-  //     console.log(event);
-  //     console.log(cardsPerPage());
-
-  container.pagination({
-    ...paginationParametersCommon,
-    dataSource: JSON.parse(localStorage.getItem('filmsQueue')), //queueFilms,
-    pageSize: cardsPerPage(),
-  });
+  paginatingLib(container, (JSON.parse(localStorage.getItem('filmsQueue'))), (cardsPerPage()));
 }
 
 function watchedPaginate() {
-  // console.log(event);
-  // const watchedFilms = JSON.parse(localStorage.getItem('filmsWatched'));
-  container.pagination({
-    ...paginationParametersCommon,
-    // ToDo: change "queueFilms" to "watchedFilms"
-    dataSource: JSON.parse(localStorage.getItem('filmsWatched')), //watchedFilms,
-    pageSize: cardsPerPage(),
-  });
+  paginatingLib(container, (JSON.parse(localStorage.getItem('filmsWatched'))), (cardsPerPage()));
 }
 
 function openLibrary(event) {
@@ -51,23 +37,6 @@ function openLibrary(event) {
   refs.buttons.classList.remove('is-hidden');
   refs.headerHomeOrMyLibrary.classList.add('lib');
   //слушатель кнопки очередь
-
-  // refs.buttonQueue.addEventListener('click',);
-
-  /*
-   */
-  // слушатель кнопки просмотренные
-
-  // refs.buttonWatched.addEventListener('click');
-
-  // modified by Maryasov
-  // refs.libraryList.textContent = '';
-
-  // container.pagination({
-  //   ...paginationParametersCommon,
-  //   dataSource: JSON.parse(localStorage.getItem('filmsWatched')), //queueFilms,
-  //   pageSize: cardsPerPage(),
-  // });
 
   refs.myLibraryGallery.classList.remove('is-hidden');
   refs.errorWarning.classList.add('is-hidden');
@@ -81,19 +50,9 @@ function cardsPerPage() {
     .getPropertyValue('--currentWidthMode');
   console.log(currentWidthMode);
   return currentWidthMode;
-
-  // function pageSizeCalc(innerWidth) {
-  //   if (innerWidth < 768) {
-  //     return 4;
-  //   }
-  //   if (innerWidth < 1024) {
-  //     return 8;
-  //   }
-  //   return 9;
-  // }
 }
 
-//Добавляем слушателя на кнопку Home
+
 
 // refs.navHome.addEventListener('click', openHome);
 function openHome(event) {
@@ -109,12 +68,13 @@ function openHome(event) {
 
 // refactoring event listeners
 refs.header.addEventListener('click', event => {
-  // console.dir(event.target.id === 'home');
+  // Обработка на кнопки Library
   if (event.target.id === 'library') {
     openLibrary(event);
     watchedPaginate();
     return;
   }
+  //Обработка на кнопки Home
   if (event.target.id === 'home') {
     openHome(event);
     return;
@@ -135,3 +95,15 @@ refs.header.addEventListener('click', event => {
     return;
   }
 });
+
+
+function paginatingLib(containerToUse, SourceToUse, cardsPerPage){
+  
+  containerToUse.pagination({
+    ...paginationParametersCommon,
+    dataSource: SourceToUse,
+    pageSize: cardsPerPage,
+    showPrevious: ((SourceToUse.length/cardsPerPage)>2),
+    showNext: ((SourceToUse.length/cardsPerPage>2))
+  });
+}
