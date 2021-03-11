@@ -1,0 +1,117 @@
+body {
+  overflow: visible;
+}
+
+body.show-modal {
+  overflow: hidden;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-bcg-grey;
+  backdrop-filter: blur(20px);
+
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  visibility: hidden;
+  overflow-y: scroll;
+}
+
+body.show-modal .modal-wrapper {
+  opacity: 1;
+  user-select: inherit;
+  pointer-events: all;
+  visibility: visible;
+
+  transition: 250ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-command {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-heading {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 3px;
+  color: $color-bcg-btn;
+  filter: drop-shadow(0px 8px 43px $color-orange);
+
+  margin-bottom: 20px;
+}
+
+.team-members {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.member {
+  margin: 15px;
+
+  width: calc((1024px - 90px) / 3);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  filter: drop-shadow(-2px 6px 5px $color-text-modal);
+
+  &:hover,
+  &:focus {
+    filter: drop-shadow(-3px 7px 8px $color-text-modal);
+    transition: $transition-common;
+    color: $color-orange;
+  }
+}
+
+.member-img {
+  border-radius: 50%;
+  margin-bottom: 15px;
+  align-items: center;
+  width: 150px;
+}
+
+.member-link {
+  font-size: 20px;
+  letter-spacing: $modal-line-height;
+  color: $color-text-footer;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $color-orange;
+    transition: $transition-common;
+  }
+}
+
+.team-btn-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+  outline: none;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
