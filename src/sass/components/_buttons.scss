@@ -1,44 +1,108 @@
-.button-group{
+.button-group {
   margin-top: 45px;
 }
 .nav__button {
-    display: inline-block;
-    padding-top: 14px;
-    padding-bottom: 12px;
-    padding-left: 37px;
-    padding-right: 37px;
-    min-width: 130px;
-  
-    @media screen and (min-width: $tablet) {
-      padding-left: 38px;
-      padding-right: 38px;
-      min-width: 136px;
+  display: inline-block;
+  padding-top: 14px;
+  padding-bottom: 12px;
+  padding-left: 37px;
+  padding-right: 37px;
+  min-width: 130px;
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 38px;
+    padding-right: 38px;
+    min-width: 136px;
+  }
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: getColor(white-text);
+  background: transparent;
+  border: 1px solid getColor(white-text);
+  border-radius: 5px;
+
+  &:hover,
+  :focus,
+  :active {
+    border: 1px solid getColor(accent);
+    background: getColor(accent);
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    cursor: pointer;
+  }
+
+  &__active {
+    border: transparent;
+    background: getColor(accent);
+  }
+}
+
+.modal-info {
+  button {
+    font-weight: 500;
+  }
+  &__buttons {
+    display: flex;
+  }
+  &__btn {
+    @media screen and (max-width: $to-desktop) {
+      width: calc((100%-15px) / 2);
     }
-  
-  
-    text-align: center;
-    text-transform: uppercase;
-  
-    color: getColor(white-text);
-    background: transparent;
-    border: 1px solid getColor(white-text);
-    border-radius: 5px;
-  
-    &:hover,
-    :focus,
-    :active {
-      border: 1px solid getColor(accent);
-      background: getColor(accent);
-  
-      transition-property: background-color;
-      transition-duration: 250ms;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  
-      cursor: pointer;
+    @media screen and (min-width: $desktop) {
+      width: 136 px;
     }
 
-    &__active {
-      border: transparent;
-      background: getColor(accent);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border-radius: 5px;
+    border: 1px solid getColor(modal-text);
+    background-color: getColor(white-text);
+    outline-color: getColor(modal-accent);
+    cursor: pointer;
+    @media screen and (min-width: $tablet) {
+      padding: 14px 10px;
+    }
+    @media screen and (min-width: $desktop) {
+      padding: 12px 17px;
+      &:last-child {
+        padding: 12px 26px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid getColor(modal-accent);
+      border-radius: 5px;
+      background-color: getColor(modal-accent);
+      color: getColor(white-text);
     }
   }
+}
+.modal__icon-close {
+  width: 24px;
+  height: 24px;
+  background-image: url('../images/close.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.closeModalBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline-color: getColor(modal-accent);
+  cursor: pointer;
+}
