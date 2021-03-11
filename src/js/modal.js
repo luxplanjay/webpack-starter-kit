@@ -1,11 +1,12 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basiclightbox.min.css';
 import { fetchInfoFilm } from './apiService';
+import modalTpl from '../templates/modal.hbs';
 import local from './local';
 const selectedMovie = document.querySelector('.image-slider');
 
 const showMovieModal = async movieId => {
-  const movieMarkup = await fetchInfoFilm(movieId);
+  const movieMarkup = await fetchInfoFilm(movieId, modalTpl);
   const modal = basicLightbox.create(movieMarkup, {
     onShow: instance => {
       const watchedBtn = instance

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import updateMarkupGallery from './updateMarkup';
-import modalTpl from '../templates/modal.hbs';
 import debounce from 'lodash.debounce';
 import renderOnSearch from './renderOnSearch';
 
@@ -108,7 +107,7 @@ function onSearch() {
     //вторым аргументом передать новый колбэк с новым шаблоном для картинок по ключевому слову (но по факту прос то у некоторых фильмов нет картинок, возможно в шаблоне в теге img прописать ширину и высоту картинки, и будет прописываться альт)
     fetchFilms(searchMoviesURL, renderOnSearch);
   }
-  
+
   if (inputSearch.value.length > 0 && inputSearch.value.length < 3) {
     errorWarning.textContent = message.manyMatches;
   }
@@ -118,13 +117,13 @@ function onSearch() {
 }
 
 //функция запроса информации о фильме
-const fetchInfoFilm = async movieID => {
+const fetchInfoFilm = async (movieID, template) => {
   const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
   // console.log(infoMovieURL);
   try {
     const { data } = await axios.get(infoMovieURL);
-    const markupModal = modalTpl(data);
-    return markupModal;
+
+    return template(data);
   } catch (error) {
     if (!error.response) {
       console.error(error);
@@ -142,4 +141,4 @@ const fetchInfoFilm = async movieID => {
 //стартовый запрос популярных фильмов
 fetchFilms(popularMoviesURL, updateMarkupGallery);
 
-export { fetchInfoFilm, fetchFilms };
+export { popularMoviesURL, fetchInfoFilm, fetchFilms };

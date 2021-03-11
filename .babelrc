@@ -6,9 +6,14 @@
         "modules": false,
         "loose": true,
         "useBuiltIns": "usage",
-        "corejs": 3
+        "corejs": 3,
+        "exclude": [
+          "transform-async-to-generator",
+          "transform-regenerator"
+        ]
       }
     ]
   ],
-  "plugins": ["@babel/plugin-proposal-class-properties"]
+  "plugins": ["@babel/plugin-proposal-class-properties"],
+  "sourceMaps": true
 }
