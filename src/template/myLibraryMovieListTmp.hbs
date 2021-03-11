@@ -5,12 +5,10 @@
             onerror="this.onerror=null;this.src='https://i.pinimg.com/564x/12/61/84/126184dfb0f0c766bfd35206dae35b37.jpg';"
             class="moviesList-poster" data-movieId="{{id}}" />
         <a class="moviesList-movieName moviesList-movieName-js">{{title}}</a>
-        <p class="moviesList-movieGenreAndYear moviesList-movieGenreAndYear-js">{{genre_ids}} | {{release_date}}</p>
+        <p class="moviesList-movieGenreAndYear moviesList-movieGenreAndYear-js"> {{#each genres}}{{name}},{{#if
+            @last}}{{name}}{{/if}}{{/each}} |
+            {{release_date}}
+        </p>
     </li>
     {{/each}}
 </ul>
-
-
-{{!-- Оригинал_ 1920x1477 (1) --}}
-
-{{!-- https://placeimg.com/200/300/animals --}}

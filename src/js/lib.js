@@ -1,7 +1,7 @@
 import fetchApi from './fetchAPIandMovieList/fetchAPI';
 import localStorageUtil from './localStorage';
 import renderMovies from './fetchAPIandMovieList/renderMovies';
-import temp from '../template/moviesListTemplate.hbs';
+import temp from '../template/myLibraryMovieListTmp.hbs';
 
 import Pagination from 'tui-pagination';
 import refs from './refs';

@@ -40,9 +40,8 @@ const refs = {
   // team
   ourTeamRefs: document.querySelector('.footer-team-link'),
 
-  pagination: document.getElementById('pagination')
-
+  pagination: document.getElementById('pagination'),
+  themeInputRef: document.querySelector('.theme-switch__toggle'),
 };
-
 
 export default refs;

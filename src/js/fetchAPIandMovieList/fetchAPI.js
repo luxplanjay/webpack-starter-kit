@@ -50,6 +50,17 @@ export default {
         });
         movie.genre_ids = genresNamesArr.slice();
       }
+      // if (movie.release_date === '') {
+      //   movie.release_date = 'Year';
+      // } else {
+      //   movie.release_date = movie.release_date.substring(0, 4);
+      // }
+
+      return movie;
+    });
+  },
+  trimmMovieYear(response) {
+    response.results.map(movie => {
       if (movie.release_date === '') {
         movie.release_date = 'Year';
       } else {
@@ -91,6 +102,7 @@ export default {
           return;
         }
         this.getMoviesWithGenreNames(response);
+        this.trimmMovieYear(response);
         //this.page += 1;
         return response;
       })
@@ -110,6 +122,7 @@ export default {
       })
       .then(response => {
         this.getMoviesWithGenreNames(response);
+        this.trimmMovieYear(response);
         this.page += 1;
         return response;
       })
@@ -126,7 +139,14 @@ export default {
         }
       })
       .then(response => {
-        // console.log(response);
+        //const arrayWithGenresNames = response.genres.map(genre => genre.name);
+        //response.genres = arrayWithGenresNames.slice();
+        //console.log(response);
+        if (response.release_date === '') {
+          response.release_date = 'Year';
+        } else {
+          response.release_date = response.release_date.substring(0, 4);
+        }
         return response;
       })
       .catch(this.errorHandler);
