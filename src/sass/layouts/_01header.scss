@@ -8,6 +8,7 @@
 
 
 .header-container--home {
+  // width: 100%;
   padding: 46px 20px 97px;
   background-position: center;
   background-repeat: no-repeat;
@@ -77,11 +78,13 @@
       }
     }
   }
+  // library
 }
 
 
 .header-container--library {
     padding: 46px 20px 65px;
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -152,9 +155,15 @@
     }
   }
 
+
+
+
+
 .header-nav-container {
-  @include container(flex, space-between, baseline);
+  display: flex;
   flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: space-between;
   margin-bottom: 27px;
 
   &--library {
@@ -163,7 +172,8 @@
 }
 
 .logo-container {
-  @include container(flex, center, center);
+  display: flex;
+  align-items: center;
 }
 
 .header__logo {
@@ -201,7 +211,6 @@
 }
 
 .site-nav__button {
-  position: relative;
   padding: 3px 0;
   text-transform: uppercase;
   border: none;
@@ -212,6 +221,8 @@
   cursor: pointer;
   outline: none;
   opacity: 0.7;
+  transition: 0.5s;
+  position: relative;
 
   &:hover,
   &:focus {
@@ -225,8 +236,8 @@
 }
 
 .search-form {
-  position: relative;
   max-width: 336px;
+  position: relative;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
@@ -241,7 +252,10 @@
     color: $text-header;
 
     &::placeholder {
-      @include font(400, 14px, 1.14);
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.14;
       color: $text-header;
     }
   }
@@ -267,10 +281,16 @@
 
 .error-container {
   position: relative;
-  @include container(flex, center, center);
+  // margin-right: auto;
+  // margin-left: auto;
+  display: flex;
+    justify-content: center;
+    text-align: center;
 
   @include for-size(tablet-plus) {
     max-width: none;
+    // display: flex;
+    // justify-content: center
   }
 }
 
@@ -278,9 +298,17 @@
   display: none;
   position: absolute;
   top: 20px;
-  @include font(400, 14px, 1.14);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
   text-align: left;
   color: $text-error;
+  // text-align: left;
+
+  // @include for-size(tablet-plus) {
+   
+  //   text-align: center;
+  // }
 }
 
 .library__list {

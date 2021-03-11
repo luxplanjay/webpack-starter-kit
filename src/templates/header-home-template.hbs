@@ -1,0 +1,38 @@
+
+    <div class="header-nav-container">
+        <div class="logo-container">
+            <span class="header__logo"></span>
+            <h1 class="header__title">
+                Filmoteka
+            </h1>
+        </div>
+        <nav>
+            <ul class="site-nav__list">
+                <li class="site-nav__item">
+                    <button class="site-nav__button is-active js-home" data-request="home">Home</button>
+                </li>
+                <li class="site-nav__item">
+                    <button class="site-nav__button js-library" data-request="library">My library</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <form class="search-form">
+        <input class="search-form__input" type="text" name="query" placeholder="Movie search" autocomplete="off" />
+        <button type="submit" class="search-form__button" aria-label="Search">
+            <span class="search-form__icon"></span>
+        </button>
+
+
+    </form>
+    <div class="error-container">
+        <p class="header__error">Search result not successful. Enter the correct movie name and press enter</p>
+    </div>
+
+    <div class="theme-switch__control">
+        <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+                aria-label="Change theme" />
+        <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
+        </label>
+        <div aria-hidden="true" class="theme-switch__marker"></div>
+    </div>
