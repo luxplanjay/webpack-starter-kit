@@ -47,8 +47,6 @@ export default {
     }
   },
   onClickFilm(event) {
-
-  if (event.target.classList.contains('films__list')){return;}
     const movieId = event.path.find(
       elem => elem.classList.value === 'film item',
     ).dataset.movieid;
