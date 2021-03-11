@@ -6,8 +6,8 @@
             class="moviesList-poster" data-movieId="{{id}}" />
         <a class="moviesList-movieName moviesList-movieName-js">{{title}}</a>
         <p class="moviesList-movieGenreAndYear moviesList-movieGenreAndYear-js"> {{#each genres}}{{name}},{{/each}} |
-            {{release_date}}
-        </p>
+            {{release_date}} <span class="modal-movie-description-vote">{{vote_average}}</span></p>
+
     </li>
     {{/each}}
 </ul>
