@@ -8,11 +8,16 @@ import refs from './refs.js';
 import onButtonRemoveFromWatched from './onButtonRemoveFromWatched';
 import checkButtonWatchedActive from './buttonWatchedCheckActive';
 import checkButtonQueueActive from './buttonQueueCheckActive';
-import { modalWatcher } from './modal-text-watcher'
+import { modalWatcher } from './modal-text-watcher';
+import posterPlaceholder from '../img/image-placeholder-modal.jpg';
+
+function setPosterModal(data) {
+  return !data ? posterPlaceholder : `https://image.tmdb.org/t/p/w500/${data}`;
+}
 
 function getFilmInfo(movie_id) {
   searchMovie(movie_id).then(film => {
-    // console.log(film);
+    film.poster_path = setPosterModal(film.poster_path);
     const markupFilm = modalTpl(film);
     const modal = basicLightbox.create(markupFilm);
     modal.show();
