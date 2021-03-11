@@ -2,21 +2,16 @@
 @import './utils/mixins';
 @import './base/normalize';
 @import './base/reset';
-
 @import './components/btn';
-// @import './components/card';
-
 @import './components/container';
 @import './components/footer';
 @import './components/header';
 @import './components/input';
 @import './components/headerLib';
-
 @import './components/modal';
 @import './components/modal-minor';
 @import './components/pagination';
-// @import './components/spinner';
-
+@import './components/spinner';
 @import './components/moviesList';
 @import './components/oneCardMovie';
 @import './components/themes';
