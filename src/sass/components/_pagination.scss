@@ -4,18 +4,19 @@
 
 .paginationjs {
   height: 40px;
-  width: 280px;
+  max-width: 100%;
+  width: auto;
   margin: 0px auto;
   padding: 0px;
   @include for-size(tablet) {
-    width: 375px;
+    max-width: 375px;
+    width: fit-content;
   }
   @include for-size(desktop) {
-    width: 375px;
+    max-width: 375px;
+    width: fit-content;
   }
-  // outline: 2px dashed red;
-}
-.paginationjs {
+
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -24,11 +25,19 @@
   &-pages {
     width: 100%;
     height: 100%;
+    max-width: 100%;
+
+    width: fit-content;
+    height: 100%;
+    margin: 0px auto;
     // outline: 2px dashed red;
     ul {
       list-style: none;
-      width: 100%;
+      max-width: 100%;
+      width: fit-content;
       height: 100%;
+      margin: 0px auto;
+
       @include CenteredFlex(flex, nowrap, center, space-between);
     }
     a {
