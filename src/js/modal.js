@@ -22,6 +22,25 @@ const showMovieModal = async movieId => {
   }
 };
 
-selectedMovie.addEventListener('click', () =>
-  showMovieModal(event.target.dataset.id),
-);
+// selectedMovie.addEventListener('click', event => {
+//   if (event.target.nodeName === 'LI') {
+//     return;
+//   }
+//   showMovieModal(event.target.parentNode.dataset.id);
+// });
+//====================================
+// selectedMovie.addEventListener('click', event => {
+//   if (event) {
+//     console.log(`event.target.nodeName  `, event.target.nodeName);
+//     console.log(`event.target.parentNode  `, event.target.parentNode);
+//     console.log(`event.currentTarget.nodeName  `, event.currentTarget.nodeName);
+//     return;
+//   }
+
+//   showMovieModal(event.target.parentNode.dataset.id);
+// });
+//====================================
+selectedMovie.addEventListener('click', event => {
+  if (event.target.parentNode.nodeName === 'LI')
+    showMovieModal(event.target.parentNode.dataset.id);
+});

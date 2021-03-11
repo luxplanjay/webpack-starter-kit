@@ -32,6 +32,9 @@
 
       &:first-child {
         margin-right: 10px;
+        @media screen and (max-width: $to-tablet) {
+          margin-bottom: 10px;
+        }
       }
     }
 

@@ -19,13 +19,16 @@
     text-transform: uppercase;
   }
 
-  &__info--container {
-    display: flex;
-  }
+  // &__info--container {
+  //   display: flex;
+  // }
 
   &__info {
     color: getColor(accent);
     margin-right: 5px;
+    &--release_date {
+      float: right;
+    }
   }
 
   &__info--votes {

@@ -1,10 +1,11 @@
 {{#each this}}
-<li class="card image-slider__slide swiper-slide" data-id="{{this.id}}">
+<li class="card image-slider__slide swiper-slide" data-id="{{id}}">
     <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" alt="{{title}}" class="card__image">
     <h4 class="card__title">{{title}}</h4>
-    <div class="card__info--container">
+    {{!-- <div class="card__info--container"> --}}
         <span class="card__info">{{genre_ids}} | </span>
-        <span class="card__info">{{release_date}}</span>
-    </div>
+        <span class="card__info card__info--release_date">{{release_date}}</span>
+        {{!--
+    </div> --}}
 </li>
 {{/each}}
