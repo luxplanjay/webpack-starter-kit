@@ -81,6 +81,10 @@ function checkAddedFilms(filmsStore, filmInfo, checkbox, button, key) {
   }
 }
 function onAddButtonClick(event, key) {
+  const libItem = document.querySelector(
+    `.lib-movie-list [data-movieid='${event.target.dataset.movieid}']`,
+  );
+
   const { pushFilm, films } = localStorageUtil.putFilms(
     key,
     event.target.dataset.movieid,
@@ -88,8 +92,34 @@ function onAddButtonClick(event, key) {
   if (pushFilm) {
     event.target.textContent = `REMOVE FROM ${key}`;
     event.target.classList.add('active');
+    if (
+      libItem !== null &&
+      refs.watchedBtn.classList.contains('active') &&
+      key === 'watched'
+    ) {
+      libItem.classList.remove('display-none');
+    } else if (
+      libItem !== null &&
+      refs.queueBtn.classList.contains('active') &&
+      key === 'queue'
+    ) {
+      libItem.classList.remove('display-none');
+    }
   } else {
     event.target.textContent = `ADD TO ${key}`;
     event.target.classList.remove('active');
+    if (
+      libItem !== null &&
+      refs.watchedBtn.classList.contains('active') &&
+      key === 'watched'
+    ) {
+      libItem.classList.add('display-none');
+    } else if (
+      libItem !== null &&
+      refs.queueBtn.classList.contains('active') &&
+      key === 'queue'
+    ) {
+      libItem.classList.add('display-none');
+    }
   }
 }

@@ -2,7 +2,7 @@ import fetchApi from './fetchAPIandMovieList/fetchAPI';
 import localStorageUtil from './localStorage';
 import renderMovies from './fetchAPIandMovieList/renderMovies';
 import temp from '../template/myLibraryMovieListTmp.hbs';
-
+import spinner from './spinner';
 import Pagination from 'tui-pagination';
 import refs from './refs';
 
@@ -18,9 +18,11 @@ buttonQueue.addEventListener('click', () => renderLibraryFilms('queue'));
 function renderLibraryFilms(key) {
   let libraryFilms = localStorageUtil.getFilms(key);
   let arrayFilms = [];
-
+  spinner.show();
   if (libraryFilms.length === 0) {
     refs.pagination.innerHTML = '';
+    moviesContainerRef.innerHTML = '<p>Movie list is empty</p>';
+    spinner.hide();
   }
 
   if (key === 'watched') {
@@ -30,8 +32,6 @@ function renderLibraryFilms(key) {
     buttonQueue.classList.add('active');
     buttonWatched.classList.remove('active');
   }
-
-  moviesContainerRef.innerHTML = '<p>Movie list is empty</p>';
 
   libraryFilms.map(id => {
     const promId = fetchApi.getFullMovieInfo(id);

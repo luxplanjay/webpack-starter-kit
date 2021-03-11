@@ -49,14 +49,14 @@
 }
 
 .icon-close:hover {
-   opacity: 1;
-   transform: scale(1.5);
-   border: 1px solid $accent-color;
+  opacity: 1;
+  transform: scale(1.5);
+  border: 1px solid $accent-color;
 }
 
 .close-button {
   position: absolute;
-  top: 7px;;
+  top: 7px;
   right: 7px;
   z-index: 100;
   width: 35px;
@@ -82,7 +82,7 @@
 // ======= modal window j=============================
 
 .film-card {
- padding-top: 15px;
+  padding-top: 15px;
   position: absolute;
   background-color: #fff;
   border-radius: 5px;
@@ -90,7 +90,7 @@
   transform: translateX(-50%);
   top: 50%;
   transform: translate(-50%, -50%);
-  
+
   @media screen and (min-width: 768px) {
     padding: 42px 28px 28px 28px;
     // width: 264px;
@@ -130,7 +130,7 @@
   width: auto;
   height: auto;
   border-radius: 5px;
-  
+
   @media screen and (min-width: 768px) {
     width: 264px;
     height: auto;
@@ -294,7 +294,7 @@
 .button:hover,
 .button:focus {
   background-color: $accent-color;
-  color: $primary-white-color;;
+  color: $primary-white-color;
   // color: #000000;
   // border: 1px solid #000000;
 }
@@ -344,4 +344,7 @@
   // padding: 14px 30px 12px;
   border: 1px solid #000000;
   text-transform: uppercase;
+}
+.display-none {
+  display: none;
 }
