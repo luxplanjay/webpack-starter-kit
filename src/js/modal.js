@@ -43,6 +43,7 @@ const showMovieModal = async movieId => {
   }
 };
 
-selectedMovie.addEventListener('click', event =>
-  showMovieModal(event.target.dataset.id),
-);
+selectedMovie.addEventListener('click', event => {
+  if (event.target.parentNode.nodeName === 'LI')
+    showMovieModal(event.target.parentNode.dataset.id);
+});

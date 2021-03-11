@@ -1,5 +1,5 @@
 <div class="modal">
-    <div class="modal__img-container">
+    <div class="modal__img-container modal__conteiner">
         {{#if poster_path}}
         <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}"
             data-source="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" alt="{{title}}" class="modal__img-container--image" />
@@ -8,33 +8,9 @@
         {{/if}}
     </div>
 
-    <div class="modal-info">
+    <div class="modal-info modal__conteiner">
         <h2 class="modal-info__movie-title">{{title}}</h2>
-        {{!-- <ul class="modal-info__list">
-            <li class="modal-info__item">
-                <p class="modal-info__item-title">Vote / Votes</p>
-                <p class="modal-info__item-text">
-                    <span class="modal-info__item-text--orange-bgr">{{vote_average}}</span> <span class="modal-info__item-title">/</span>
-                    <span>{{vote_count}}</span>
-                </p>
-            </li>
-            <li class="modal-info__item">
-                <p class="modal-info__item-title">Popularity</p>
-                <p class="modal-info__item-text">{{popularity}}</p>
-            </li>
-            <li class="modal-info__item">
-                <p class="modal-info__item-title">Original title</p>
-                <p class="modal-info__item-text">{{original_title}}</p>
-            </li>
-            <li class="modal-info__item">
-                <p class="modal-info__item-title">Genre</p>
-                <p class="modal-info__item-text">
-                    {{#each this.genres}}
-                    <span>{{this.name}}</span>
-                    {{/each}}
-                </p>
-            </li>
-        </ul> --}}
+
         <div class="modal-info__lists">
             <ul class="modal-info__list">
                 <li class="modal-info__item-title">Vote / Votes</li>
@@ -50,7 +26,7 @@
                 <li class="modal-info__item-text">{{popularity}}</li>
                 <li class="modal-info__item-text">{{original_title}}</li>
                 <li class="modal-info__item-text modal-info__item-text--genres">{{#each this.genres}}
-                    <span>{{this.name}}</span>
+                    <span class="modal-info__item-text--each-genre">{{this.name}}</span>
                     {{/each}}
                 </li>
             </ul>
@@ -68,9 +44,5 @@
         </div>
     </div>
 
-    <button type="button" class="closeModalBtn">
-        <svg class="modal__icon-close">
-            <use href="./images/symbol-defs.svg#close-modal"></use>
-        </svg>
-    </button>
+    <button type="button" class="modal__icon-close closeModalBtn"></button>
 </div>
