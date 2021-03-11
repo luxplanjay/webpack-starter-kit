@@ -6,6 +6,7 @@ import lightbox from './js/modalFilmMarkup';
 import { processingSpinner, deleteSpinner } from './js/spinner-loader';
 import './js/pagination.min';
 import optionsPagination from './js/paginationOptions';
+import './js/team-modal';
 const container = $('#pagination-container');
 
 // processingSpinner();
@@ -20,7 +21,6 @@ refs.inputForm.addEventListener('submit', event => {
   console.log(apiService.searchUrl);
   refs.movieGrid.innerHTML = '';
   form.reset(); //чистим форму
-  
 
   container.pagination({
     ...optionsPagination, //деструктуризация базовых настроек пагинатора (default options) рендер страницы зашит в дефолтных опциях!!!
