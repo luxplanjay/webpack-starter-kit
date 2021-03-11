@@ -97,7 +97,7 @@ function getFilmInfo(movie_id) {
         );
       }
     }
-    const crossRef = document.querySelector('.icon-close');
+    const crossRef = document.querySelector('.icon-cross');
     crossRef.addEventListener('click', btnClosedModal);
     function btnClosedModal() {
       modal.close();

@@ -40,7 +40,7 @@
     @media screen and (min-width: $desktop) {
       width: 396px;
       height: 478px;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 
@@ -271,7 +271,7 @@
 //  }
 // =======
 
-.icon-close {
+.icon-cross {
   width: 30px;
   height: 30px;
 }
