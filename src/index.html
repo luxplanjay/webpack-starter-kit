@@ -11,42 +11,53 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     /> -->
-</head>
-
-<body>
-  <!-- Main header -->
-  <div class="main-page page" style=>
-    <header class="page-header">
-      <nav class="nav">
-        <div class="main-link logo">
-          <svg width="24" height="24" aria-label="Logo">
-            <use class="logo__icon" href="./images/symbol-defs.svg#icon-logo"></use>
-          </svg>
-          <span class="logo__text">Filmoteka</span>
-        </div>
-        <div class="nav__container" id="menu-container" data-menu>
-          <span class="link nav__link--current">home</span>
-          <span class="link nav__link">my library</span>
-        </div>
-      </nav>
-      <!-- Search-form -->
-      <section class="search">
-        <div class="search__container">
-          <input class="search__input" type="text" name="query" autocomplete="off" placeholder="Поиск фильмов"
-            id="search__input" />
-          <div class="search__box" id="search__box"></div>
-          <p class="search__warning"></p>
-        </div>
-      </section>
-    </header>
-  </div>
-  <!-- Library Header -->
-  <div class="library-page" style="display: none">
-    <header class="page-header">
-      <nav class="nav">
-        <div class="main-link logo">
-          <svg width="24" height="24" aria-label="Logo">
-            <use class="logo__icon" href="./images/symbol-defs.svg#icon-logo"></use>
+  </head>
+  <body>
+    <!-- Main header -->
+    <div class="main-page page" style=>
+      <header class="page-header">
+          <nav class="nav">
+            <div class="main-link logo">
+              <svg class="logo__svg" width="24" height="24" aria-label="Logo">
+                <use
+                  class="logo__icon"
+                  href="./images/symbol-defs.svg#icon-logo"
+                ></use>
+              </svg>
+              <span class="logo__text">Filmoteka</span>
+            </div>
+            <div class="nav__container" id="menu-container" data-menu>
+              <span class="link nav__link--current">home</span>
+              <span class="link nav__link">my library</span>
+            </div>
+          </nav>
+          <!-- Search-form --> 
+          <section class="search">
+            <div class="search__container">
+              <input
+                class="search__input"
+                type="text"
+                name="query"
+                autocomplete="off"
+                placeholder="Поиск фильмов"
+                id="search__input"
+              />
+              <div class="search__box" id="search__box"></div>
+                <p class="search__warning"></p>
+              </div>
+          </section>
+      </header>
+    </div>
+    <!-- Library Header -->
+    <div class="library-page" style="display: none">
+      <header class="page-header">
+        <nav class="nav">
+          <div class="main-link logo">
+            <svg class="logo__svg" width="24" height="24" aria-label="Logo">
+              <use
+                class="logo__icon"
+                href="./images/symbol-defs.svg#icon-logo"
+              ></use>
           </svg>
           <span class="logo__text">Filmoteka</span>
         </div>
@@ -62,39 +73,6 @@
         <button type="button" class="nav__button" data-menu-button aria-expanded="false" aria-controls="menu-container">
           QUEUE
         </button>
-      </div>
-    </header>
-  </div>
-  <!-- Library Header -->
-  <div class="library-page" style="display: none">
-    <header class="page-header">
-      <div class="container page-header__container">
-        <nav class="nav">
-          <div class="main-link logo">
-            <svg width="24" height="24" aria-label="Logo">
-              <use class="icon-logo" href="./images/symbol-defs.svg#icon-logo"></use>
-            </svg>
-            <span class="logo__studio">Filmoteka</span>
-          </div>
-          <button type="button" class="nav__button" data-menu-button aria-expanded="false"
-            aria-controls="menu-container">
-            WATCHED
-          </button>
-          <button type="button" class="nav__button" data-menu-button aria-expanded="false"
-            aria-controls="menu-container">
-            QUEUE
-          </button>
-          <div class="nav__container">
-            <ul class="menu">
-              <li class="menu__item">
-                <span class="link menu__link">HOME</span>
-              </li>
-              <li class="menu__item">
-                <span class="link menu__link menu__link--current">MY LIBRARY</span>
-              </li>
-            </ul>
-          </div>
-        </nav>
       </div>
     </header>
   </div>
@@ -120,5 +98,4 @@
     </div>
   </footer>
 </body>
-
 </html>

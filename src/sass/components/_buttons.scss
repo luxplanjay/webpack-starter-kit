@@ -1,5 +1,5 @@
 .button-group {
-  margin-top: 45px;
+  margin-top: 50px;
 }
 .nav__button {
   display: inline-block;
@@ -9,6 +9,12 @@
   padding-right: 37px;
   min-width: 130px;
 
+  font-weight: 500;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+  
   @media screen and (min-width: $tablet) {
     padding-left: 38px;
     padding-right: 38px;
@@ -106,3 +112,4 @@
   outline-color: getColor(modal-accent);
   cursor: pointer;
 }
+

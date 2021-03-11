@@ -1,4 +1,5 @@
 .main-page > .page-header {
+  position: relative;
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -16,7 +17,7 @@
       ),
       url('../images/main-mobile.jpg');
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     background-image: linear-gradient(
         to right,
         rgba(47, 48, 58, 0.4),
@@ -35,7 +36,7 @@
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: $desktop) {
     background-image: linear-gradient(
         to right,
         rgba(47, 48, 58, 0.4),
@@ -62,33 +63,66 @@
   padding-top: 40px;
   padding-left: 70px;
   padding-right: 70px;
+  @media screen and (max-width: $to-tablet) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
-  &__container{
-      padding-top: 16px;
+  &__container {
+    @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+      padding-top: 10px;
+    }
   }
 }
 
 .logo {
-  
+  display: flex;
+  cursor: pointer;
+
+  &:hover {
+    color: getColor(accent);
+  }
+
+  &:hover > .logo__svg {
+    color: getColor(accent);
+    stroke: getColor(accent);
+  }
+
+  &__svg {
+    align-self: center;
+    padding-right: 20px;
+    stroke: getColor(icon-color);
+  }
 
   &__text {
     font-style: normal;
     font-weight: 500;
     font-size: 30px;
     line-height: 1.5;
-    // letter-spacing: 1px;
+    letter-spacing: 1px;
+  }
+}
 
-    position: relative;
-
-    margin-left: 20px;
+.logo__text {
+  @media screen and (max-width: $to-tablet) {
+    display: none;
   }
 }
 
 .nav__link,
 .nav__link--current {
+  position: relative;
+
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.4;
   text-transform: uppercase;
+
+  cursor: pointer;
+
+  &:hover {
+    color: getColor(accent);
+  }
 }
 
 .nav__link--current {
@@ -99,8 +133,8 @@
     position: absolute;
     width: 35px;
     height: 3px;
-    right: 180px;
-    top: 74px;
+    right: 0px;
+    top: 14px;
     background-color: getColor(accent);
   }
 }

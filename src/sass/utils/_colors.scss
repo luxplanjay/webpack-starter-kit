@@ -8,6 +8,7 @@ $colors: (
   'modal-text': #000000,
   'modal-grey_text': #8c8c8c,
   'modal-accent': #ff6b01,
+  'icon-color': #818181,
 );
 @function getColor($key) {
   @return map-get($colors, $key);
