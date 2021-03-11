@@ -3,6 +3,7 @@ import { initProgramFilmoteka } from './moviesListEventsHandler';
 import movieListTmp from '../../template/moviesListTemplate.hbs';
 import renderMovies from './renderMovies.js';
 import refs from '../refs.js';
+import spinner from '../spinner';
 const myKey = '1690d1319b4e719ac3308f10c68ac649';
 
 export default {
@@ -149,9 +150,11 @@ export default {
   async searchMovies(page = 1) {
     //рендер результата поиска возвращает промис
     //moviesContainerRef.innerHTML = '';
+
     refs.pagination.classList.remove('is-hidden');
     return this.searchMoviesbyTag(page)
       .then(response => {
+        spinner.hide();
         if (response === undefined) {
           return;
         }
@@ -164,6 +167,7 @@ export default {
   async showMoviesInTrend(page = 1) {
     //рендер трендовых возвращает промис
     //moviesContainerRef.innerHTML = '';
+
     refs.pagination.classList.remove('is-hidden');
     return this.getTrendingMovies(page)
       .then(response => {

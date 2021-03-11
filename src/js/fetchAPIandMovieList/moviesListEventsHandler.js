@@ -4,7 +4,8 @@ import renderMovies from './renderMovies.js';
 import movieListTmp from '../../template/moviesListTemplate.hbs';
 import renderPagination from '../pagination';
 import refs from '../refs.js';
-
+import spinner from '../spinner';
+spinner.show();
 function inputHandler(event) {
   const movieName = event.target.value;
   if (movieName == '') {
@@ -20,6 +21,7 @@ function inputHandler(event) {
 
 refs.movieInputRef.addEventListener('input', debounce(inputHandler, 500));
 export default async function initProgramFilmoteka() {
+  spinner.show();
   let response;
   if (fetchAPI.moviesSearchActive === false) {
     response = await fetchAPI.showMoviesInTrend();
