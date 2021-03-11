@@ -23,14 +23,13 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
-  overflow: scroll;
 }
 
 .content-modal {
   display: flex;
 
   max-width: 100%;
-  max-height: fit-content;
+  max-height: 100%;
 
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.5);
 
@@ -249,88 +248,32 @@
 }
 
 // OUR TEAM
-
 .footer-team-link {
-  /*  text-align: center;
-  margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center; */
-  @media screen and (min-width: 768px) {
-    margin-left: -10px;
-    margin-bottom: -10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-.team {
-  @media screen and (min-width: 768px) {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    width: calc((100% - 30px) / 3);
-  }
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .team-photo {
-  width: 140px;
-  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
 }
-
-.team-name {
-  margin-bottom: 10px;
+.team-social-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
-.title-header {
-  margin-bottom: 20px;
-}
-
 .social-link {
   border-radius: 50%;
   &:hover,
   &:focus {
     fill: $accent-color;
-  }
-}
-
-.team-mail {
-  margin-bottom: 10px;
-}
-
-.team-photo {
-  margin-bottom: 20px;
-}
-
-/* .personal-inf {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-.image-link {
-  margin: 0;
-}
-
-.lightbox-button.btn-modal-close {
-  position: absolute;
-  bottom: 99%;
-  right: 1%;
-}
-
-.lightbox-content.content-modal {
-  position: relative;
-  max-width: 700px;
-  height: fit-content;
-  margin-right: 30px;
-  margin-left: 30px;
-  height: fit-content;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    width: 646px;
-  }
-  @media screen and (min-width: 1024px) {
-    width: 912px;
   }
 }
