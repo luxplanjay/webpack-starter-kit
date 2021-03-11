@@ -6,6 +6,9 @@ body.light-theme {
 body.dark-theme {
   background-color: #333333;
   color: $primary-text-color;
+  .moviesList-movieName {
+    color: $primary-white-color;
+  }
 }
 
 .toolbar {
