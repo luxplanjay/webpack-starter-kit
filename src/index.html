@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmoteka</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#ff6b01">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
   <body>
     <header class="header">
@@ -79,88 +74,107 @@
 
     
     <main>
-        <section class="films ">
-            <div class="films__container container ">
-                <h2 class="films__title " hidden>Popular films</h2>
-                <ul class="films__list "></ul>
-                <div class="films__message is-hidden "></div>
-                <div class="pagination is-hidden ">
-                    <ul class="pagination__list "></ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="back_to_top ">
-            <img src="./images/up.svg " />
+      <section class="films">
+        <div class="films__container container">
+          <h2 class="films__title" hidden>Popular films</h2>
+          <ul class="films__list"></ul>
+          <div class="films__message is-hidden"></div>
+          <div class="pagination is-hidden">
+            <ul class="pagination__list"></ul>
+          </div>
         </div>
+      </section>
+
+      <div class="back_to_top">
+        <img src="./images/up.svg" />
+      </div>
     </main>
 
     <!-- Modal from Olga + Lekasey-->
-    <div class="backdrop visually-hidden ">
-        <div class="modal visually-hidden ">
-            <button class="btn__close " data-action="close " aria-label="close-button ">
-        <svg class="icon " height="20 " width="20 ">
-          <use href="./images/sprite.svg#icon-close "></use>
-        </svg>
-      </button>
-            <div class="modal__content ">
-                <div class="modal__block image__block ">
-                    <img class="modal__image " src="./images/default-opt.jpg " alt=" " />
-                </div>
-                <div class="modal__block ">
-                    <h2 class="modal__title "></h2>
-                    <div class="film-info ">
-                        <ul class="list film-info__names ">
-                            <li class="film-info__name ">
-                                <p class="content-list__item " data-attribute="votesTitle ">
-                                    Vote/Votes
-                                </p>
-                            </li>
-                            <li class="film-info__name ">
-                                <p class="content-list__item " data-attribute="popularityTitle ">
-                                    Popularity
-                                </p>
-                            </li>
-                            <li class="film-info__name ">
-                                <p class="content-list__item " data-attribute="originalTitle ">
-                                    Original Title
-                                </p>
-                            </li>
-                            <li class="film-info__name ">
-                                <p class="content-list__item " data-attribute="genresTitle ">
-                                    Genre
-                                </p>
-                            </li>
-                        </ul>
-                        <ul class="list film-info__values ">
-                            <li class="film-info__value ">
-                                <span class="film-info__rate "></span> /
-                                <span class="content-list__item--value " data-attribute="votes "></span>
-                            </li>
-                            <li class="film-info__value ">
-                                <span class="content-list__item--value " data-attribute="popularity "></span>
-                            </li>
-                            <li class="film-info__value ">
-                                <span class="content-list__item--value " data-attribute="title "></span>
-                            </li>
-                            <li class="film-info__value ">
-                                <span class="content-list__item--value " data-attribute="genre "></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <h3 class="description-title ">ABOUT</h3>
-                    <p class="description-text "></p>
-                    <ul class="list button-list ">
-                        <button class="button modal__btn modal__btn--watched ">
-              ADD TO WATCHED
-            </button>
-                        <button class="button modal__btn modal__btn--queue ">
-              ADD TO QUEUE
-            </button>
-                    </ul>
-                </div>
+    <div class="backdrop visually-hidden">
+      <div class="modal visually-hidden">
+        <button
+          class="btn__close"
+          data-action="close"
+          aria-label="close-button"
+        >
+          <svg class="icon" height="20" width="20">
+            <use href="./images/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="modal__content">
+          <div class="modal__block image__block">
+            <img class="modal__image" src="./images/default-opt.jpg" alt="" />
+          </div>
+          <div class="modal__block">
+            <h2 class="modal__title"></h2>
+            <div class="film-info">
+              <ul class="list film-info__names">
+                <li class="film-info__name">
+                  <p class="content-list__item" data-attribute="votesTitle">
+                    Vote/Votes
+                  </p>
+                </li>
+                <li class="film-info__name">
+                  <p
+                    class="content-list__item"
+                    data-attribute="popularityTitle"
+                  >
+                    Popularity
+                  </p>
+                </li>
+                <li class="film-info__name">
+                  <p class="content-list__item" data-attribute="originalTitle">
+                    Original Title
+                  </p>
+                </li>
+                <li class="film-info__name">
+                  <p class="content-list__item" data-attribute="genresTitle">
+                    Genre
+                  </p>
+                </li>
+              </ul>
+              <ul class="list film-info__values">
+                <li class="film-info__value">
+                  <span class="film-info__rate"></span> /
+                  <span
+                    class="content-list__item--value"
+                    data-attribute="votes"
+                  ></span>
+                </li>
+                <li class="film-info__value">
+                  <span
+                    class="content-list__item--value"
+                    data-attribute="popularity"
+                  ></span>
+                </li>
+                <li class="film-info__value">
+                  <span
+                    class="content-list__item--value"
+                    data-attribute="title"
+                  ></span>
+                </li>
+                <li class="film-info__value">
+                  <span
+                    class="content-list__item--value"
+                    data-attribute="genre"
+                  ></span>
+                </li>
+              </ul>
             </div>
+            <h3 class="description-title">ABOUT</h3>
+            <p class="description-text"></p>
+            <ul class="list button-list">
+              <button class="button modal__btn modal__btn--watched">
+                ADD TO WATCHED
+              </button>
+              <button class="button modal__btn modal__btn--queue">
+                ADD TO QUEUE
+              </button>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
     <!-- modal end -->
 
@@ -552,16 +566,19 @@
                 </li>
               </ul>
 
-                        <button type="button " class="lightbox__button " data-action="close-lightbox ">
-              <svg class="icon ">
-                <use href="./images/sprite.svg#icon-close "></use>
-              </svg>
-            </button>
-                    </div>
-                </div>
+              <button
+                type="button"
+                class="lightbox__button"
+                data-action="close-lightbox"
+              >
+                <svg class="icon">
+                  <use href="./images/sprite.svg#icon-close"></use>
+                </svg>
+              </button>
             </div>
+          </div>
         </div>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
