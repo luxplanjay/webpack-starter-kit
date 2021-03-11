@@ -1,17 +1,15 @@
 .header {
-  // position: fixed;
-  // left: 0;
-  // top: 0;
   width: 100%;
+  background-color: $color-bg-header;
   font-family: 'Roboto';
   font-weight: 500;
   color: $text-header;
 }
 
-.header-container {
+
+.header-container--home {
   // width: 100%;
   padding: 46px 20px 97px;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,10 +78,11 @@
       }
     }
   }
-
   // library
+}
 
-  &--library {
+
+.header-container--library {
     padding: 46px 20px 65px;
 
     background-position: center;
@@ -155,7 +154,10 @@
       }
     }
   }
-}
+
+
+
+
 
 .header-nav-container {
   display: flex;

@@ -24,16 +24,13 @@ import { save } from './js/storage';
 
 import './js/change-header-theme';
 import './js/library-list-hendler';
-import './js/spinner';
 
 
-const searchFormRef = document.querySelector('.search-form');
-const errorNoteRef = document.querySelector('.header__error');
 save('currentRequest', HOME);
 
 fnFetch.fetchData();
 
-searchFormRef.addEventListener('submit', fnHendler.onSubmitSearchForm);
+refs.searchForm.addEventListener('submit', fnHendler.onSubmitSearchForm);
 refs.paginationBox.addEventListener('click', fnHendler.onClickPaginate);
 refs.filmListRef.addEventListener('click', fnHendler.onClickFilm);
 refs.libraryHeaderBtn.addEventListener('click', fnHendler.onClickLibrary);
@@ -41,6 +38,3 @@ refs.watchedBtn.addEventListener('click', fnHendler.onClickWatched);
 refs.queueBtn.addEventListener('click', fnHendler.onClickQueue);
 refs.logoNav.addEventListener('click', fnHendler.onClickLogoHome);
 refs.homeHeaderBtn.addEventListener('click', fnHendler.onClickLogoHome);
-
-
-

@@ -4,14 +4,17 @@ import apiService from './apiService.js';
 import { HOME, SEARCH, WATCHED, QUEUE } from './request.js';
 import { load, save, remove } from './storage';
 import showErrorNote from './error-notification';
+import refs from './refs';
 
 export default {
   onSubmitSearchForm(event) {
     event.preventDefault();
-    const searchQuery = event.target.elements.query.value;
-
+    const searchQuery = event.target.elements.query.value.trim();
+    console.log('search', searchQuery);
     if (!searchQuery) {
-      //   showErrorNote(errorNoteRef);
+      showErrorNote(refs.errorNoteRef);
+      refs.filmListRef.innerHTML = '';
+      refs.paginationList.innerHTML = '';
       return;
     }
     apiService.searchQuery = searchQuery;
@@ -52,8 +55,9 @@ export default {
   },
 
   onClickLibrary() {
-    save('currentRequest', QUEUE);
-    fnFetch.fetchDataLibrary(1, load('queue'));
+    const req = refs.libraryList.querySelector('.is-active').dataset.request;
+    save('currentRequest', req);
+    fnFetch.fetchDataLibrary(1, load(req));
   },
   onClickWatched() {
     save('currentRequest', WATCHED);

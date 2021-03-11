@@ -3,6 +3,7 @@ import apiService from './apiService.js';
 import pagination from './pagination.js';
 import updateModalValue from './modal';
 import refs from './refs';
+import spinner from './spinner';
 
 export default {
   async fetchData(
@@ -12,6 +13,7 @@ export default {
     try {
       let resultArray = [];
       let totalResults;
+      spinner.spinnerShow();
       for (let set of fetchSettings) {
         const resAwait = await apiService.fetchData(set);
         totalResults = resAwait.total_results;
@@ -26,15 +28,16 @@ export default {
       const resultArrayDetalsFilm = await Promise.all(promisesIdFilms);
 
       addContent.additemList(resultArray, resultArrayDetalsFilm);
-      console.log('totalres', totalResults);
-   
+
       pagination.addPaginationList(totalResults, pagePagination);
+      spinner.spinnerClose();
     } catch (error) {
       throw error;
     }
   },
 
   async fetchDataLibrary(pagePagination = 1, listFilms) {
+    spinner.spinnerShow();
     const perPage = apiService.perPage;
 
     if (!listFilms || !listFilms.length) {
@@ -52,6 +55,7 @@ export default {
     const numLast = pagePagination * perPage;
     addContent.addLibraryList(resultArrayDetalsFilm.slice(numFirst, numLast));
     pagination.addPaginationList(resultArrayDetalsFilm.length, pagePagination);
+    spinner.spinnerClose();
   },
 
   async fetchDataFilm(movieId) {

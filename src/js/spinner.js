@@ -2,15 +2,12 @@
 
 import refs from './refs';
 
-function spinnerShow() {
-  refs.spinner.classList.remove('is-hidden');
-}
+export default {
+  spinnerShow() {
+    refs.spinner.classList.remove('is-hidden__spinner');
+  },
 
-function spinnerClose() {
-  refs.spinner.classList.add('is-hidden');
-
-}
-
-export default spinnerClose;
-
-
+  spinnerClose() {
+    refs.spinner.classList.add('is-hidden__spinner');
+  },
+};
