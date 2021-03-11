@@ -2,11 +2,9 @@
     <div class="modal__img-container">
         {{#if poster_path}}
         <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}"
-            data-source="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" alt="{{title}}"
-            class="modal__img-container--image" />
+            data-source="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" alt="{{title}}" class="modal__img-container--image" />
         {{else}}
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg" alt="{{title}}"
-            class="modal__img-container--image" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg" alt="{{title}}" class="modal__img-container--image" />
         {{/if}}
     </div>
 
@@ -16,8 +14,7 @@
             <li class="modal-info__item">
                 <p class="modal-info__item-title">Vote / Votes</p>
                 <p class="modal-info__item-text">
-                    <span class="modal-info__item-text--orange-bgr">{{vote_average}}</span> <span
-                        class="modal-info__item-title">/</span>
+                    <span class="modal-info__item-text--orange-bgr">{{vote_average}}</span> <span class="modal-info__item-title">/</span>
                     <span>{{vote_count}}</span>
                 </p>
             </li>
@@ -46,8 +43,7 @@
                 <li class="modal-info__item-title">Genre</li>
             </ul>
             <ul class="modal-info__list">
-                <li class="modal-info__item-text"><span
-                        class="modal-info__item-text--orange-bgr">{{vote_average}}</span>
+                <li class="modal-info__item-text"><span class="modal-info__item-text--orange-bgr">{{vote_average}}</span>
                     <span class="modal-info__item-title">/</span>
                     <span>{{vote_count}}</span>
                 </li>
@@ -67,8 +63,8 @@
         </div>
 
         <div class="modal-info__buttons">
-            <button type='button' class="modal-info__btn">add to watched</button>
-            <button type='button' class="modal-info__btn">add to queue</button>
+            <button type='button' class="modal-info__btn-watched">add to watched</button>
+            <button type='button' class="modal-info__btn-queue">add to queue</button>
         </div>
     </div>
 

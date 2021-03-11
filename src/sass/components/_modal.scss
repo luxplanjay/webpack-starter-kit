@@ -124,7 +124,8 @@
     margin-bottom: 10px;
   }
 
-  &__btn {
+  &__btn-watched,
+  &__btn-queue {
     text-align: center;
     text-transform: uppercase;
     padding: 14px 22px 12px 22px;
@@ -147,7 +148,10 @@
     }
   }
 }
-
+.modal-info__btn-watched--active {
+  background-color: #ff6b01;
+  color: #fff;
+}
 // .basicLightbox__placeholder {
 //   //   background-color: aqua;
 //   //   padding: 40px;
