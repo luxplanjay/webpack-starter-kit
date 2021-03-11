@@ -6,7 +6,7 @@ function updateModalValue(obj) {
   refs.modalTitle.textContent = obj.title;
   refs.modalImg.src = obj.poster_path
     ? `https://image.tmdb.org/t/p/w500/${obj.poster_path}`
-    : '/images/default-opt.jpg';
+    : './images/default-opt.jpg';
   refs.rate.textContent = obj.vote_average;
   refs.votes.textContent = obj.vote_count;
   refs.popularity.textContent = obj.popularity;
