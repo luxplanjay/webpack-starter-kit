@@ -12,7 +12,8 @@ import './js/modal-close';
 import './js/movieLibrary';
 import '../node_modules/spinkit/spinkit.css';
 
-
+// import createHeaderHomeMarkup from './js/header-render';
+// createHeaderHomeMarkup();
 
 import fnFetch from './js/fetch.js';
 import fnHendler from './js/fnHendler.js';
