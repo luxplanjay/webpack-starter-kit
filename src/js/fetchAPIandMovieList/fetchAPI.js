@@ -50,12 +50,6 @@ export default {
         });
         movie.genre_ids = genresNamesArr.slice();
       }
-      // if (movie.release_date === '') {
-      //   movie.release_date = 'Year';
-      // } else {
-      //   movie.release_date = movie.release_date.substring(0, 4);
-      // }
-
       return movie;
     });
   },
@@ -156,20 +150,27 @@ export default {
     //рендер результата поиска возвращает промис
     //moviesContainerRef.innerHTML = '';
     refs.pagination.classList.remove('is-hidden');
-    return this.searchMoviesbyTag(page).then(response => {
-      renderMovies(response.results, refs.gallery, movieListTmp);
-      //console.log(response);
-      return response;
-    });
+    return this.searchMoviesbyTag(page)
+      .then(response => {
+        if (response === undefined) {
+          return;
+        }
+        renderMovies(response.results, refs.gallery, movieListTmp);
+        //console.log(response);
+        return response;
+      })
+      .catch(this.errorHandler);
   },
   async showMoviesInTrend(page = 1) {
     //рендер трендовых возвращает промис
     //moviesContainerRef.innerHTML = '';
     refs.pagination.classList.remove('is-hidden');
-    return this.getTrendingMovies(page).then(response => {
-      renderMovies(response.results, refs.gallery, movieListTmp);
-      //console.log(response);
-      return response;
-    });
+    return this.getTrendingMovies(page)
+      .then(response => {
+        renderMovies(response.results, refs.gallery, movieListTmp);
+        //console.log(response);
+        return response;
+      })
+      .catch(this.errorHandler);
   },
 };

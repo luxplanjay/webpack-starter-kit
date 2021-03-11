@@ -26,6 +26,9 @@ export default async function initProgramFilmoteka() {
   } else if (fetchAPI.moviesSearchActive === true) {
     response = await fetchAPI.searchMovies();
   }
+  if (response === undefined) {
+    return;
+  }
   renderPagination(response.total_results);
 }
 initProgramFilmoteka();
