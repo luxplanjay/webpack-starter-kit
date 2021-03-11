@@ -13,9 +13,10 @@ refs.backdropModalRef.addEventListener('click', nodeCheckClosing);
 refs.filmListRef.addEventListener('click', openingModal);
 
 function openingModal() {
+  if (event.target.classList.contains('films__list')){return;}
   const id = event.path.find(elem => elem.classList.value === 'film item')
     .dataset.movieid;
-  
+
   const all = JSON.parse(localStorage.getItem('watched') || '[]');
   if (all.includes(id)) {
     refs.addToWatchedBtn.innerHTML = 'REMOVE FROM WATCHED';
@@ -31,7 +32,7 @@ function openingModal() {
   refs.bodyEl.classList.add('modal-is-open');
   // console.log('cliked');
   window.addEventListener('keydown', onEscPress);
-  
+
 }
 
 function closingModal() {
@@ -53,7 +54,7 @@ function clearData () {
   refs.descr.textContent = '';
   refs.addToWatchedBtn.innerHTML = 'ADD TO WATCHED';
   refs.addToQueueBtn.innerHTML = 'ADD TO QUEUE';
-  
+
 }
 
 function onEscPress(event) {
