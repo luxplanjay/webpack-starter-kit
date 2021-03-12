@@ -7,8 +7,7 @@ import renderOnSearch from './renderOnSearch';
 // данные для запроса
 const token = '6b8ef447c2ce3d010bfcc7f710d71588';
 let page = 1;
-const baseURL = `api_key=${token}&page=${page}`;
-const popularMoviesURL = `https://api.themoviedb.org/3/trending/movie/day?${baseURL}`;
+const popularMoviesURL = `https://api.themoviedb.org/3/trending/movie/day`;
 
 //массив жанров с их идентификаторами
 const genres = {
@@ -32,21 +31,18 @@ const genres = {
   10752: 'War',
   37: 'Western',
 };
-
 //форма поиска и слушатель на ней
 const inputSearch = document.querySelector('.search__input');
-inputSearch.addEventListener('input', debounce(onSearch, 500));
+inputSearch.addEventListener('input', debounce(onSearch, 300));
 
-const search = document.querySelector('.search__container');
-search.addEventListener('click', openInputSearch);
+
+const searchOpen = document.querySelector('.search__container');
+searchOpen.addEventListener('click',openInputSearch);
 
 //кнопка поиска закрывается только при пустом инпуте
-function openInputSearch() {
-  if (inputSearch.value === '') {
-    inputSearch.classList.toggle('search__input--active');
-  }
+function openInputSearch(){
+  inputSearch.classList.add('search__input--active');
 }
-
 //предупредительное сообщение об ошибке
 const errorWarning = document.querySelector('.search__warning');
 const message = {
@@ -58,11 +54,10 @@ const message = {
 };
 
 //базовая функция запроса списка фильмов
-const fetchFilms = async (moviesURL, callbackTemplate) => {
-  try {
-    const {
-      data: { results },
-    } = await axios.get(moviesURL);
+const fetchFilms = async (moviesURL, callbackTemplate, searchQuery = '') => {
+   try {
+     console.log(page);
+    const { data: { results } } = await axios.get(`${moviesURL}?api_key=${token}&page=${page}&query=${searchQuery}`);
     console.log(results);
     if (results.length === 0) {
       errorWarning.textContent = message.notFound;
@@ -93,34 +88,35 @@ function renderListFilms(arrayFilms, template) {
   return template(arrayFilms);
 }
 //функция поиска по ключевому слову
+let oldValueInput = '';
+
 function onSearch() {
   errorWarning.textContent = '';
-  // if (inputSearch.value.length === 0) {
-  //   fetchFilms(popularMoviesURL, updateMarkupGallery);
-  // }
-  // if (inputSearch.value.length > 0 && inputSearch.value.length < 3) {
-  //   errorWarning.textContent = message.manyMatches;
-  // }
   if (inputSearch.value.length >= 3) {
+    if(inputSearch.value.length != oldValueInput.length ) {
+    page = 1;
+    document.querySelector('.image-slider').innerHTML = '';
+    }
+    oldValueInput = inputSearch.value;
     let searchQuery = inputSearch.value.trim();
-    const searchMoviesURL = `https://api.themoviedb.org/3/search/movie?${baseURL}&query=${searchQuery}`;
-
-    //вторым аргументом передать новый колбэк с новым шаблоном для картинок по ключевому слову (но по факту прос то у некоторых фильмов нет картинок, возможно в шаблоне в теге img прописать ширину и высоту картинки, и будет прописываться альт)
-    fetchFilms(searchMoviesURL, renderOnSearch);
+    const searchMoviesURL = `https://api.themoviedb.org/3/search/movie`;
+    fetchFilms(searchMoviesURL, renderOnSearch, searchQuery);
   }
   
   if (inputSearch.value.length > 0 && inputSearch.value.length < 3) {
     errorWarning.textContent = message.manyMatches;
+    document.querySelector('.image-slider').innerHTML = '';
+    page = 1;
   }
   if (inputSearch.value === '') {
     fetchFilms(popularMoviesURL, updateMarkupGallery);
+    return;
   }
 }
 
 //функция запроса информации о фильме
 const fetchInfoFilm = async movieID => {
   const infoMovieURL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${token}`;
-  // console.log(infoMovieURL);
   try {
     const { data } = await axios.get(infoMovieURL);
     const markupModal = modalTpl(data);
@@ -142,4 +138,8 @@ const fetchInfoFilm = async movieID => {
 //стартовый запрос популярных фильмов
 fetchFilms(popularMoviesURL, updateMarkupGallery);
 
-export { fetchInfoFilm, fetchFilms };
+
+
+
+export {fetchInfoFilm, fetchFilms, onSearch};
+
