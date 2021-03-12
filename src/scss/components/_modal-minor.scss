@@ -298,14 +298,14 @@
     background-color: gainsboro;
     transform: scale(1.1);
   }
-  @media screen and (min-width: 767px) {
+  /*  @media screen and (min-width: 767px) {
     width: calc((100% - 20px * 2) / 3);
   }
   @media screen and (min-width: 320px) and (max-width: 767px) {
     display: block;
     width: 100%;
     text-align: center;
-  }
+  } */
 }
 .title-header {
   position: relative;
