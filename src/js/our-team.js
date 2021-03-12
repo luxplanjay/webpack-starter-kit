@@ -53,7 +53,7 @@ export default [
   {
     photo:
       'https://avatars.githubusercontent.com/u/68437095?s=400&u=7d7845438d2d1440e9f9b5b99500090adcce613b&v=4',
-    name: 'Marchenko Yaroslava',
+    name: 'Diana Kuzmina',
     github: 'https://github.com/Di-ua',
     email: 'di.ua@mail.ru',
   },
