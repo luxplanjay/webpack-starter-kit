@@ -298,6 +298,7 @@
   }
 }
 .title-header {
+  position: relative;
   margin-bottom: 20px;
 }
 
@@ -309,4 +310,8 @@
 }
 .team-name {
   margin-bottom: 10px;
+}
+.lightbox-button {
+  position: absolute;
+  top: 28%;
 }
