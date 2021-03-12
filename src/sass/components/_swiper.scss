@@ -1,82 +1,98 @@
+
+
+//стили старые (пускай пока остаются)
 .image-container.swiper-container{
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
-    width: 280px;
-    height: 1796px;
+    //width: 280px;
+    //height: 1796px;
   @media screen and (min-width: 768px) {
     padding-left: 75px;
     padding-right: 75px;
     padding-top: 60px;
-    width: 626px;
-    height: 1840px;
+    //width: 626px;
+    //height: 1840px;
     }
     @media screen and (min-width: 1024px) {
-      padding-left: 71px;
-      padding-right: 71px;
-      height: 1380px;
-      width: 882px;
+      padding-left: 70px;
+      padding-right: 70px;
+      //height: 1380px;
+      //width: 882px;
         }
 }
 .image-slider.swiper-wrapper {
-  flex-wrap: wrap;
-  flex-direction: row !important;
-}
-.image-slider__slide.swiper-slide{
-  height: 439px !important;
-    width: 280px !important;
-    margin-bottom: 10px;
+width: 280px;
+ margin-left: auto;
+ margin-right: auto;
   @media screen and (min-width: 768px) {
-    width: 293px !important;
-    margin: 10px;
+    width: 626px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 930px;
       }
-@media screen and (min-width: 1024px) {
-    width: 274px !important;
-    margin: 10px;
-      }
+  // flex-wrap: wrap;
+  // display: flex;
+  // justify-content: center;
+  //flex-direction: row !important;
 }
-// .swiper-container .swiper-wrapper > .swiper-slide {
-//   height: 439px;
-//   width: 274px;
-//   overflow: hidden;
-//   margin: 0;
-//   margin-right: 30px;
-//   margin-bottom: 30px;
+// .image-slider__slide.swiper-slide{
+//   height: 439px !important;
+//     width: 280px !important;
+//     margin-bottom: 10px;
+//   @media screen and (min-width: 768px) {
+//     width: 293px !important;
+//     margin: 10px;
+//       }
+// @media screen and (min-width: 1024px) {
+//     width: 274px !important;
+//     margin: 10px;
+//       }
 // }
 
+ 
+ 
 
-// .image-container .swiper-container {
-//   display: block;
-//   width: $mobile;
-//   margin: 20px;
-
-//   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
-//     width: $tablet;
-//   }
-
-//   @media screen and (min-width: $desktop) {
-//     width: $desktop;
-//   }
-// }
-// .swiper-container > ul {
+// .swiper-container>.swiper-pagination-bullets {
 //   // width: 100%;
-//   height: 100%;
-//   margin: 20px;
-//   padding: 20px;
-//   @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
-//     margin: 60px 70px 60px 70px;
-//   }
-// }
+//   // height: 50px;
+//   //   background-color: purple;
+//   //   position: absolute;
+//   //       z-index: 1000;
+//   //        top: 1390px;
+//   //        left: 0;
+//           //     position: absolute;
+//           //     z-index: 1000;
+//           //      top: 1390px;
+//           //      left: 0;
+//           //      padding-top: 5px;
+//           //      padding-bottom: 5px;
+//           // width: 300px;
+//           //height: 50px !important;
+//               // display: flex;
+//           //     justify-content: center;
+//               //align-items: flex-start;
+//               //width: 100px !important;
+//               // display: flex;
+//               // margin-left: auto;
+//               // margin-right: auto;
+//               // justify-content: center;
+//               background-color: purple;
+//               .swiper-pagination-bullet {
+//                 background-color: #FF6B08;
+//                 width: 20px;
+//                 height: 20px;
+//                 border-radius: 5px;
+//                 padding: 5px;
+//                 margin: 5px;
+//               }
+//             }
 
-// .swiper-wrapper > .swiper-slide {
-//   height: 439px;
-//   width: 274px;
-//   overflow: hidden;
 
-  // &__image {
-  //   position: relative;
-  //   overflow: hidden;
-  // }
-  // &__title {
-  //   margin-bottom: 4px;
+
+
 

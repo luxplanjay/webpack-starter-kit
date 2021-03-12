@@ -1,12 +1,15 @@
 .card {
   height: 439px;
-  width: 274px;
+  width: 280px;
   margin-bottom: 30px;
-  margin-right: 30px;
+  // margin-right: 30px;
   font-family: Roboto, sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.6;
+  @media screen and (min-width: 768px) {
+   margin-right: 30px;
+      }
 
   &__image {
     border-radius: 5px;
