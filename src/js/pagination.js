@@ -22,6 +22,10 @@ export default function renderPagination(totalItems) {
     },
   });
   pagination.on('afterMove', function (eventData) {
+    window.scrollTo({
+      top: 150,
+      behavior: 'smooth',
+    });
     console.log('poisk ili net', fetchAPI.moviesSearchActive);
     if (fetchAPI.moviesSearchActive === false) {
       fetchAPI.showMoviesInTrend(eventData.page);
