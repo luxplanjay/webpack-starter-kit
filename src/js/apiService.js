@@ -63,7 +63,9 @@ const fetchFilms = async (moviesURL, callbackTemplate, searchQuery = '') => {
       errorWarning.textContent = message.notFound;
       return;
     }
-    const changeGenre = [...results].map(el => genresMovie(el));
+    //то что было раньше - при загрузке страници все жанры отображались
+    // const changeGenre = [...results].map(el => genresMovie(el));
+    const changeGenre = [...results].map(el => genresMovieShort(el));
     page += 1;
     return renderListFilms(changeGenre, callbackTemplate);
   } catch (error) {
@@ -78,12 +80,22 @@ const fetchFilms = async (moviesURL, callbackTemplate, searchQuery = '') => {
   }
 };
 //преобразование id жанров в названия
-function genresMovie(element) {
+// function genresMovie(element) {
+//   element.genre_ids = element.genre_ids
+//     .map(genreMovie => (genreMovie = genres[genreMovie]))
+//     .join(',');
+//   return element;
+// }
+//====================================================
+//дает возможность вывести на главной странице не больше 3ч жанров, а в модалке прописаны все
+function genresMovieShort(element) {
   element.genre_ids = element.genre_ids
     .map(genreMovie => (genreMovie = genres[genreMovie]))
-    .join(',');
+    .slice(0, 3)
+    .join(', ');
   return element;
 }
+//====================================================
 function renderListFilms(arrayFilms, template) {
   return template(arrayFilms);
 }
@@ -102,7 +114,7 @@ function onSearch() {
     const searchMoviesURL = `https://api.themoviedb.org/3/search/movie`;
     fetchFilms(searchMoviesURL, renderOnSearch, searchQuery);
   }
-  
+
   if (inputSearch.value.length > 0 && inputSearch.value.length < 3) {
     errorWarning.textContent = message.manyMatches;
     document.querySelector('.image-slider').innerHTML = '';
