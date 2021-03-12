@@ -11,77 +11,81 @@
       rel="stylesheet"
     /> -->
   </head>
-<body>
-  <!-- Main header -->
-  <div class="main-page page" style=>
-    <header class="page-header">
-      <nav class="nav">
-        <div class="main-link logo">
-          <svg class="logo__svg" width="24" height="24" aria-label="Logo">
-            <use class="logo__icon" href="./images/symbol-defs.svg#icon-logo"></use>
-          </svg>
-          <span class="logo__text">Filmoteka</span>
-        </div>
-        <div class="nav__container" id="menu-container" data-menu>
-          <span class="link nav__link--current">home</span>
-          <span class="link nav__link">my library</span>
-        </div>
-      </nav>
-      <!-- Search-form -->
-      <section class="search">
-        <div class="search__container">
-          <input class="search__input" type="text" name="query" autocomplete="off" placeholder="Поиск фильмов"
-            id="search__input" />
-          <div class="search__box" id="search__box"></div>
-          <p class="search__warning"></p>
-        </div>
-      </section>
-    </header>
-  </div>
-  <!-- Library Header -->
-  <div class="library-page" style="display: none">
-    <header class="page-header">
-      <nav class="nav">
-        <div class="main-link logo">
-          <svg class="logo__svg" width="24" height="24" aria-label="Logo">
-            <use class="logo__icon" href="./images/symbol-defs.svg#icon-logo"></use>
-          </svg>
-          <span class="logo__text">Filmoteka</span>
-        </div>
-        <div class="nav__container">
-          <span class="link lib__link library-home">HOME</span>
+  <body>
+    <!-- Main header -->
+    <div class="main-page page">
+      <header class="page-header">
+        <nav class="nav">
+          <div class="main-link logo">
+            <svg class="logo__svg" width="24" height="24" aria-label="Logo">
+              <use
+                class="logo__icon"
+                href="./images/symbol-defs.svg#icon-logo"
+              ></use>
+            </svg>
+            <span class="logo__text">Filmoteka</span>
+          </div>
+          <div class="nav__container" id="menu-container" data-menu>
+            <span class="link nav__link--current home">home</span>
+            <span class="link nav__link my-library">my library</span>
+          </div>
+        </nav>
+        <!-- Search-form -->
+        <section class="search">
+          <div class="search__container">
+            <input
+              class="search__input"
+              type="text"
+              name="query"
+              autocomplete="off"
+              placeholder="Поиск фильмов"
+              id="search__input"
+            />
+            <div class="search__box" id="search__box"></div>
+            <p class="search__warning"></p>
+          </div>
+        </section>
+      </header>
+    </div>
+    <!-- Library Header -->
+    <div class="library-page" style="display: none">
+      <header class="page-header">
+        <nav class="nav">
+          <div class="main-link logo">
+            <svg class="logo__svg" width="24" height="24" aria-label="Logo">
+              <use
+                class="logo__icon"
+                href="./images/symbol-defs.svg#icon-logo"
+              ></use>
+            </svg>
+            <span class="logo__text">Filmoteka</span>
+          </div>
+          <div class="nav__container">
+            <span class="link lib__link library-home">HOME</span>
             <span class="link lib__link--current my-library">MY LIBRARY</span>
+          </div>
+        </nav>
+        <div class="button-group">
+          <button
+            type="button"
+            class="nav__button library-watched"
+            data-menu-button
+            aria-expanded="false"
+            aria-controls="menu-container"
+          >
+            WATCHED
+          </button>
+          <button
+            type="button"
+            class="nav__button"
+            data-menu-button
+            aria-expanded="false"
+            aria-controls="menu-container"
+          >
+            QUEUE
+          </button>
         </div>
-      </nav>
-      <div class="button-group">
-        <button type="button" class="nav__button" data-menu-button aria-expanded="false" aria-controls="menu-container">
-          WATCHED
-        </button>
-        <button type="button" class="nav__button" data-menu-button aria-expanded="false" aria-controls="menu-container">
-          QUEUE
-        </button>
-      </div>
-    </header>
-  </div>
-  <!-- Swiper -->
-  <div class="image-container swiper-container">
-    <ul class="image-slider swiper-wrapper"></ul>
-    <div class="swiper-pagination"></div>
-  </div>
-  <!-- footer -->
-  <footer class="footer-page">
-    <div class="footer-page__info-area">
-      <p class="footer-page__info-area--text">
-        &copy; 2021 | All Rights Reserved |
-      </p>
-      <p class="footer-page__info-area--text">
-        Developed with
-        <svg class="footer-page__info-area--icon">
-          <use href="./images/symbol-defs.svg#icon-heart"></use>
-        </svg>
-        by
-        <a class="footer-page__info-area--students-link" id="footer-modal">GoIT Students</a>
-      </p>
+      </header>
     </div>
     <!-- Swiper -->
     <div class="image-container swiper-container">
@@ -100,7 +104,9 @@
             <use href="./images/symbol-defs.svg#icon-heart"></use>
           </svg>
           by
-          <a class="footer-page__info-area--students-link">GoIT Students</a>
+          <a class="footer-page__info-area--students-link" id="footer-modal"
+            >GoIT Students</a
+          >
         </p>
       </div>
     </footer>
