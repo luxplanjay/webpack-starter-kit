@@ -47,7 +47,7 @@ export default {
           const updatedGenre = this.genresArray.find(
             genre => genre.id === movieGenre,
           );
-          return updatedGenre.name;
+          return ' ' + updatedGenre.name;
         });
         movie.genre_ids = genresNamesArr.slice();
       }
