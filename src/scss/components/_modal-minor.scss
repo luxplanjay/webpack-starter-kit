@@ -277,3 +277,54 @@
     fill: $accent-color;
   }
 }
+<<<<<<< Updated upstream
+=======
+.footer-team-link {
+  margin-right: -10px;
+  margin-bottom: -10px;
+}
+.team {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  //width: calc((100% - 20px * 4) / 5);
+
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  &:hover,
+  &:focus {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: gainsboro;
+    transform: scale(1.1);
+  }
+  /*  @media screen and (min-width: 767px) {
+    width: calc((100% - 20px * 2) / 3);
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    display: block;
+    width: 100%;
+    text-align: center;
+  } */
+}
+.title-header {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.social-link {
+  margin-right: 10px;
+}
+.team-photo {
+  margin-bottom: 10px;
+}
+.team-name {
+  margin-bottom: 10px;
+}
+.lightbox-button {
+  position: absolute;
+  top: 15%;
+}
+>>>>>>> Stashed changes
