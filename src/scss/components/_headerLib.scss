@@ -1,5 +1,4 @@
 .header-lib {
-  padding-top: 48px;
   height: 320px;
   max-width: 100%;
 
@@ -25,8 +24,7 @@
       url(../images/library.bgi.mobile2_.jpg);
   }
 
-  @include for-size(tablet-landscape) {
-    padding-top: 41px;
+  @media screen and (min-width: 768px) {
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.56),
@@ -45,7 +43,7 @@
         url(../images/library.bgi.tablet2_.jpg);
     }
   }
-  @include for-size(desktop) {
+  @media screen and (min-width: 1334px) {
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.56),
