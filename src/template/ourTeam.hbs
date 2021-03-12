@@ -1,17 +1,22 @@
 {{#each this}}
 <li class="team">
-    <div class="personal-inf">
-        <a class="img-link">
-            <img src="{{photo}}" alt="team-photo" class="team-photo"></a>
-        <div class="team-description">
-            <h3 class="team-name">{{name}}</h3>
-            <p class="team-mail">{{email}}</p>
+    <img src="{{photo}}" alt="team-photo" class="team-photo">
+    <h3 class="team-name">{{name}}</h3>
+    <ul class="team-social-links">
+        <li class="social-links">
             <a href="{{github}}" target="_blank" aria-label="Github" class="social-link">
                 <svg class="" width="24" height="24">
                     <use href="./images/symbol-defs.svg#icon-github"></use>
                 </svg>
             </a>
-        </div>
-    </div>
+        </li>
+        <li class="social-links">
+            <a href="mailto:{{gmail}}" target="_blank" aria-label="mail" class="social-link">
+                <svg class="icon-gmail" width="24" height="24">
+                    <use href="./images/symbol-defs.svg#icon-gmail"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
 </li>
 {{/each}}
