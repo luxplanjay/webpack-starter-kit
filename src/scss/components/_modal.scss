@@ -6,8 +6,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow-y: scroll; 
 }
 
 .modal-overflow {
@@ -50,8 +50,8 @@
 
 .icon-close:hover {
   opacity: 1;
-  transform: scale(1.5);
   border: 1px solid $accent-color;
+  transform: scale(1.2);
 }
 
 .close-button {
@@ -85,39 +85,39 @@
   padding-top: 15px;
   position: absolute;
   background-color: #fff;
+  
+  min-width: 280px;
   border-radius: 5px;
   left: 50%;
   transform: translateX(-50%);
   top: 50%;
+
   transform: translate(-50%, -50%);
 
   @media screen and (min-width: 768px) {
-    padding: 42px 28px 28px 28px;
-    // width: 264px;
+    // padding: 42px 28px 28px 28px;
+    // width: 618px;
     // height: auto;
     // width: auto;
     // height: 374px;
   }
 
   @media screen and (min-width: 1024px) {
-    padding: 58px 20px 32px 30px;
+    // padding: 58px 20px 32px 30px;
     // width: 396px;
     // height: auto;
   }
 }
 
 .modal-movie-wrapper {
-  padding: 30px 15px;
+  padding: 25px 20px;
+  width: 280px;
   border-radius: 5px;
   background-color: $primary-white-color;
 
-  @media screen and (max-width: 767px) {
-    max-width: 310px;
-  }
-
   @media screen and (min-width: 768px) {
     display: flex;
-    width: 646px;
+    width: 618px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -126,16 +126,13 @@
 }
 
 .modal-movie-poster {
-  // width: 240px;
-  width: auto;
+  width: 240px;
   height: auto;
   border-radius: 5px;
 
   @media screen and (min-width: 768px) {
     width: 264px;
     height: auto;
-    // width: auto;
-    // height: 374px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -146,7 +143,7 @@
 
 .modal-movie-information {
   background-color: $primary-white-color;
-  margin-top: 30px;
+  margin-top: 15px;
 
   @media screen and (min-width: 768px) {
     margin-top: 0;
@@ -195,7 +192,7 @@
 
 .modal-movie-description-vote {
   display: inline-block;
-  // padding-top: 2px;
+  padding-top: 2px;
   width: 36px;
   height: 16px;
   text-align: center;
@@ -240,30 +237,28 @@
 
 .buttons-wrapper {
   justify-content: left;
-  // .movie-button {
-  //   justify-content: left;
   &.is-hidden {
     display: none;
   }
 }
 
 .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   font-size: 12px;
   vertical-align: middle;
   text-align: center;
-  padding: 12px;
-  display: inline-block;
+  
+  height: 44px;
 
   border: transparent;
   border-radius: 5px;
-  width: 100px;
-  max-height: 50px;
-
-  overflow: hidden;
-
+  width: 108px;
+  
   font-weight: 500;
-  line-height: 1.33;
+  line-height: 1.2;
   text-transform: uppercase;
   color: $primary-white-color;
   background-color: $accent-color;
@@ -333,7 +328,6 @@
 .add-watched-button {
   margin-right: 10px;
   color: #000000;
-  // padding: 14px 30px 12px;
   border: 1px solid #000000;
   background-color: transparent;
   text-transform: uppercase;
@@ -341,7 +335,6 @@
 .add-queue-button {
   color: #000000;
   background-color: transparent;
-  // padding: 14px 30px 12px;
   border: 1px solid #000000;
   text-transform: uppercase;
 }
