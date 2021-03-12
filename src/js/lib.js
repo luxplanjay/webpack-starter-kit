@@ -21,7 +21,7 @@ function renderLibraryFilms(key) {
   spinner.show();
   if (libraryFilms.length === 0) {
     refs.pagination.innerHTML = '';
-    moviesContainerRef.innerHTML = '<p>Movie list is empty</p>';
+    moviesContainerRef.innerHTML = '<p class="message">Movie list is empty</p>';
     spinner.hide();
   }
 
