@@ -6,7 +6,11 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+<<<<<<< Updated upstream
   background-color: rgba(0, 0, 0, 0.8);
+=======
+  background-color: rgba(0, 0, 0, 0.6);
+>>>>>>> Stashed changes
   overflow-y: scroll;
 }
 
@@ -85,6 +89,11 @@
   padding-top: 15px;
   position: absolute;
   background-color: #fff;
+<<<<<<< Updated upstream
+=======
+
+  min-width: 280px;
+>>>>>>> Stashed changes
   border-radius: 5px;
   left: 50%;
   transform: translateX(-50%);
@@ -252,6 +261,7 @@
   font-size: 12px;
   vertical-align: middle;
   text-align: center;
+<<<<<<< Updated upstream
   padding: 12px;
   display: inline-block;
 
@@ -261,6 +271,14 @@
   max-height: 50px;
 
   overflow: hidden;
+=======
+
+  height: 44px;
+
+  border: transparent;
+  border-radius: 5px;
+  width: 108px;
+>>>>>>> Stashed changes
 
   font-weight: 500;
   line-height: 1.33;
