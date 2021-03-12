@@ -278,6 +278,7 @@
     fill: $accent-color;
   }
 }
+
 .footer-team-link {
   margin-right: -10px;
   margin-bottom: -10px;
@@ -285,7 +286,9 @@
 .team {
   margin-right: 10px;
   margin-bottom: 10px;
-  width: calc((100% - 20px * 4) / 5);
+
+  //width: calc((100% - 20px * 4) / 5);
+
   border: 1px solid transparent;
   display: flex;
   flex-direction: column;

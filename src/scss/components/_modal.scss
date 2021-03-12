@@ -6,8 +6,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+
   background-color: rgba(0, 0, 0, 0.6);
-  overflow-y: scroll; 
+  overflow-y: scroll;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow-y: scroll;
 }
 
 .modal-overflow {
@@ -85,7 +89,6 @@
   padding-top: 15px;
   position: absolute;
   background-color: #fff;
-  
   min-width: 280px;
   border-radius: 5px;
   left: 50%;
@@ -250,13 +253,11 @@
   font-size: 12px;
   vertical-align: middle;
   text-align: center;
-  
-  height: 44px;
 
+  height: 44px;
   border: transparent;
   border-radius: 5px;
   width: 108px;
-  
   font-weight: 500;
   line-height: 1.2;
   text-transform: uppercase;

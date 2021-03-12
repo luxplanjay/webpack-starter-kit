@@ -109,3 +109,14 @@
 .pagination.is-hidden {
   display: none;
 }
+.tui-next-is-ellip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tui-ico-ellip {
+  margin-right: 15px;
+  font-weight: 700;
+  color: #000;
+  height: 25px;
+}
