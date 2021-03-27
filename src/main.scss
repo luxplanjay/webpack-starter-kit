@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import 'normalize.css';
+
+// ===========  UTILS block
+
+@import './sass/utils/variables';
+@import './sass/utils/mixins';
+@import './sass/utils/placeholders';
+
+// ===========  BASE block
+
+@import './sass/base/common';
+
+// ===========  COMPONENTS block
+
+// ===========  LAYOUT block
