@@ -1,0 +1,45 @@
+.footer {
+  height: 100px;
+  padding: 30px 10px;
+  background-color: $color-footer;
+
+  color: $color-dark;
+  font-size: 14px;
+}
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.footer_container__authors {
+  margin-top: 10px;
+}
+.footer_container__authors__svg {
+  margin: 0 10px;
+}
+.footer_container__authors__button {
+  border: none;
+  background-color: initial;
+  cursor: pointer;
+
+  text-decoration: underline;
+  color: $color-dark;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    height: 77px;
+
+    font-size: 16px;
+  }
+  .footer__container {
+    flex-direction: row;
+  }
+  .footer_container__authors {
+    margin-top: 0;
+    margin-left: 4px;
+  }
+}
