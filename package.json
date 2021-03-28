@@ -1,5 +1,5 @@
 {
-  "name": "webpack-starter-kit",
+  "name": "Kyiv-single-malt-team-project-js",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
-  "homepage": "https://github.com/luxplanjay/webpack-starter-kit#readme",
+  "homepage": "https://yuliiadvoinos.github.io/Kyiv-single-malt-team-project-js/",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
