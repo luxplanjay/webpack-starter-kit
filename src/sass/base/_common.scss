@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $main-font;
+  font-style: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.section {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
