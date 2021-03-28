@@ -7,7 +7,6 @@ img {
 .movie-card {
     background-color: $color-lightest; 
     cursor: pointer;
-    z-index: 111;
 
     &__item {
         display: block;
@@ -59,7 +58,6 @@ img {
         align-items: center;
         padding: 48px 20px 40px 20px ;
 
-    
         &__item {
             width: 240px; 
         }
