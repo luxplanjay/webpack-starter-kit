@@ -1,12 +1,12 @@
 footer {
-  background-color: #f7f7f7;
+  background-color: $dark-bg;
 
   &-page {
     padding-top: 26px;
     padding-bottom: 30px;
     font-weight: 400;
     font-size: 14px;
-    line-height: 16px;
-    text-align: $dark-bg;
+    line-height: 1.142;
+    text-align: center;
   }
 }
