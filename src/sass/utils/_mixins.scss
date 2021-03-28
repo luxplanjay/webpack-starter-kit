@@ -1,0 +1,5 @@
+@mixin font($fs, $lh) {
+  font-size: $fs;
+  line-height: $lh / $fs;
+}
+// в коде вставлять так: @include font(16px, 30px);
