@@ -1,3 +1,28 @@
 {{#each this}}
-    <div class="movie-card"></div>
+    <div class="movie-card">
+        <div class="movie-card__item">
+            <img src="{{}}" alt="Movie Poster" class="movie-card__poster"/>
+        </div>
+        <div class="movie-card__item">
+            <h2 class="movie-card__title">{{}}</h2>
+            <div class="movie-card__info">
+                <ul class="movie-card__info--title">
+                    <li>Vote / Votes</li>
+                    <li>Popularity</li>
+                    <li>Original Title</li>
+                    <li>Genre</li>
+                </ul>
+                <ul class="movie-card__info--content">
+                    <li>{{}}</li>
+                    <li>{{}}</li>
+                    <li>{{}}</li>
+                    <li>{{}}</li>
+                </ul>
+            </div>
+            <h3 class="movie-card__about">About</h3>
+            <div class="movie-card__about--content">{{}}</div>
+            <button type="button" class="add-btn" data-action="add-to-watched">Add to watched</button>
+            <button type="button" class="add-btn" data-action="add-to-queue">Add to queue</button>
+        </div>
+    </div>
 {{/each}}
