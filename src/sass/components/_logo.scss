@@ -1,0 +1,24 @@
+.logo {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $color-lightest;
+}
+.logo-svg-film{
+margin-right: 10px;
+}
+.logo-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    width: 141px;
+    height: 35px;
+  
+}
+@media screen and (max-width: 767px) {
+    .logo-text{
+        display: none;
+    } 
+}
