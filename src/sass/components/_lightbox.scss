@@ -1,0 +1,45 @@
+.lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(opacity);
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      &__content {
+        z-index: 100;
+        transform: scale(0.95);
+        @include transition(transform);
+      }
+      &__card {
+        display: block;
+        width: auto;
+        height: auto;
+        max-height: 100vh;
+        max-width: 100vw;
+      }
+  }
+  
+  .lightbox.is-open {
+    opacity: 1;
+    pointer-events: initial;
+    height: 100%; 
+  }
+
+  .lightbox.is-open .lightbox__content {
+    transform: scale(1);
+  }
+  
