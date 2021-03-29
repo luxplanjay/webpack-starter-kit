@@ -52,6 +52,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "pagination": "^0.4.6"
   }
 }
