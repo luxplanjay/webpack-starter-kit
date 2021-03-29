@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
+
   <title>Filmoteka</title>
 </head>
 
@@ -75,10 +77,14 @@
       </div>
     </header>
   
-      <section class="movies container">
-      <ul class="movies__list"> 
-      </ul>
-    </section>
+    <section class="movies container">
+    <ul class="movies__list">
+    </ul>
+    <div class="movies__pagination-container"><button class="pagination-prev-button" type="button"></button>
+      <div class="js-pagination-wrapper"></div> <button class="pagination-next-button" type="button"></button>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer__container container">
       <p class="footer__container__copyright">&copy 2020 | All Rights Reserved |</p>
@@ -88,14 +94,14 @@
         </svg><button class="footer_container__authors__button" type="button">by GoIT Students</button> </p>
     </div>
   </footer>
-    <!-- lightbox -->
-    <div class="lightbox js-lightbox">
-      <div class="lightbox__overlay"></div>
-      <div class="lightbox__content">
-          <div class="lightbox__card"></div> 
-      </div>
+  <!-- lightbox -->
+  <div class="lightbox js-lightbox">
+    <div class="lightbox__overlay"></div>
+    <div class="lightbox__content">
+      <div class="lightbox__card"></div>
     </div>
-    <!-- end of lightbox -->
+  </div>
+  <!-- end of lightbox -->
 </body>
 
 </html>
