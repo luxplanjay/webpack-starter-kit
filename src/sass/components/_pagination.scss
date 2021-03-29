@@ -7,10 +7,10 @@
 .paginator {
   display: flex;
 }
-.paginator-page,
-.paginator-page-first,
-.paginator-page-last,
-.paginator-next {
+.pagination-next-button__svg {
+  fill: black;
+}
+.page-item {
   display: block;
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
   color: $color-darkest;
   font-size: 12px;
 }
-.active-page {
+.active {
   background-color: $color-accent;
   color: $color-lightest;
 }
@@ -37,4 +37,23 @@
   .movies__pagination-container {
     margin-top: 46px;
   }
+}
+.pagination-prev-button,
+.pagination-next-button {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-color: inherit;
+  outline: inherit;
+  cursor: pointer;
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pagination-prev-button {
+  background-image: url('./images/arrow-left.svg');
+}
+.pagination-next-button {
+  background-image: url('./images/arrow-right.svg');
 }
