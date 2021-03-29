@@ -1,12 +1,21 @@
 footer {
   background-color: $dark-bg;
+}
 
-  &-page {
-    padding-top: 26px;
-    padding-bottom: 30px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.142;
-    text-align: center;
-  }
+.footer-page {
+  padding-top: 26px;
+  padding-bottom: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.142;
+  text-align: center;
+}
+
+.footer-hart {
+  width: 14px;
+  height: 13px;
+}
+
+.copyright {
+  margin-bottom: 10px;
 }
