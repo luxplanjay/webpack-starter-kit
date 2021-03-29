@@ -9,6 +9,8 @@
 
     &-wraper {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     &-svg {
@@ -23,17 +25,18 @@
 
       @media screen and (min-width: $tablet) {
         display: inline-block;
-        font-style: normal;
         font-weight: 500;
         font-size: 30px;
         line-height: 35px;
         color: $color-white;
+        margin-top: 41px;
+        margin-right: 304px;
+        margin-left: 10px;
       }
     }
     &-nav-list {
       display: flex;
       margin-top: 58px;
-      margin-left: 112px;
     }
 
     &-nav-page:first-child {
@@ -44,7 +47,7 @@
       position: relative;
       font-weight: 500;
       font-size: 12px;
-      line-height: 14px;
+      line-height: 1.167;
       text-transform: uppercase;
       color: $color-white;
     }
@@ -52,13 +55,13 @@
     &-buttons {
       margin-top: 49px;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
     }
 
     &-btn {
       font-weight: 500;
       font-size: 12px;
-      line-height: 16px;
+      line-height: 1.333;
       text-transform: uppercase;
       color: $color-white;
       padding: 14px 36px 12px 36px;
@@ -66,6 +69,14 @@
       border-radius: 3px;
       box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
       background-color: transparent;
+
+      &:first-child {
+        margin-right: 20px;
+
+        @media screen and (min-width: $tablet) {
+          margin-right: 15px;
+        }
+      }
 
       :hover,
       :focus {
@@ -76,10 +87,6 @@
 }
 
 .current {
-  //   width: 69px;
-  //   height: 3px;
-  //   color: $accent-color;
-
   &::after {
     position: absolute;
     display: block;

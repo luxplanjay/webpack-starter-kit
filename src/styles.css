@@ -338,6 +338,12 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header-library-svg {
@@ -354,11 +360,13 @@ a {
 @media screen and (min-width: 768px) {
   .header-library-title {
     display: inline-block;
-    font-style: normal;
     font-weight: 500;
     font-size: 30px;
     line-height: 35px;
     color: #ffffff;
+    margin-top: 41px;
+    margin-right: 304px;
+    margin-left: 10px;
   }
 }
 
@@ -367,7 +375,6 @@ a {
   display: -ms-flexbox;
   display: flex;
   margin-top: 58px;
-  margin-left: 112px;
 }
 
 .header-library-nav-page:first-child {
@@ -378,7 +385,7 @@ a {
   position: relative;
   font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.167;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -388,14 +395,15 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header-library-btn {
   font-weight: 500;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 1.333;
   text-transform: uppercase;
   color: #ffffff;
   padding: 14px 36px 12px 36px;
@@ -404,6 +412,16 @@ a {
   -webkit-box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
           box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
   background-color: transparent;
+}
+
+.header-library-btn:first-child {
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .header-library-btn:first-child {
+    margin-right: 15px;
+  }
 }
 
 .header-library-btn :hover,
