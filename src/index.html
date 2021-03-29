@@ -15,12 +15,12 @@
 <body>
   <header class="header">
     <div class="container">
-      <div class="header__container">
+      <div class="header__wrapper">
         <a class="logo header__logo link" href="./index.html" aria-label="filmoteka logo">
-          <svg class="header__logo-icon">
+          <svg class="logo__icon">
             <use href="./images/sprite.svg#icon-logo"></use>
           </svg>
-          <span class="header__logo-text">Filmoteka</span>
+          <span class="logo__text">Filmoteka</span>
         </a>
         <nav class="navigation">
           <ul class="navigation__list list">
@@ -33,9 +33,10 @@
           </ul>
         </nav>
       </div>
-
-      <input type="text" placeholder="Поиск фильмов">
-      <p class=""></p>
+      <div class="input__wrapper">
+        <input class="input header__input" type="text" placeholder="Поиск фильмов" id="js-input">
+        <p class="input__error" id="js-input-error">Search result not successful. Enter the correct movie name and</p>
+      </div>
     </div>
   </header>
 

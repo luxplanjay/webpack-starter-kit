@@ -4,25 +4,25 @@
   background-size: 320px;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 46px 0 97px;
+  padding: 46px 0 43px;
 
-  &__container {
+  &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
-  &__logo-icon {
+}
+.logo {
+  &__icon {
     width: 24px;
     height: 24px;
     fill: $logo-color;
   }
 
-  &__logo-text {
+  &__text {
     display: none;
   }
 }
-///////////////////////////////////////////////////////////////////////////////////////////
 .navigation {
   &__list {
     display: flex;
@@ -39,5 +39,90 @@
     @include font(12px, 14px);
     text-transform: uppercase;
     color: $header-text-color;
+  }
+}
+.input {
+  width: 280px;
+  height: 20px;
+  font-weight: 400;
+  @include font(14px, 16px);
+  color: $header-text-color;
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.5px solid $header-text-color;
+  padding: 0 0 4px 1px;
+
+  &::placeholder {
+    font-weight: 400;
+    @include font(14px, 16px);
+    color: $header-text-color;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 38px;
+  }
+  &__error {
+    font-weight: 400;
+    @include font(14px, 16px);
+    color: $error-color;
+    margin-top: 22px;
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+  screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-mobile@2x.jpg');
+  }
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width: 768px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-tablet.jpg');
+    background-size: 768px;
+    padding: 40px 0 60px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+      display: block;
+      font-weight: 500;
+      @include font(30px, 35px);
+      color: $header-text-color;
+      margin-left: 10px;
+    }
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-tablet@2x.jpg');
+  }
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+@media screen and (min-width: 1024px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-desktop.jpg');
+    background-size: 1024px;
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
+  screen and (min-resolution: 192dpi) and (min-width: 1024px),
+  screen and (min-resolution: 2dppx) and (min-width: 1024px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header/header-bg-desktop@2x.jpg');
   }
 }
