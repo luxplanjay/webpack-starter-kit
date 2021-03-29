@@ -424,8 +424,7 @@ a {
   }
 }
 
-.header-library-btn :hover,
-.header-library-btn :focus {
+.header-library-btn:hover, .header-library-btn:focus {
   background-color: #ff6b01;
 }
 
