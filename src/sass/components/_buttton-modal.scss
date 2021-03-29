@@ -1,0 +1,48 @@
+.modal-button {
+    width: 136px;
+    height: 44px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    align-items: center;
+text-align: center;
+   cursor: pointer;
+   transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &-watched {
+        color: $color-lightest;
+        border: none;
+        background-color: $color-accent-2;
+     
+    }
+    &-queue {
+        color: $color-darkest;
+        border: 1px solid $color-darkest;
+        background-color: transparent;
+    }
+    &:not(:last-child) {
+        margin-right: 15px;
+     }
+}
+@media screen and (max-width: 1023px) {
+    .modal-button{
+        width: 125.03px;
+        &:not(:last-child) {
+            margin-right: 14.94px;
+         }
+    }
+}
+@media screen and (max-width: 767px) {
+    .modal-button {
+        width: 112.58px;
+        &:not(:last-child) {
+            margin-right: 14.85px;
+         }
+        &-watched {
+            padding: 0 8.28px;
+        }
+    }
+}
