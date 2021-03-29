@@ -1,2 +1,2 @@
 import './main.scss';
-import './js/popular-gallery';
+import './script/js/popular-gallery';
