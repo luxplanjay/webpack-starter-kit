@@ -1,7 +1,7 @@
 .footer {
   height: 100px;
   padding: 30px 10px;
-  background-color: $color-footer;
+  background-color: $color-light;
 
   color: $color-dark;
   font-size: 14px;
@@ -29,7 +29,7 @@
   color: $color-dark;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $bp-tablet) {
   .footer {
     height: 77px;
 

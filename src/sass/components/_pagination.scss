@@ -1,0 +1,40 @@
+.movies__pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 0px auto;
+}
+.paginator {
+  display: flex;
+}
+.paginator-page,
+.paginator-page-first,
+.paginator-page-last,
+.paginator-next {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+
+  border-radius: 5px;
+  background-color: inherit;
+
+  color: $color-darkest;
+  font-size: 12px;
+}
+.active-page {
+  background-color: $color-accent;
+  color: $color-lightest;
+}
+@media screen and (min-width: $bp-tablet) {
+  .movies__pagination-container {
+    margin-top: 50px;
+  }
+}
+@media screen and (min-width: $bp-desktop) {
+  .movies__pagination-container {
+    margin-top: 46px;
+  }
+}
