@@ -15,22 +15,25 @@
 <body>
   <header class="header">
     <div class="container">
-      <a class="logo header__logo link" href="./index.html" aria-label="filmoteka logo">
-        <!-- <svg class="header__icon">
-          <use href="./src/images/svg/sprite.svg#icon-logo"></use>
-        </svg> -->
-        Filmoteka
-      </a>
-      <nav class="navigation">
-        <ul class="navigation__list list">
-          <li class="navigation__item">
-            <a class="navigation__link navigation__link--active link" href="#">home</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link link" href="#">my library</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="header__container">
+        <a class="logo header__logo link" href="./index.html" aria-label="filmoteka logo">
+          <svg class="header__logo-icon">
+            <use href="./images/sprite.svg#icon-logo"></use>
+          </svg>
+          <span class="header__logo-text">Filmoteka</span>
+        </a>
+        <nav class="navigation">
+          <ul class="navigation__list list">
+            <li class="navigation__item">
+              <a class="navigation__link navigation__link--active link" href="#">home</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link link" href="#">my library</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
       <input type="text" placeholder="Поиск фильмов">
       <p class=""></p>
     </div>
