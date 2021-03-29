@@ -11,13 +11,80 @@
 </head>
 
 <body>
-  <section class="movies container">
+  
+      <header>
+      <div class="header__background">
+        <div class="header__container container">
+          <div class="header__wrapper">
+            <div class="logo-wrapper">
+              <a class="logo" href="/index" aria-label="логотип фильмотека">
+                <svg class="logo__icon" width="24" height="24">
+                  <use href="./images/sprite.svg#film"></use>
+                </svg>
+                <span class="logo__text">Filmoteka </span>
+              </a>
+            </div>
+            <nav class="site-nav">
+              <button
+                class="home-button current"
+                type="button"
+                aria-label="Переключатель основной страницы"
+                data-home
+              >
+                Home
+              </button>
+              <button
+                class="library-button"
+                type="button"
+                aria-label="Переключатель страницы библиотека"
+                data-library
+              >
+                My library
+              </button>
+            </nav>
+          </div>
+
+          <form class="search__form" id="search-form" method="GET">
+            <span class="search__input-wrapper"
+              ><input
+                class="search__input"
+                type="text"
+                name="search"
+                autocomplete="off"
+                aria-label="Search films "
+                placeholder="Поиск фильмов"/>
+              <button class="btn-search" type="submit">
+                <svg width="12" height="12" aria-label="Кнопка поиска">
+                  <use
+                    class="search-icon"
+                    href="./images/sprite.svg#search"
+                  ></use>
+                </svg></button
+            ></span>
+          </form>
+          <!-- <form class="search__form" id="search-form" method="GET">
+            <span class="search__icon"
+              ><input
+                class="search__input"
+                type="text"
+                name="search"
+                autocomplete="off"
+                aria-label="Search films "
+                placeholder="Поиск фильмов"
+            /></span>
+          </form> -->
+        </div>
+      </div>
+    </header>
+  
+    <section class="movies container">
     <ul class="movies__list">
     </ul>
     <div class="movies__pagination-container"><button class="pagination-prev-button" type="button"></button>
       <div class="js-pagination-wrapper"></div> <button class="pagination-next-button" type="button"></button>
     </div>
   </section>
+
   <footer class="footer">
     <div class="footer__container container">
       <p class="footer__container__copyright">&copy 2020 | All Rights Reserved |</p>
