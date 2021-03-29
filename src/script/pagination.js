@@ -15,11 +15,11 @@ const setNumberOfItems = () => {
   return itemPerPage;
 };
 setNumberOfItems();
-
+const resultsCount = 200;
 const boostrapPaginator = new pagination.TemplatePaginator({
   current: 15,
-  rowsPerPage: 200,
-  totalResult: 10020,
+  rowsPerPage: itemPerPage,
+  totalResult: resultsCount,
   slashSeparator: true,
   template: function (result) {
     let html = '<div><ul class="paginator">';
@@ -28,7 +28,13 @@ const boostrapPaginator = new pagination.TemplatePaginator({
       return html;
     }
     if (result.previous) {
-      html += '<li class="page-item">' + '&middot&middot&middot' + '</li>';
+      html +=
+        '<li class="page-item">' +
+        1 +
+        '</li>' +
+        '<li class="page-item">' +
+        '&middot&middot&middot' +
+        '</li>';
     }
     if (result.range.length) {
       result.range.forEach((item, index) => {
@@ -41,7 +47,15 @@ const boostrapPaginator = new pagination.TemplatePaginator({
       });
     }
     if (result.next) {
-      html += '<li class="page-item">' + '&middot&middot&middot' + '</li>';
+      const pageCount = Math.round(resultsCount / itemPerPage);
+      console.log(pageCount);
+      html +=
+        '<li class="page-item">' +
+        '&middot&middot&middot' +
+        '</li>' +
+        '<li class="page-item">' +
+        pageCount +
+        '</li>';
     }
     html += '</ul></div>';
     return html;
