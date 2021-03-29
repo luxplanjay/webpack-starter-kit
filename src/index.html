@@ -9,6 +9,72 @@
 </head>
 
 <body>
+  
+      <header>
+      <div class="header__background">
+        <div class="header__container container">
+          <div class="header__wrapper">
+            <div class="logo-wrapper">
+              <a class="logo" href="/index" aria-label="логотип фильмотека">
+                <svg class="logo__icon" width="24" height="24">
+                  <use href="./images/sprite.svg#film"></use>
+                </svg>
+                <span class="logo__text">Filmoteka </span>
+              </a>
+            </div>
+            <nav class="site-nav">
+              <button
+                class="home-button current"
+                type="button"
+                aria-label="Переключатель основной страницы"
+                data-home
+              >
+                Home
+              </button>
+              <button
+                class="library-button"
+                type="button"
+                aria-label="Переключатель страницы библиотека"
+                data-library
+              >
+                My library
+              </button>
+            </nav>
+          </div>
+
+          <form class="search__form" id="search-form" method="GET">
+            <span class="search__input-wrapper"
+              ><input
+                class="search__input"
+                type="text"
+                name="search"
+                autocomplete="off"
+                aria-label="Search films "
+                placeholder="Поиск фильмов"/>
+              <button class="btn-search" type="submit">
+                <svg width="12" height="12" aria-label="Кнопка поиска">
+                  <use
+                    class="search-icon"
+                    href="./images/sprite.svg#search"
+                  ></use>
+                </svg></button
+            ></span>
+          </form>
+          <!-- <form class="search__form" id="search-form" method="GET">
+            <span class="search__icon"
+              ><input
+                class="search__input"
+                type="text"
+                name="search"
+                autocomplete="off"
+                aria-label="Search films "
+                placeholder="Поиск фильмов"
+            /></span>
+          </form> -->
+        </div>
+      </div>
+    </header>
+  
       <section class="movies container">
       <ul class="movies__list"> 
       </ul>
@@ -22,6 +88,14 @@
         </svg><button class="footer_container__authors__button" type="button">by GoIT Students</button> </p>
     </div>
   </footer>
+    <!-- lightbox -->
+    <div class="lightbox js-lightbox">
+      <div class="lightbox__overlay"></div>
+      <div class="lightbox__content">
+          <div class="lightbox__card"></div> 
+      </div>
+    </div>
+    <!-- end of lightbox -->
 </body>
 
 </html>
