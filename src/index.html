@@ -8,6 +8,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   </head>
   <body>
-    
+
+    <header class="header">
+      <div class="container">
+          <nav class="header_navigation">
+           <a class="logo link" lang="en" href="./index.html" >	            
+            <svg class="logo-svg" width="24" height="24" >
+                <use href="./images/sprite.svg#icon-film"></use>
+            </svg> 
+             Filmoteka         
+          </a> 
+          
+          <div class="nav_link">
+           <a class="home link" lang="en" href="./index.html" >		
+              HOME
+          </a>
+          
+          <a class="libr link" lang="en" href="./library.html" >		
+              MY LIBRARY          
+          </a> 
+          </div>
+          
+          
+          
+          </nav>
+          <form class="search-form" id="search-form">
+            <input
+              class="form-input"
+              type="text"
+              name="query"
+              autocomplete="off"
+              placeholder="Поиск фильмов"
+              
+            />
+            <svg class="search-svg" width="12" height="12" >
+              <use href="./images/sprite.svg#icon-search"></use>
+            </svg>
+          </form>
+      </div>
+  
+  </header>
+
+    <include src="./partials/header.html"></include>
+
+    <script src="/index.js"></script>
   </body>
 </html>
