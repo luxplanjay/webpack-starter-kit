@@ -12,7 +12,6 @@
 .movies {
   padding: 20px 20px 40px 20px;
   font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
@@ -21,6 +20,10 @@
   width: 280px;
   display: block;
   margin-bottom: 10px;
+  border-radius: 5px;
+}
+.movie__name {
+  text-transform: uppercase;
 }
 .movie__genre {
   color: $color-accent;
@@ -30,9 +33,9 @@
     margin-bottom: 20px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $bp-tablet) {
   .container {
-    width: 768px;
+    width: $bp-tablet;
   }
   .movies {
     padding: 60px 75px 50px;
@@ -46,9 +49,9 @@
     gap: 30px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $bp-desktop) {
   .container {
-    width: 1024px;
+    width: $bp-desktop;
   }
   .movies {
     padding: 60px 70px 50px;
