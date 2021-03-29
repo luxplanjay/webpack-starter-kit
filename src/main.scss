@@ -10,7 +10,9 @@
 // ===========  BASE block
 
 @import './sass/base/common';
+@import './sass/base/visually-hidden';
 
 // ===========  COMPONENTS block
 
 // ===========  LAYOUT block
+@import './sass/layout/header';
