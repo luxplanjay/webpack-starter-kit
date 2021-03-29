@@ -1,6 +1,6 @@
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const KEY_API = 'dc8a219507b80e9a1079e61c31f6a77a';
-import createMarkup from '../script/templates/galleryCard.hbs';
+import createMarkup from '../templates/galleryCard.hbs';
 
 export { BASE_URL, KEY_API };
 export default class PopularFilms {
