@@ -40,13 +40,14 @@
 }
 .pagination-prev-button,
 .pagination-next-button {
-  width: 16px;
-  height: 16px;
+  width: 40px;
+  height: 40px;
   border: none;
-  background-color: inherit;
+  border-radius: 5px;
   outline: inherit;
   cursor: pointer;
 
+  background-color: $color-light;
   background-repeat: no-repeat;
   background-position: center;
 }
