@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <title>Filmoteka</title>
+  </head>
 
-  <title>Filmoteka</title>
-</head>
-
-<body>
-  
-      <header>
+  <body>
+    <header>
       <div class="header__background">
         <div class="header__container container">
           <div class="header__wrapper">
@@ -52,7 +50,7 @@
                 name="search"
                 autocomplete="off"
                 aria-label="Search films "
-                placeholder="Поиск фильмов"/>
+                placeholder="Поиск фильмов" />
               <button class="btn-search" type="submit">
                 <svg width="12" height="12" aria-label="Кнопка поиска">
                   <use
@@ -85,36 +83,45 @@
       <button class="modal-button modal-button-queue" type="button">add to queue</button>
     </div> -->
     <section class="movies container">
-    <ul class="movies__list">
-    </ul>
-    <div class="movies__pagination-container"><button class="pagination-prev-button" type="button"></button>
-      <div class="js-pagination-wrapper"></div> <button class="pagination-next-button" type="button"></button>
-    </div>
-  </section>
+      <ul class="movies__list"></ul>
+      <div class="movies__pagination-container">
+        <button class="pagination-prev-button" type="button"></button>
+        <div class="js-pagination-wrapper"></div>
+        <button class="pagination-next-button" type="button"></button>
+      </div>
+    </section>
 
-  <footer class="footer">
-    <div class="footer__container container">
-      <p class="footer__container__copyright">&copy 2020 | All Rights Reserved |</p>
-      <p class="footer_container__authors">Developed with<svg class="footer_container__authors__svg" width="14"
-          height="13">
-          <use href="./images/sprite.svg#heart"></use>
-        </svg><button class="footer_container__authors__button" type="button">by GoIT Students</button> </p>
-    </div>
-  </footer>
+    <footer class="footer">
+      <div class="footer__container container">
+        <p class="footer__container__copyright">
+          &copy 2020 | All Rights Reserved |
+        </p>
+        <p class="footer_container__authors">
+          Developed with<svg
+            class="footer_container__authors__svg"
+            width="14"
+            height="13"
+          >
+            <use href="./images/sprite.svg#heart"></use></svg
+          ><button class="footer_container__authors__button" type="button">
+            by GoIT Students
+          </button>
+        </p>
+      </div>
+    </footer>
     <!-- lightbox -->
     <div class="lightbox js-lightbox">
       <div class="lightbox__overlay"></div>
       <div class="lightbox__content">
-          <img class="lightbox__card"></img> 
+        <img class="lightbox__card" />
       </div>
       <button
-          type="button"
-          class="lightbox__button"
-          data-action="close-lightbox"
+        type="button"
+        class="lightbox__button"
+        data-action="close-lightbox"
       ></button>
     </div>
-  </div>
-  <!-- end of lightbox -->
-</body>
 
+    <!-- end of lightbox -->
+  </body>
 </html>
