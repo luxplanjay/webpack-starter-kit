@@ -1,20 +1,18 @@
 import settings from '../js/settings';
 const BASE_URL = settings.BASE_URL;
 const API_KEY = settings.API_KEY;
+import refs from '../js/refs';
 
 import createMarkup from '../templates/galleryCard.hbs';
 
 export default class PopularFilms {
-  constructor(createGenreTranpiler, galleryRef) {
+  constructor() {
     this._page = 1;
-    // this.galleryRef = galleryRef;
-    // this.handlerPopularMovies();
-    // this.createGenreTranpiler = createGenreTranpiler;
+    this.galleryRef = refs.gallery;
     this.resultAmount = 0;
     this.result;
     this.ganreObject = {};
     this.handleGenre();
-    this.handlerPopularMovies();
   }
   async fetchPopular() {
     const response = await fetch(
@@ -30,7 +28,8 @@ export default class PopularFilms {
       elem.genre_ids = this.ganreTranspiler(elem.genre_ids);
       elem.genre_ids = elem.genre_ids.slice(0, 3).join(', ');
     });
-    console.log(this.result.results);
+    const markup = createMarkup(this.result.results);
+    this.galleryRef.insertAdjacentHTML('beforeend', markup);
   }
   async fetchGenre() {
     const response = await fetch(
@@ -50,19 +49,6 @@ export default class PopularFilms {
     );
     return arrayNameGenres;
   }
-  // async handlerPopularMovies() {
-  //   const result = await this.fetchPopular();
-  //   console.log(result);
-  //   this.resultAmount = result.total_results;
-  //   result.results.map(elem =>
-  //     this.createGenreTranpiler(elem.genre_ids).then(arr => {
-  //       elem.genre_ids = arr.slice(0, 3).join(', ');
-  //       elem.release_date = elem.release_date.slice(0, 4);
-  //       const markup = createMarkup(elem);
-  //       this.galleryRef.insertAdjacentHTML('beforeend', markup);
-  //     }),
-  //   );
-  // }
   incrementPage() {
     this._page += 1;
   }
