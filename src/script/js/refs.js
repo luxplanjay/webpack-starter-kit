@@ -1,3 +1,5 @@
-const galleryRef = document.querySelector('.movies__list');
+const refs = {
+  galleryRef: document.querySelector('.movies__list'),
+};
 
-export default galleryRef;
+export default refs;
