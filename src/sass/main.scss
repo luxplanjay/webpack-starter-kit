@@ -1,5 +1,6 @@
 //utils
 @import './utils/variables';
+@import './utils/placeholders';
 
 //base
 @import './base/common';
@@ -10,6 +11,8 @@
 @import './components/button';
 @import './components/logo';
 @import './components/accent';
+
+@import './layout/header-home';
 
 //footer
 @import './layout/team-modal';
