@@ -1,10 +1,6 @@
 import PopularFilms from '../API/fetchPopular';
-import Genre from '../API/fetchGenre';
+// import Genre from '../API/fetchGenre';
+// import refs from '../js/refs';
 
-const galleryRef = document.querySelector('.movies__list');
-
-const fetchGenre = new Genre();
-const fetchPopularMovie = new PopularFilms(
-  fetchGenre.createGenreTranpiler,
-  galleryRef,
-);
+// const fetchGenre = new Genre();
+const fetchPopularMovie = new PopularFilms();
