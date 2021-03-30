@@ -5,26 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Filmoteka</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    
-
-  <!-- временная галерея -->
-   <div class="container">
+    <!-- временная галерея -->
+    <div class="container">
       <ul class="gallery" id="js-gallery">
         <li class="gallery__item"></li>
         <li class="gallery__item"></li>
         <li class="gallery__item"></li>
         <li class="gallery__item"></li>
       </ul>
-      
-      
-      
+
       <!-- Modal -->
       <div class="lightbox js-lightbox">
         <div class="lightbox__overlay"></div>
-      
+
         <div class="lightbox__content">
           <img class="lightbox__image" />
         </div>
@@ -32,11 +31,32 @@
           <svg class="close-modal-icon">
             <use href="/images/sprite.svg/#icon-close"></use>
           </svg>
-      
         </button>
       </div>
       <!-- /Modal -->
-   </div>
-
+    </div>
+    <!-- Footer -->
+    <footer class="footer container">
+      <ul class="footer-list">
+        <li class="footer-item">
+          &copy; 2021 | All Rights Reserved | Developed with
+          <svg class="footer-svg">
+            <use
+              class="footer-svg"
+              href="/images/sprite.svg/#icon-heart"
+            ></use></svg
+          >by
+          <span class="footer-item-word">GoIT Students</span>
+        </li>
+        <!-- <li class="footer-item">
+          <svg class="footer-svg">
+            <use class="footer-svg" href="/images/sprite.svg/#icon-heart"></use>
+          </svg>
+        </li> -->
+        <!-- <li class="footer-item">
+          by <span class="footer-item-word">GoIT Students</span>
+        </li> -->
+      </ul>
+    </footer>
   </body>
 </html>

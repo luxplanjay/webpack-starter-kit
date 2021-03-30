@@ -1,0 +1,35 @@
+.footer {
+  padding-top: 28px;
+  padding-bottom: 30px;
+  background-color: $color-light-gray;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 30px;
+    padding-bottom: 28px;
+  }
+
+  &-list {
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &-item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.188;
+    color: $color-subtitle-light-gray;
+
+    &-word {
+      text-decoration: underline;
+    }
+  }
+  &-svg {
+    width: 14px;
+    height: 13px;
+    fill: $accent-color;
+  }
+}
