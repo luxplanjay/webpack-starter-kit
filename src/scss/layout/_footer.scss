@@ -21,7 +21,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 1.188;
-    color: $color-subtitle-light-gray;
+    color: $color-gray;
 
     &:first-child {
       @media screen and (max-width: 767px) {
@@ -35,9 +35,10 @@
   }
   &-svg {
     display: inline-block;
-    background-color: $color-subtitle-light-gray;
     width: 14px;
     height: 13px;
+    margin-right: 10px;
+    margin-left: 10px;
     fill: $accent-color;
   }
 }
