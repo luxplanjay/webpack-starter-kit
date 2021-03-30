@@ -4,7 +4,7 @@ import './script/pagination'
 
 import './script/js/popular-gallery';
 
-import './script/js/infoCard';
+import './script/js/modalCard';
 
 
 
