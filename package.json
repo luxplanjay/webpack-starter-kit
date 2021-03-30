@@ -47,6 +47,7 @@
   "dependencies": {
     "basiclightbox": "^5.0.4",
     "core-js": "^3.9.1",
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "jquery": "^3.6.0"
   }
 }
