@@ -40,6 +40,21 @@ module.exports = env => ({
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
+      chunks: ['index'],
+      filename: 'index.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: './library.html',
+      chunks: ['library'],
+      filename: 'library.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
