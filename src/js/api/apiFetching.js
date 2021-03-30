@@ -1,13 +1,13 @@
-import variables from './apiVariables';
+import variables from '../settingsApi/apiVariables';
 
 const { BASE_URL, API_KEY } = variables;
 
 const api = {
   fetchPopularFilms(page = '') {
-    const url = `${BASE_URL}/3/movie/popular?api_key=${API_KEY}&page=${page}`;
+    const url = `${BASE_URL}/3/trending/movie/week?api_key=${API_KEY}&page=${page}`;
     return fetch(url)
       .then(response => {
-        if (response.ok) return response.json();
+        if (response.ok) return console.log(response.json());
       })
       .catch(() => console.error('no popular'));
   },
@@ -18,6 +18,14 @@ const api = {
         if (response.ok) return response.json();
       })
       .catch(() => console.error('film is nod find!'));
+  },
+  fetchGanres() {
+    const url = `${BASE_URL}/3/genre/movie/list?api_key=${API_KEY}`;
+    return fetch(url)
+      .then(response => {
+        if (response.ok) return response.json();
+      })
+      .catch(() => console.error('no ganres'));
   },
 };
 
