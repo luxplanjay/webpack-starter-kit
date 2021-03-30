@@ -1,5 +1,6 @@
 //utils
 @import './utils/variables';
+@import './utils/placeholders';
 
 //base
 @import './base/common';
@@ -12,6 +13,7 @@
 @import './components/accent';
 
 //layout
+@import './layout/header-home';
 @import './layout/gellary';
 
 //footer

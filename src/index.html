@@ -12,10 +12,51 @@
 </head>
 
 <body>
-  <header-home></header-home>
-  <gallery></gallery>
-  <modal-backdrop></modal-backdrop>
-  <footer></footer>
+  <header>
+    <div class="header">
+    <div class="container">
+        <nav class="header-nav">
+            <a class="header-logo logo" href="./index.html">
+                <svg class="logo-icon" width="24" height="24">
+                   <use href="./images/icons/sprite.svg#logo"></use>
+                </svg>
+                <span class="logo-title link">Filmoteka</span>
+            </a>
+            <ul class="header-list list">
+                <li class="header-list-item">
+                    <a class="header-list-link link current" href="./index.html">Home</a>
+                </li>
+                <li class="header-list-item">
+                   <a class="header-list-link link" href="./library.html">my library</a>
+                </li>
+            </ul>
+        </nav>
+        <form class="search-form">
+                <input class="search-input" type="text" id="search-input" name="query" placeholder="Поиск фильмов">
+                <label class="search-form-label" for="search-input">Поиск фильмов
+                </label>
+                <svg class="search-icon" width="12px" height="12px">
+                    <use href="./images/icons/sprite.svg#search"><use>
+                </svg>
+        </form>
+        <p class="error">Search result not successful. Enter the correct movie name and</p>
+    </div>
+</div>
+  </header>
+  <footer>
+    <div class="container">
+      <div class="footer-page">
+          <p class="copyright">&copy; 2020 | All Rights Reserved |</p>
+          <div class="developers">
+              <p>Developed with
+                  <svg class="footer-hart">
+                      <use href="./images/icons/sprite.svg#heart"></use>
+                  </svg>
+                  by <span class="js-team-modal team-modal">GoIT Students</span>
+              </p>
+          </div>
+      </div>
+  </footer>
 </body>
 
 </html>
