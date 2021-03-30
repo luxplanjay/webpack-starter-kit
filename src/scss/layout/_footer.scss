@@ -23,11 +23,19 @@
     line-height: 1.188;
     color: $color-subtitle-light-gray;
 
+    &:first-child {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 10px;
+      }
+    }
+
     &-word {
       text-decoration: underline;
     }
   }
   &-svg {
+    display: inline-block;
+    background-color: $color-subtitle-light-gray;
     width: 14px;
     height: 13px;
     fill: $accent-color;
