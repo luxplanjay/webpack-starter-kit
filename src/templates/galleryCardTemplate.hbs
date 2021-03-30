@@ -1,0 +1,17 @@
+<div class="container">
+    <ul class="gallery__list">
+        {{#each this}}
+            <li class="list list__item">
+                <img
+                    src="{{poster_path}}"
+                    alt="{{original_title}}"
+                    class="poster__path"
+                />        
+                <div class="film__short__info">
+                    <h2 class="title__card__film">{{original_title}}</h2>
+                    <p class="genre__card__film genre__card__film__style">{{genre_ids}}, {{id}} | {{release_date}}</p>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>
