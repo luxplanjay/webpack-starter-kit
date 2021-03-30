@@ -1,5 +1,5 @@
 const refs = {
-  galleryRef: document.querySelector('.movies__list'),
+  gallery: document.querySelector('.movies__list'),
   paginationWrapper: document.querySelector('.js-pagination-wrapper'),
 };
 
