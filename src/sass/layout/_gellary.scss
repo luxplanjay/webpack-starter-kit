@@ -1,0 +1,34 @@
+.list-item {
+    margin: 0 0 20px;
+}
+
+.gallery-list {
+    padding: 20px 0 40px;
+    margin: 0;
+}
+
+.poster-path {
+    width: 280px;
+    height: 402px;
+    border-radius: 5px;
+    margin: 0 0 10px;
+}
+
+.film-short-info {
+    height: 31px;
+}
+
+.title-card-film,
+.genre-card-film {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.genre-card-film-style { 
+    line-height: 1.17;
+    color: $accent-color;
+    text-transform: none;
+}
