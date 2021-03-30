@@ -66,3 +66,4 @@ typings/
 .env.development.local
 .env.test.local
 .env.production.local
+src/sass/components/_modal.scss

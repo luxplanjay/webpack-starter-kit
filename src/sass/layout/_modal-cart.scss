@@ -1,0 +1,150 @@
+.modal{
+    position: relative;
+        background-color: #FFFFFF;
+}
+   
+    @media screen and (min-width: 480px){
+      .modal{
+        height: 918px;
+        width: 240px;
+      }
+      .detalis-film{
+        padding-top: 48px;
+        padding-left: 20px;
+        padding-right: 20px;
+      } 
+      .modal-button{
+        justify-content: center;
+      }
+      .film-title{
+        font-size: 20px;
+        line-height: 1.17;
+      }
+      .button{
+        height: 44px;
+        width: 113px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .modal{
+          height: 562px;
+          width: 576px;
+      } 
+      .detalis-film{
+        display: flex;
+        padding-top: 42px;
+        padding-left: 30px;
+        padding-right: 30px;
+      } 
+      .modal-button{
+        display: flex;
+      }
+      .film-title{
+        font-size: 20px;
+        line-height: 1.17;
+      }
+      .button{
+        height: 44px;
+        width: 125px;
+      }
+      }
+    @media screen and (min-width: 1200px){
+      .modal{
+        width: 832px;
+        height: 568px;
+      }
+      .detalis-film{
+        display: flex;
+        padding-top: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .modal-button{
+        display: flex;
+      }
+      .film-title{
+        font-size: 30px;
+        line-height: 1.16;
+      }
+      .button{
+        height: 44px;
+        width: 136px;
+      }
+  }
+
+
+.detalis-film{
+
+height: 478px;
+justify-content: space-between;
+}
+.detalis-film-img{
+    height: 478px;
+    width: 396px;
+    border-radius: 5px;  
+}
+.detalis-film-about{
+  width: 396px;
+}
+///
+.film-title{
+font-style: normal;
+font-weight: 500;
+letter-spacing: 0em;
+text-align: left;
+}
+.statistics{
+ font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.33;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.statistics-title{
+  background: #8C8C8C;
+
+}
+.about-title{
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.33;
+letter-spacing: 0em;
+text-align: left;
+}
+.about{
+ 
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.66;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.rectangle{
+  height: 16px;
+  width: 36px;
+  border-radius: 5px;
+  background: $accent-color;
+  color: #FFFFFF;
+
+
+}
+.button{
+  border-radius: 5px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 0em;
+  text-align: center;
+  border: 1px solid #000000;
+  &:hover,
+    &:focus{
+        color: #FFFFFF;;
+        background: $accent-color;
+    }
+  }
