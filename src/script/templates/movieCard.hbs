@@ -1,9 +1,9 @@
 <div class="movie-card">
     <div class="movie-card__item">
-        <img src="{{}}" alt="Movie Poster" class="movie-card__poster"/>
+        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="Movie Poster" class="movie-card__poster"/>
     </div>
     <div class="movie-card__item">
-        <h2 class="movie-card__title">{{}}</h2>
+        <h2 class="movie-card__title">{{title}}</h2>
         <div class="movie-card__info">
             <ul class="movie-card__info--title">
                 <li>Vote / Votes</li>
@@ -12,16 +12,18 @@
                 <li>Genre</li>
             </ul>
             <ul class="movie-card__info--content">
-                <li>{{}} / {{}}</li>
-                <li>{{}}</li>
-                <li>{{}}</li>
-                <li>{{}}</li>
+                <li>{{vote_average}} / {{vote_count}}</li>
+                <li>{{popularity}}</li>
+                <li>{{original_title}}</li>
+                <li>{{genres}}</li>
             </ul>
         </div>
         <a class="play-trailer"></a>
         <h3 class="movie-card__about">About</h3>
-        <div class="movie-card__about--content">{{}}</div>
+        <div class="movie-card__about--content">{{overview}}</div>
+        <div class="button-wrapper">
         <button type="button" class="add-btn" data-action="add-to-watched">Add to watched</button>
         <button type="button" class="add-btn" data-action="add-to-queue">Add to queue</button>
+        </div>
     </div>
 </div>

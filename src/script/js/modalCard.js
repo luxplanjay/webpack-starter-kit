@@ -1,5 +1,6 @@
 import Lightbox from './lightbox';
-import galleryRef from './refs'
+import refs from './refs'
+const { gallery } = refs;
 const lightbox = new Lightbox();
 
-galleryRef.addEventListener('click', event => lightbox.openLightbox(event));
+gallery.addEventListener('click', event => lightbox.openLightbox(event));
