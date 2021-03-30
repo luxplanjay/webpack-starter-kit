@@ -5,19 +5,22 @@ import createMarkup from '../templates/galleryCard.hbs';
 export { BASE_URL, KEY_API };
 export default class PopularFilms {
   constructor(createGenreTranpiler, galleryRef) {
-    this.page = 1;
+    this._page = 1;
     this.galleryRef = galleryRef;
     this.handlerPopularMovies();
     this.createGenreTranpiler = createGenreTranpiler;
+    this.ResultAmount = 0;
   }
   async fetchPopular() {
     const response = await fetch(
-      `${BASE_URL}/trending/movie/day?api_key=${KEY_API}&page=${this.page}`,
+      `${BASE_URL}/trending/movie/day?api_key=${KEY_API}&page=${this._page}`,
     );
     return response.json();
   }
   async handlerPopularMovies() {
     const result = await this.fetchPopular();
+    console.log(result);
+    this.resultAmount = result.total_results;
     result.results.map(elem =>
       this.createGenreTranpiler(elem.genre_ids).then(arr => {
         elem.genre_ids = arr.slice(0, 3).join(', ');
@@ -28,9 +31,21 @@ export default class PopularFilms {
     );
   }
   incrementPage() {
-    this.page += 1;
+    this._page += 1;
   }
   resetPage() {
-    this.page = 1;
+    this._page = 1;
+  }
+  decrementPage() {
+    this._page -= 1;
+  }
+  get page() {
+    return this._page;
+  }
+  set page(value) {
+    this._page = value;
+  }
+  getResultAmount() {
+    return this.resultAmount;
   }
 }
