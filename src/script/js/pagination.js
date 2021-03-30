@@ -1,10 +1,6 @@
-
-import Pagination from './pagination-api'
-
+import refs from './refs';
+import Pagination from './pagination-api';
 
 const pagination = new Pagination(28, 1000);
 
-const paginationWrapperRef = document.querySelector('.js-pagination-wrapper');
-
-
-paginationWrapperRef.innerHTML = pagination.paginationMarkup();
+refs.paginationWrapper.innerHTML = pagination.paginationMarkup();
