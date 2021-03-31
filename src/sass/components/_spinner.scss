@@ -1,0 +1,30 @@
+  .square{
+      position: absolute;
+    border:0;
+    width:80px;
+    padding:0px;
+    margin-top: 90px;
+    margin-left: calc(50% - 40px);
+    margin-left: -webkit-calc(50% - 40px);
+    margin-left: -moz-calc(50% - 40px);
+    background: transparent;
+  }
+  
+  .spin {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border:dashed 5px orange;
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+  }
+  
+  @-webkit-keyframes spin {
+    from   {  -webkit-transform: rotate(0deg); }
+    to   {  -webkit-transform: rotate(360deg); }
+  }
+  .is-hidden {
+display: none;
+  }
