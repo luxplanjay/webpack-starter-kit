@@ -6,7 +6,6 @@ img {
 
 .movie-card {
     background-color: $color-lightest; 
-    cursor: pointer;
 
     &__item {
         display: block;
@@ -88,6 +87,7 @@ img {
     color: $color-lightest;
     @include font(500, 12px, 16px);
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 @media screen and (min-width: $bp-mobile) and (max-width: 767px) {
