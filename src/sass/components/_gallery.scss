@@ -12,11 +12,16 @@
 }
 .movie__poster {
   width: 280px;
+  height: 398px;
   display: block;
   margin-bottom: 10px;
-
   border-radius: 5px;
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 10px 5px $color-accent;
+  }
 }
+
 .movie__name {
   text-transform: uppercase;
 }

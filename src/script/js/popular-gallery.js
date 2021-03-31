@@ -2,6 +2,7 @@ import PopularFilms from '../API/fetchPopular';
 import refs from '../js/refs';
 import createMarkup from '../templates/galleryCard.hbs';
 import Pagination from './pagination-api';
+import settings from './settings';
 
 const fetchPopularMovie = new PopularFilms();
 const pagination = new Pagination();
@@ -31,6 +32,12 @@ createCard();
 
 function transformMovieObject(movies) {
   movies.forEach(elem => {
+    if (elem.title.length > 38) {
+      elem.title = elem.title.slice(0, 38) + '...';
+    }
+    elem.poster_path
+      ? (elem.poster_path = `https://image.tmdb.org/t/p/w500/${elem.poster_path}`)
+      : (elem.poster_path = settings.reservImg);
     elem.release_date = elem.release_date.slice(0, 4);
     elem.genre_ids = fetchPopularMovie.ganreTranspiler(elem.genre_ids);
     elem.genre_ids = elem.genre_ids.slice(0, 3).join(', ');
