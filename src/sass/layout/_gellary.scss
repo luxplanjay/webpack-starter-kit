@@ -1,0 +1,49 @@
+.list-item {
+  margin: 0 0 20px;
+}
+
+.gallery-list {
+  padding: 20px 0 40px;
+  margin: 0;
+}
+
+.poster-img {
+  width: 280px;
+  height: 402px;
+  border-radius: 5px;
+  margin: 0 0 10px;
+}
+
+.movie-card-short-info {
+  height: 32px;
+}
+
+.movie-card-title{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+
+.movie-card-text {
+	display: flex;
+	align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: capitalize;
+  color: $accent-color;
+}
+
+.avg-rating {
+  display: flex;
+	justify-content: center;
+  align-items: center;
+	margin-left: 10px;
+  min-width: 36px;
+  height: 16px;
+  line-height: 1.167;
+  color: $white;
+  background-color: $avg-rating-color;
+	border-radius: 5px;
+}
