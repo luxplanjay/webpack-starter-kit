@@ -1,6 +1,6 @@
 import refs from './refs';
 import Pagination from './pagination-api';
 
-const pagination = new Pagination(28, 1000);
+const pagination = new Pagination();
 
-refs.paginationWrapper.innerHTML = pagination.paginationMarkup();
+refs.paginationWrapper.innerHTML = pagination.renderPaginationMarkup(28, 1000);
