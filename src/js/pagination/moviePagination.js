@@ -31,21 +31,21 @@ class MoviePagination{
         api.fetchGanres().then(result=>{
           const { genres } = result;
           this.totalGenres = [...genres];
-          // console.log(this.totalGenres);
+          console.log(this.totalGenres);
         });
       }
-      findFilmGenres(arr){
-      this.getAllGenres();
-               let arrayOfGenres = [];
-                for(let i = 0; i < movie.genre_ids.length; i++){
-                   this.totalGenres
-                   .find(genreItem =>{
-                      if(genreItem.id ===  movie.genre_ids[i])
-                        return arrayOfGenres.push(genreItem.name);
-                     });
-                }
-                return movie.genre_ids = arrayOfGenres;
-      }
+      // findFilmGenres(arr){
+      // this.getAllGenres();
+      //          let arrayOfGenres = [];
+      //           for(let i = 0; i < movie.genre_ids.length; i++){
+      //              this.totalGenres
+      //              .find(genreItem =>{
+      //                 if(genreItem.id ===  movie.genre_ids[i])
+      //                   return arrayOfGenres.push(genreItem.name);
+      //                });
+      //           }
+      //           return movie.genre_ids = arrayOfGenres;
+      // }
       goToPrevPage() {
         if (this.currentPage === 1) {
           return;
