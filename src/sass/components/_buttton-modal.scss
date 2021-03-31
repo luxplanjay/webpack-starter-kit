@@ -8,20 +8,21 @@
     text-transform: uppercase;
     align-items: center;
 text-align: center;
+color: $color-darkest;
+border: 1px solid $color-darkest;
+background-color: transparent;
    cursor: pointer;
    transition-property: border-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    &-watched {
+
+    // modal-button-aktive
+    
+    &-aktive {
         color: $color-lightest;
         border: none;
         background-color: $color-accent-2;
      
-    }
-    &-queue {
-        color: $color-darkest;
-        border: 1px solid $color-darkest;
-        background-color: transparent;
     }
     &:not(:last-child) {
         margin-right: 15px;
