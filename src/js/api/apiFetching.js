@@ -7,7 +7,7 @@ const api = {
     const url = `${BASE_URL}/3/trending/movie/week?api_key=${API_KEY}&page=${page}`;
     return fetch(url)
       .then(response => {
-        if (response.ok) return console.log(response.json());
+        if (response.ok) return response.json();
       })
       .catch(() => console.error('no popular'));
   },

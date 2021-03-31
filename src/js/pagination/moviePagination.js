@@ -1,19 +1,18 @@
 import api from '../api/apiFetching';
-// import moviesListTemplate from '../../templates/moviesList.hbs';
-import movieAdapter from '../movieHelpers/adapterData';
+ import moviesListTemplate from '../../template/cardTemp.hbs';
+import { generatePosterPath } from '../movieHelpers/generatePoster';
 
 class MoviePagination{
     #movies = [];
-    // constructor(selector)
-    constructor() {
-      // this.element = document.querySelector(selector);
+    constructor(selector) {
+      this.element = document.querySelector(selector);
       this.#movies = [];
       this.currentPage = 1;
       this.totalPages = 0;
       this.totalGenres = [];
       this.goToPrevPage = this.goToPrevPage.bind(this);
       this.goToNextPage = this.goToNextPage.bind(this);
-      this.loadMore = this.loadMore.bind(this);
+      this.loadFirst = this.loadFirst.bind(this);
     }
     get movies() {
         return this.#movies;
@@ -25,35 +24,34 @@ class MoviePagination{
         }
     
         this.#movies = movieList;
-        // this.render();
+        this.render();
       }
-      getAllGenres(){
+      getAllGenres(){                        //load at once before using other methods
         api.fetchGanres().then(result=>{
           const { genres } = result;
-          this.totalGenres = [...genres];
-          console.log(this.totalGenres);
+          this.totalGenres = [...genres];         
         });
       }
-      // findFilmGenres(arr){
-      // this.getAllGenres();
-      //          let arrayOfGenres = [];
-      //           for(let i = 0; i < movie.genre_ids.length; i++){
-      //              this.totalGenres
-      //              .find(genreItem =>{
-      //                 if(genreItem.id ===  movie.genre_ids[i])
-      //                   return arrayOfGenres.push(genreItem.name);
-      //                });
-      //           }
-      //           return movie.genre_ids = arrayOfGenres;
-      // }
+      
+      findFilmGenres(){
+               this.movies.forEach(movie =>{
+                 for(let i = 0; i < movie.genre_ids.length; i++){
+                  const searchGenre =  this.totalGenres
+                    .find(genreItem => genreItem.id ===  movie.genre_ids[i]);
+                    movie.genre_ids[i] = searchGenre.name;
+                  }
+                  movie.backdrop_path = generatePosterPath(movie.backdrop_path);
+               })
+      }
       goToPrevPage() {
         if (this.currentPage === 1) {
           return;
         }
     
         this.currentPage -= 1;
-        this.fetchMovies().then(({ results }) => {
-          this.movies = this.convertMoviesData(results);
+        this.fetchMovies().then((results) => {
+          this.movies = results;
+          this.render();
         });
       }
     
@@ -61,44 +59,41 @@ class MoviePagination{
         if (this.currentPage === this.totalPages) {
           return;
         }
-    
+ 
         this.currentPage += 1;
-        this.fetchMovies().then(({ results }) => {
-          this.movies = this.convertMoviesData(results);
-        });
-      }
-    
-      loadMore() {
-        this.currentPage += 1;
-        return this.fetchMovies().then(({ results }) => {
-          this.addMovies(this.convertMoviesData(results));
+        this.fetchMovies().then((results) => {
+          this.movies = results;
+          this.render();
         });
       }
     
       addMovies(newMovies) {
         this.movies = [...this.movies, ...newMovies];
       }
+
+      loadFirst() {
+        return this.fetchMovies()
+         .then(data => {
+          this.addMovies(data.results);
+         });
+      }
+    
+     
       fetchMovies() {
         return api
           .fetchPopularFilms(this.currentPage)
-          .then(({ results, total_pages }) => ({ results, total_pages }))
-          .then(result => this.findFilmGenres(result));
-      }
-    
-      mount() {
-        this.fetchMovies().then(({ results, total_pages }) => {
-          this.movies = this.convertMoviesData(results);
-          this.totalPages = total_pages;
-        });
+          .then(data => {
+            const {results, total_pages} = data;
+            this.totalPages = total_pages;
+            this.#movies = results;
+            this.findFilmGenres();
+            return this.movies;
+          })
       }
     
       render() {
-        // this.element.innerHTML = moviesListTemplate(this.movies);
+         this.element.innerHTML = moviesListTemplate(this.movies);
       }
-      
-  convertMoviesData(movieList) {
-    return movieList.map(movie => movieAdapter(movie));
-  }
 }
   
   export default MoviePagination;
