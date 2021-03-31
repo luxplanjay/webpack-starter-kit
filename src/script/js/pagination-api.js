@@ -1,17 +1,15 @@
 import pagination from 'pagination';
 
 export default class Pagination {
-  constructor(currentPage, resultsAmount) {
-    this.currentPage = currentPage;
-    this.resultsAmount = resultsAmount;
+  constructor() {
     this.itemsPerPage = 20;
   }
 
-  paginationMarkup() {
+  renderPaginationMarkup(currentPage, resultsAmount) {
     const boostrapPaginator = new pagination.TemplatePaginator({
-      current: this.currentPage,
+      current: currentPage,
       rowsPerPage: this.itemsPerPage,
-      totalResult: this.resultsAmount,
+      totalResult: resultsAmount,
       slashSeparator: true,
       template: function (result) {
         const vw = Math.max(
