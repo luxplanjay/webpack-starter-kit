@@ -1,0 +1,73 @@
+@media screen and (min-width: $mobile) {
+  .gallery {
+    li {
+      width: 100%;
+      padding-top: 20px;
+    }
+  }
+
+  .move-card {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .text-conteiner {
+    padding-top: 20px;
+  }
+  .move-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16;
+    text-transform: uppercase;
+    font-family: Roboto;
+
+    color: #000000;
+
+    color: #000000;
+  }
+  .move-info {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    color: #ff6b08;
+  }
+}
+@media screen and (min-width: $tablet) {
+  .gallery {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 294px;
+      padding-top: 30px;
+    }
+  }
+  .move-title {
+    line-height: 1.33;
+  }
+  .text-conteiner {
+    padding-top: 10px;
+  }
+}
+@media (min-width: $tablet) and (max-width: 1023px) {
+  .gallery {
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: $desktop) {
+  .gallery {
+    li:not(:nth-child(3n + 3)) {
+      margin-right: 30px;
+    }
+    li {
+      width: 274px;
+    }
+  }
+}

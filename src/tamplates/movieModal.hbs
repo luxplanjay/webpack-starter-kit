@@ -1,0 +1,43 @@
+<div class="movie-container">
+      <div class="movie-image">
+            <img src="{{this.img}}" alt="{{this.title}}">
+      </div>
+      <div class="movie-description">
+            <h1 class="movie-description-title">{{this.title}}</h1>
+            <div class="movie-description-block">
+                  <ul class="movie-description-list-left">
+                        <li class="movie-description-list-left-item">Vote / Votes</li>
+                        <li class="movie-description-list-left-item">Popularity</li>
+                        <li class="movie-description-list-left-item">Original title</li>
+                        <li class="movie-description-list-left-item">Genre</li>
+                  </ul>
+                  <ul class="movie-description-list-right">
+                        <li class="movie-description-list-right-item">
+                              <span class="movie-rating filler">{{this.vote_average}}</span> /
+                              <span class="movie-vote-count filler">{{this.vote_count}}</span>
+                        </li>
+                        <li class="movie-description-list-right-item">
+                              {{this.popularity}}
+                        </li>
+                        <li class="movie-description-list-right-item">
+                              <span class="original-title">{{this.original_title}}</span>
+                        </li>
+                        <li class="movie-description-list-right-item">
+                              {{#each this.genres}}
+                              {{name}}&nbsp;&nbsp;
+                              {{/each}}
+                        </li>
+                  </ul>
+            </div>
+            <div class="movie-about">
+                  <p class="movie-about-title">ABOUT</p>
+                  <p class="movie-about-text">{{this.overview}}</p>
+            </div>
+            <button class="add-to-watched active-btn-style" type="button" data-action-watched="watched"
+                  data-movie-id="{{this.id}}">ADD TO
+                  WATCHED</button>
+            <button class="add-to-queue active-btn-style" type="button" data-action-queue="queue"
+                  data-movie-id="{{this.id}}">ADD TO
+                  QUEUE</button>
+      </div>
+</div>

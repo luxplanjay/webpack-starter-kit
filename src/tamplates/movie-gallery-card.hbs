@@ -1,0 +1,16 @@
+{{#each this}}
+<li>
+    <div class="move-card">
+        <img src="https://image.tmdb.org/t/p/w500/{{'poster_path'}}" alt="{{"title"}}" />
+
+        <div class="text-conteiner">
+            <h3 class="move-title">{{'title'}}
+            </h3>
+            <p class="move-info">
+                <span class="move-genres">{{"genre_ids"}}</span> | <span class="move-year">{{'release_date'}}</span>
+            </p>
+
+        </div>
+    </div>
+</li>
+{{/each}}
