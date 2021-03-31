@@ -27,12 +27,14 @@ img {
     }
     &__info {
         display: flex; 
-        justify-content: space-between;
+
         @include font(500, 12px, 16px);
         color: $color-darkest;
     } 
 
     &__info--title{
+        margin-right: 38px;
+        margin-bottom: 20px;
         color: $color-middle;
     }
     &__about {
@@ -47,9 +49,12 @@ img {
         width: 100%;
     }
 }
+.button-wrapper {
+    display: flex;    
+}
 .add-btn {
-    display: flex;
-    justify-content: space-between;
+    margin-right: 15px;
+    text-transform: uppercase;
 }
 @media screen and (min-width: $bp-mobile) and (max-width: 767px) {
     .movie-card {
@@ -64,7 +69,6 @@ img {
 
         &__about--content {
             width: 240px;
-            height: 236px;
         }
     }
 }
@@ -86,7 +90,6 @@ img {
         
         &__about--content {
             width: 264px;
-            height: 236px;
         }
     }
 }
@@ -98,7 +101,7 @@ img {
         padding: 50px 30px 40px 30px ;
     
         &__item {
-            // margin-left: 30px;
+            margin-left: 30px;
             width: 396px; 
         }
 
@@ -107,11 +110,12 @@ img {
         }
         &__title {
             @include font(500, 30px, 35px);
+            margin-bottom: 20px;
         }
 
         &__about--content {
+            margin-bottom: 20px;
             width: 396px;
-            height: 160px;
         }
     }
 }
