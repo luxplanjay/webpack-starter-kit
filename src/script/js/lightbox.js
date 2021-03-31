@@ -28,7 +28,7 @@ export default class Lightbox{
     closeLightbox() {
         this.refs.lightbox.classList.remove('is-open');
         document.body.style.overflow = 'visible';
-        this.refs.infoCard.innerHTML = '';
+        this.refs.infoCard.innerHTML = '<button type="button" class="lightbox__button" data-action="close-lightbox"></button>';
         this.refs.overlay.removeEventListener('click', () => this.closeLightbox());
         this.refs.closeBtn.removeEventListener('click', () => this.closeLightbox());
         window.removeEventListener('keydown', event => this.closeOnKeydown(event));
@@ -41,7 +41,6 @@ export default class Lightbox{
     createMarkup(event) {
         movieInfo.fetchMovie(event.target.id)
         .then(result => {
-            console.log(result);
             const genres = result.genres.map(item => item.name);
             result.genres = genres.join(', ');
             result.popularity = parseFloat(result.popularity).toFixed(1);
