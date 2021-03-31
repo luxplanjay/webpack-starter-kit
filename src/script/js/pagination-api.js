@@ -40,7 +40,7 @@ export default class Pagination {
             }
           });
         }
-        if (result.next && result.current <= result.last - 4 && vw > 768) {
+        if (result.next && result.current <= result.last - 3 && vw > 768) {
           html +=
             '<li class="page-item">' +
             '&middot&middot&middot' +
@@ -48,8 +48,6 @@ export default class Pagination {
             '<li class="page-item">' +
             result.last +
             '</li>';
-        } else if (result.last && vw > 768) {
-          html += '<li class="page-item">' + result.last + '</li>';
         }
         html += '</ul></div>';
         return html;
