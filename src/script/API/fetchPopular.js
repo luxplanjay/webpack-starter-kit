@@ -5,7 +5,6 @@ const API_KEY = settings.API_KEY;
 export default class PopularFilms {
   constructor() {
     this._page = 1;
-    this.resultAmount = 0;
     this.result;
     this.ganreObject = {};
     this.handleGenre();
@@ -50,8 +49,5 @@ export default class PopularFilms {
   }
   set page(value) {
     this._page = value;
-  }
-  getResultAmount() {
-    return this.resultAmount;
   }
 }
