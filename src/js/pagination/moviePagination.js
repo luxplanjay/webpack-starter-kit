@@ -35,7 +35,7 @@ class MoviePagination {
   loadFirstPage() {
     return this.fetchMovies().then(data => {
       this.prepareMovies();
-      this.addMovies(data.results);
+      this.render();
     });
   }
 
@@ -43,13 +43,11 @@ class MoviePagination {
     return api.fetchPopularFilms(this.currentPage).then(data => {
       const { results, total_pages } = data;
       this.totalPages = total_pages;
+      console.log('in fetch', this.#movies);
       this.#movies = results;
-      return this.movies;
+      console.log('in fetch', this.#movies);
+      return results;
     });
-  }
-
-  addMovies(newMovies) {
-    this.movies = [...this.movies, ...newMovies];
   }
 
   render() {
@@ -116,7 +114,7 @@ class MoviePagination {
 
     this.currentPage -= 1;
     this.fetchMovies().then(results => {
-      this.movies = results;
+      this.#movies = results;
       this.prepareMovies();
       this.render();
     });
@@ -129,7 +127,7 @@ class MoviePagination {
 
     this.currentPage += 1;
     this.fetchMovies().then(results => {
-      this.movies = results;
+      this.#movies = results;
       this.prepareMovies();
       this.render();
     });
