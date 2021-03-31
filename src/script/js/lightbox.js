@@ -39,7 +39,9 @@ export default class Lightbox{
          };
     }
     createMarkup(event) {
-        movieInfo.fetchMovie(event.target.id).then(result => {
+        movieInfo.fetchMovie(event.target.id)
+        .then(result => {
+            console.log(result);
             const genres = result.genres.map(item => item.name);
             result.genres = genres.join(', ');
             result.popularity = parseFloat(result.popularity).toFixed(1);
