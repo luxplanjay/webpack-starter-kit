@@ -12,8 +12,9 @@ class MoviePagination {
     this.totalGenres = [];
     this.goToPrevPage = this.goToPrevPage.bind(this);
     this.goToNextPage = this.goToNextPage.bind(this);
-    this.loadFirst = this.loadFirst.bind(this);
+    this.loadFirstPage = this.loadFirstPage.bind(this);
   }
+
   get movies() {
     return this.#movies;
   }
@@ -25,25 +26,87 @@ class MoviePagination {
     this.#movies = movieList;
     this.render();
   }
-  
+
+  init() {
+    this.getAllGenres();
+    this.loadFirstPage();
+  }
+
+  loadFirstPage() {
+    return this.fetchMovies().then(data => {
+      this.prepareMovies();
+      this.addMovies(data.results);
+    });
+  }
+
+  fetchMovies() {
+    return api.fetchPopularFilms(this.currentPage).then(data => {
+      const { results, total_pages } = data;
+      this.totalPages = total_pages;
+      this.#movies = results;
+      return this.movies;
+    });
+  }
+
+  addMovies(newMovies) {
+    this.movies = [...this.movies, ...newMovies];
+  }
+
+  render() {
+    this.element.innerHTML = moviesListTemplate(this.movies);
+  }
+
+  prepareMovies() {
+    this.movies.forEach(movie => {
+      this.findMovieGenres(movie);
+      this.getReleaseYear(movie);
+      this.getPosterImg(movie);
+    });
+  }
+
   getAllGenres() {
-    //load at once before using other methods
     api.fetchGanres().then(result => {
       const { genres } = result;
       this.totalGenres = [...genres];
     });
   }
 
-  findFilmGenres() {
-    this.movies.forEach(movie => {
-      for (let i = 0; i < movie.genre_ids.length; i++) {
-        const genre = this.totalGenres.find(
-          genreItem => genreItem.id === movie.genre_ids[i],
-        );
-        movie.genre_ids[i] = genre.name;
-      }
-      movie.backdrop_path = generatePosterPath(movie.backdrop_path);
-    });
+  findMovieGenres(movie) {
+    const maxGenresViewed = 3;
+    if (movie.genre_ids.length > maxGenresViewed) {
+      movie.genre_ids = movie.genre_ids.slice(0, 3);
+      this.convertGenreIds(movie);
+      movie.genre_ids.splice(maxGenresViewed - 1, 1, 'Other');
+      movie.genre_ids = this.convertMovieGenresToString(movie.genre_ids);
+      return;
+    }
+    movie.genre_ids = movie.genre_ids.slice(0, 3);
+    this.convertGenreIds(movie);
+    movie.genre_ids = this.convertMovieGenresToString(movie.genre_ids);
+  }
+
+  convertGenreIds(movie) {
+    for (let i = 0; i < movie.genre_ids.length; i++) {
+      const genre = this.totalGenres.find(
+        genreItem => genreItem.id === movie.genre_ids[i],
+      );
+      movie.genre_ids[i] = genre.name;
+    }
+  }
+
+  convertMovieGenresToString(genres) {
+    genres = genres.join(', ');
+    return genres;
+  }
+
+  getReleaseYear(movie) {
+    const date = new Date(movie.release_date);
+    const year = date.getFullYear();
+    movie.release_date = year;
+  }
+
+  getPosterImg(movie) {
+    movie.backdrop_path = generatePosterPath(movie.backdrop_path);
   }
 
   goToPrevPage() {
@@ -54,6 +117,7 @@ class MoviePagination {
     this.currentPage -= 1;
     this.fetchMovies().then(results => {
       this.movies = results;
+      this.prepareMovies();
       this.render();
     });
   }
@@ -66,40 +130,8 @@ class MoviePagination {
     this.currentPage += 1;
     this.fetchMovies().then(results => {
       this.movies = results;
+      this.prepareMovies();
       this.render();
-    });
-  }
-
-  addMovies(newMovies) {
-    this.movies = [...this.movies, ...newMovies];
-  }
-
-  loadFirst() {
-    return this.fetchMovies().then(data => {
-      this.addMovies(data.results);
-    });
-  }
-
-  fetchMovies() {
-    return api.fetchPopularFilms(this.currentPage).then(data => {
-      const { results, total_pages } = data;
-      this.totalPages = total_pages;
-      this.#movies = results;
-      this.findFilmGenres();
-      this.getReleaseYear();
-      return this.movies;
-    });
-  }
-
-  render() {
-    this.element.innerHTML = moviesListTemplate(this.movies);
-  }
-
-  getReleaseYear() {
-    this.movies.forEach(movie => {
-      const date = new Date(movie.release_date);
-      const year = date.getFullYear()
-      movie.release_date = year;
     });
   }
 }
