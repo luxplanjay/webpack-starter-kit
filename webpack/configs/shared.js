@@ -1,14 +1,15 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const paths = require('../utils/paths');
-const path = require('path');
 
 module.exports = env => ({
   mode: env.mode,
   context: paths.SRC_DIR,
-  entry: './index.js',
+  entry: {
+    index: './index.js',
+    library: './library.js',
+  },
   output: {
     path: paths.BUILD_DIR,
   },
@@ -73,25 +74,5 @@ module.exports = env => ({
     new CleanWebpackPlugin(),
     new FriendlyErrorsWebpackPlugin(),
     new WebpackBar(),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join('./src/partials/header-home.html'),
-      location: 'header-home',
-      template_filename: ['index.html']
-    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join('./src/partials/gallery.html'),
-      location: 'gallery',
-      template_filename: ['index.html']
-    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join('./src/partials/footer.html'),
-      location: 'footer',
-      template_filename: ['index.html']
-    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join('./src/partials/modal-backdrop.html'),
-      location: 'modal-backdrop',
-      template_filename: ['index.html']
-  }),
   ],
 });
