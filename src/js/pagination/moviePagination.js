@@ -1,5 +1,5 @@
 import api from '../api/apiFetching';
-import moviesListTemplate from '../../template/cardTemp.hbs';
+import moviesListTemplate from '../../templates/galleryCardTemplate.hbs';
 import { generatePosterPath } from '../movieHelpers/generatePoster';
 
 class MoviePagination {
