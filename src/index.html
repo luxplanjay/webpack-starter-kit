@@ -24,6 +24,18 @@
             </div>
             <nav class="site-nav">
               <button
+                class="home-button site-nav__signup"
+                type="button" 
+              >
+                Sign up
+              </button>
+              <button
+                class="home-button site-nav__signin"
+                type="button"
+              >
+                Sign in
+              </button>
+              <button
                 class="home-button current"
                 type="button"
                 aria-label="Переключатель основной страницы"
@@ -39,6 +51,7 @@
               >
                 My library
               </button>
+              
             </nav>
           </div>
 
@@ -121,7 +134,67 @@
       ></button>
       </div>
     </div>
+    <div class="backdrop is-hidden" data-modal-signup>
+      <div class="modal">
+          <h2 class="modal__title">Sign up</h2>
+          <form action="" class="modal__form-registration">
+              <ul class="modal__list-input list">
+                  <li class="modal__list-item">
+                      <label  class="modal__label">Email<input type="email" name="email" class="modal__field-input">
+                        <svg width="18" height="18" class="modal__icon">
+                          <use href="./images/sprite.svg#icon-email"></use>
+                        </svg>
+                      </label>
+                  </li>
+                  <li class="modal__list-item">
+                      <label  class="modal__label">Password<input type="password" name="pass" class="modal__field-input">
+                        <svg width="18" height="18" class="modal__icon">
+                          <use href="./images/sprite.svg#icon-key"></use>
+                        </svg>
+                      </label>
+                  </li>
+                  <li class="modal__list-item">
+                    <label  class="modal__label">Repeat password<input type="password" name="secondpass" class="modal__field-input">
+                      <svg width="18" height="18" class="modal__icon">
+                        <use href="./images/sprite.svg#icon-key"></use>
+                      </svg>   
+                    </label>
+                </li>
+                </ul>
+              <button type="submit" class="modal__button ">Sign up</button> 
+              
+          </form>
+      </div>
+      </div>
+      <div class="backdrop is-hidden" data-modal-signin>
+        <div class="modal">
+            <h2 class="modal__title">Sign in</h2>
+            <form action="" class="modal__form-login">
+                <ul class="modal__list-input list">
+                    <li class="modal__list-item">
+                        <label  class="modal__label">Email<input type="email" name="email" class="modal__field-input">
+                          <svg width="18" height="18" class="modal__icon">
+                            <use href="./images/sprite.svg#icon-email"></use>
+                        </svg>
+                        </label>
+                    </li>
+                    <li class="modal__list-item">
+                        <label  class="modal__label">Password<input type="password" name="pass" class="modal__field-input">
+                          <svg width="18" height="18" class="modal__icon">
+                            <use href="./images/sprite.svg#icon-key"></use>
+                          </svg>
+                        </label>
+                    </li>
+                    
+                  </ul>
+                <button type="submit" class="modal__button">Sign in</button> 
+                
+            </form>
+        </div>
+        </div>
 
     <!-- end of lightbox -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
   </body>
 </html>
