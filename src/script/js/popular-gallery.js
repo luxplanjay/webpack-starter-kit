@@ -1,14 +1,29 @@
 import PopularFilms from '../API/fetchPopular';
 import refs from '../js/refs';
 import createMarkup from '../templates/galleryCard.hbs';
+import Pagination from './pagination-api';
 
 const fetchPopularMovie = new PopularFilms();
+const pagination = new Pagination();
 
 function createCard() {
   fetchPopularMovie.fetchPopular().then(res => {
     refs.gallery.innerHTML = createMarkup(transformMovieObject(res.results));
+    // pagination
+    if (res.total_results > 20) {
+      refs.paginationPrevButton.classList.remove('hidden');
+      refs.paginationNextButton.classList.remove('hidden');
+      refs.paginationPrevButton.addEventListener('click', showPrevPage);
+      refs.paginationNextButton.addEventListener('click', showNextPage);
+      refs.paginationWrapper.addEventListener('click', showSelectedPage);
+      refs.paginationWrapper.innerHTML = pagination.renderPaginationMarkup(
+        fetchPopularMovie.page,
+        res.total_results,
+      );
+    }
   });
 }
+fetchPopularMovie.resetPage();
 createCard();
 
 function transformMovieObject(movies) {
@@ -19,3 +34,21 @@ function transformMovieObject(movies) {
   });
   return movies;
 }
+const showPrevPage = () => {
+  if (fetchPopularMovie.page < 2) return;
+  fetchPopularMovie.decrementPage();
+  createCard();
+};
+const showNextPage = totalResults => {
+  const activePageNumber = document.querySelector('li.active');
+  if (fetchPopularMovie.page === activePageNumber.textContent) return;
+  fetchPopularMovie.incrementPage();
+  createCard();
+};
+const showSelectedPage = e => {
+  if (e.target.nodeName === 'LI') {
+    if (isNaN(e.target.textContent)) return;
+    fetchPopularMovie.page = e.target.textContent;
+    createCard();
+  }
+};

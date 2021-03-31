@@ -23,6 +23,7 @@
 
   color: $color-darkest;
   font-size: 12px;
+  cursor: pointer;
 }
 .active {
   background-color: $color-accent;
@@ -57,4 +58,8 @@
 }
 .pagination-next-button {
   background-image: url('./images/arrow-right.svg');
+}
+
+.hidden {
+  display: none;
 }
