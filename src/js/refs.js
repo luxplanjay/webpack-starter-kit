@@ -1,5 +1,5 @@
 export default {
-      gallery: document.querySelector('#js-gallery'),
+      gallery: document.querySelector('.gallery'),
       galleryItem: document.querySelector('.gallery__item'),
       modal: document.querySelector('.js-lightbox'),
       modalContent: document.querySelector('.lightbox__content'),
