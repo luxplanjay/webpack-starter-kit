@@ -1,14 +1,10 @@
 import settings from '../js/settings';
 const BASE_URL = settings.BASE_URL;
 const API_KEY = settings.API_KEY;
-import refs from '../js/refs';
-
-import createMarkup from '../templates/galleryCard.hbs';
 
 export default class PopularFilms {
   constructor() {
     this._page = 1;
-    this.galleryRef = refs.gallery;
     this.resultAmount = 0;
     this.result;
     this.ganreObject = {};
@@ -20,17 +16,7 @@ export default class PopularFilms {
     );
     return response.json();
   }
-  async handlerPopularMovies() {
-    this.result = await this.fetchPopular();
-    this.resultAmount = this.result.total_results;
-    this.result.results.forEach(elem => {
-      elem.release_date = elem.release_date.slice(0, 4);
-      elem.genre_ids = this.ganreTranspiler(elem.genre_ids);
-      elem.genre_ids = elem.genre_ids.slice(0, 3).join(', ');
-    });
-    const markup = createMarkup(this.result.results);
-    this.galleryRef.insertAdjacentHTML('beforeend', markup);
-  }
+
   async fetchGenre() {
     const response = await fetch(
       `${BASE_URL}/genre/movie/list?api_key=${API_KEY}`,
@@ -49,6 +35,7 @@ export default class PopularFilms {
     );
     return arrayNameGenres;
   }
+
   incrementPage() {
     this._page += 1;
   }
