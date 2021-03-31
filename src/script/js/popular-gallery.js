@@ -7,7 +7,10 @@ const fetchPopularMovie = new PopularFilms();
 const pagination = new Pagination();
 
 function createCard() {
+  // refs.gallery.innerHTML = '';
   fetchPopularMovie.fetchPopular().then(res => {
+    scrollWin();
+  
     refs.gallery.innerHTML = createMarkup(transformMovieObject(res.results));
     // pagination
     if (res.total_results > 20) {
@@ -52,3 +55,6 @@ const showSelectedPage = e => {
     createCard();
   }
 };
+function scrollWin() {
+  window.scrollTo(0, 0);
+}
