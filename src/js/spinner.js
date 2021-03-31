@@ -1,3 +1,5 @@
+import {Spinner} from 'spin.js';
+
 var opts = {
   lines: 12, // The number of lines to draw
   length: 59, // The length of each line
@@ -19,7 +21,6 @@ var opts = {
   position: 'absolute', // Element positioning
 };
 
-// var target = document.getElementById('foo');
-// var spinner = new Spinner(opts).spin(target);
+var spinner = new Spinner(opts);
 
-export default opts
+export default spinner;
