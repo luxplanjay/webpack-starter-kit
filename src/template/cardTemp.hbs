@@ -1,15 +1,13 @@
-{{!-- <ul class="gallery-list"> --}}
-    {{#each this}}
-        <li class="list list-item">
-            <img
-                src="{{backdrop_path}}"
-                alt="{{original_title}}"
-                class="poster-path"
-            />        
-            <div class="film-short-info">
-                <h2 class="title-card-film">{{original_title}}</h2>
-                <p class="genre-card-film genre-card-film-style">{{genre_ids}}, {{vote_average}} | {{release_date}}</p>
-            </div>
-        </li>
-    {{/each}}
-    </ul>
+{{#each this}}
+    <li class="list list-item">
+        <img
+            src="{{backdrop_path}}"
+            alt="{{title}}"
+            class="poster-img"
+        />        
+        <div class="movie-card-short-info">
+            <h2 class="movie-card-title">{{title}}</h2>
+            <p class="movie-card-text">{{genre_ids}} | {{release_date}} <span class="avg-rating">{{vote_average}}</span></p>
+        </div>
+    </li>
+{{/each}}
