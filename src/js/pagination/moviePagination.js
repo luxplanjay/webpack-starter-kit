@@ -12,7 +12,6 @@ class MoviePagination {
     this.totalGenres = [];
     this.goToPrevPage = this.goToPrevPage.bind(this);
     this.goToNextPage = this.goToNextPage.bind(this);
-    this.loadFirstPage = this.loadFirstPage.bind(this);
   }
 
   get movies() {
@@ -27,11 +26,13 @@ class MoviePagination {
     this.render();
   }
 
+  // run this first in outer code - gets list of genres from the server and shows the first page of trending movies
   init() {
     this.getAllGenres();
     this.loadFirstPage();
   }
 
+  // shows the first page of trending movies
   loadFirstPage() {
     return this.fetchMovies().then(data => {
       this.prepareMovies();
@@ -39,21 +40,22 @@ class MoviePagination {
     });
   }
 
+  // fetches current page of trending movies
   fetchMovies() {
     return api.fetchPopularFilms(this.currentPage).then(data => {
       const { results, total_pages } = data;
       this.totalPages = total_pages;
-      console.log('in fetch', this.#movies);
       this.#movies = results;
-      console.log('in fetch', this.#movies);
       return results;
     });
   }
 
+  // renders markup
   render() {
     this.element.innerHTML = moviesListTemplate(this.movies);
   }
 
+  // prepares info for movie cards
   prepareMovies() {
     this.movies.forEach(movie => {
       this.findMovieGenres(movie);
@@ -62,6 +64,7 @@ class MoviePagination {
     });
   }
 
+  // gets an array of all genres from the server
   getAllGenres() {
     api.fetchGanres().then(result => {
       const { genres } = result;
@@ -69,6 +72,7 @@ class MoviePagination {
     });
   }
 
+  // translates array of genres of a movie to a string, limits count of genres to 3
   findMovieGenres(movie) {
     const maxGenresViewed = 3;
     if (movie.genre_ids.length > maxGenresViewed) {
@@ -83,6 +87,7 @@ class MoviePagination {
     movie.genre_ids = this.convertMovieGenresToString(movie.genre_ids);
   }
 
+  // converts movie's genres from ids to names ([28, 12] -> [Action, Adventure])
   convertGenreIds(movie) {
     for (let i = 0; i < movie.genre_ids.length; i++) {
       const genre = this.totalGenres.find(
@@ -92,17 +97,20 @@ class MoviePagination {
     }
   }
 
+  // creates a string of movie's genres
   convertMovieGenresToString(genres) {
     genres = genres.join(', ');
     return genres;
   }
 
+  // coverts release date to a year (2017-03-21 -> 2017)
   getReleaseYear(movie) {
     const date = new Date(movie.release_date);
     const year = date.getFullYear();
     movie.release_date = year;
   }
 
+  // generates path of a movie's poster image
   getPosterImg(movie) {
     movie.backdrop_path = generatePosterPath(movie.backdrop_path);
   }
