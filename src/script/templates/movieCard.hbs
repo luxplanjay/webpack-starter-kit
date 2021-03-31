@@ -6,19 +6,19 @@
         <h2 class="movie-card__title">{{title}}</h2>
         <div class="movie-card__info">
             <ul class="movie-card__info--title">
-                <li>Vote / Votes</li>
-                <li>Popularity</li>
-                <li>Original Title</li>
-                <li>Genre</li>
+                <li class="movie-card__info--item">Vote / Votes</li>
+                <li class="movie-card__info--item">Popularity</li>
+                <li class="movie-card__info--item">Original Title</li>
+                <li class="movie-card__info--item">Genre</li>
             </ul>
             <ul class="movie-card__info--content">
-                <li>{{vote_average}} / {{vote_count}}</li>
-                <li>{{popularity}}</li>
-                <li>{{original_title}}</li>
-                <li>{{genres}}</li>
+                <li class="movie-card__content--item"><span class="movie-card__vote">{{vote_average}}</span> / {{vote_count}}</li>
+                <li class="movie-card__content--item">{{popularity}}</li>
+                <li class="movie-card__content--item">{{original_title}}</li>
+                <li class="movie-card__content--item">{{genres}}</li>
             </ul>
         </div>
-        <a class="play-trailer"></a>
+        <a class="play-trailer">Watch Trailer</a>
         <h3 class="movie-card__about">About</h3>
         <div class="movie-card__about--content">{{overview}}</div>
         <div class="button-wrapper">
