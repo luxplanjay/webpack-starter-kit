@@ -6,8 +6,6 @@
 
   width: 280px;
   height: 100vh;
-
-  overflow: scroll;
 }
 .authors-list__item {
   width: 200px;
@@ -21,6 +19,9 @@
   }
   .authors-list__item:first-child {
     margin-top: 5px;
+  }
+  .authors-list {
+    overflow: scroll;
   }
 }
 
