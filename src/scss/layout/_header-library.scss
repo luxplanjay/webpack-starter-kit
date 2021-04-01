@@ -103,3 +103,10 @@
     justify-content: center;
   }
 }
+.controls-item {
+  color: $color-white;
+}
+
+.controls-current {
+  background-color: $accent-color;
+}
