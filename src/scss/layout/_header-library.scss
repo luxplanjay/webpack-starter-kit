@@ -53,8 +53,12 @@
 
     &-buttons {
       margin-top: 49px;
-      display: flex;
-      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: $tablet) {
+        display: flex;
+        justify-content: center;
+      }
     }
 
     &-btn {
@@ -75,7 +79,7 @@
       }
 
       &:first-child {
-        margin-right: 20px;
+        margin-right: 16px;
 
         @media screen and (min-width: $tablet) {
           margin-right: 15px;
