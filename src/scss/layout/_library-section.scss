@@ -1,13 +1,13 @@
 .library {
-  &.container {
-    background-color: $color-subtitle-light-gray;
-  }
-
   &-movie-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-top: 60px;
+    padding-top: 20px;
+
+    @media screen and (min-width: $tablet) {
+      padding-top: 60px;
+    }
   }
 
   &-movie-item {
@@ -45,5 +45,19 @@
   }
   @media screen and (min-width: $desktop) {
     margin-top: 16px;
+  }
+}
+
+.alert-mesage {
+  padding-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.333;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-alert-message;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 60px;
   }
 }

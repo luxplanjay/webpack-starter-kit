@@ -33,26 +33,35 @@
           </ul>
         </nav>
       </div>
-      <div class="header-library-buttons">
-        <button class="header-library-btn">Watched</button>
-        <button class="header-library-btn">queue</button>
+      <div class="header-library-buttons" id="tabs">
+        <div class="controls" data-controls>
+          <button
+            class="header-library-btn controls-current"
+            id="watched-btn-js"
+          >
+            <a class="controls-item" href="#watched">Watched</a>
+          </button>
+          <button class="header-library-btn" id="queue-btn-js">
+            <a class="controls-item" href="#queue">queue</a>
+          </button>
+        </div>
       </div>
     </header>
     <!--Header library end-->
-
     <!-- Library section -->
     <main class="library">
-      <div class="container">
+      <div class="container panes" data-panes id="js-library-container">
+        <div class="alert-mesage"></div>
         <!-- Галерея для правильності позиціонування -->
-        <ul class="library-movie-gallery" id="js-library-gallery">
+        <ul id="queue" class="library-movie-gallery" id="js-library-gallery">
+          <!-- <li class="library-movie-item"></li>
           <li class="library-movie-item"></li>
           <li class="library-movie-item"></li>
           <li class="library-movie-item"></li>
           <li class="library-movie-item"></li>
           <li class="library-movie-item"></li>
           <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
+          <li class="library-movie-item"></li> -->
         </ul>
         <div class="pagination"></div>
       </div>
@@ -73,6 +82,5 @@
         </ul>
       </div>
     </footer>
-
   </body>
 </html>
