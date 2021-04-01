@@ -6,7 +6,15 @@ import Pagination from './pagination-api';
 import createMarkup from '../templates/galleryCard.hbs';
 import _debounce from 'lodash.debounce';
 
-const { searchInputRef, gallery, noResultRef, paginationWrapper, paginationPrevButton, paginationNextButton, paginationContainer} = refs;
+const {
+  searchInputRef,
+  gallery,
+  noResultRef,
+  paginationWrapper,
+  paginationPrevButton,
+  paginationNextButton,
+  paginationContainer,
+} = refs;
 const { reservImg } = CONST;
 
 const apiSearchData = new FetchSearchMovie();
@@ -15,44 +23,49 @@ const pagination = new Pagination();
 
 searchInputRef.addEventListener(
   'input',
-  _debounce(e => hendlerInput(e), 500),
+  _debounce(e => {
+    let targetValue = e.target.value;
+    hendlerInput(targetValue);
+  }, 500),
 );
 
 function hendlerInput(e) {
-  apiSearchData.query = e.target.value;
+  apiSearchData.query = e;
   // gallery.innerHTML = '';
 
   function createCard() {
-    apiSearchData.fetchMovies().then(res => {
-      scrollWin();
-      if (res === []) return;
-      gallery.innerHTML = createMarkup(transformMovieObject(res.results));
-      // pagination
-      if (res.total_results > 20) {
-
-        noResultRef.textContent = '';
-        paginationContainer.classList.remove('visually-hidden')
-        paginationPrevButton.classList.remove('hidden');
-        paginationNextButton.classList.remove('hidden');
-        paginationPrevButton.addEventListener('click', showPrevPage);
-        paginationNextButton.addEventListener('click', showNextPage);
-        paginationWrapper.addEventListener('click', showSelectedPage);
-        paginationWrapper.innerHTML = pagination.renderPaginationMarkup(
-          apiSearchData.page,
-          res.total_results,
-        );
-      }
-      if (res.total_results === 0 || res.total_results === "") {
-        noResults();
-        paginationContainer.classList.add('visually-hidden')
-      }
-    }).catch(e => console.log(e))
+    apiSearchData
+      .fetchMovies()
+      .then(res => {
+        scrollWin();
+        if (res === []) return;
+        gallery.innerHTML = createMarkup(transformMovieObject(res.results));
+        // pagination
+        if (res.total_results > 20) {
+          noResultRef.textContent = '';
+          paginationContainer.classList.remove('visually-hidden');
+          paginationPrevButton.classList.remove('hidden');
+          paginationNextButton.classList.remove('hidden');
+          paginationPrevButton.addEventListener('click', showPrevPage);
+          paginationNextButton.addEventListener('click', showNextPage);
+          paginationWrapper.addEventListener('click', showSelectedPage);
+          paginationWrapper.innerHTML = pagination.renderPaginationMarkup(
+            apiSearchData.page,
+            res.total_results,
+          );
+        }
+        if (res.total_results === 0 || res.total_results === '') {
+          noResults();
+          paginationContainer.classList.add('visually-hidden');
+        }
+      })
+      .catch(e => console.log(e));
   }
 
   function noResults() {
-  noResultRef.textContent = 'Search result not successful. Enter the correct movie name and try again';
-    
-}
+    noResultRef.textContent =
+      'Search result not successful. Enter the correct movie name and try again';
+  }
 
   apiSearchData.resetPage();
   createCard();
@@ -67,10 +80,13 @@ function hendlerInput(e) {
         : (elem.poster_path = reservImg);
       elem.release_date
         ? (elem.release_date = elem.release_date.slice(0, 4))
-        : (elem.release_date = "Unknown")
+        : (elem.release_date = 'Unknown');
       elem.genre_ids
-        ? (elem.genre_ids = apiGenreData.ganreTranspiler(elem.genre_ids).slice(0, 3).join(', '))
-        : (elem.genre_ids = 'Unknown')
+        ? (elem.genre_ids = apiGenreData
+            .ganreTranspiler(elem.genre_ids)
+            .slice(0, 3)
+            .join(', '))
+        : (elem.genre_ids = 'Unknown');
     });
     return movies;
   }
@@ -96,3 +112,5 @@ function hendlerInput(e) {
     window.scrollTo(0, 0);
   }
 }
+
+export default hendlerInput;

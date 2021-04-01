@@ -1,7 +1,5 @@
 import refs from './refs';
-// const inputSearchMicroRef = document.querySelector(
-//   '.search__input-wrapper .search__input',
-// );
+import hendlerInput from './search';
 
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -25,13 +23,13 @@ function listenSpeech(e) {
   let transcript = Array.from(e.results)
     .map(result => result[0].transcript)
     .join('');
-
   //  transcript = transcript[0].toUpperCase() + transcript.slice(1);
   refs.searchInputRef.value = transcript;
 
   if (e.results[0].isFinal) {
     stopRecognition();
     refs.microphone.classList.remove('active-microphone');
+    hendlerInput(transcript);
   }
 }
 
