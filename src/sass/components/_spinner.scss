@@ -15,15 +15,15 @@
     width: 70px;
     border-radius: 50%;
     border:dashed 5px orange;
-    -webkit-animation-name: spin;
-    -webkit-animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
+    animation-name: spin;
+    animation-duration: 1.5s;
+   animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
   
-  @-webkit-keyframes spin {
-    from   {  -webkit-transform: rotate(0deg); }
-    to   {  -webkit-transform: rotate(360deg); }
+  @keyframes spin {
+    from   { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
   }
   .is-hidden {
 display: none;
