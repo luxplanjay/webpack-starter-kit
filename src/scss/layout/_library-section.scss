@@ -1,8 +1,4 @@
 .library {
-  &.container {
-    background-color: $color-subtitle-light-gray;
-  }
-
   &-movie-gallery {
     display: flex;
     flex-wrap: wrap;
