@@ -1,7 +1,17 @@
+
+.wrap-container {
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: 100px;
   padding: 30px 10px;
   background-color: $color-light;
+  
 
   color: $color-dark;
   font-size: 14px;
@@ -30,6 +40,9 @@
 }
 
 @media screen and (min-width: $bp-tablet) {
+  .wrap-container {
+    padding-bottom: 70px;
+  }
   .footer {
     height: 77px;
 
