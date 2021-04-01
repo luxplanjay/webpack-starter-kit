@@ -1,9 +1,8 @@
 import 'firebase/auth';
 import 'firebase/firestore';
-
 import firebase from 'firebase/app';
+import refs from './refs';
 
-// Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: 'AIzaSyD5Lz8Xolb4aTDugqG9oqiD3TvNrCFheKg',
   authDomain: 'filmoteka-d2783.firebaseapp.com',
@@ -14,15 +13,9 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const spinner = document.querySelector('.signin-spinner');
 
-const registerForm = document.querySelector('.modal__form-registration');
-const loginForm = document.querySelector('.modal__form-login');
-const signUpBtn = document.querySelector('.site-nav__signup');
-const signInBtn = document.querySelector('.site-nav__signin');
-const signUpModal = document.querySelector('.backdrop[data-modal-signup]');
-const signInModal = document.querySelector('.backdrop[data-modal-signin]');
-
-registerForm.addEventListener('submit', e => {
+refs.registerForm.addEventListener('submit', e => {
   e.preventDefault();
   let password = '';
   const email = e.target.email.value;
@@ -35,20 +28,23 @@ registerForm.addEventListener('submit', e => {
     .then(userCredential => {
       // Signed in
       var user = userCredential.user;
-      console.log(user);
-      // ...
+      console.log('good');
     })
     .catch(error => {
       var errorCode = error.code;
       var errorMessage = error.message;
       // ..
+      console.log('bad');
     });
 });
 
-loginForm.addEventListener('submit', e => {
+refs.loginForm.addEventListener('submit', e => {
   e.preventDefault();
+
   const email = e.target.email.value;
   const password = e.target.pass.value;
+  spinner.classList.remove('is-hidden');
+  refs.loginForm.classList.add('is-hidden');
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
@@ -56,34 +52,73 @@ loginForm.addEventListener('submit', e => {
       // Signed in
       var user = userCredential.user;
       // ...
-      console.log('good');
+
+      refs.loginForm.classList.remove('is-hidden');
+      console.log(user.uid);
+    })
+    .then(() => {
+      refs.signInModal.classList.add('is-hidden');
+      e.target.email.value = null;
+      e.target.pass.value = null;
     })
     .catch(error => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log('bad');
+      alert('Incorrect password');
+    })
+    .finally(() => {
+      spinner.classList.add('is-hidden');
+      refs.loginForm.classList.remove('is-hidden');
     });
 });
 
-signUpBtn.addEventListener('click', () => {
-  signUpModal.classList.remove('is-hidden');
-  signUpModal.addEventListener('click', hideSignUpModal);
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    // User is signed in.
+
+    refs.signUpBtn.classList.add('is-hidden');
+    refs.signInBtn.classList.add('is-hidden');
+    refs.logOutBtn.classList.remove('is-hidden');
+  } else {
+    // No user is signed in.
+    refs.signUpBtn.classList.remove('is-hidden');
+    refs.signInBtn.classList.remove('is-hidden');
+    refs.logOutBtn.classList.add('is-hidden');
+  }
+});
+
+refs.signUpBtn.addEventListener('click', () => {
+  refs.signUpModal.classList.remove('is-hidden');
+  refs.signUpModal.addEventListener('click', hideSignUpModal);
   window.addEventListener('keydown', hideSignUpEsc);
 });
-signInBtn.addEventListener('click', () => {
-  signInModal.classList.remove('is-hidden');
-  signInModal.addEventListener('click', hideSignInModal);
+refs.signInBtn.addEventListener('click', () => {
+  refs.signInModal.classList.remove('is-hidden');
+  refs.signUpNowBtn.addEventListener('click', () => {
+    refs.signInModal.classList.add('is-hidden');
+    refs.signUpModal.classList.remove('is-hidden');
+    refs.signUpModal.addEventListener('click', hideSignUpModal);
+    window.addEventListener('keydown', hideSignUpEsc);
+  });
+  refs.signInModal.addEventListener('click', hideSignInModal);
   window.addEventListener('keydown', hideSignInEsc);
 });
-function hideSignInModal() {
-  signInModal.classList.add('is-hidden');
+refs.logOutBtn.addEventListener('click', () => {
+  firebase.auth().signOut();
+});
+function hideSignInModal(e) {
+  if (e.target === e.currentTarget) {
+    refs.signInModal.classList.add('is-hidden');
+  }
 }
-function hideSignUpModal() {
-  signUpModal.classList.add('is-hidden');
+function hideSignUpModal(e) {
+  if (e.target === e.currentTarget) {
+    refs.signUpModal.classList.add('is-hidden');
+  }
 }
 function hideSignInEsc(e) {
-  if (e.key === 'Escape') hideSignInModal();
+  if (e.key === 'Escape') refs.signInModal.classList.add('is-hidden');
 }
 function hideSignUpEsc(e) {
-  if (e.key === 'Escape') hideSignUpModal();
+  if (e.key === 'Escape') refs.signUpModal.classList.add('is-hidden');
 }
