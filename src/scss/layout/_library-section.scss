@@ -47,3 +47,17 @@
     margin-top: 16px;
   }
 }
+
+.alert-mesage {
+  padding-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.333;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-alert-message;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 60px;
+  }
+}
