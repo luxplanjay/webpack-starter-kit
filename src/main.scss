@@ -2,30 +2,28 @@
 @import 'normalize.css';
 
 // ===========  UTILS block
-
 @import './sass/utils/variables';
 @import './sass/utils/mixins';
 @import './sass/utils/placeholders';
 
 // ===========  BASE block
-
 @import './sass/base/common';
 @import './sass/base/visually-hidden';
 
 // ===========  COMPONENTS block
 @import './sass/components/gallery';
-
 @import './sass/components/lightbox';
 @import './sass/components/movieCard';
 @import './sass/components/spinner';
-
 @import './sass/components/pagination';
 @import './sass/components/button';
 @import './sass/components/buttton-modal';
+@import './sass/components/students-lightbox';
 @import './sass/components/microphone';
 
 // ===========  LAYOUT block
 @import './sass/layout/header';
 @import './sass/layout/footer';
+
 // ===========  REGISTRATION block
 @import './sass/components/registration';

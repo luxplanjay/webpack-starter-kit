@@ -9,23 +9,26 @@ const pagination = new Pagination();
 
 function createCard() {
   // refs.gallery.innerHTML = '';
-  fetchPopularMovie.fetchPopular().then(res => {
-    scrollWin();
-  
-    refs.gallery.innerHTML = createMarkup(transformMovieObject(res.results));
-    // pagination
-    if (res.total_results > 20) {
-      refs.paginationPrevButton.classList.remove('hidden');
-      refs.paginationNextButton.classList.remove('hidden');
-      refs.paginationPrevButton.addEventListener('click', showPrevPage);
-      refs.paginationNextButton.addEventListener('click', showNextPage);
-      refs.paginationWrapper.addEventListener('click', showSelectedPage);
-      refs.paginationWrapper.innerHTML = pagination.renderPaginationMarkup(
-        fetchPopularMovie.page,
-        res.total_results,
-      );
-    }
-  });
+  fetchPopularMovie
+    .fetchPopular()
+    .then(res => {
+      scrollWin();
+
+      refs.gallery.innerHTML = createMarkup(transformMovieObject(res.results));
+      // pagination
+      if (res.total_results > 20) {
+        refs.paginationPrevButton.classList.remove('hidden');
+        refs.paginationNextButton.classList.remove('hidden');
+        refs.paginationPrevButton.addEventListener('click', showPrevPage);
+        refs.paginationNextButton.addEventListener('click', showNextPage);
+        refs.paginationWrapper.addEventListener('click', showSelectedPage);
+        refs.paginationWrapper.innerHTML = pagination.renderPaginationMarkup(
+          fetchPopularMovie.page,
+          res.total_results,
+        );
+      }
+    })
+    .catch(error => console.log(console.error()));
 }
 fetchPopularMovie.resetPage();
 createCard();
@@ -63,5 +66,5 @@ const showSelectedPage = e => {
   }
 };
 function scrollWin() {
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 230);
 }
