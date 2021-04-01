@@ -74,10 +74,10 @@ header {
 }
 
 
-  // .search__form {
-  // display: flex;
-  // justify-content: center;
-  // align-items: flex-end; //! Alex: changed value from center to align with microphone
+  .search__form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; //! Alex: changed value from center to align with microphone
   // &-icon {
   //   display: inline-block;
   //   position: relative;
@@ -94,7 +94,7 @@ header {
   //     background-size: contain;
   //   }
   // }
-  // }
+  }
 
 .search__input-wrapper {
   display: block;
@@ -106,7 +106,7 @@ header {
   &::after {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 6px;    //! Alex: corrected from 0px
     right: 0;
     width: 12px;
     height: 12px;
