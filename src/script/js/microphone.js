@@ -1,7 +1,7 @@
 import refs from './refs';
-const inputSearchMicroRef = document.querySelector(
-  '.search__input-wrapper .search__input',
-);
+// const inputSearchMicroRef = document.querySelector(
+//   '.search__input-wrapper .search__input',
+// );
 
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -27,7 +27,7 @@ function listenSpeech(e) {
     .join('');
 
   //  transcript = transcript[0].toUpperCase() + transcript.slice(1);
-  inputSearchMicroRef.value = transcript;
+  refs.searchInputRef.value = transcript;
 
   if (e.results[0].isFinal) {
     stopRecognition();
