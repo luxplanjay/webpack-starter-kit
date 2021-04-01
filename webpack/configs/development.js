@@ -21,10 +21,12 @@ module.exports = env => ({
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
+      chunks: ['main'],
     }),
     new HtmlWebpackPlugin({
       template: './library.html',
       filename: 'library.html',
+      chunks: ['library'],
     }),
   ],
   devServer: {

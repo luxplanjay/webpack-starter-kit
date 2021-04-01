@@ -26,7 +26,7 @@
         display: inline-block;
         font-weight: 500;
         font-size: 30px;
-        line-height: 35px;
+        line-height: 1.167;
         color: $color-white;
         margin-top: 41px;
         margin-right: 304px;
@@ -53,8 +53,12 @@
 
     &-buttons {
       margin-top: 49px;
-      display: flex;
-      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: $tablet) {
+        display: flex;
+        justify-content: center;
+      }
     }
 
     &-btn {
@@ -75,7 +79,7 @@
       }
 
       &:first-child {
-        margin-right: 20px;
+        margin-right: 16px;
 
         @media screen and (min-width: $tablet) {
           margin-right: 15px;
