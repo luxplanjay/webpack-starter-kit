@@ -19,8 +19,8 @@ header {
 }
 
 .header__container {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .header__wrapper {
@@ -73,10 +73,11 @@ header {
   }
 }
 
-.search__form {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; //! Alex: changed value from center to align with microphone
+
+  // .search__form {
+  // display: flex;
+  // justify-content: center;
+  // align-items: flex-end; //! Alex: changed value from center to align with microphone
   // &-icon {
   //   display: inline-block;
   //   position: relative;
@@ -93,15 +94,30 @@ header {
   //     background-size: contain;
   //   }
   // }
-}
+  // }
 
 .search__input-wrapper {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   position: relative;
+  width: 280px;
+  margin-bottom: 22px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-image: url('/images/search.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
 
 .search__input {
-  width: 280px;
+  width: 100%;
 
   border: none;
   border-bottom: 0.5px solid $color-lightest;
@@ -139,10 +155,21 @@ header {
   cursor: pointer;
 }
 
+.no-results {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.143;
+  text-align: center;
+
+  color: #ff001b;
+}
 // TABLET--------------------------------
 @media screen and (min-width: $bp-tablet) {
-  .header-container {
+  .header__container {
     padding-bottom: 60px;
+    padding-left: 70px;
+    padding-right: 75px;
   }
 
   .header-background {
@@ -163,14 +190,14 @@ header {
     display: inline;
   }
 
-  .search__input {
+  .search__input-wrapper {
     width: 336px;
   }
 }
 // DESKTOP------------------------------------
 
 @media screen and (min-width: $bp-desktop) {
-  .header-background {
+  .header__background {
     background-image: url('/images/header/header-bg-main-@1x-desktop.jpg');
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
