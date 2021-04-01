@@ -11,10 +11,52 @@
     />
   </head>
   <body>
+  <!-- header -->
+   <header class="header">
+      <div class="container">
+          <nav class="header_navigation">
+           <a class="logo link" lang="en" href="./index.html" >	            
+            <svg class="logo-svg" width="24" height="24" >
+                <use href="./images/sprite.svg#icon-film"></use>
+            </svg> 
+             Filmoteka         
+          </a> 
+          
+          <div class="nav_link">
+           <a class="home link" lang="en" href="./index.html" >		
+              HOME
+          </a>
+          
+          <a class="libr link" lang="en" href="./library.html" >		
+              MY LIBRARY          
+          </a> 
+          </div>
+          
+          
+          
+          </nav>
+          <form class="search-form" id="search-form">
+            <input
+              class="form-input"
+              type="text"
+              name="query"
+              autocomplete="off"
+              placeholder="Поиск фильмов"
+              
+            />
+            <svg class="search-svg" width="12" height="12" >
+              <use href="./images/sprite.svg#icon-search"></use>
+            </svg>
+          </form>
+      </div>
+  
+  </header>
+
+  <!-- /header -->
 
     
 <section class="home-section">
-  <div class="gallery-container container">
+  <div class="gallery-container container" id="js-spinner">
    <ul class="gallery" id="js-gallery">
    </ul> 
   </div>
@@ -22,7 +64,7 @@
 
 
   <!-- Modal -->
-  <div class="lightbox js-lightbox">
+  <div class="lightbox js-lightbox" id="js-spinner">
     <div class="lightbox__overlay"></div>
   
     <div class="lightbox__content">
@@ -36,7 +78,6 @@
   </div>
   <!-- /Modal -->
 
-
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -49,9 +90,9 @@
             <span class="footer-item-word">GoIT Students</span>
           </li>
         </ul>
+
       </div>
     </footer>
 
-    
   </body>
 </html>
