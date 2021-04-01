@@ -76,7 +76,7 @@ header {
 .search__form {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; //! Alex: changed value from center to align with microphone
   // &-icon {
   //   display: inline-block;
   //   position: relative;
