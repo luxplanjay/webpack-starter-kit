@@ -6,3 +6,7 @@ import './script/js/modalCard';
 
 import './script/js/search';
 
+import './script/js/microphone';
+
+import './script/js/auth';
+

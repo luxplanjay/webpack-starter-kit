@@ -1,0 +1,36 @@
+.microphone {
+  fill: $color-lightest;
+  padding: 5px 5px 0;
+  margin-right: 5px;
+  margin-bottom: -4px;
+  margin-left: -45px;
+  transition: transform 0.4s ease;
+}
+
+@media screen and (max-width: $bp-tablet) {
+  .microphone {
+    margin-left: 0;
+  }
+}
+
+.microphone:hover,
+.microphone:focus {
+  transform: scale(1.5) translateY(-5px);
+}
+
+.active-microphone {
+  fill: $color-accent;
+  animation: beat-microphone 1.2s infinite;
+}
+
+@keyframes beat-microphone {
+  0% {
+    transform: scale(1.5) translateY(-5px);
+  }
+  50% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.5) translateY(-5px);
+  }
+}

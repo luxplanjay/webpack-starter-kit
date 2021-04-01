@@ -73,6 +73,29 @@ header {
   }
 }
 
+
+  // .search__form {
+  // display: flex;
+  // justify-content: center;
+  // align-items: flex-end; //! Alex: changed value from center to align with microphone
+  // &-icon {
+  //   display: inline-block;
+  //   position: relative;
+
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     width: 12px;
+  //     height: 12px;
+  //     background-image: url('/images/search.svg');
+  //     background-repeat: no-repeat;
+  //     background-size: contain;
+  //   }
+  // }
+  // }
+
 .search__input-wrapper {
   display: block;
   margin: 0 auto;

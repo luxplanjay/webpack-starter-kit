@@ -34,7 +34,7 @@ img {
         margin-right: 38px;
         margin-bottom: 20px;
         color: $color-middle;
-        width: 70px;
+        width: 110px;
     }
     &__info--item:not(:last-child),
     &__content--item:not(:last-child){
@@ -85,6 +85,7 @@ img {
     border-radius: 5px;
     background-color: $color-accent-2;
     color: $color-lightest;
+    border: none;
     @include font(500, 12px, 16px);
     text-transform: uppercase;
     cursor: pointer;
