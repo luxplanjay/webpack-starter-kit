@@ -1,7 +1,5 @@
 import './main.scss';
 
-import './main.css';
-
 import './script/js/popular-gallery';
 
 import './script/js/modalCard';
