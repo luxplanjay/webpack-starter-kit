@@ -70,7 +70,7 @@
 
 .lightbox__button:hover,
 .lightbox__button:focus {
-  // background-color: rgba(0, 0, 0, 0.5);
-  background-color: $color-accent-2;
-  @include transition(background-color);
+  border: 2px solid $color-accent-2;
+  border-radius: 50px;
+  @include transition(border);
 }
