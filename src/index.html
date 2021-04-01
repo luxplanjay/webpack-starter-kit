@@ -24,7 +24,13 @@
                 <span class="logo__text">Filmoteka </span>
               </a>
             </div>
-            <nav class="site-nav">
+            <nav class="site-nav">              
+              <button class="home-button site-nav__signup" type="button">
+                Sign up
+              </button>
+              <button class="home-button site-nav__signin" type="button">
+                Sign in
+              </button>
               <button class="home-button current" type="button" aria-label="Переключатель основной страницы" data-home>
                 Home
               </button>
@@ -35,8 +41,23 @@
           </div>
 
           <form class="search__form" id="search-form" method="GET">
-            <span class="search__input-wrapper"><input class="search__input" type="text" name="search"
-                autocomplete="off" aria-label="Search films " placeholder="Поиск фильмов" />
+            <svg
+              class="microphone"
+              width="40"
+              height="40"
+              aria-label="microphone">
+              <use
+                href="./images/sprite.svg#microphone"
+              ></use>
+            </svg>
+            <span class="search__input-wrapper"
+              ><input
+                class="search__input"
+                type="text"
+                name="search"
+                autocomplete="off"
+                aria-label="Search films "
+                placeholder="Поиск фильмов" />
               <button class="btn-search" type="submit">
                 <svg width="12" height="12" aria-label="Кнопка поиска">
                   <use class="search-icon" href="./images/sprite.svg#search"></use>
@@ -60,10 +81,13 @@
       <button class="button" type="button">queue</button>
     </div> -->
     </header>
-    <!-- <div class="button-container">
-    <button class="modal-button" type="button">add to Watched</button>
-    <button class="modal-button " type="button">add to queue</button>
-  </div> -->
+    
+    <!-- spinner -->
+    <div class="square is-hidden">
+      <div class="spin"></div>
+    </div>
+    <!-- end spinner -->
+
     <section class="movies container">
       <ul class="movies__list"></ul>
       <!--pagination-->
@@ -76,30 +100,122 @@
     </section>
   </div>
 
-  <footer class="footer">
-    <div class="footer__container container">
-      <p class="footer__container__copyright">
-        &copy 2020 | All Rights Reserved |
-      </p>
-      <p class="footer_container__authors">
-        Developed with<svg class="footer_container__authors__svg" width="14" height="13">
-          <use href="./images/sprite.svg#heart"></use>
-        </svg><button class="footer_container__authors__button" type="button">
-          by GoIT Students
-        </button>
-      </p>
+
+    <footer class="footer">
+      <div class="footer__container container">
+        <p class="footer__container__copyright">
+          &copy 2020 | All Rights Reserved |
+        </p>
+        <p class="footer_container__authors">
+          Developed with<svg
+            class="footer_container__authors__svg"
+            width="14"
+            height="13"
+          >
+            <use href="./images/sprite.svg#heart"></use></svg
+          ><button class="footer_container__authors__button" type="button">
+            by GoIT Students
+          </button>
+        </p>
+      </div>
+    </footer>
+  
+    <!-- lightbox -->
+    <div class="lightbox js-lightbox">
+      <div class="lightbox__overlay"></div>
+      <div class="lightbox__content">
+        <div class="lightbox__card"></div>
+        <button
+          type="button"
+          class="lightbox__button"
+          data-action="close-lightbox"
+        ></button>
+      </div>
     </div>
-  </footer>
-  <!-- lightbox -->
-  <div class="lightbox js-lightbox">
-    <div class="lightbox__overlay"></div>
-    <div class="lightbox__content">
-      <div class="lightbox__card"></div>
-      <button type="button" class="lightbox__button" data-action="close-lightbox"></button>
+     <!-- end of lightbox -->
+  
+    <div class="backdrop is-hidden" data-modal-signup>
+      <div class="modal">
+        <h2 class="modal__title">Sign up</h2>
+        <form action="" class="modal__form-registration">
+          <ul class="modal__list-input list">
+            <li class="modal__list-item">
+              <label class="modal__label"
+                >Email<input
+                  type="email"
+                  name="email"
+                  class="modal__field-input"
+                />
+                <svg width="18" height="18" class="modal__icon">
+                  <use href="./images/sprite.svg#icon-email"></use>
+                </svg>
+              </label>
+            </li>
+            <li class="modal__list-item">
+              <label class="modal__label"
+                >Password<input
+                  type="password"
+                  name="pass"
+                  class="modal__field-input"
+                />
+                <svg width="18" height="18" class="modal__icon">
+                  <use href="./images/sprite.svg#icon-key"></use>
+                </svg>
+              </label>
+            </li>
+            <li class="modal__list-item">
+              <label class="modal__label"
+                >Repeat password<input
+                  type="password"
+                  name="secondpass"
+                  class="modal__field-input"
+                />
+                <svg width="18" height="18" class="modal__icon">
+                  <use href="./images/sprite.svg#icon-key"></use>
+                </svg>
+              </label>
+            </li>
+          </ul>
+          <button type="submit" class="modal__button">Sign up</button>
+        </form>
+      </div>
+    </div>
+    <div class="backdrop is-hidden" data-modal-signin>
+      <div class="modal">
+        <h2 class="modal__title">Sign in</h2>
+        <form action="" class="modal__form-login">
+          <ul class="modal__list-input list">
+            <li class="modal__list-item">
+              <label class="modal__label"
+                >Email<input
+                  type="email"
+                  name="email"
+                  class="modal__field-input"
+                />
+                <svg width="18" height="18" class="modal__icon">
+                  <use href="./images/sprite.svg#icon-email"></use>
+                </svg>
+              </label>
+            </li>
+            <li class="modal__list-item">
+              <label class="modal__label"
+                >Password<input
+                  type="password"
+                  name="pass"
+                  class="modal__field-input"
+                />
+                <svg width="18" height="18" class="modal__icon">
+                  <use href="./images/sprite.svg#icon-key"></use>
+                </svg>
+              </label>
+            </li>
+          </ul>
+          <button type="submit" class="modal__button">Sign in</button>
+        </form>
+      </div>
     </div>
   </div>
 
-  <!-- end of lightbox -->
-</body>
-
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  </body>
 </html>

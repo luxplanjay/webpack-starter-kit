@@ -6,4 +6,6 @@ import './script/js/modalCard';
 
 import './script/js/students-lightbox';
 
-import './main.css';
+import './script/js/microphone';
+
+import './script/js/auth';
