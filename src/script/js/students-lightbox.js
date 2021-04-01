@@ -25,11 +25,4 @@ const instance = basicLightbox.create(
   );
 
 
-
-// const onAuthorsButton = () => {
-// instance.show();
-// };
-
-
-
 refs.authorsButton.addEventListener('click', instance.show);
