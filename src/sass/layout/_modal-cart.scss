@@ -1,6 +1,6 @@
 .modal{
     position: relative;
-        background-color: #FFFFFF;
+        background-color: $white;
 }
    
     @media screen and (min-width: 480px){
@@ -20,9 +20,8 @@
         font-size: 20px;
         line-height: 1.17;
       }
-      .button{
-        height: 44px;
-        width: 113px;
+      .modal-button .modal-btn{
+         width: 113px;
       }
     }
     @media screen and (min-width: 768px) {
@@ -43,9 +42,8 @@
         font-size: 20px;
         line-height: 1.17;
       }
-      .button{
-        height: 44px;
-        width: 125px;
+      .modal-button .modal-btn{
+         width: 125px;
       }
       }
     @media screen and (min-width: 1200px){
@@ -66,8 +64,7 @@
         font-size: 30px;
         line-height: 1.16;
       }
-      .button{
-        height: 44px;
+      .modal-button .modal-btn{
         width: 136px;
       }
   }
@@ -88,17 +85,13 @@ justify-content: space-between;
 }
 ///
 .film-title{
-font-style: normal;
 font-weight: 500;
-letter-spacing: 0em;
 text-align: left;
 }
 .statistics{
  font-size: 12px;
-font-style: normal;
 font-weight: 500;
 line-height: 1.33;
-letter-spacing: 0em;
 text-align: left;
 
 }
@@ -108,19 +101,15 @@ text-align: left;
 }
 .about-title{
 font-size: 12px;
-font-style: normal;
 font-weight: 500;
 line-height: 1.33;
-letter-spacing: 0em;
 text-align: left;
 }
 .about{
  
 font-size: 12px;
-font-style: normal;
 font-weight: 500;
 line-height: 1.66;
-letter-spacing: 0em;
 text-align: left;
 
 }
@@ -129,22 +118,13 @@ text-align: left;
   width: 36px;
   border-radius: 5px;
   background: $accent-color;
-  color: #FFFFFF;
+  color: $white;
 
 
 }
-.button{
-  border-radius: 5px;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.33;
-  letter-spacing: 0em;
-  text-align: center;
-  border: 1px solid #000000;
-  &:hover,
-    &:focus{
-        color: #FFFFFF;;
-        background: $accent-color;
-    }
-  }
+.modal-button .modal-btn{
+  
+  border: 1px solid $dark;
+  background-color: $white;
+  
+}
