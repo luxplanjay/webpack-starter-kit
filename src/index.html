@@ -37,26 +37,26 @@
                 </button>
 
                 <button
+                  id="home-button"
                   class="home-button current"
                   type="button"
                   aria-label="main page switch"
-                  data-home
                 >
                   Home
                 </button>
                 <button
+                  id="library-button"
                   class="library-button"
                   type="button"
                   aria-label="library page switch"
-                  data-library
                 >
                   My library
                 </button>
               </nav>
             </div>
 
-            <span class="search__input-wrapper">
-              <form class="search__form" id="search-form" method="GET">
+            <div class="search-container">
+              <span class="search__input-wrapper">
                 <svg
                   class="microphone"
                   width="40"
@@ -73,26 +73,21 @@
                   name="search"
                   autocomplete="off"
                   aria-label="Search films "
-                  placeholder="search movie by name"
+                  placeholder="Search films"
                   contenteditable
                 />
-                <!-- <button class="btn-search" type="submit">
-                <svg width="12" height="12" aria-label="Search button">
-                  <use
-                    class="search-icon"
-                    href="./images/sprite.svg#search"
-                  ></use>
-                </svg></button
-            > -->
-              </form>
-            </span>
-            <p class="no-results"></p>
+              </span>
+              <p class="no-results"></p>
+            </div>
+
+            <div class="button-container visually-hidden">
+              <button class="button" type="button" disabled="true">
+                Watched
+              </button>
+              <button class="button" type="button">queue</button>
+            </div>
           </div>
         </div>
-        <!-- <div class="button-container">
-      <button class="button " type="button">Watched</button>
-      <button class="button" type="button">queue</button>
-    </div> -->
       </header>
 
       <!-- spinner -->
