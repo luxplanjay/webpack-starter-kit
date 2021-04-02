@@ -33,11 +33,32 @@
                   <p class="movie-about-title">ABOUT</p>
                   <p class="movie-about-text">{{this.overview}}</p>
             </div>
-            <button class="add-to-watched active-btn-style" type="button" data-action-watched="watched"
-                  data-movie-id="{{this.id}}">ADD TO
-                  WATCHED</button>
-            <button class="add-to-queue active-btn-style" type="button" data-action-queue="queue"
-                  data-movie-id="{{this.id}}">ADD TO
-                  QUEUE</button>
+            <div>
+                  <ul class="storage">
+                        <li class="storage__item">
+                              <label class="storage__label ">
+                                    <input type="checkbox" value="Watched" class="storage__input visuallyhidden" />
+                                    <span class="storage__btn " id="js-WatchedButton">ADD TO
+                                          WATCHED</span>
+                              </label>
+                        </li>
+                        <li class="storage__item">
+                              <label class="storage__label ">
+                                    <input type="checkbox" value="Queue" class="storage__input visuallyhidden" />
+                                    <span class="storage__btn " id="js-QueueButton">ADD TO
+                                          QUEUE</span>
+                              </label>
+                        </li>
+                  </ul>
+            </div>
+
+            {{!-- <div class="add-to-storage-bnts">
+                  <button class="add-to-watched active-btn-style" type="button" data-action-watched="watched"
+                        data-movie-id="{{this.id}}">ADD TO
+                        WATCHED</button>
+                  <button class="add-to-queue active-btn-style" type="button" data-action-queue="queue"
+                        data-movie-id="{{this.id}}">ADD TO
+                        QUEUE</button>
+            </div> --}}
       </div>
 </div>

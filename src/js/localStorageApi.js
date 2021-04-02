@@ -1,4 +1,4 @@
-export const localStorageApi = {
+const localStorageApi = {
 
     //Проверяет хранилище по ключу. Возвращает пустой массив или данные
     getMovies(key) {
@@ -51,4 +51,4 @@ export const localStorageApi = {
     }
 };
 
-// export default localStorageApi;
+export default localStorageApi;

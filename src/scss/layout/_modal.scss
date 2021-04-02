@@ -151,24 +151,6 @@
   }
 }
 
-.inactive-btn-style {
-  transition: 2s;
-  font-size: 12px;
-  background-color: $color-gray;
-  cursor: ihherit;
-  border: none;
-  outline: none;
-  width: 130px;
-  height: 39px;
-  text-align: center;
-  color: $color-white;
-  border-radius: 5px;
-  @media screen and (min-width: $tablet) {
-    width: 136px;
-    height: 44px;
-  }
-}
-
 .add-to-watched {
   margin-right: 15px;
 }
@@ -252,4 +234,89 @@
 }
 .close-modal-icon:hover {
   fill: $accent-color;
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+// storage buttons
+
+// .inactive-btn-style {
+//   transition: 2s;
+//   font-size: 12px;
+//   background-color: $color-gray;
+//   cursor: ihherit;
+//   border: none;
+//   outline: none;
+//   width: 130px;
+//   height: 39px;
+//   text-align: center;
+//   color: $color-white;
+//   border-radius: 5px;
+//   @media screen and (min-width: $tablet) {
+//     width: 136px;
+//     height: 44px;
+//   }
+// }
+
+.storage {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+  }
+}
+
+.storage__item:first-child {
+  @media screen and (min-width: $tablet) {
+    margin-right: 15px;
+  }
+}
+
+.storage__btn {
+  transition: 2s;
+  display: block;
+
+  padding-top: 14px;
+  padding-bottom: 12px;
+
+  min-width: 130px;
+
+  @media screen and (min-width: $tablet) {
+    min-width: 136px;
+  }
+
+  text-align: center;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  color: $color-white;
+
+  cursor: pointer;
+
+  border: 1px solid $color-white;
+  border-radius: 5px;
+}
+
+.storage__input ~ .storage__btn {
+  background-color: $accent-color;
+  border: 1px solid $accent-color;
+  color: $color-white;
+}
+
+.storage__input:checked ~ .storage__btn {
+  background-color: $color-white;
+  border: 1px solid $color-black;
+  color: $color-black;
 }
