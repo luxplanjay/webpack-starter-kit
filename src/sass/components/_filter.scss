@@ -1,0 +1,71 @@
+
+.bottom-shadow:after {
+    content: "";
+    display: block;
+    height: 6px;
+    background: transparent;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%); 
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); 
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient(   startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+}
+
+.filter-section{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    padding-left: 20px;
+}
+
+.filter-input:not(:last-child) {
+    margin-right: 14px;
+}
+@media screen and (min-width: $bp-mobile) and (max-width: 767px) {
+    .filter-text {
+        display: none;
+    }
+    .filter-input {
+
+        padding: 4px 6px;
+        width: 136px;
+        font-family: $font-family;
+        @include font(500, 14px, 16px);
+    }
+}
+@media screen and (min-width: $bp-tablet) and (max-width: 1023px) {
+    .filter-text {
+        margin-right: 20px;
+        font-family: $font-family;
+        @include font(500, 25px, 30px);
+        color: $color-darkest;
+    }
+    .filter-input {
+        margin-right: 20px;
+        padding: 5px 10px;
+        width: 152px;
+        font-family: $font-family;
+        @include font(500, 16px, 18px);
+    }
+}
+@media screen and (min-width: $bp-desktop) {
+    .filter-section{
+        justify-content: start;
+        padding: 20px;
+        padding-left: 70px;
+    }
+    .filter-text {
+        margin-right: 40px;
+        font-family: $font-family;
+        @include font(500, 30px, 35px);
+        color: $color-darkest;
+    }
+    .filter-input {
+        margin-right: 20px;
+        padding: 5px 10px;
+        width: 152px;
+        font-family: $font-family;
+        @include font(500, 16px, 14px);
+    }
+}
+
+

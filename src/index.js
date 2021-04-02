@@ -14,4 +14,7 @@ import './script/js/auth';
 
 import './script/js/search';
 
+import './script/js/movieFilter';
+
 import './script/js/library';
+

@@ -7,6 +7,59 @@ img {
 .movie-card {
   background-color: $color-lightest;
 
+<<<<<<< HEAD
+    &__poster {
+        border-radius: 5px;
+    }
+ 
+    &__title {
+        margin-bottom: 20px;
+        font-family: $font-family;
+        font-style: normal;
+        @include font(500, 20px, 23px);
+        text-transform: uppercase;
+        color: $color-darkest;
+    }
+    &__info {
+        display: flex; 
+        margin-bottom: 20px;
+        @include font(500, 12px, 16px);
+        color: $color-darkest;
+    } 
+
+    &__info--title{
+        margin-right: 38px;
+        color: $color-middle;
+        width: 110px;
+    }
+    &__info--item:not(:last-child),
+    &__content--item:not(:last-child){
+        margin-bottom: 10px;
+    }
+    &__content--item:nth-child(1),
+    &__content--item:nth-child(2){
+        @include font(500, 12px, 14px);
+    }
+    &__content--item:nth-child(3) {
+        text-transform: uppercase;
+    }
+    &__vote {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 16px;
+        border-radius: 5px;
+        background-color: $color-accent-2;
+        color: $color-lightest;
+    }
+    &__about {
+        margin-bottom: 10px;
+        font-family: $font-family;
+        font-style: normal;
+        @include font(500, 12px, 16px);
+        text-transform: uppercase;
+=======
   &__item {
     display: block;
     margin: 0 auto;
@@ -15,6 +68,7 @@ img {
   &__poster {
     border-radius: 5px;
   }
+>>>>>>> dev
 
   &__title {
     margin-bottom: 20px;
