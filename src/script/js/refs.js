@@ -17,6 +17,7 @@ const refs = {
   logOutBtn: document.querySelector('.logout-js'),
   signUpModal: document.querySelector('.backdrop[data-modal-signup]'),
   signUpNowBtn: document.querySelector('.signup-now__button'),
+  spinner: document.querySelector('.square'),
 };
 
 export default refs;

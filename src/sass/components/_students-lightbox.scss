@@ -1,5 +1,3 @@
-
-
 .authors-list {
   display: flex;
   flex-wrap: wrap;
@@ -8,13 +6,32 @@
 
   width: 280px;
   height: 100vh;
+  &__item {
+    width: 200px;
+    height: 270px;
+    margin-bottom: 5px;
+    background-color: white;
+    &__descr {
+      width: 100%;
+      height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+      &__link {
+        display: block;
+        margin-left: 4px;
+        height: 24px;
+        width: 24px;
+        background-image: url('./images/GitHub-Mark-32px.png');
+        background-position: center;
+        background-size: contain;
+        fill: black;
+        
+      }
+    }
+  }
 }
-.authors-list__item {
-  width: 200px;
-  height: 270px;
-  margin-bottom: 5px;
-  background-color: white;
-}
+
 @media screen and (max-width: $bp-tablet) {
   .authors-list__item:not(:last-child) {
     margin-bottom: 5px;

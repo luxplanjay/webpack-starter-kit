@@ -1,3 +1,5 @@
+import './script/js/preloader';
+
 import './main.scss';
 
 import './script/js/popular-gallery';
@@ -11,3 +13,4 @@ import './script/js/microphone';
 import './script/js/auth';
 
 import './script/js/search';
+

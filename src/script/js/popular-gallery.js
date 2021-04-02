@@ -3,9 +3,13 @@ import refs from '../js/refs';
 import createMarkup from '../templates/galleryCard.hbs';
 import Pagination from './pagination-api';
 import settings from './settings';
+import Search from './spinner';
 
 const fetchPopularMovie = new PopularFilms();
 const pagination = new Pagination();
+
+const spinner = new Search();
+spinner.showSpinner();
 
 function createCard() {
   // refs.gallery.innerHTML = '';
@@ -27,6 +31,7 @@ function createCard() {
           res.total_results,
         );
       }
+      spinner.hideSpinner();
     })
     .catch(error => console.log(console.error()));
 }
