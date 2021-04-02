@@ -1,3 +1,5 @@
+import './script/js/preloader';
+
 import './main.scss';
 
 import './script/js/popular-gallery';
@@ -14,4 +16,5 @@ import './script/js/search';
 
 import './script/js/movieFilter';
 
+import './script/js/library';
 

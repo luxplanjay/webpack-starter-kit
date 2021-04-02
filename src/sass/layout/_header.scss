@@ -6,15 +6,27 @@ header {
 
 .header__background {
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('/images/header/header-bg-main-@1x-mobile.jpg');
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('/images/header/header-bg-main-@1x-mobile.jpg');
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('/images/header/header-bg-main-@2x-mobile.jpg');
+  }
+}
+
+.library__background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('/images/header/header-bg-library-@1x-mobile.jpg');
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('/images/header/header-bg-library-@2x-mobile.jpg');
   }
 }
 
@@ -61,58 +73,49 @@ header {
   color: $color-lightest;
   background-color: transparent;
   border: none;
-  outline: none;
   padding: 0;
   cursor: pointer;
 }
 
 .home-button {
   margin-right: 40px;
-  &.current {
-    border-bottom: 3px solid $color-accent;
-  }
 }
 
+.current {
+  border-bottom: 3px solid $color-accent;
+}
 
-  .search__form {
+.search__form {
   display: flex;
   justify-content: center;
   align-items: flex-end; //! Alex: changed value from center to align with microphone
-  // &-icon {
-  //   display: inline-block;
-  //   position: relative;
-
-  //   &::after {
-  //     content: '';
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     width: 12px;
-  //     height: 12px;
-  //     background-image: url('/images/search.svg');
-  //     background-repeat: no-repeat;
-  //     background-size: contain;
-  //   }
-  // }
-  }
+}
 
 .search__input-wrapper {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; //! Alex: changed value from center to align with microphone
+  flex-wrap: wrap;
   margin: 0 auto;
   position: relative;
   width: 280px;
-  margin-bottom: 22px;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 
   &::after {
     content: '';
     position: absolute;
-    bottom: 6px;    //! Alex: corrected from 0px
+    bottom: 6px; //! Alex: corrected from 0px
     right: 0;
     width: 12px;
     height: 12px;
     background-image: url('/images/search.svg');
     background-repeat: no-repeat;
     background-size: contain;
+  }
+
+  &.without-after-el::after {
+    content: none;
   }
 }
 
@@ -150,7 +153,6 @@ header {
   color: $color-lightest;
   background-color: transparent;
   border: none;
-  outline: none;
   padding: 0 10px;
   cursor: pointer;
 }
@@ -162,8 +164,10 @@ header {
   line-height: 1.143;
   text-align: center;
 
+  margin-top: 22px;
   color: #ff001b;
 }
+
 // TABLET--------------------------------
 @media screen and (min-width: $bp-tablet) {
   .header__container {
@@ -183,6 +187,20 @@ header {
           rgba(0, 0, 0, 0.56)
         ),
         url('/images/header/header-bg-main-@2x-tablet.jpg');
+    }
+  }
+
+  .library__background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('/images/header/header-bg-library-@1x-tablet.jpg');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url('/images/header/header-bg-library-@2x-tablet.jpg');
     }
   }
 
@@ -207,6 +225,20 @@ header {
           rgba(0, 0, 0, 0.56)
         ),
         url('/images/header/header-bg-main-@2x-desktop.jpg');
+    }
+  }
+
+  .library__background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('/images/header/header-bg-library-@1x-desktop.jpg');
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.56),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url('/images/header/header-bg-library-@2x-desktop.jpg');
     }
   }
 }
