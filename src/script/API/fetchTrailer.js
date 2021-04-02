@@ -4,7 +4,8 @@ import settings from '../js/settings';
 
 export default class runTrailer {
   constructor(trailerID) {
-    this.trailerID = trailerID || 'LG-_cNGGje4';
+    this.trailerID = trailerID;
+    console.log('trailerID', this.trailerID);
   }
 
   async fetchTrailer() {
@@ -13,7 +14,7 @@ export default class runTrailer {
       apiKey: settings.API_KEY,
       id: true,
     });
-    return id;
+    return id !== null ? id : '953J_jPm7-s';
   }
 
   markupTrailer(id) {
