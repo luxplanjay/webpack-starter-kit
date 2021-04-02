@@ -5,7 +5,6 @@ import settings from '../js/settings';
 export default class runTrailer {
   constructor(trailerID) {
     this.trailerID = trailerID;
-    console.log('trailerID', this.trailerID);
   }
 
   async fetchTrailer() {
