@@ -14,3 +14,4 @@ import './script/js/auth';
 
 import './script/js/search';
 
+import './script/js/library';

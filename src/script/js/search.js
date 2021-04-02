@@ -14,6 +14,7 @@ const {
   paginationPrevButton,
   paginationNextButton,
   paginationContainer,
+  searchWrap,
 } = refs;
 const { reservImg } = CONST;
 
@@ -32,7 +33,11 @@ searchInputRef.addEventListener(
 function hendlerInput(e) {
   apiSearchData.query = e;
   // gallery.innerHTML = '';
-
+  if (searchInputRef.value === '') {
+    searchWrap.classList.remove('without-after-el');
+    return;
+  }
+  searchWrap.classList.add('without-after-el');
   function createCard() {
     apiSearchData
       .fetchMovies()
@@ -65,6 +70,9 @@ function hendlerInput(e) {
   function noResults() {
     noResultRef.textContent =
       'Search result not successful. Enter the correct movie name and try again';
+    setTimeout(function () {
+      noResultRef.textContent = '';
+    }, 2000);
   }
 
   apiSearchData.resetPage();

@@ -73,3 +73,5 @@ const showSelectedPage = e => {
 function scrollWin() {
   window.scrollTo(0, 230);
 }
+
+export default createCard;
