@@ -2,10 +2,10 @@ import localStorageApi from './localStorageApi';
 
 // ДОБАВИТЬ В МОДАЛ.ДЖС НА ОТКРЫТИЕ МОДАЛКИ
 export const initStorageBtns = () => {
-  const storageElement = document.querySelector('.movie-container .add-to-storage-bnts');
+  const storageElement = document.querySelector('.movie-container .storage');
   const movieId = document.querySelector('.movie-container').dataset.action;
 
-  checkStorage(storageElem);
+  checkStorage(storageElement);
 
   storageElement.addEventListener('change', onStorageBtnClick);
 
@@ -25,8 +25,8 @@ export const initStorageBtns = () => {
   
     btnElement.forEach(element => {
       const storageKey = element.value;
-
       const arr = localStorageApi.load(storageKey);
+      
       if (arr.indexOf(movieId) >= 0) element.checked = "true";    
     });
   } 
