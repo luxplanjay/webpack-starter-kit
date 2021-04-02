@@ -94,6 +94,49 @@
       <button class="button" type="button">queue</button>
     </div> -->
     </header>
+<!-- FILTER -->
+  <div class="container">
+    <section class="filter-section">
+
+      <h2 class="filter-text">Find the best movies</h2>
+
+        <select class="filter-input" name="genrepicker" id="genrepicker">
+          <option value="">Choose genre</option>
+          <option value="28">Action</option>
+          <option value="12">Adventure</option>
+          <option value="16">Animation</option>
+          <option value="35">Comedy</option>
+          <option value="80">Crime</option>
+          <option value="99">Documentary</option>
+          <option value="18">Drama</option>
+          <option value="14">History</option>
+          <option value="27">Horror</option>
+          <option value="10402">Music</option>
+          <option value="10749">Romance</option>
+          <option value="878">Science Fiction</option>
+          <option value="10770">TV Movie</option>
+          <option value="53">Thriller</option>
+          <option value="10752">War</option>
+          <option value="37">Western</option>
+        </select>
+        <select class="filter-input" name="yearpicker" id="yearpicker"></select>
+
+      <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+      </script>
+      <script type="text/javascript">
+          let startYear = 1900;
+          let endYear = new Date().getFullYear();
+          $('#yearpicker').append($('<option />').val('').html('Choose year'));
+          for (i = endYear; i > startYear; i--)
+          {
+            $('#yearpicker').append($('<option />').val(i).html(i));
+          }
+      </script>
+    </section>
+  </div>
+  <div class="bottom-shadow"></div>
+    <!-- END OF FILTER -->
     
     <!-- spinner -->
     <div class="square is-hidden">
