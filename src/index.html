@@ -245,34 +245,6 @@
           <button type="submit" class="modal__button">Sign up</button>
         </form>
       </div>
-      <h2 class="modal__title">Sign up</h2>
-      <form action="" class="modal__form-registration">
-        <ul class="modal__list-input list">
-          <li class="modal__list-item">
-            <label class="modal__label">Email<input type="email" name="email" class="modal__field-input" />
-              <svg width="18" height="18" class="modal__icon">
-                <use href="./images/sprite.svg#icon-email"></use>
-              </svg>
-            </label>
-          </li>
-          <li class="modal__list-item">
-            <label class="modal__label">Password<input type="password" name="pass" class="modal__field-input" />
-              <svg width="18" height="18" class="modal__icon">
-                <use href="./images/sprite.svg#icon-key"></use>
-              </svg>
-            </label>
-          </li>
-          <li class="modal__list-item">
-            <label class="modal__label">Repeat password<input type="password" name="secondpass"
-                class="modal__field-input" />
-              <svg width="18" height="18" class="modal__icon">
-                <use href="./images/sprite.svg#icon-key"></use>
-              </svg>
-            </label>
-          </li>
-        </ul>
-        <button type="submit" class="modal__button">Sign up</button>
-      </form>
     </div>
     <div class="backdrop is-hidden" data-modal-signin>
       <div class="modal modal-signin">
@@ -309,6 +281,14 @@
           </ul>
           <button type="submit" class="modal__button">Sign in</button>
         </form>
+        <p class="divider">OR</p>
+        <button class="google-signin"> 
+          <svg width="20" height="20" class="google-icon">
+            <use href="./images/sprite.svg#google"></use>
+          </svg>
+          Sign up using Google
+        </button>
+        
         <div class="signup-now">
           <p class="signup-now__text">Not a member?</p>
           <button class="signup-now__button">Signup Now</button>

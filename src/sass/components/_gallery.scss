@@ -47,7 +47,11 @@
   .movies__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+
+    margin: -15px;
+  }
+  .movies__list-item {
+    margin: 15px;
   }
 }
 
