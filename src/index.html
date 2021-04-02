@@ -7,8 +7,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <title>Filmoteka</title>
   </head>
-
   <body>
+    <div class="preloader">
+    <!-- spinner -->
+     <div id="preloader" class="visible" class="square is-hidden">
+      <div class="spin"></div>
+     </div>
+    <!-- end spinner -->
+    </div>
     <div class="wrap-container">
       <header>
         <div class="header__background">
@@ -79,8 +85,7 @@
               </span>
               <p class="no-results"></p>
             </div>
-
-            <div class="button-container visually-hidden">
+          <div class="button-container visually-hidden">
               <button class="button" type="button" disabled="true">
                 Watched
               </button>
@@ -107,7 +112,6 @@
         <!--pagination end-->
       </section>
     </div>
-
     <footer class="footer">
       <div class="footer__container container">
         <p class="footer__container__copyright">
@@ -190,6 +194,34 @@
           <button type="submit" class="modal__button">Sign up</button>
         </form>
       </div>
+      <h2 class="modal__title">Sign up</h2>
+      <form action="" class="modal__form-registration">
+        <ul class="modal__list-input list">
+          <li class="modal__list-item">
+            <label class="modal__label">Email<input type="email" name="email" class="modal__field-input" />
+              <svg width="18" height="18" class="modal__icon">
+                <use href="./images/sprite.svg#icon-email"></use>
+              </svg>
+            </label>
+          </li>
+          <li class="modal__list-item">
+            <label class="modal__label">Password<input type="password" name="pass" class="modal__field-input" />
+              <svg width="18" height="18" class="modal__icon">
+                <use href="./images/sprite.svg#icon-key"></use>
+              </svg>
+            </label>
+          </li>
+          <li class="modal__list-item">
+            <label class="modal__label">Repeat password<input type="password" name="secondpass"
+                class="modal__field-input" />
+              <svg width="18" height="18" class="modal__icon">
+                <use href="./images/sprite.svg#icon-key"></use>
+              </svg>
+            </label>
+          </li>
+        </ul>
+        <button type="submit" class="modal__button">Sign up</button>
+      </form>
     </div>
     <div class="backdrop is-hidden" data-modal-signin>
       <div class="modal modal-signin">
