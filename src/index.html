@@ -31,6 +31,9 @@
               <button class="home-button site-nav__signin" type="button">
                 Sign in
               </button>
+              <button class="home-button site-nav__signin logout-js is-hidden" type="button">
+                Log out
+              </button>
 
               <button
                 class="home-button current"
@@ -122,8 +125,8 @@
             width="14"
             height="13"
           >
-            <use href="./images/sprite.svg#heart"></use></svg
-          ><button class="footer_container__authors__button" type="button">
+            <use href="./images/sprite.svg#heart"></use></svg>
+            <button class="footer_container__authors__button" type="button">
             by GoIT Students
           </button>
         </p>
@@ -145,7 +148,10 @@
      <!-- end of lightbox -->
   
     <div class="backdrop is-hidden" data-modal-signup>
-      <div class="modal">
+      <div class="modal modal-signup">
+        <div class="square is-hidden">
+          <div class="spin"></div>
+        </div>
         <h2 class="modal__title">Sign up</h2>
         <form action="" class="modal__form-registration">
           <ul class="modal__list-input list">
@@ -191,8 +197,11 @@
       </div>
     </div>
     <div class="backdrop is-hidden" data-modal-signin>
-      <div class="modal">
+      <div class="modal modal-signin">
         <h2 class="modal__title">Sign in</h2>
+        <div class="signin-spinner is-hidden">
+          <div class="spin"></div>
+        </div>
         <form action="" class="modal__form-login">
           <ul class="modal__list-input list">
             <li class="modal__list-item">
@@ -222,10 +231,13 @@
           </ul>
           <button type="submit" class="modal__button">Sign in</button>
         </form>
+        <div class="signup-now">
+          <p class="signup-now__text">Not a member?</p>
+        <button class="signup-now__button">Signup Now</button>
+        </div>
       </div>
     </div>
-  </div>
+  
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
   </body>
 </html>
