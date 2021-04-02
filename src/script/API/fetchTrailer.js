@@ -13,6 +13,7 @@ export default class runTrailer {
       apiKey: settings.API_KEY,
       id: true,
     });
+    console.log('id', id);
     return id !== null ? id : '953J_jPm7-s';
   }
 
