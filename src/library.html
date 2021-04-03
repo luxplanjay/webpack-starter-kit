@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Filmoteka</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Header library-->
+    <header class="header-library">
+      <div class="container">
+        <div class="header-library-wraper">
+          <div class="logo-wrap">
+            <a class="header-library-logo" href="/index.html">
+              <svg class="header-library-svg">
+                <use href="./images/sprite.svg#icon-film"></use>
+              </svg>
+            </a>
+            <h1 class="header-library-title">Filmoteka</h1>
+          </div>
+          <nav class="header-library-nav">
+            <ul class="header-library-nav-list">
+              <li class="header-library-nav-page">
+                <a class="header-library-nav-link" href="/index.html">Home</a>
+              </li>
+              <li class="header-library-nav-page">
+                <a class="header-library-nav-link current" href="#"
+                  >my library</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-library-buttons" id="tabs">
+          <div class="controls" data-controls>
+            <button
+              class="header-library-btn controls-current"
+              id="watched-btn-js"
+            >
+              <a class="controls-item" href="#watched">Watched</a>
+            </button>
+            <button class="header-library-btn" id="queue-btn-js">
+              <a class="controls-item" href="#queue">queue</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--Header library end-->
+    <!-- Library section -->
+    <main class="library">
+      <div class="container panes" data-panes id="js-library-container">
+        <div class="alert-mesage"></div>
+        <!-- Галерея для правильності позиціонування -->
+        <ul id="queue" class="library-movie-gallery" id="js-library-gallery">
+          <!-- <li class="library-movie-item"></li>
+          <li class="library-movie-item"></li>
+          <li class="library-movie-item"></li>
+          <li class="library-movie-item"></li>
+          <li class="library-movie-item"></li>
+          <li class="library-movie-item"></li>
+          <li class="library-movie-item"></li>
+          <li class="library-movie-item"></li> -->
+        </ul>
+        <div class="pagination"></div>
+      </div>
+    </main>
+    <!-- End library section -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <ul class="footer-list">
+          <li class="footer-item">&copy; 2021 | All Rights Reserved |</li>
+          <li class="footer-item">
+            &nbsp;Developed with<svg class="footer-svg">
+              <use href="./images/sprite.svg#icon-heart"></use></svg
+            >by
+            <span class="footer-item-word">GoIT Students</span>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

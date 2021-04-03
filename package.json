@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
-  "homepage": "https://github.com/luxplanjay/webpack-starter-kit#readme",
+  "homepage": "https://github.com/pentagrams/Filmoteka.git",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -39,6 +39,7 @@
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^4.0.2",
+    "sass": "^1.32.8",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
@@ -50,6 +51,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "spin.js": "^4.1.0"
   }
 }
