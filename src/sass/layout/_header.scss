@@ -121,7 +121,7 @@ header {
 
 .search__input {
   width: 100%;
-
+  padding-left: 3px;
   border: none;
   border-bottom: 0.5px solid $color-lightest;
 
@@ -139,6 +139,11 @@ header {
     font-size: 14px;
     line-height: 1.14;
     color: $color-lightest;
+    opacity: 0.6;
+  }
+
+  &:focus::placeholder {
+    color: transparent;
   }
 
   &:focus {

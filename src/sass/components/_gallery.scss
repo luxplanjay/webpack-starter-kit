@@ -16,8 +16,9 @@
   display: block;
   margin-bottom: 10px;
   border-radius: 5px;
+  transition: all 0.4s ease;
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.03) translateY(-4px);
     box-shadow: 0px 0px 10px 5px $color-accent;
   }
 }
