@@ -50,6 +50,8 @@ export default class Lightbox{
             result.genres = genres.join(', ');
             result.popularity = parseFloat(result.popularity).toFixed(1);
             this.refs.infoCard.insertAdjacentHTML('beforeend', movieCard(result));
+            // document.querySelector('.modal-button-watched').addEventListener('click', watchedBtnHandler);
+            // document.querySelector('.modal-button-queue').addEventListener('click', queqeBtnHandler);
         });
     }
 }
