@@ -1,5 +1,7 @@
 import movieCard from '../templates/movieCard.hbs';
 import MovieApi from '../API/fetchMovie';
+import settings from './settings';
+const { reservImg } = settings;
 const movieInfo = new MovieApi();
 
 export default class Lightbox{
@@ -41,6 +43,9 @@ export default class Lightbox{
     createMarkup(event) {
         movieInfo.fetchMovie(event.target.id)
         .then(result => {
+            result.poster_path
+            ? (result.poster_path = `https://image.tmdb.org/t/p/w500/${result.poster_path}`)
+            : (result.poster_path = reservImg);
             const genres = result.genres.map(item => item.name);
             result.genres = genres.join(', ');
             result.popularity = parseFloat(result.popularity).toFixed(1);
