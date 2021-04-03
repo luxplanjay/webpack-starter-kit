@@ -3,10 +3,7 @@
   border: 0;
   width: 80px;
   padding: 0px;
-  margin-top: 90px;
   margin-left: calc(50% - 40px);
-  margin-left: -webkit-calc(50% - 40px);
-  margin-left: -moz-calc(50% - 40px);
   background: transparent;
   z-index: 1002;
 }
@@ -16,13 +13,10 @@
   width: 70px;
   border-radius: 50%;
   border: dashed 5px orange;
-  animation-name: spin;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: spinner 1.5s infinite linear;
 }
 
-@keyframes spin {
+@keyframes spinner {
   from {
     transform: rotate(0deg);
   }
@@ -30,6 +24,7 @@
     transform: rotate(360deg);
   }
 }
+
 .is-hidden {
   display: none;
 }

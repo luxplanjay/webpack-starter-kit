@@ -4,186 +4,267 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!------------ Preloader configuration start-->
+    <style>
+      #page-content {
+        opacity: 0;
+        transition: opacity 800ms;
+      }
+      #page-content.ready {
+        opacity: initial;
+      }
+
+      .preloader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: #3f3d3d;
+        z-index: 1000;
+      }
+
+      /* ==========Spinner */
+
+      .preloader-spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 0;
+        width: 80px;
+        padding: 0;
+        background: transparent;
+        z-index: 10000;
+      }
+
+      .preloader-spin {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        border: dashed 10px orange;
+        animation: spinner 1.5s infinite linear;
+      }
+
+      @keyframes spinner {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <script>
+      window.addEventListener('load', function () {
+        const preloader = document.querySelector('.preloader');
+        document.body.removeChild(preloader);
+        document.getElementById('page-content').classList.add('ready');
+        console.log('done');
+      });
+    </script>
+    <!------------ Preloader configuration end-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <title>Filmoteka</title>
   </head>
   <body>
+    <!------------ Preloader start-->
     <div class="preloader">
-    <!-- spinner -->
-     <div id="preloader" class="visible" class="square is-hidden">
-      <div class="spin"></div>
-     </div>
-    <!-- end spinner -->
+      <div id="preloader" class="preloader-spinner">
+        <div class="preloader-spin"></div>
+      </div>
     </div>
-    <div class="wrap-container">
-      <header>
-        <div class="header__background">
-          <div class="header__container container">
-            <div class="header__wrapper">
-              <div class="logo-wrapper">
-                <a class="logo" href="/index" aria-label="logo of filmoteka">
-                  <svg class="logo__icon" width="24" height="24">
-                    <use href="./images/sprite.svg#film"></use>
-                  </svg>
-                  <span class="logo__text">Filmoteka </span>
-                </a>
+    <!-------------Preloader end -->
+
+    <div id="page-content">
+      <div class="wrap-container">
+        <header>
+          <div class="header__background">
+            <div class="header__container container">
+              <div class="header__wrapper">
+                <div class="logo-wrapper">
+                  <a class="logo" href="/index" aria-label="logo of filmoteka">
+                    <svg class="logo__icon" width="24" height="24">
+                      <use href="./images/sprite.svg#film"></use>
+                    </svg>
+                    <span class="logo__text">Filmoteka </span>
+                  </a>
+                </div>
+                <nav class="site-nav">
+                  <button class="home-button site-nav__signup" type="button">
+                    Sign up
+                  </button>
+                  <button class="home-button site-nav__signin" type="button">
+                    Sign in
+                  </button>
+                  <button
+                    class="home-button site-nav__signin logout-js is-hidden"
+                    type="button"
+                  >
+                    Log out
+                  </button>
+
+                  <button
+                    id="home-button"
+                    class="home-button current"
+                    type="button"
+                    aria-label="main page switch"
+                  >
+                    Home
+                  </button>
+                  <button
+                    id="library-button"
+                    class="library-button"
+                    type="button"
+                    aria-label="library page switch"
+                  >
+                    My library
+                  </button>
+                </nav>
               </div>
-              <nav class="site-nav">
-                <button class="home-button site-nav__signup" type="button">
-                  Sign up
-                </button>
-                <button class="home-button site-nav__signin" type="button">
-                  Sign in
-                </button>
-                <button
-                  class="home-button site-nav__signin logout-js is-hidden"
-                  type="button"
-                >
-                  Log out
-                </button>
 
-                <button
-                  id="home-button"
-                  class="home-button current"
-                  type="button"
-                  aria-label="main page switch"
-                >
-                  Home
-                </button>
-                <button
-                  id="library-button"
-                  class="library-button"
-                  type="button"
-                  aria-label="library page switch"
-                >
-                  My library
-                </button>
-              </nav>
-            </div>
+              <div class="search-container">
+                <span class="search__input-wrapper">
+                  <svg
+                    class="microphone"
+                    width="40"
+                    height="40"
+                    aria-label="microphone"
+                  >
+                    <use href="./images/sprite.svg#microphone"></use>
+                  </svg>
+                  <!-- <span class="search__input-wrapper" -->
 
-            <div class="search-container">
-              <span class="search__input-wrapper">
-                <svg
-                  class="microphone"
-                  width="40"
-                  height="40"
-                  aria-label="microphone"
-                >
-                  <use href="./images/sprite.svg#microphone"></use>
-                </svg>
-                <!-- <span class="search__input-wrapper" -->
-
-                <input
-                  class="search__input"
-                  type="text"
-                  name="search"
-                  autocomplete="off"
-                  aria-label="Search films "
-                  placeholder="Search films"
-                  contenteditable
-                />
-              </span>
-              <p class="no-results"></p>
-            </div>
-          <div class="button-container visually-hidden">
-              <button class="button" type="button" disabled="true">
-                Watched
-              </button>
-              <button class="button" type="button">queue</button>
+                  <input
+                    class="search__input"
+                    type="text"
+                    name="search"
+                    autocomplete="off"
+                    aria-label="Search films "
+                    placeholder="Search films"
+                    contenteditable
+                  />
+                </span>
+                <p class="no-results"></p>
+              </div>
+              <div class="button-container visually-hidden">
+                <button class="button" type="button" disabled="true">
+                  Watched
+                </button>
+                <button class="button" type="button">queue</button>
+              </div>
             </div>
           </div>
-        </div>
         </header>
-<!-- FILTER -->
-  <div class="container">
-    <section class="filter-section">
+        <!-- FILTER -->
+        <div class="container">
+          <section class="filter-section">
+            <h2 class="filter-text">Find the best movies</h2>
 
-      <h2 class="filter-text">Find the best movies</h2>
+            <select class="filter-input" name="genrepicker" id="genrepicker">
+              <option value="">Choose genre</option>
+              <option value="28">Action</option>
+              <option value="12">Adventure</option>
+              <option value="16">Animation</option>
+              <option value="35">Comedy</option>
+              <option value="80">Crime</option>
+              <option value="99">Documentary</option>
+              <option value="18">Drama</option>
+              <option value="14">History</option>
+              <option value="27">Horror</option>
+              <option value="10402">Music</option>
+              <option value="10749">Romance</option>
+              <option value="878">Science Fiction</option>
+              <option value="10770">TV Movie</option>
+              <option value="53">Thriller</option>
+              <option value="10752">War</option>
+              <option value="37">Western</option>
+            </select>
+            <select
+              class="filter-input"
+              name="yearpicker"
+              id="yearpicker"
+            ></select>
 
-        <select class="filter-input" name="genrepicker" id="genrepicker">
-          <option value="">Choose genre</option>
-          <option value="28">Action</option>
-          <option value="12">Adventure</option>
-          <option value="16">Animation</option>
-          <option value="35">Comedy</option>
-          <option value="80">Crime</option>
-          <option value="99">Documentary</option>
-          <option value="18">Drama</option>
-          <option value="14">History</option>
-          <option value="27">Horror</option>
-          <option value="10402">Music</option>
-          <option value="10749">Romance</option>
-          <option value="878">Science Fiction</option>
-          <option value="10770">TV Movie</option>
-          <option value="53">Thriller</option>
-          <option value="10752">War</option>
-          <option value="37">Western</option>
-        </select>
-        <select class="filter-input" name="yearpicker" id="yearpicker"></select>
-
-      <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
-      </script>
-      <script type="text/javascript">
-          let startYear = 1900;
-          let endYear = new Date().getFullYear();
-          $('#yearpicker').append($('<option />').val('').html('Choose year'));
-          for (i = endYear; i > startYear; i--)
-          {
-            $('#yearpicker').append($('<option />').val(i).html(i));
-          }
-      </script>
-    </section>
-  </div>
-  <div class="bottom-shadow"></div>
-    <!-- END OF FILTER -->
-    
-    <!-- spinner -->
-    <div class="square is-hidden">
-      <div class="spin"></div>
-    </div>
-    <!-- end spinner -->
-
-      </header>
-
-      <!-- spinner -->
-      <div class="square is-hidden">
-        <div class="spin"></div>
-      </div>
-      <!-- end spinner -->
-
-      <section class="movies container">
-        <ul class="movies__list"></ul>
-        <!--pagination-->
-        <div class="movies__pagination-container">
-          <button class="pagination-prev-button hidden" type="button"></button>
-          <div class="js-pagination-wrapper"></div>
-          <button class="pagination-next-button hidden" type="button"></button>
+            <script
+              type="text/javascript"
+              src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            ></script>
+            <script type="text/javascript">
+              let startYear = 1900;
+              let endYear = new Date().getFullYear();
+              $('#yearpicker').append(
+                $('<option />').val('').html('Choose year'),
+              );
+              for (i = endYear; i > startYear; i--) {
+                $('#yearpicker').append($('<option />').val(i).html(i));
+              }
+            </script>
+          </section>
         </div>
-        <!--pagination end-->
-      </section>
-    </div>
-    <footer class="footer">
-      <div class="footer__container container">
-        <p class="footer__container__copyright">
-          &copy 2020 | All Rights Reserved |
-        </p>
-        <p class="footer_container__authors">
-          Developed with<svg
-            class="footer_container__authors__svg"
-            width="14"
-            height="13"
-          >
-            <use href="./images/sprite.svg#heart"></use>
-          </svg>
-          <button class="footer_container__authors__button" type="button">
-            by GoIT Students
-          </button>
-        </p>
-      </div>
-    </footer>
+        <div class="bottom-shadow"></div>
+        <!-- END OF FILTER -->
 
-    <!-- lightbox -->
+        <!-- spinner -->
+        <div class="square is-hidden">
+          <div class="spin"></div>
+        </div>
+        <!-- end spinner -->
+
+        <!-- </header> -->
+
+        <!-- spinner -->
+        <div class="square is-hidden">
+          <div class="spin"></div>
+        </div>
+        <!-- end spinner -->
+
+        <section class="movies container">
+          <ul class="movies__list"></ul>
+          <!--pagination-->
+          <div class="movies__pagination-container">
+            <button
+              class="pagination-prev-button hidden"
+              type="button"
+            ></button>
+            <div class="js-pagination-wrapper"></div>
+            <button
+              class="pagination-next-button hidden"
+              type="button"
+            ></button>
+          </div>
+          <!--pagination end-->
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="footer__container container">
+          <p class="footer__container__copyright">
+            &copy 2020 | All Rights Reserved |
+          </p>
+          <p class="footer_container__authors">
+            Developed with<svg
+              class="footer_container__authors__svg"
+              width="14"
+              height="13"
+            >
+              <use href="./images/sprite.svg#heart"></use>
+            </svg>
+            <button class="footer_container__authors__button" type="button">
+              by GoIT Students
+            </button>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!------------ lightbox start-->
     <div class="lightbox js-lightbox">
       <div class="lightbox__overlay"></div>
       <div class="lightbox__content">
@@ -195,7 +276,7 @@
         ></button>
       </div>
     </div>
-    <!-- end of lightbox -->
+    <!------------ lightbox end-->
 
     <div class="backdrop is-hidden" data-modal-signup>
       <div class="modal modal-signup">
@@ -282,13 +363,13 @@
           <button type="submit" class="modal__button">Sign in</button>
         </form>
         <p class="divider">OR</p>
-        <button class="google-signin"> 
+        <button class="google-signin">
           <svg width="20" height="20" class="google-icon">
             <use href="./images/sprite.svg#google"></use>
           </svg>
           Sign up using Google
         </button>
-        
+
         <div class="signup-now">
           <p class="signup-now__text">Not a member?</p>
           <button class="signup-now__button">Signup Now</button>
