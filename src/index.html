@@ -6,68 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!------------ Preloader configuration start-->
     <style>
-      #page-content {
-        opacity: 0;
-        transition: opacity 800ms;
-      }
-      #page-content.ready {
-        opacity: initial;
-      }
+    
 
       .preloader {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        background: #3f3d3d;
-        z-index: 1000;
+        position: fixed;
+        z-index: 10000;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        background-color: #10131a;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 800ms ease-in-out, visibility 0s 800ms;
+      }
+      .hide-preloader{
+        visibility: hidden;
+        opacity: 0;
       }
 
       /* ==========Spinner */
 
-      .preloader-spinner {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 0;
-        width: 80px;
-        padding: 0;
-        background: transparent;
-        z-index: 10000;
+      .circle {
+        background-color: #f9dc97;
+       height: 10px;
+       width: 10px;
+       border-radius: 50%;
+       display: inline-block;
+       animation: bounce-circles 0.7s infinite ease-in-out;
+       animation-delay: -0.6s;
+      }
+      .circle:nth-child(2){
+        animation-delay: -0.5s
+      }
+      .circle:nth-child(3){
+        animation-delay: -0.4s
       }
 
-      .preloader-spin {
-        height: 70px;
-        width: 70px;
-        border-radius: 50%;
-        border: dashed 10px orange;
-        animation: spinner 1.5s infinite linear;
+      .text {
+        color: #fbae17;
+        display: inline-block;
+        margin-left: 5px;
       }
 
-      @keyframes spinner {
-        from {
-          transform: rotate(0deg);
+      @keyframes bounce-circles {
+        0%,
+        40%,
+        100% {
+          transform: translateY(-10px);
         }
-        to {
-          transform: rotate(360deg);
+        20% {
+          transform: translateY(-20px);
         }
       }
     </style>
     <script>
       window.addEventListener('load', function () {
         const preloader = document.querySelector('.preloader');
-        document.body.removeChild(preloader);
-        document.getElementById('page-content').classList.add('ready');
-        console.log('done');
+        preloader.classList.add('hide-preloader');
       });
     </script>
     <!------------ Preloader configuration end-->
@@ -77,13 +76,15 @@
   <body>
     <!------------ Preloader start-->
     <div class="preloader">
-      <div id="preloader" class="preloader-spinner">
-        <div class="preloader-spin"></div>
+      <div class="circles-group">
+       <div class="circle"></div>
+       <div class="circle"></div>
+        <div class="circle"></div>
       </div>
-    </div>
+      <div class="text">NOW LOADING</div>
     <!-------------Preloader end -->
-
-    <div id="page-content">
+    </div>
+    <!-- <div id="page-content"> -->
       <div class="wrap-container">
         <header>
           <div class="header__background">
@@ -262,7 +263,7 @@
           </p>
         </div>
       </footer>
-    </div>
+    <!-- </div> -->
 
     <!------------ lightbox start-->
     <div class="lightbox js-lightbox">
