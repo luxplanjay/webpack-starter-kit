@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import firebase from 'firebase/app';
 import refs from './refs';
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: 'AIzaSyD5Lz8Xolb4aTDugqG9oqiD3TvNrCFheKg',
   authDomain: 'filmoteka-d2783.firebaseapp.com',
   projectId: 'filmoteka-d2783',
@@ -14,7 +14,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const spinner = document.querySelector('.signin-spinner');
-
+// Create account
 refs.registerForm.addEventListener('submit', e => {
   e.preventDefault();
   let password = '';
@@ -37,7 +37,7 @@ refs.registerForm.addEventListener('submit', e => {
       console.log('bad');
     });
 });
-
+// Singin
 refs.loginForm.addEventListener('submit', e => {
   e.preventDefault();
 
@@ -71,7 +71,34 @@ refs.loginForm.addEventListener('submit', e => {
       refs.loginForm.classList.remove('is-hidden');
     });
 });
+//Google login
+const provider = new firebase.auth.GoogleAuthProvider();
+const googleBtn = document.querySelector('.google-signin');
+googleBtn.addEventListener('click', () => {
+  firebase.auth().signInWithRedirect(provider);
+  firebase
+    .auth()
+    .getRedirectResult()
+    .then(result => {
+      if (result.credential) {
+        refs.signUpBtn.classList.add('is-hidden');
+        refs.signInBtn.classList.add('is-hidden');
+        refs.logOutBtn.classList.remove('is-hidden');
+      }
+    })
+    .catch(error => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+});
 
+//Check is signet
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
@@ -86,7 +113,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     refs.logOutBtn.classList.add('is-hidden');
   }
 });
-
+//Modals closing
 refs.signUpBtn.addEventListener('click', () => {
   refs.signUpModal.classList.remove('is-hidden');
   refs.signUpModal.addEventListener('click', hideSignUpModal);
