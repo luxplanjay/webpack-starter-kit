@@ -23,6 +23,8 @@ const refs = {
   headerBg: document.querySelector('.header__background'),
   searchWrap: document.querySelector('.search__input-wrapper'),
   libraryBtnsContainer: document.querySelector('.button-container'),
+  chooseGenre: document.querySelector('#genrepicker'),
+  chooseYear: document.querySelector('#yearpicker'),
 };
 
 export default refs;

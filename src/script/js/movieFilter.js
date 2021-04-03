@@ -7,10 +7,7 @@ import settings from './settings';
 const movieFilter = new MovieFilter();
 const fetchPopularMovie = new PopularFilms();
 
-const chooseGender = document.querySelector('#genrepicker');
-const chooseYear = document.querySelector('#yearpicker');
-
-chooseGender.addEventListener('change', event => {
+refs.chooseGenre.addEventListener('change', event => {
     fetchPopularMovie.resetPage();
     if (event.target.value === "") {
         fetchPopularMovie
@@ -21,11 +18,14 @@ chooseGender.addEventListener('change', event => {
             }); 
     } else {
         createCard(event.target.value, '');
+        setTimeout(() => {
+          event.target.value = '';
+        }, 1500);
     }
     
 });
 
-chooseYear.addEventListener('change', event => {
+refs.chooseYear.addEventListener('change', event => {
     fetchPopularMovie.resetPage();
     if (event.target.value === "") {
         fetchPopularMovie
@@ -35,7 +35,10 @@ chooseYear.addEventListener('change', event => {
                 refs.gallery.innerHTML = createMarkup(transformMovieObject(res.results));
             }); 
     } else {
-    createCard('', event.target.value);
+        createCard('', event.target.value);
+        setTimeout(() => {
+          event.target.value = '';
+        }, 1500);
     }
 });
 
@@ -65,3 +68,18 @@ function transformMovieObject(movies) {
 function scrollWin() {
   window.scrollTo(0, 230);
 }
+
+
+const yearpicker = function() {
+  let startYear = 1900;
+  let endYear = new Date().getFullYear();
+  $('#yearpicker').append(
+    $('<option />').val('').html('Choose year'),
+  );
+  for (let i = endYear; i > startYear; i--) {
+    $('#yearpicker').append($('<option />').val(i).html(i));
+  }
+}
+yearpicker();
+
+
