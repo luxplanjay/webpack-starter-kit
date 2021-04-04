@@ -87,16 +87,6 @@ function scrollWin() {
   window.scrollTo(0, 230);
 }
 
-const yearpicker = function () {
-  let startYear = 1900;
-  let endYear = new Date().getFullYear();
-  $('#yearpicker').append($('<option />').val('').html('Choose year'));
-  for (let i = endYear; i > startYear; i--) {
-    $('#yearpicker').append($('<option />').val(i).html(i));
-  }
-};
-yearpicker();
-
 //pagination callbacks
 const showPrevPage = () => {
   if (movieFilter.page < 2) return;
