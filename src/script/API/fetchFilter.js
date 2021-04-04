@@ -12,6 +12,7 @@ export default class MovieFilter {
       .then(response => (response.ok ? response.json() : []))
       .catch(error => console.log(error));
   }
+  
   incrementPage() {
     this._page += 1;
   }
