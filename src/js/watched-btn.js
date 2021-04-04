@@ -6,10 +6,20 @@ const refs = {
   //   libraryContainer: document.getElementById('js-library-container'),
 };
 
+let watchedBtnActive = true;
+// якщо відкриваємо лібрарі, то вотчед активна, якщо клацаємо на кьюіє, то стає активною вона
+refs.watchedBtn.classList.add('controls-current');
+const watchedStr = localStorage.getItem('watched');
+showWatchedMovies();
+
 refs.watchedBtn.addEventListener('click', e => {
   e.preventDefault();
-  console.log(e.target.nodeName);
-  const watchedStr = localStorage.getItem('watched');
+  // console.log(e.target.nodeName);
+
+  showWatchedMovies();
+});
+
+function showWatchedMovies() {
   if (watchedStr === null) {
     refs.alertMessage.innerHTML = '';
 
@@ -41,4 +51,4 @@ refs.watchedBtn.addEventListener('click', e => {
       console.log.error('Set state error: ', error);
     }
   }
-});
+}
