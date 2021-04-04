@@ -3,8 +3,9 @@ import * as basicLightbox from 'basiclightbox';
 import settings from '../js/settings';
 
 export default class runTrailer {
-  constructor(trailerID) {
+  constructor(trailerID, trailerName) {
     this.trailerID = trailerID;
+    this.trailerName = trailerName;
   }
 
   async fetchTrailer() {
@@ -13,28 +14,26 @@ export default class runTrailer {
       apiKey: settings.API_KEY,
       id: true,
     });
-    console.log('id', id);
-    return id !== null ? id : '953J_jPm7-s';
+    return id !== null ? id : this.fetchTrailerByName();
+  }
+
+  async fetchTrailerByName() {
+    const idByName = await movieTrailer(this.trailerName, {
+      apiKey: settings.API_KEY,
+      id: true,
+    });
+    return idByName !== null ? idByName : '_vECE5BJbA0';
   }
 
   markupTrailer(id) {
-    return `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" frameborder="0" allow="autoplay; fullscreen"></iframe>`;
+    return `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" frameborder="0" allow="autoplay; fullscreen" class="trailer-tag"></iframe>`;
   }
 
-  trailerModal(markup) {
-    return basicLightbox
-      .create(markup, {
-        onShow: () => {
-          document.body.style.overflow = 'hidden';
-        },
-        onclose: () => {
-          document.body.style.overflow = 'visible';
-        },
-      })
-      .show();
+  showTrailerModal(markup) {
+    return basicLightbox.create(markup).show();
   }
 
   show() {
-    this.fetchTrailer().then(this.markupTrailer).then(this.trailerModal);
+    this.fetchTrailer().then(this.markupTrailer).then(this.showTrailerModal);
   }
 }
