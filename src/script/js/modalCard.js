@@ -14,12 +14,13 @@ modal.addEventListener('click', event => {
   }
 
   if (event.target.classList.contains('play-trailer')) {
-    new runTrailer(event.target.dataset.id).show();
+    new runTrailer(event.target.dataset.id, event.target.dataset.name).show();
   }
 
   if (event.target.classList.contains('modal-button-watched')) {
     console.log('Здесь будет callback от Андрея');
   }
+
   if (event.target.classList.contains('modal-button-queue')) {
     console.log('Здесь тоже будет callback от Андрея');
   }
