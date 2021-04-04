@@ -14,7 +14,7 @@ const pagination = new Pagination();
 let year = '';
 let genre = '';
 spinner.showSpinner();
-refs.chooseGenre.addEventListener('change', event => {
+refs.genrePicker.addEventListener('change', event => {
   fetchPopularMovie.resetPage();
   if (event.target.value === '') {
     fetchPopularMovie.fetchPopular().then(res => {
@@ -31,7 +31,7 @@ refs.chooseGenre.addEventListener('change', event => {
   }
 });
 
-refs.chooseYear.addEventListener('change', event => {
+refs.yearPicker.addEventListener('change', event => {
   fetchPopularMovie.resetPage();
   if (event.target.value === '') {
     fetchPopularMovie.fetchPopular().then(res => {
