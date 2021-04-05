@@ -26,6 +26,8 @@ const refs = {
   genrePicker: document.querySelector('#genrepicker'),
   yearPicker: document.querySelector('#yearpicker'),
   infoCard: document.querySelector('.lightbox__card'),
+  watchedBtn: document.querySelector('.watched-button'),
+  queueBtn: document.querySelector('.queue-button'),
 };
 
 export default refs;

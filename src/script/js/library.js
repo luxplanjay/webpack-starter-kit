@@ -1,6 +1,9 @@
 import refs from './refs';
 import createCard from './popular-gallery';
 import hendlerInput from './search';
+import FilmsStorage from './local-storage';
+
+const filmsStorage = new FilmsStorage();
 
 const {
   homeBtn,
@@ -42,3 +45,6 @@ function hendlerLibraryBtn(e) {
   gallery.innerHTML = '';
   paginationContainer.classList.add('visually-hidden');
 }
+
+refs.watchedBtn.addEventListener('click', filmsStorage.showWatchedFilms);
+refs.queueBtn.addEventListener('click', filmsStorage.showFilmsQueue);
