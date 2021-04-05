@@ -1,8 +1,22 @@
 import refs from './refs';
 import Pagination from './pagination-api';
+import 'firebase/auth';
+import 'firebase/firestore';
+import firebase from 'firebase/app';
 
 const pagination = new Pagination();
 
+const firebaseConfig = {
+  apiKey: 'AIzaSyD5Lz8Xolb4aTDugqG9oqiD3TvNrCFheKg',
+  authDomain: 'filmoteka-d2783.firebaseapp.com',
+  projectId: 'filmoteka-d2783',
+  storageBucket: 'filmoteka-d2783.appspot.com',
+  messagingSenderId: '870527658773',
+  appId: '1:870527658773:web:6c74f3043e4340ced1d71c',
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 export default class FilmsStorage {
   constructor() {
     this._watchedFilms = [];
@@ -19,6 +33,14 @@ export default class FilmsStorage {
   }
   saveWatchedFilms() {
     localStorage.setItem('watched-films', JSON.stringify(this._watchedFilms));
+    const user = firebase.auth().currentUser;
+    if (user) {
+      db.collection('users')
+        .doc(user.uid)
+        .collection('Watched')
+        .doc('Markup')
+        .set({ list: localStorage.getItem('watched-films') });
+    }
   }
   showWatchedFilms() {
     const savedFilms = localStorage.getItem('watched-films');
@@ -50,6 +72,14 @@ export default class FilmsStorage {
   }
   saveFilmsQueue() {
     localStorage.setItem('films-queue', JSON.stringify(this._filmsQueue));
+    const user = firebase.auth().currentUser;
+    if (user) {
+      db.collection('users')
+        .doc(user.uid)
+        .collection('Queue')
+        .doc('Markup')
+        .set({ list: localStorage.getItem('watched-films') });
+    }
   }
   showFilmsQueue() {
     const queue = localStorage.getItem('films-queue');
