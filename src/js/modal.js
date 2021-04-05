@@ -60,3 +60,5 @@ function closeModalToPressEscape(event) {
             closeModal();
       }
 }
+
+export { closeModalToPressEscape }
