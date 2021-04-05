@@ -1,24 +1,26 @@
 <div class="movie-card">
     <div class="movie-card__item">
-        <img src="{{poster_path}}" alt="Movie Poster" class="movie-card__poster" />
+        <img src="{{poster_path}}" alt="Movie Poster" class="movie-card__poster"/>
     </div>
     <div class="movie-card__item">
         <h2 class="movie-card__title">{{title}}</h2>
-        <div class="movie-card__info">
-            <ul class="movie-card__info--title">
-                <li class="movie-card__info--item">Vote / Votes</li>
-                <li class="movie-card__info--item">Popularity</li>
-                <li class="movie-card__info--item">Original Title</li>
-                <li class="movie-card__info--item">Genre</li>
+            <ul class="movie-card__info">
+                <li class="movie-card__info--item">
+                    <h3 class="movie-card__info--title">Vote / Votes</h3>
+                    <p class="movie-card__content--item"><span class="movie-card__vote">{{vote_average}}</span> / {{vote_count}}</p>
+                </li>
+                <li class="movie-card__info--item">
+                    <h3 class="movie-card__info--title">Popularity</h3>
+                    <p class="movie-card__content--item">{{popularity}}</p>
+                </li>
+                <li class="movie-card__info--item">
+                    <h3 class="movie-card__info--title">Original Title</h3>
+                    <p class="movie-card__content--item">{{original_title}}</p>
+                </li>
+                <li class="movie-card__info--item">
+                    <h3 class="movie-card__info--title">Genre</h3>
+                    <p class="movie-card__content--item">{{genres}}</p>
             </ul>
-            <ul class="movie-card__info--content">
-                <li class="movie-card__content--item"><span class="movie-card__vote">{{vote_average}}</span> /
-                    {{vote_count}}</li>
-                <li class="movie-card__content--item">{{popularity}}</li>
-                <li class="movie-card__content--item">{{original_title}}</li>
-                <li class="movie-card__content--item">{{genres}}</li>
-            </ul>
-        </div>
         <button type="button" class="play-trailer" data-id={{id}} data-name={{title}}>Watch Trailer</button>
         <h3 class="movie-card__about">About</h3>
         <div class="movie-card__about--content">{{overview}}</div>

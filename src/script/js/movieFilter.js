@@ -106,3 +106,15 @@ const showSelectedPage = e => {
     createCard(genre, year);
   }
 };
+
+// function yearPickerMenu() {
+//   let startYear = 1900;
+//   let endYear = new Date().getFullYear();
+//   console.log(startYear, endYear);
+
+//   refs.yearPicker.insertAdjacentHTML('beforeend', '<option value="">Choose year</option>');
+//   for (let i = endYear; i > startYear; i--) {
+//     refs.yearPicker.insertAdjacentHTML('beforeend', `<option value="${i}">${i}</option>`);
+//   }
+// };
+// yearPickerMenu();
