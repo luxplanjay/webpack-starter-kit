@@ -12,9 +12,7 @@ color: $color-darkest;
 border: 1px solid $color-darkest;
 background-color: transparent;
    cursor: pointer;
-   transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+   transition: All 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:not(:last-child) {
         margin-right: 15px;
