@@ -23,8 +23,12 @@ const refs = {
   headerBg: document.querySelector('.header__background'),
   searchWrap: document.querySelector('.search__input-wrapper'),
   libraryBtnsContainer: document.querySelector('.button-container'),
-  chooseGenre: document.querySelector('#genrepicker'),
-  chooseYear: document.querySelector('#yearpicker'),
+  signinSpinner: document.querySelector('.signin-spinner'),
+  signUpSpinner: document.querySelector('.signup-spinner'),
+  genrePicker: document.querySelector('#genrepicker'),
+  yearPicker: document.querySelector('#yearpicker'),
+  watchedBtn: document.querySelector('.watched-button'),
+  queueBtn: document.querySelector('.queue-button'),
 };
 
 export default refs;

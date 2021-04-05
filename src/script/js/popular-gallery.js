@@ -12,7 +12,6 @@ const spinner = new Search();
 spinner.showSpinner();
 
 function createCard() {
-  // refs.gallery.innerHTML = '';
   fetchPopularMovie
     .fetchPopular()
     .then(res => {

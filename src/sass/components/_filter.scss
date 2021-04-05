@@ -1,20 +1,26 @@
 
-.bottom-shadow:after {
-    content: "";
-    display: block;
-    height: 6px;
-    background: transparent;
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%); 
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); 
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient(   startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
-}
-
 .filter-section{
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 20px;
-    padding-left: 20px;
+    padding-bottom: 0;
+}
+
+.filter-input {
+    border: 2px solid $color-accent-2;
+    border-radius: 5px;
+    background-color: transparent;
+    color: $color-darkest;
+    text-transform: uppercase;
+
+    &:hover {
+        border: 2px solid transparent;
+        background: transparent;
+        color: $color-darkest;
+        transform: scale(1.03) translateY(-4px);
+        @include transition(transform);
+    }
 }
 
 .filter-input:not(:last-child) {
@@ -25,11 +31,10 @@
         display: none;
     }
     .filter-input {
-
-        padding: 4px 6px;
-        width: 136px;
+        padding: 6px 6px;
+        width: 122px;
         font-family: $font-family;
-        @include font(500, 14px, 16px);
+        @include font(500, 12px, 14px);
     }
 }
 @media screen and (min-width: $bp-tablet) and (max-width: 1023px) {
@@ -41,18 +46,13 @@
     }
     .filter-input {
         margin-right: 20px;
-        padding: 5px 10px;
-        width: 152px;
+        padding: 10px 10px;
+        width: 146px;
         font-family: $font-family;
-        @include font(500, 16px, 18px);
+        @include font(500, 12px, 14px);
     }
 }
 @media screen and (min-width: $bp-desktop) {
-    .filter-section{
-        justify-content: start;
-        padding: 20px;
-        padding-left: 70px;
-    }
     .filter-text {
         margin-right: 40px;
         font-family: $font-family;
@@ -61,10 +61,12 @@
     }
     .filter-input {
         margin-right: 20px;
-        padding: 5px 10px;
-        width: 152px;
+        padding: 10px 10px;
+        width: 146px;
         font-family: $font-family;
-        @include font(500, 16px, 14px);
+        // @include font(500, 16px, 14px);
+        @include font(500, 12px, 14px);
+
     }
 }
 

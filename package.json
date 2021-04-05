@@ -56,6 +56,7 @@
     "handlebars": "^4.7.6",
     "movie-trailer": "^2.1.0",
     "normalize.css": "^8.0.1",
-    "pagination": "^0.4.6"
+    "pagination": "^0.4.6",
+    "pnotify": "^4.0.1"
   }
 }
