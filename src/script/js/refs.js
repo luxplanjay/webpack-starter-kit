@@ -23,6 +23,8 @@ const refs = {
   headerBg: document.querySelector('.header__background'),
   searchWrap: document.querySelector('.search__input-wrapper'),
   libraryBtnsContainer: document.querySelector('.button-container'),
+  signinSpinner: document.querySelector('.signin-spinner'),
+  signUpSpinner: document.querySelector('.signup-spinner'),
 };
 
 export default refs;

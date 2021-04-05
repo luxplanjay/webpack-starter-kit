@@ -14,7 +14,25 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const spinner = document.querySelector('.signin-spinner');
+//Check is signet
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    // User is signed in.
+
+    refs.signUpBtn.classList.add('is-hidden');
+    refs.signInBtn.classList.add('is-hidden');
+    refs.logOutBtn.classList.remove('is-hidden');
+    PNotify.success({
+      title: 'Success!',
+      text: 'You have successfully signed in.',
+    });
+  } else {
+    // No user is signed in.
+    refs.signUpBtn.classList.remove('is-hidden');
+    refs.signInBtn.classList.remove('is-hidden');
+    refs.logOutBtn.classList.add('is-hidden');
+  }
+});
 // Create account
 refs.registerForm.addEventListener('submit', e => {
   e.preventDefault();
@@ -25,10 +43,10 @@ refs.registerForm.addEventListener('submit', e => {
   } else {
     PNotify.error({
       title: 'Error',
-      text: 'Passwords does not match',
+      text: 'Passwords did not match',
     });
   }
-  spinner.classList.remove('is-hidden');
+  refs.signUpSpinner.classList.remove('is-hidden');
   document.querySelector('.signup-wpapper').classList.add('load');
   firebase
     .auth()
@@ -44,7 +62,7 @@ refs.registerForm.addEventListener('submit', e => {
       });
     })
     .then(() => {
-      spinner.classList.add('is-hidden');
+      refs.signUpSpinner.classList.add('is-hidden');
       refs.signUpModal.classList.add('is-hidden');
       e.target.email.value = null;
       e.target.pass.value = null;
@@ -52,37 +70,24 @@ refs.registerForm.addEventListener('submit', e => {
     })
     .catch(error => {
       document.querySelector('.signup-wpapper').classList.remove('load');
-      spinner.classList.add('is-hidden');
+      refs.signUpSpinner.classList.add('is-hidden');
+      console.log(error);
       var errorCode = error.code;
-      var errorMessage = e.message;
+      var errorMessage = error.message;
       PNotify.error({
         title: 'Error',
         text: errorMessage,
       });
     });
 });
-//Check is signet
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    // User is signed in.
 
-    refs.signUpBtn.classList.add('is-hidden');
-    refs.signInBtn.classList.add('is-hidden');
-    refs.logOutBtn.classList.remove('is-hidden');
-  } else {
-    // No user is signed in.
-    refs.signUpBtn.classList.remove('is-hidden');
-    refs.signInBtn.classList.remove('is-hidden');
-    refs.logOutBtn.classList.add('is-hidden');
-  }
-});
 // Singin
 refs.loginForm.addEventListener('submit', e => {
   e.preventDefault();
 
   const email = e.target.email.value;
   const password = e.target.pass.value;
-  spinner.classList.remove('is-hidden');
+  refs.signinSpinner.classList.remove('is-hidden');
   document.querySelector('.signin-wpapper').classList.add('load');
   firebase
     .auth()
@@ -90,7 +95,6 @@ refs.loginForm.addEventListener('submit', e => {
     .then(userCredential => {
       // Signed in
       var user = userCredential.user;
-      // ...
 
       document.querySelector('.signin-wpapper').classList.remove('load');
       console.log(user.uid);
@@ -99,10 +103,6 @@ refs.loginForm.addEventListener('submit', e => {
       refs.signInModal.classList.add('is-hidden');
       e.target.email.value = null;
       e.target.pass.value = null;
-      PNotify.success({
-        title: 'Success!',
-        text: 'You have successfully signed in.',
-      });
     })
     .catch(e => {
       var errorCode = e.code;
@@ -111,11 +111,10 @@ refs.loginForm.addEventListener('submit', e => {
         title: 'Error',
         text: errorMessage,
       });
-      // alert(errorMessage);
       document.querySelector('.signin-wpapper').classList.remove('load');
     })
     .finally(() => {
-      spinner.classList.add('is-hidden');
+      refs.signinSpinner.classList.add('is-hidden');
       refs.loginForm.classList.remove('is-hidden');
     });
 });
@@ -164,7 +163,14 @@ refs.signInBtn.addEventListener('click', () => {
   window.addEventListener('keydown', hideSignInEsc);
 });
 refs.logOutBtn.addEventListener('click', () => {
-  firebase.auth().signOut();
+  firebase
+    .auth()
+    .signOut()
+    .then(
+      PNotify.info({
+        text: 'You have been logged out.',
+      }),
+    );
 });
 function hideSignInModal(e) {
   if (e.target === e.currentTarget) {
