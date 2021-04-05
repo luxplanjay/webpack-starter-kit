@@ -6,24 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!------------ Preloader configuration start-->
     <style>
-    
-
       .preloader {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
         z-index: 10000;
         width: 100vw;
         height: 100vh;
-        top: 0;
         background-color: #10131a;
         visibility: visible;
         opacity: 1;
         transition: opacity 800ms ease-in-out, visibility 0s 800ms;
       }
-      .hide-preloader{
+      .hide-preloader {
         visibility: hidden;
         opacity: 0;
       }
@@ -32,21 +33,22 @@
 
       .circle {
         background-color: #f9dc97;
-       height: 10px;
-       width: 10px;
-       border-radius: 50%;
-       display: inline-block;
-       animation: bounce-circles 0.7s infinite ease-in-out;
-       animation-delay: -0.6s;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        animation: bounce-circles 0.7s infinite ease-in-out;
+        animation-delay: -0.6s;
       }
-      .circle:nth-child(2){
-        animation-delay: -0.5s
+      .circle:nth-child(2) {
+        animation-delay: -0.5s;
       }
-      .circle:nth-child(3){
-        animation-delay: -0.4s
+      .circle:nth-child(3) {
+        animation-delay: -0.4s;
       }
 
       .text {
+        font-family: 'Roboto', sans-serif;
         color: #fbae17;
         display: inline-block;
         margin-left: 5px;
@@ -77,192 +79,184 @@
     <!------------ Preloader start-->
     <div class="preloader">
       <div class="circles-group">
-       <div class="circle"></div>
-       <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
         <div class="circle"></div>
       </div>
       <div class="text">NOW LOADING</div>
-    <!-------------Preloader end -->
+      <!-------------Preloader end -->
     </div>
     <!-- <div id="page-content"> -->
-      <div class="wrap-container">
-        <header>
-          <div class="header__background">
-            <div class="header__container container">
-              <div class="header__wrapper">
-                <div class="logo-wrapper">
-                  <a class="logo" href="/index" aria-label="logo of filmoteka">
-                    <svg class="logo__icon" width="24" height="24">
-                      <use href="./images/sprite.svg#film"></use>
-                    </svg>
-                    <span class="logo__text">Filmoteka </span>
-                  </a>
-                </div>
-                <nav class="site-nav">
-                  <button class="home-button site-nav__signup" type="button">
-                    Sign up
-                  </button>
-                  <button class="home-button site-nav__signin" type="button">
-                    Sign in
-                  </button>
-                  <button
-                    class="home-button site-nav__signin logout-js is-hidden"
-                    type="button"
-                  >
-                    Log out
-                  </button>
-
-                  <button
-                    id="home-button"
-                    class="home-button current"
-                    type="button"
-                    aria-label="main page switch"
-                  >
-                    Home
-                  </button>
-                  <button
-                    id="library-button"
-                    class="library-button"
-                    type="button"
-                    aria-label="library page switch"
-                  >
-                    My library
-                  </button>
-                </nav>
-              </div>
-
-              <div class="search-container">
-                <span class="search__input-wrapper">
-                  <svg
-                    class="microphone"
-                    width="40"
-                    height="40"
-                    aria-label="microphone"
-                  >
-                    <use href="./images/sprite.svg#microphone"></use>
+    <div class="wrap-container">
+      <header>
+        <div class="header__background">
+          <div class="header__container container">
+            <div class="header__wrapper">
+              <div class="logo-wrapper">
+                <a class="logo" href="/index" aria-label="logo of filmoteka">
+                  <svg class="logo__icon" width="24" height="24">
+                    <use href="./images/sprite.svg#film"></use>
                   </svg>
-                  <!-- <span class="search__input-wrapper" -->
-
-                  <input
-                    class="search__input"
-                    type="text"
-                    name="search"
-                    autocomplete="off"
-                    aria-label="Search films "
-                    placeholder="Search films"
-                    contenteditable
-                  />
-                </span>
-                <p class="no-results"></p>
+                  <span class="logo__text">Filmoteka </span>
+                </a>
               </div>
-              <div class="button-container visually-hidden">
-                <button class="button" type="button" disabled="true">
-                  Watched
+              <nav class="site-nav">
+                <button class="home-button site-nav__signup" type="button">
+                  Sign up
                 </button>
-                <button class="button" type="button">queue</button>
-              </div>
+                <button class="home-button site-nav__signin" type="button">
+                  Sign in
+                </button>
+                <button
+                  class="home-button site-nav__signin logout-js is-hidden"
+                  type="button"
+                >
+                  Log out
+                </button>
+
+                <button
+                  id="home-button"
+                  class="home-button current"
+                  type="button"
+                  aria-label="main page switch"
+                >
+                  Home
+                </button>
+                <button
+                  id="library-button"
+                  class="library-button"
+                  type="button"
+                  aria-label="library page switch"
+                >
+                  My library
+                </button>
+              </nav>
+            </div>
+
+            <div class="search-container">
+              <span class="search__input-wrapper">
+                <svg
+                  class="microphone"
+                  width="40"
+                  height="40"
+                  aria-label="microphone"
+                >
+                  <use href="./images/sprite.svg#microphone"></use>
+                </svg>
+                <!-- <span class="search__input-wrapper" -->
+
+                <input
+                  class="search__input"
+                  type="text"
+                  name="search"
+                  autocomplete="off"
+                  aria-label="Search films "
+                  placeholder="search movie by name"
+                  contenteditable
+                />
+              </span>
+              <p class="no-results"></p>
+            </div>
+            <div class="button-container visually-hidden">
+              <button class="button watched-button" type="button">
+                Watched
+              </button>
+              <button class="button queue-button" type="button">queue</button>
             </div>
           </div>
-        </header>
-        <!-- FILTER -->
-        <div class="container">
-          <section class="filter-section">
-            <h2 class="filter-text">Find the best movies</h2>
-
-            <select class="filter-input" name="genrepicker" id="genrepicker">
-              <option value="">Choose genre</option>
-              <option value="28">Action</option>
-              <option value="12">Adventure</option>
-              <option value="16">Animation</option>
-              <option value="35">Comedy</option>
-              <option value="80">Crime</option>
-              <option value="99">Documentary</option>
-              <option value="18">Drama</option>
-              <option value="14">History</option>
-              <option value="27">Horror</option>
-              <option value="10402">Music</option>
-              <option value="10749">Romance</option>
-              <option value="878">Science Fiction</option>
-              <option value="10770">TV Movie</option>
-              <option value="53">Thriller</option>
-              <option value="10752">War</option>
-              <option value="37">Western</option>
-            </select>
-            <select
-              class="filter-input"
-              name="yearpicker"
-              id="yearpicker"
-            ></select>
-
-            <script
-              type="text/javascript"
-              src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            ></script>
-            <script type="text/javascript">
-              let startYear = 1900;
-              let endYear = new Date().getFullYear();
-              $('#yearpicker').append(
-                $('<option />').val('').html('Choose year'),
-              );
-              for (i = endYear; i > startYear; i--) {
-                $('#yearpicker').append($('<option />').val(i).html(i));
-              }
-            </script>
-          </section>
         </div>
-        <div class="bottom-shadow"></div>
-        <!-- END OF FILTER -->
-
-        <!-- spinner -->
-        <div class="square is-hidden">
-          <div class="spin"></div>
-        </div>
-        <!-- end spinner -->
-
-        <!-- </header> -->
-
-        <!-- spinner -->
-        <div class="square is-hidden">
-          <div class="spin"></div>
-        </div>
-        <!-- end spinner -->
-
-        <section class="movies container">
-          <ul class="movies__list"></ul>
-          <!--pagination-->
-          <div class="movies__pagination-container">
-            <button
-              class="pagination-prev-button hidden"
-              type="button"
-            ></button>
-            <div class="js-pagination-wrapper"></div>
-            <button
-              class="pagination-next-button hidden"
-              type="button"
-            ></button>
-          </div>
-          <!--pagination end-->
+      </header>
+      <!-- FILTER -->
+      <div class="container">
+        <section class="filter-section">
+          <h2 class="filter-text">Find the best movies</h2>
+          <select class="filter-input" name="genrepicker" id="genrepicker">
+            <option value="">Choose genre</option>
+            <option value="28">Action</option>
+            <option value="12">Adventure</option>
+            <option value="16">Animation</option>
+            <option value="35">Comedy</option>
+            <option value="80">Crime</option>
+            <option value="99">Documentary</option>
+            <option value="18">Drama</option>
+            <option value="14">History</option>
+            <option value="27">Horror</option>
+            <option value="10402">Music</option>
+            <option value="10749">Romance</option>
+            <option value="878">Science Fiction</option>
+            <option value="10770">TV Movie</option>
+            <option value="53">Thriller</option>
+            <option value="10752">War</option>
+            <option value="37">Western</option>
+          </select>
+          <select
+            class="filter-input"
+            name="yearpicker"
+            id="yearpicker"
+          ></select>
+          <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+          ></script>
+          <script type="text/javascript">
+            let startYear = 1900;
+            let endYear = new Date().getFullYear();
+            $('#yearpicker').append(
+              $('<option />').val('').html('Choose year'),
+            );
+            for (i = endYear; i > startYear; i--) {
+              $('#yearpicker').append($('<option />').val(i).html(i));
+            }
+          </script>
         </section>
       </div>
-      <footer class="footer">
-        <div class="footer__container container">
-          <p class="footer__container__copyright">
-            &copy 2020 | All Rights Reserved |
-          </p>
-          <p class="footer_container__authors">
-            Developed with<svg
-              class="footer_container__authors__svg"
-              width="14"
-              height="13"
-            >
-              <use href="./images/sprite.svg#heart"></use>
-            </svg>
-            <button class="footer_container__authors__button" type="button">
-              by GoIT Students
-            </button>
-          </p>
+
+      <!-- END OF FILTER -->
+
+      <!-- spinner -->
+      <div class="square is-hidden">
+        <div class="spin"></div>
+      </div>
+      <!-- end spinner -->
+
+      <!-- </header> -->
+
+      <!-- spinner -->
+      <div class="square is-hidden">
+        <div class="spin"></div>
+      </div>
+      <!-- end spinner -->
+
+      <section class="movies container">
+        <ul class="movies__list"></ul>
+        <!--pagination-->
+        <div class="movies__pagination-container">
+          <button class="pagination-prev-button hidden" type="button"></button>
+          <div class="js-pagination-wrapper"></div>
+          <button class="pagination-next-button hidden" type="button"></button>
         </div>
-      </footer>
+        <!--pagination end-->
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="footer__container container">
+        <p class="footer__container__copyright">
+          &copy 2020 | All Rights Reserved |
+        </p>
+        <p class="footer_container__authors">
+          Developed with<svg
+            class="footer_container__authors__svg"
+            width="14"
+            height="13"
+          >
+            <use href="./images/sprite.svg#heart"></use>
+          </svg>
+          <button class="footer_container__authors__button" type="button">
+            by GoIT Students
+          </button>
+        </p>
+      </div>
+    </footer>
     <!-- </div> -->
 
     <!------------ lightbox start-->

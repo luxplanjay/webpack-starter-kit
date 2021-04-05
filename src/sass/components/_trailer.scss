@@ -1,10 +1,10 @@
-iframe[allow='autoplay; fullscreen'] {
+.trailer-tag {
   width: 640px;
   height: 360px;
 }
 
 @media screen and (max-width: $bp-tablet) {
-  iframe[allow='autoplay; fullscreen'] {
+  .trailer-tag {
     width: 360px;
     height: 270px;
   }
