@@ -1,7 +1,8 @@
 import refs from './refs';
 import renderCardFilmInModal from './fnRenderMarkupCardFilm';
 import emptyJpg from '../images/empty-img.jpg';
-import fetchOneFilm from './findOneFilm'
+import fetchOneFilm from './findOneFilm';
+import { initStorageBtns } from './fnAddToLocalStorage';
 
 refs.gallery.addEventListener('click', onImageClick);
 refs.btnClose.addEventListener('click', closeModal);
@@ -39,7 +40,8 @@ function openModal(movieId) {
                         ? `https://image.tmdb.org/t/p/w500${poster_path}`
                         : emptyJpg;
                         let movie = ({ id, title, release_date, genre_ids, img, vote_average, vote_count, original_title, genres, overview, popularity });
-                        renderCardFilmInModal(movie)
+                  renderCardFilmInModal(movie);
+                  initStorageBtns();
             })
             // .then(() => checkMovieInStorage(movieId));
     

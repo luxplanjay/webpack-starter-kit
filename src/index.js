@@ -3,4 +3,5 @@ import './js/apiService';
 import './js/search';
 import './js/renderGallery';
 import './js/modal';
+import './js/fnAddToLocalStorage';
 import './js/ourTeamModal';
