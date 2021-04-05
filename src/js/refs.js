@@ -9,7 +9,11 @@ export default {
       btnClose: document.querySelector('.lightbox__btn'),
       body: document.querySelector('body'),
       loadSpinner: document.getElementById('js-spinner'),
-
+      ourTeamRef: document.getElementById('js-our_team'),
       // storageElement: document.querySelector('.movie-container .storage'),
       // movieId: document.querySelector('.movie-container').dataset.action,
+      // storageBtns: document.querySelector('.controls'),
+      // queueLibrary: document.querySelector('.library-movie-gallery'),
+      // pagination: document.querySelector('.pagination'),
+
 }
