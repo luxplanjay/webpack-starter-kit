@@ -27,7 +27,6 @@ const refs = {
   signUpSpinner: document.querySelector('.signup-spinner'),
   genrePicker: document.querySelector('#genrepicker'),
   yearPicker: document.querySelector('#yearpicker'),
-  infoCard: document.querySelector('.lightbox__card'),
   watchedBtn: document.querySelector('.watched-button'),
   queueBtn: document.querySelector('.queue-button'),
 };
