@@ -4,16 +4,7 @@ import firebase from 'firebase/app';
 import refs from './refs';
 import PNotify from '../../../node_modules/pnotify/dist/es/PNotify.js';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyD5Lz8Xolb4aTDugqG9oqiD3TvNrCFheKg',
-  authDomain: 'filmoteka-d2783.firebaseapp.com',
-  projectId: 'filmoteka-d2783',
-  storageBucket: 'filmoteka-d2783.appspot.com',
-  messagingSenderId: '870527658773',
-  appId: '1:870527658773:web:6c74f3043e4340ced1d71c',
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 //Check is signet
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
@@ -53,7 +44,7 @@ refs.registerForm.addEventListener('submit', e => {
     .createUserWithEmailAndPassword(email, password)
     .then(userCredential => {
       // Signed in
-      var user = userCredential.user;
+      const user = userCredential.user;
       document.querySelector('.signup-wpapper').classList.remove('load');
 
       PNotify.success({
@@ -71,9 +62,8 @@ refs.registerForm.addEventListener('submit', e => {
     .catch(error => {
       document.querySelector('.signup-wpapper').classList.remove('load');
       refs.signUpSpinner.classList.add('is-hidden');
-      console.log(error);
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       PNotify.error({
         title: 'Error',
         text: errorMessage,
@@ -94,10 +84,32 @@ refs.loginForm.addEventListener('submit', e => {
     .signInWithEmailAndPassword(email, password)
     .then(userCredential => {
       // Signed in
-      var user = userCredential.user;
-
+      const user = userCredential.user;
+      let userWatched = [];
+      let userQueue = [];
+      db.collection('users')
+        .doc(user.uid)
+        .collection('Watched')
+        .doc('Markup')
+        .get()
+        .then(data => {
+          if (data.data()) {
+            userWatched = data.data().list;
+          }
+          localStorage.setItem('watched-films', userWatched);
+        });
+      db.collection('users')
+        .doc(user.uid)
+        .collection('Queue')
+        .doc('Markup')
+        .get()
+        .then(data => {
+          if (data.data()) {
+            userQueue = data.data().list;
+          }
+          localStorage.setItem('films-queue', userQueue);
+        });
       document.querySelector('.signin-wpapper').classList.remove('load');
-      console.log(user.uid);
     })
     .then(() => {
       refs.signInModal.classList.add('is-hidden');
@@ -105,8 +117,8 @@ refs.loginForm.addEventListener('submit', e => {
       e.target.pass.value = null;
     })
     .catch(e => {
-      var errorCode = e.code;
-      var errorMessage = e.message;
+      const errorCode = e.code;
+      const errorMessage = e.message;
       PNotify.error({
         title: 'Error',
         text: errorMessage,
@@ -133,14 +145,40 @@ googleBtn.addEventListener('click', () => {
         refs.logOutBtn.classList.remove('is-hidden');
       }
     })
+    .then(() => {
+      let userWatched = [];
+      let userQueue = [];
+      db.collection('users')
+        .doc(user.uid)
+        .collection('Watched')
+        .doc('Markup')
+        .get()
+        .then(data => {
+          if (data.data().list) {
+            userWatched = data.data().list;
+          }
+          localStorage.setItem('watched-films', userWatched);
+        });
+      db.collection('users')
+        .doc(user.uid)
+        .collection('Queue')
+        .doc('Markup')
+        .get()
+        .then(data => {
+          if (data.data().list) {
+            userQueue = data.data().list;
+          }
+          localStorage.setItem('films-queue', userQueue);
+        });
+    })
     .catch(error => {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       // The email of the user's account used.
-      var email = error.email;
+      const email = error.email;
       // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
+      const credential = error.credential;
       // ...
     });
 });
@@ -170,6 +208,8 @@ refs.logOutBtn.addEventListener('click', () => {
       PNotify.info({
         text: 'You have been logged out.',
       }),
+      localStorage.setItem('watched-films', []),
+      localStorage.setItem('films-queue', []),
     );
 });
 function hideSignInModal(e) {
