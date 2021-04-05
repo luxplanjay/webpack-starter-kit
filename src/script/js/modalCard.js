@@ -24,7 +24,7 @@ const createMarkup = function (event) {
     result.genres = genres.join(', ');
     result.popularity = parseFloat(result.popularity).toFixed(1);
     lightbox.refs.infoCard.insertAdjacentHTML('beforeend', movieCard(result));
-
+    
     const curElement = {
       id: event.target.id,
       element: event.target.parentNode.innerHTML,
@@ -90,12 +90,3 @@ const createMarkup = function (event) {
 
 export { createMarkup };
 
-// modal.addEventListener('click', event => {
-//   if (event.target.nodeName !== 'BUTTON') {
-//     return;
-//   }
-
-//   if (event.target.classList.contains('play-trailer')) {
-//     new runTrailer(event.target.dataset.id, event.target.dataset.name).show();
-//   }
-// });
