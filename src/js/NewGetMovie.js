@@ -33,4 +33,16 @@ export default class NewGetMovie {
       });
     });
   }
+  fetchPopularArticlesPages() {
+    const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=6df9a2b88a6cdc986e05b3daaeb09968&page=${this.page}`;
+    return fetch(url).then(response => response.json());
+  }
+
+  getPage() {
+    return this.page;
+  }
+
+  setPage(value) {
+    this.page = value;
+  }
 }

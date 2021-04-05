@@ -1,0 +1,95 @@
+#page {
+  &.tui-page-btn {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    border-radius: 5px;
+
+    align-items: center;
+
+    color: #000000;
+
+    :focus {
+      outline: none;
+    }
+  }
+  &.tui-first {
+    background-image: url('./images/navigate-last.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0;
+    transform: scale(-1, 1);
+  }
+  &.tui-last {
+    background-image: url('./images/navigate-last.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0;
+  }
+
+  &.tui-next-is-ellip {
+    border-radius: 5px;
+    border: none;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &.tui-prev,
+  &.tui-next {
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    border: none;
+    border-radius: 5px;
+  }
+
+  &.tui-prev {
+    background-image: url('./images/arrow-left.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+  }
+  &.tui-next {
+    background: url('./images/arrow-right.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+  }
+
+  &.tui-page-btn.page-btn {
+    border: none;
+  }
+
+  &.tui-page-btn.tui-is-selected.active-page-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6b08;
+    border-radius: 5px;
+    color: white;
+    border: none;
+  }
+
+  &.tui-is-disabled {
+    display: none;
+    border: none;
+  }
+
+  &.tui-first,
+  &.tui-last,
+  &.tui-prev-is-ellip,
+  &.tui-next-is-ellip {
+    border: none;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}

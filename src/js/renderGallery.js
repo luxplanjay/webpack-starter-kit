@@ -14,6 +14,7 @@ const getMovies = new NewGetMovie();
 
 function toCreateGallery() {
   spinner.spin(refs.loadSpinner);
+
   getMovies
     .toCreateDataList()
     .then(results => {

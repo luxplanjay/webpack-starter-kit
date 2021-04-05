@@ -38,6 +38,17 @@
 
     color: #ff6b08;
   }
+  .tui-pagination {
+    width: 280px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pg-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 @media screen and (min-width: $tablet) {
   .gallery {
@@ -54,6 +65,13 @@
   }
   .text-conteiner {
     padding-top: 10px;
+  }
+  .pg-container {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .tui-pagination {
+    width: 374px;
   }
 }
 @media (min-width: $tablet) and (max-width: 1023px) {

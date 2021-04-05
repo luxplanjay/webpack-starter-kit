@@ -1,8 +1,14 @@
 import Pagination from 'tui-pagination';
+import movieGalleryCardTpl from '../tamplates/movie-gallery-card.hbs';
+import refs from './refs.js';
+import NewGetMovie from './NewGetMovie.js';
+import spinner from './spinner.js';
+
+const getNewPage = new NewGetMovie();
 
 const pagination = new Pagination(document.getElementById('pagination'), {
-  totalItems: 500,
-  itemsPerPage: 10,
+  totalItems: 400,
+  itemsPerPage: 20,
   visiblePages: 5,
   centerAlign: true,
   template: {
@@ -23,3 +29,25 @@ const pagination = new Pagination(document.getElementById('pagination'), {
       '</button>',
   },
 });
+
+pagination.on('afterMove', function (evt) {
+  getNewPage.setPage(evt.page);
+  toCreateGallery();
+});
+
+function toCreateGallery() {
+  spinner.spin(refs.loadSpinner);
+
+  getNewPage
+    .toCreateDataList()
+    .then(results => {
+      const markup = movieGalleryCardTpl(results);
+      refs.gallery.innerHTML = markup;
+    })
+    .catch(error => {
+      console.log(error);
+    })
+    .finally(() => {
+      spinner.stop();
+    });
+}
