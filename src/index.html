@@ -275,9 +275,10 @@
 
     <div class="backdrop is-hidden" data-modal-signup>
       <div class="modal modal-signup">
-        <div class="square is-hidden">
+        <div class="signup-spinner is-hidden">
           <div class="spin"></div>
         </div>
+        <div class="signup-wpapper">
         <h2 class="modal__title">Sign up</h2>
         <form action="" class="modal__form-registration">
           <ul class="modal__list-input list">
@@ -320,14 +321,17 @@
           </ul>
           <button type="submit" class="modal__button">Sign up</button>
         </form>
+        </div>
       </div>
     </div>
     <div class="backdrop is-hidden" data-modal-signin>
       <div class="modal modal-signin">
-        <h2 class="modal__title">Sign in</h2>
         <div class="signin-spinner is-hidden">
           <div class="spin"></div>
         </div>
+        <div class="signin-wpapper">
+        <h2 class="modal__title">Sign in</h2>
+        
         <form action="" class="modal__form-login">
           <ul class="modal__list-input list">
             <li class="modal__list-item">
@@ -364,10 +368,10 @@
           </svg>
           Sign up using Google
         </button>
-
         <div class="signup-now">
           <p class="signup-now__text">Not a member?</p>
           <button class="signup-now__button">Signup Now</button>
+        </div>
         </div>
       </div>
     </div>

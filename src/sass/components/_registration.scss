@@ -155,6 +155,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.signup-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .signup-now {
   display: flex;
   justify-content: center;
@@ -189,4 +196,20 @@
 .divider {
   display: block;
   text-align: center;
+}
+.signin-wpapper {
+  visibility: visible;
+  opacity: 1;
+}
+.signin-wpapper.load {
+  visibility: hidden;
+  opacity: 0;
+}
+.signup-wpapper {
+  visibility: visible;
+  opacity: 1;
+}
+.signup-wpapper.load {
+  visibility: hidden;
+  opacity: 0;
 }

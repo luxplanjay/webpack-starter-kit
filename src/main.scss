@@ -5,7 +5,7 @@
 @import './sass/utils/variables';
 @import './sass/utils/mixins';
 @import './sass/utils/placeholders';
-
+@import '../node_modules/pnotify/dist/PNotifyBrightTheme.css';
 // ===========  BASE block
 @import './sass/base/common';
 @import './sass/base/visually-hidden';
