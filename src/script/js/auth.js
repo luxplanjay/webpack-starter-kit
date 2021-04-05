@@ -16,6 +16,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     PNotify.success({
       title: 'Success!',
       text: 'You have successfully signed in.',
+      delay: 1000,
     });
   } else {
     // No user is signed in.
@@ -35,6 +36,7 @@ refs.registerForm.addEventListener('submit', e => {
     PNotify.error({
       title: 'Error',
       text: 'Passwords did not match',
+      delay: 1000,
     });
   }
   refs.signUpSpinner.classList.remove('is-hidden');
@@ -50,7 +52,11 @@ refs.registerForm.addEventListener('submit', e => {
       PNotify.success({
         title: 'Success!',
         text: 'Your account successfully created.',
+        delay: 1000,
       });
+
+      localStorage.setItem('watched-films', []);
+      localStorage.setItem('films-queue', []);
     })
     .then(() => {
       refs.signUpSpinner.classList.add('is-hidden');
@@ -67,6 +73,7 @@ refs.registerForm.addEventListener('submit', e => {
       PNotify.error({
         title: 'Error',
         text: errorMessage,
+        delay: 1000,
       });
     });
 });
@@ -122,6 +129,7 @@ refs.loginForm.addEventListener('submit', e => {
       PNotify.error({
         title: 'Error',
         text: errorMessage,
+        delay: 1000,
       });
       document.querySelector('.signin-wpapper').classList.remove('load');
     })
@@ -144,8 +152,6 @@ googleBtn.addEventListener('click', () => {
         refs.signInBtn.classList.add('is-hidden');
         refs.logOutBtn.classList.remove('is-hidden');
       }
-    })
-    .then(() => {
       let userWatched = [];
       let userQueue = [];
       db.collection('users')
@@ -207,6 +213,7 @@ refs.logOutBtn.addEventListener('click', () => {
     .then(
       PNotify.info({
         text: 'You have been logged out.',
+        delay: 1000,
       }),
       localStorage.setItem('watched-films', []),
       localStorage.setItem('films-queue', []),
