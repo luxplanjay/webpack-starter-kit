@@ -1,0 +1,128 @@
+.team-container {
+  width: 320px;
+  max-height: 100vh;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 20px;
+  overflow: auto;
+
+  @media screen and (min-width: $tablet) {
+    width: 615px;
+    max-height: 514px;
+    padding: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 700px;
+    max-height: 609px;
+    padding: 30px;
+  }
+}
+
+.team {
+  &-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 25px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media screen and (min-width: $tablet) {
+      justify-content: center;
+    }
+
+    &-image {
+      margin-bottom: 10px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: 5px 5px 11px -2px #000000;
+
+      @media screen and (min-width: $tablet) {
+        width: 120px;
+        height: 120px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    &-name {
+      margin-bottom: 5px;
+      text-align: center;
+      font-size: 16px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 18px;
+      }
+    }
+
+    &-position {
+      text-align: center;
+      font-size: 14px;
+      color: $accent-color;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.social {
+  &-link {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    transform: scale(1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.5);
+    }
+  }
+
+  &-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.main-team-list {
+  margin-bottom: 15px;
+  margin-right: 14px;
+  margin-left: 14px;
+  position: relative;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 33px;
+    margin-left: 33px;
+  }
+}
+
+.social-links-list {
+  position: absolute;
+  right: -12px;
+  bottom: 33px;
+}

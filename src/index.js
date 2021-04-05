@@ -4,3 +4,4 @@ import './js/search';
 import './js/renderGallery';
 import './js/modal';
 import './js/paginstion';
+import './js/paginstion';

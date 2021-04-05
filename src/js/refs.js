@@ -9,4 +9,5 @@ export default {
       btnClose: document.querySelector('.lightbox__btn'),
       body: document.querySelector('body'),
       loadSpinner: document.getElementById('js-spinner'),
+      ourTeamRef: document.getElementById('js-our_team'),
 }

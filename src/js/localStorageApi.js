@@ -1,6 +1,5 @@
-export const localStorageApi = {
+const localStorageApi = {
 
-    //Проверяет хранилище по ключу. Возвращает пустой массив или данные
     getMovies(key) {
         const keyStorage = this.load(key);
 
@@ -10,13 +9,11 @@ export const localStorageApi = {
         return [];
     },
     
-    //Добавляет фильм
     addMovie(key, value) {
         const dataFromLocalStorage = this.load(key);
         this.save(key, [value, ...dataFromLocalStorage]);
     },
     
-    // Удаляет фильм
     removeMovie(key, value) {
   
         const dataFromLocalStorage = this.load(key);
@@ -29,7 +26,6 @@ export const localStorageApi = {
             this.save(key, dataFromLocalStorage);
         }
     },
-
 
     load(key) {
         try {
@@ -51,4 +47,4 @@ export const localStorageApi = {
     }
 };
 
-// export default localStorageApi;
+export default localStorageApi;
