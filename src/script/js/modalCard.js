@@ -15,6 +15,9 @@ const filmsStorage = new FilmsStorage();
 
 gallery.addEventListener('click', event => lightbox.openLightbox(event));
 
+filmsStorage.getWathedListFromLS();
+filmsStorage.getQueueFromLS();
+
 const createMarkup = function (event) {
   movieInfo.fetchMovie(event.target.id).then(result => {
     result.poster_path
@@ -24,7 +27,7 @@ const createMarkup = function (event) {
     result.genres = genres.join(', ');
     result.popularity = parseFloat(result.popularity).toFixed(1);
     lightbox.refs.infoCard.insertAdjacentHTML('beforeend', movieCard(result));
-    
+
     const curElement = {
       id: event.target.id,
       element: event.target.parentNode.innerHTML,
@@ -32,8 +35,6 @@ const createMarkup = function (event) {
     const addToWathedBtn = document.querySelector('.modal-button-watched');
     const addToQueueBtn = document.querySelector('.modal-button-queue');
 
-    filmsStorage.getWathedListFromLS();
-    filmsStorage.getQueueFromLS();
     //watched
     if (
       filmsStorage.watchedFilms.length &&
@@ -89,4 +90,3 @@ const createMarkup = function (event) {
 };
 
 export { createMarkup };
-
