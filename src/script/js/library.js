@@ -14,6 +14,7 @@ const {
   libraryBtnsContainer,
   gallery,
   paginationContainer,
+  filter,
 } = refs;
 
 homeBtn.addEventListener('click', e => hendlerHomeBtn(e));
@@ -42,7 +43,9 @@ function hendlerLibraryBtn(e) {
   headerBg.classList.add('library__background');
   searchWrap.classList.add('visually-hidden');
   libraryBtnsContainer.classList.remove('visually-hidden');
+  filter.classList.add('visually-hidden');
   gallery.innerHTML = '';
+  filmsStorage.showWatchedFilms();
   paginationContainer.classList.add('visually-hidden');
 }
 
