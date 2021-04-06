@@ -30,6 +30,7 @@ const refs = {
   yearPicker: document.querySelector('#yearpicker'),
   watchedBtn: document.querySelector('.watched-button'),
   queueBtn: document.querySelector('.queue-button'),
+  filter: document.querySelector('.filter-section'),
 };
 
 export default refs;
