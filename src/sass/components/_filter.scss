@@ -31,7 +31,7 @@
         display: none;
     }
     .filter-input {
-        padding: 6px 6px;
+        padding: 5px 6px;
         width: 122px;
         font-family: $font-family;
         @include font(500, 12px, 14px);
@@ -46,8 +46,8 @@
     }
     .filter-input {
         margin-right: 20px;
-        padding: 10px 10px;
-        width: 146px;
+        padding: 8px 10px;
+        width: 144px;
         font-family: $font-family;
         @include font(500, 12px, 14px);
     }
@@ -61,8 +61,8 @@
     }
     .filter-input {
         margin-right: 20px;
-        padding: 10px 10px;
-        width: 146px;
+        padding: 8px 10px;
+        width: 144px;
         font-family: $font-family;
         // @include font(500, 16px, 14px);
         @include font(500, 12px, 14px);
