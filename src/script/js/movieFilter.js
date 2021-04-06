@@ -110,11 +110,12 @@ const showSelectedPage = e => {
 function yearPickerMenu() {
   let startYear = 1900;
   let endYear = new Date().getFullYear();
-  console.log(startYear, endYear);
+  let years =[];
 
   refs.yearPicker.insertAdjacentHTML('beforeend', '<option value="">Choose year</option>');
   for (let i = endYear; i > startYear; i--) {
-    refs.yearPicker.insertAdjacentHTML('beforeend', `<option value="${i}">${i}</option>`);
+    years.push(`<option value="${i}">${i}</option>`);
   }
+  refs.yearPicker.insertAdjacentHTML('beforeend', years);
 };
 yearPickerMenu();
