@@ -7,7 +7,8 @@
             <h3 class="move-title">{{'title'}}
             </h3>
             <p class="move-info">
-                <span class="move-genres">{{"genre_ids"}}</span> | <span class="move-year">{{'release_date'}}</span>
+                <span class="move-genres">{{#each genres}} {{name}} {{/each}}</span> | <span
+                    class="move-year">{{'release_date'}}</span>
             </p>
 
         </div>
