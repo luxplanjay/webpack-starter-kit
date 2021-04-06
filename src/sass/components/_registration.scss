@@ -66,6 +66,8 @@
 }
 
 .modal__button {
+  position: relative;
+  overflow: hidden;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -83,6 +85,24 @@
   margin-right: auto;
   margin-bottom: 25px;
   margin-top: 20px;
+  transition: All 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:active {
+    top: .3em;
+    left: .3em;
+    box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+  }
+  &::before{
+    content: "";
+    height: 100px;
+    position: absolute;
+    transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
+    transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    width: 200px;
+  }
+      &:hover::before{
+        background-color:$color-lightest;
+        transform: translate3d(100%, -100px, 0) rotate3d(0, 0, 1, 90deg);
+      }
 }
 .modal__icon {
   position: absolute;
@@ -94,6 +114,7 @@
     fill: $color-accent;
   }
 }
+
 .user-box {
   display: flex;
   align-items: baseline;
@@ -109,8 +130,36 @@
 // border: 2px solid $color-accent;
     // border-radius: 4px;
     // background: 0;
+
+.site-nav__signup {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid $color-accent;
+  padding: 15px;
+  border-radius: 4px;
+  transition: All 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:active {
+    top: .3em;
+    left: .3em;
+    box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
   }
+  &::before{
+    content: "";
+    height: 100px;
+    position: absolute;
+    transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
+    transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    width: 200px;
+  }
+  &:hover {
+        background-color:$color-accent-2;
+      }
+      &:hover::before{
+        background-color:$color-lightest;
+        transform: translate3d(100%, -100px, 0) rotate3d(0, 0, 1, 90deg);
+      }
 }
+
 .user-box__signin {
   border: 1px solid $color-accent;
   padding: 5px;
@@ -120,7 +169,35 @@
     // border: 2px solid $color-accent;
     // border-radius: 4px;
     // background: 0;
+
+.site-nav__signin {
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 4px;
+  border: 2px solid $color-accent;
+  transition: All 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:active {
+    top: .3em;
+    left: .3em;
+    box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+
   }
+  &::before{
+    content: "";
+    height: 100px;
+    position: absolute;
+    transform: translate3d(-100%, -50px, 0) rotate3d(0, 0, 1, 45deg);
+    transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    width: 200px;
+  }
+  &:hover {
+        background-color:$color-accent-2;
+      }
+      &:hover::before{
+        background-color:$color-lightest;
+        transform: translate3d(100%, -100px, 0) rotate3d(0, 0, 1, 90deg);
+      }
 }
 
 @media screen and (max-width: 767px) {
@@ -160,6 +237,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.signup-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .signup-now {
   display: flex;
   justify-content: center;
@@ -174,16 +258,36 @@
   margin-left: 10px;
 }
 .google-signin {
-  display: block;
+  position: relative;
+  overflow: hidden;
+  display: flex;
   width: 100%;
   background: 0;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   margin-top: 4px;
-  padding-left: 42px;
+  align-items: center;
+  justify-content: center;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-top: 25px;
+  &:active {
+    top: .3em;
+    left: .3em;
+    box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+  }
+  &::before{
+    content: "";
+    height: 100px;
+    position: absolute;
+    transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
+    transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    width: 200px;
+  }
+      &:hover::before{
+        background-color:$color-lightest;
+        transform: translate3d(100%, -100px, 0) rotate3d(0, 0, 1, 90deg);
+      }
 
   &:hover,
   &:focus {
@@ -194,4 +298,23 @@
 .divider {
   display: block;
   text-align: center;
+}
+.signin-wpapper {
+  visibility: visible;
+  opacity: 1;
+}
+.signin-wpapper.load {
+  visibility: hidden;
+  opacity: 0;
+}
+.signup-wpapper {
+  visibility: visible;
+  opacity: 1;
+}
+.signup-wpapper.load {
+  visibility: hidden;
+  opacity: 0;
+}
+.google-icon {
+  margin-right: 10px;
 }

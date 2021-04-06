@@ -15,3 +15,5 @@ import './script/js/search';
 import './script/js/movieFilter';
 
 import './script/js/library';
+
+import './script/js/local-storage';
