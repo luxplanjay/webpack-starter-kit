@@ -11,12 +11,17 @@
     height: 270px;
     margin-bottom: 5px;
     background-color: white;
+
+    &__image {
+      width: 200px;
+      height: 200px;
+    }
     &__descr {
       width: 100%;
-      height: 100%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       &__link {
         display: block;
         margin-left: 4px;
@@ -25,8 +30,10 @@
         background-image: url('./images/GitHub-Mark-32px.png');
         background-position: center;
         background-size: contain;
-        fill: black;
-        
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }
@@ -60,6 +67,13 @@
     margin-bottom: 5px;
   }
 }
+@media screen and (min-width: $bp-tablet) and (max-width: $bp-desktop) {
+  .authors-list__item__image {
+    width: 190px;
+    height: 190px;
+  }
+}
+
 @media screen and (min-width: $bp-desktop) {
   .authors-list {
     width: 630px;
