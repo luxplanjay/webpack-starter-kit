@@ -61,25 +61,27 @@ header {
 .site-nav {
   margin-left: auto;
   display: block;
+  margin-right: 30px;
 }
 
-.home-button,
-.library-button {
+.header-button {
   font-family: $font-family;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
+  
   text-transform: uppercase;
   color: $color-lightest;
   background-color: transparent;
   border: none;
-  padding: 0;
+  padding: 5px 0 0 0;
   cursor: pointer;
 }
 
 .home-button {
-  margin-right: 40px;
+margin-right: 30px;
 }
+
 
 .current {
   border-bottom: 3px solid $color-accent;
@@ -95,7 +97,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-end; //! Alex: changed value from center to align with microphone
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   margin: 0 auto;
   position: relative;
   width: 280px;
