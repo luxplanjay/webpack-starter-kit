@@ -69,7 +69,7 @@ header {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
-  
+
   text-transform: uppercase;
   color: $color-lightest;
   background-color: transparent;
@@ -79,9 +79,8 @@ header {
 }
 
 .home-button {
-margin-right: 30px;
+  margin-right: 30px;
 }
-
 
 .current {
   border-bottom: 3px solid $color-accent;
@@ -183,7 +182,7 @@ margin-right: 30px;
     padding-right: 75px;
   }
 
-  .header-background {
+  .header__background {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('/images/header/header-bg-main-@1x-tablet.jpg');
     @media screen and (min-device-pixel-ratio: 2),
@@ -223,7 +222,8 @@ margin-right: 30px;
 
 @media screen and (min-width: $bp-desktop) {
   .header__background {
-    background-image: url('/images/header/header-bg-main-@1x-desktop.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('/images/header/header-bg-main-@1x-desktop.jpg');
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
