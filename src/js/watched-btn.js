@@ -6,7 +6,7 @@ const refs = {
   //   libraryContainer: document.getElementById('js-library-container'),
 };
 
-// якщо відкриваємо лібрарі, то watched активна, якщо клацаємо на queue, то стає активною вона
+// якщо відкриваємо лібрарі, то watched активна,
 refs.watchedBtn.classList.add('btn-active');
 const watchedStr = localStorage.getItem('watched');
 showWatchedMovies();
@@ -20,6 +20,8 @@ refs.watchedBtn.addEventListener('click', e => {
   showWatchedMovies();
 });
 
+const queueStr = localStorage.getItem('queue');
+// якщо клацаємо на queue, то стає активною вона
 refs.queueBtn.addEventListener('click', e => {
   e.preventDefault();
 
@@ -59,8 +61,6 @@ function showWatchedMovies() {
     }
   }
 }
-
-const queueStr = localStorage.getItem('queue');
 
 function showQueueMovies() {
   if (queueStr === null) {
