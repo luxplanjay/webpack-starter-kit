@@ -12,7 +12,7 @@ const getMovies = new NewGetMovie();
 //   release_date: release_date.split('-')[0],
 // });
 
-function toCreateGallery() {
+export default function toCreateGallery() {
   spinner.spin(refs.loadSpinner);
 
   getMovies

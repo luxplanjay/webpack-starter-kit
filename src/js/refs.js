@@ -1,6 +1,7 @@
 export default {
 
       formRef: document.querySelector('#search-form'),
+      spanRef: document.querySelector('.notification'),
       gallery: document.querySelector('.gallery'),
       galleryItem: document.querySelector('.gallery__item'),
       modal: document.querySelector('.js-lightbox'),
