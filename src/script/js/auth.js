@@ -150,7 +150,7 @@ function hideSignUpEsc(e) {
   if (e.key === 'Escape') refs.signUpModal.classList.add('is-hidden');
 }
 
-// hide signUpBtn in mobile
+// hide signUpBtn in mobile screen
 const mobileDevice = window.matchMedia("(max-width: 767px)");
 
 mobileDevice.addListener(handleDeviceChange);

@@ -15,6 +15,7 @@ const {
   paginationNextButton,
   paginationContainer,
   searchWrap,
+  spinner
 } = refs;
 const { reservImg } = CONST;
 
@@ -39,6 +40,7 @@ function hendlerInput(e) {
   }
   searchWrap.classList.add('without-after-el');
   function createCard() {
+    // spinner.classList.remove('is-hidden');
     apiSearchData
       .fetchMovies()
       .then(res => {
@@ -64,7 +66,10 @@ function hendlerInput(e) {
           paginationContainer.classList.add('visually-hidden');
         }
       })
-      .catch(e => console.log(e));
+      .catch(e => console.log(e))
+      .finally(
+      spinner.classList.add('is-hidden')
+    )
   }
 
   function noResults() {
