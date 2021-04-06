@@ -11,41 +11,19 @@ const movieFilter = new MovieFilter();
 const fetchPopularMovie = new PopularFilms();
 const pagination = new Pagination();
 
-let year = '';
-let genre = '';
+yearPickerMenu();
 spinner.showSpinner();
-refs.genrePicker.addEventListener('change', event => {
-  fetchPopularMovie.resetPage();
-  if (event.target.value === '') {
-    fetchPopularMovie.fetchPopular().then(res => {
-      scrollWin();
-      refs.gallery.innerHTML = createMarkup(transformMovieObject(res.results));
-    });
-  } else {
-    genre = event.target.value;
-    movieFilter.resetPage();
-    createCard(genre, '');
-    setTimeout(() => {
-      event.target.value = '';
-    }, 1500);
-  }
-});
 
-refs.yearPicker.addEventListener('change', event => {
-  fetchPopularMovie.resetPage();
-  if (event.target.value === '') {
-    fetchPopularMovie.fetchPopular().then(res => {
-      scrollWin();
-      refs.gallery.innerHTML = createMarkup(transformMovieObject(res.results));
-    });
-  } else {
-    year = event.target.value;
+let yearValue = '';
+let genreValue = '';
+
+refs.filterInput.forEach(item => {
+  item.addEventListener('change', event => {
     movieFilter.resetPage();
-    createCard('', year);
-    setTimeout(() => {
-      event.target.value = '';
-    }, 1500);
-  }
+    yearValue = refs.yearPicker.value;
+    genreValue = refs.genrePicker.value;
+    createCard(genreValue, yearValue);
+  })
 });
 
 function createCard(genre, year) {
@@ -91,19 +69,19 @@ function scrollWin() {
 const showPrevPage = () => {
   if (movieFilter.page < 2) return;
   movieFilter.decrementPage();
-  createCard(genre, year);
+  createCard(genreValue, yearValue);
 };
 const showNextPage = totalResults => {
   const activePageNumber = document.querySelector('li.active');
   if (movieFilter.page === activePageNumber.textContent) return;
   movieFilter.incrementPage();
-  createCard(genre, year);
+  createCard(genreValue, yearValue);
 };
 const showSelectedPage = e => {
   if (e.target.nodeName === 'LI') {
     if (isNaN(e.target.textContent)) return;
     movieFilter.page = e.target.textContent;
-    createCard(genre, year);
+    createCard(genreValue, yearValue);
   }
 };
 
@@ -118,4 +96,3 @@ function yearPickerMenu() {
   }
   refs.yearPicker.insertAdjacentHTML('beforeend', years);
 };
-yearPickerMenu();

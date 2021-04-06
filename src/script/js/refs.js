@@ -25,6 +25,7 @@ const refs = {
   libraryBtnsContainer: document.querySelector('.button-container'),
   signinSpinner: document.querySelector('.signin-spinner'),
   signUpSpinner: document.querySelector('.signup-spinner'),
+  filterInput: document.querySelectorAll('.filter-input'),
   genrePicker: document.querySelector('#genrepicker'),
   yearPicker: document.querySelector('#yearpicker'),
   watchedBtn: document.querySelector('.watched-button'),
