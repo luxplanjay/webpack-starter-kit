@@ -6,7 +6,7 @@ import spinner from './spinner.js';
 const getMovies = new NewGetMovie();
 
 
-function toCreateGallery() {
+export default function toCreateGallery() {
   spinner.spin(refs.loadSpinner);
   getMovies
     .fetchTrendingMovie()
