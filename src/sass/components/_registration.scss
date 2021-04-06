@@ -211,7 +211,6 @@
     transform: translate3d(100%, -100px, 0) rotate3d(0, 0, 1, 90deg);
   }
 }
-
 @media screen and (min-width: 768px) {
   .modal {
     position: absolute;
@@ -243,6 +242,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 
 .signup-now {
   display: flex;
@@ -340,4 +340,34 @@
     border: 1px solid $color-accent;
     outline: 0;
   }
+}
+.divider {
+  display: block;
+  text-align: center;
+}
+.signin-wpapper {
+  visibility: visible;
+  opacity: 1;
+}
+.signin-wpapper.load {
+  visibility: hidden;
+  opacity: 0;
+}
+.signup-wpapper {
+  visibility: visible;
+  opacity: 1;
+}
+.signup-wpapper.load {
+  visibility: hidden;
+  opacity: 0;
+}
+.google-icon {
+  margin-right: 10px;
+}
+.show-pass {
+  position: absolute;
+  border: 0;
+  background: 0;
+  top: 50%;
+  right: 50px;
 }
