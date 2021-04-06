@@ -3,6 +3,7 @@ import Pagination from './pagination-api';
 import 'firebase/auth';
 import 'firebase/firestore';
 import firebase from 'firebase/app';
+import PNotify from '../../../node_modules/pnotify/dist/es/PNotify.js';
 
 const pagination = new Pagination();
 
@@ -44,7 +45,13 @@ export default class FilmsStorage {
   }
   showWatchedFilms() {
     const savedFilms = localStorage.getItem('watched-films');
-    if (!savedFilms) alert('Your watchedlist is emty.');
+    if (!savedFilms) {
+      PNotify.info({
+        text: 'Your watchedlist is empty.',
+        delay: 1000,
+      });
+      return;
+    }
     let watchedFilmsMarkup = '';
     JSON.parse(savedFilms).forEach(object => {
       watchedFilmsMarkup +=
@@ -83,7 +90,13 @@ export default class FilmsStorage {
   }
   showFilmsQueue() {
     const queue = localStorage.getItem('films-queue');
-    if (!queue) alert('Your queue is emty.');
+    if (!queue) {
+      PNotify.info({
+        text: 'Your queue is empty.',
+        delay: 1000,
+      });
+      return;
+    }
     let filmsQueueMarkup = '';
     JSON.parse(queue).forEach(object => {
       filmsQueueMarkup +=
