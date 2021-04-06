@@ -4,6 +4,15 @@ import firebase from 'firebase/app';
 import refs from './refs';
 import PNotify from '../../../node_modules/pnotify/dist/es/PNotify.js';
 
+const showPassBtn = document.querySelector('.show-pass');
+const fieldPass = document.querySelector('.pass-js');
+showPassBtn.addEventListener('click', () => {
+  if (fieldPass.type === 'password') {
+    fieldPass.type = 'text';
+  } else {
+    fieldPass.type = 'password';
+  }
+});
 const db = firebase.firestore();
 //Check is signet
 firebase.auth().onAuthStateChanged(function (user) {
@@ -18,11 +27,37 @@ firebase.auth().onAuthStateChanged(function (user) {
       text: 'You have successfully signed in.',
       delay: 1000,
     });
+    let userWatched = [];
+    let userQueue = [];
+    db.collection('users')
+      .doc(user.uid)
+      .collection('Watched')
+      .doc('Markup')
+      .get()
+      .then(data => {
+        if (data.data()) {
+          userWatched = data.data().list;
+        }
+        localStorage.setItem('watched-films', userWatched);
+      });
+    db.collection('users')
+      .doc(user.uid)
+      .collection('Queue')
+      .doc('Markup')
+      .get()
+      .then(data => {
+        if (data.data()) {
+          userQueue = data.data().list;
+        }
+        localStorage.setItem('films-queue', userQueue);
+      });
   } else {
     // No user is signed in.
     refs.signUpBtn.classList.remove('is-hidden');
     refs.signInBtn.classList.remove('is-hidden');
     refs.logOutBtn.classList.add('is-hidden');
+    localStorage.setItem('watched-films', []);
+    localStorage.setItem('films-queue', []);
   }
 });
 // Create account
@@ -92,30 +127,7 @@ refs.loginForm.addEventListener('submit', e => {
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
-      let userWatched = [];
-      let userQueue = [];
-      db.collection('users')
-        .doc(user.uid)
-        .collection('Watched')
-        .doc('Markup')
-        .get()
-        .then(data => {
-          if (data.data()) {
-            userWatched = data.data().list;
-          }
-          localStorage.setItem('watched-films', userWatched);
-        });
-      db.collection('users')
-        .doc(user.uid)
-        .collection('Queue')
-        .doc('Markup')
-        .get()
-        .then(data => {
-          if (data.data()) {
-            userQueue = data.data().list;
-          }
-          localStorage.setItem('films-queue', userQueue);
-        });
+
       document.querySelector('.signin-wpapper').classList.remove('load');
     })
     .then(() => {
@@ -152,30 +164,6 @@ googleBtn.addEventListener('click', () => {
         refs.signInBtn.classList.add('is-hidden');
         refs.logOutBtn.classList.remove('is-hidden');
       }
-      let userWatched = [];
-      let userQueue = [];
-      db.collection('users')
-        .doc(user.uid)
-        .collection('Watched')
-        .doc('Markup')
-        .get()
-        .then(data => {
-          if (data.data().list) {
-            userWatched = data.data().list;
-          }
-          localStorage.setItem('watched-films', userWatched);
-        });
-      db.collection('users')
-        .doc(user.uid)
-        .collection('Queue')
-        .doc('Markup')
-        .get()
-        .then(data => {
-          if (data.data().list) {
-            userQueue = data.data().list;
-          }
-          localStorage.setItem('films-queue', userQueue);
-        });
     })
     .catch(error => {
       // Handle Errors here.
@@ -215,8 +203,6 @@ refs.logOutBtn.addEventListener('click', () => {
         text: 'You have been logged out.',
         delay: 1000,
       }),
-      localStorage.setItem('watched-films', []),
-      localStorage.setItem('films-queue', []),
     );
 });
 function hideSignInModal(e) {
@@ -237,13 +223,14 @@ function hideSignUpEsc(e) {
 }
 
 // hide signUpBtn in mobile screen
-const mobileDevice = window.matchMedia("(max-width: 767px)");
+const mobileDevice = window.matchMedia('(max-width: 767px)');
 
 mobileDevice.addListener(handleDeviceChange);
 
 function handleDeviceChange(e) {
-  if (e.matches) { refs.signUpBtn.classList.add("visually-hidden") }
-  else refs.signUpBtn.classList.remove("visually-hidden");
+  if (e.matches) {
+    refs.signUpBtn.classList.add('visually-hidden');
+  } else refs.signUpBtn.classList.remove('visually-hidden');
 }
 
 handleDeviceChange(mobileDevice);

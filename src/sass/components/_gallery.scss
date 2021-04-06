@@ -61,7 +61,7 @@
     width: $bp-desktop;
   }
   .movies {
-    padding: 60px 70px 50px;
+    padding: 30px 70px 50px;
   }
   .movie__poster {
     width: 274px;
@@ -71,7 +71,8 @@
   .container {
     width: 1400px;
   }
-  .movies__list {
-    justify-content: space-around;
+
+  .movie__poster {
+    width: 290px;
   }
 }
