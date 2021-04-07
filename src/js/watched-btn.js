@@ -95,6 +95,6 @@ function showQueueMovies() {
 function alertMessage() {
   const messageSorry = document.createElement('p');
   messageSorry.classList.add('library-message');
-  messageSorry.textContent = 'Soory, there are no movies';
+  messageSorry.textContent = 'Sorry, there are no movies';
   refs.alertMessage.appendChild(messageSorry);
 }
