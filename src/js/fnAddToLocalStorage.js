@@ -25,7 +25,7 @@ export const initStorageBtns = () => {
     btnElement.forEach(element => {
       const storageKey = element.value;
       const arr = localStorageApi.load(storageKey);
-      if (arr.indexOf(movieId) >= 0) element.checked = "true";    
+      if (arr !== undefined && arr.indexOf(movieId) >= 0) element.checked = "true";
     });
   } 
 }
