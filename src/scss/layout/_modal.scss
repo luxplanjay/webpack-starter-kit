@@ -9,14 +9,14 @@
   @media screen and (min-width: $tablet) {
     display: flex;
     width: 678px;
-    max-height: 514px;
+    max-height: 560px;
     padding: 30px;
   }
 
   @media screen and (min-width: $desktop) {
     display: flex;
     width: 882px;
-    max-height: 609px;
+    max-height: 670px;
     padding: 30px;
   }
 }
@@ -38,16 +38,13 @@
     border-radius: 5px;
 
     width: 240px;
-    height: 356px;
 
     @media screen and (min-width: $tablet) {
       width: 264px;
-      height: 373px;
     }
 
     @media screen and (min-width: $desktop) {
       width: 396px;
-      height: 477px;
     }
   }
 }
