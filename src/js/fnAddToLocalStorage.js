@@ -1,6 +1,5 @@
 import localStorageApi from './localStorageApi';
 
-// ДОБАВИТЬ В МОДАЛ.ДЖС НА ОТКРЫТИЕ МОДАЛКИ
 export const initStorageBtns = () => {
   const storageElement = document.querySelector('.movie-container .storage');
   const movieId = document.querySelector('.movie-container').dataset.action;
@@ -9,11 +8,13 @@ export const initStorageBtns = () => {
 
   storageElement.addEventListener('change', onStorageBtnClick);
 
-  function onStorageBtnClick(e) { 
+  function onStorageBtnClick(element) { 
   
-    const storageKey = e.target.value;
+    const storageKey = element.target.value;
+    // console.log(storageKey);
+
     
-    const action = (e.target.checked) ? 'add' : 'remove';
+    const action = (element.target.checked) ? 'add' : 'remove';
 
     localStorageApi.getMovies(storageKey);
     makeActionInStorage({ storageKey, movieId, action });
@@ -21,12 +22,14 @@ export const initStorageBtns = () => {
 
   function checkStorage(storageElement) { 
 
-  const btnElement = storageElement.querySelectorAll('.storage__input');
+  const btnElement = storageElement.querySelectorAll('[type=checkbox]');
   
     btnElement.forEach(element => {
       const storageKey = element.value;
       const arr = localStorageApi.load(storageKey);
-      
+      // console.log(arr);
+      // console.log(movieId);
+      // console.log(arr.indexOf(movieId));
       if (arr.indexOf(movieId) >= 0) element.checked = "true";    
     });
   } 
