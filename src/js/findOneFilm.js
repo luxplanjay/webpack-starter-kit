@@ -1,16 +1,20 @@
 import refs from './refs.js';
 import spinner from './spinner.js';
 
-const apiKey = "api_key=6df9a2b88a6cdc986e05b3daaeb09968";
+const BASE_URL = "https://api.themoviedb.org/3/movie";
+const apiKey = "6df9a2b88a6cdc986e05b3daaeb09968";
 
 function fetchOneFilm(movie_id) {
-    const url = `https://api.themoviedb.org/3/movie/${movie_id}?${apiKey}`;
     spinner.spin(refs.loadSpinner);
-    return fetch(url)
+    return fetch(`${BASE_URL}/${movie_id}?api_key=${apiKey}&language=en-US`)
         .then(response => response.json())
-        .catch(error => console.log(error)).finally(() => {
+        .catch(error => console.log(error))
+        .finally(() => {
             spinner.stop();
         });
 }
+            // if (!response.ok) return Promise.reject('Server error!');
+            // return response.json();
+            // }
 
 export default fetchOneFilm;
