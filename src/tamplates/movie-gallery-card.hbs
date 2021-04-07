@@ -1,13 +1,14 @@
 {{#each this}}
 <li>
     <div class="move-card">
-        <img src="https://image.tmdb.org/t/p/w500/{{'poster_path'}}" alt="{{"title"}}" />
+        <img src="https://image.tmdb.org/t/p/w500/{{'poster_path'}}" alt="{{" title"}}" data-movie-id="{{id}}" />
 
         <div class="text-conteiner">
             <h3 class="move-title">{{'title'}}
             </h3>
             <p class="move-info">
-                <span class="move-genres">{{"genre_ids"}}</span> | <span class="move-year">{{'release_date'}}</span>
+                <span class="move-genres">{{#each genres}} {{name}} {{/each}}</span> | <span
+                    class="move-year">{{'release_date'}}</span>
             </p>
 
         </div>

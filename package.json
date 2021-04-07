@@ -52,6 +52,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6",
-    "spin.js": "^4.1.0"
+    "lodash.debounce": "^4.0.8",
+    "spin.js": "^4.1.0",
+    "tui-pagination": "^3.4.0"
   }
 }

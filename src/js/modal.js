@@ -9,18 +9,18 @@ refs.btnClose.addEventListener('click', closeModal);
 refs.overlay.addEventListener('click', closeModal);
 
  function onImageClick(event) {
-      if (event.target === document.querySelectorAll(".movie-poster-lib")) { console.log(event.target) }
+      if (event.target === document.querySelectorAll(".move-card")) { console.log(event.target) }
 
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
+      if (event.target.nodeName !== 'IMG') {
+            return;
+      }
 
-  if (event.target.dataset.emptyPage) {
-    return;
-  }
+      if (event.target.dataset.emptyPage) {
+            return;
+      }
 
-  const activeImg = event.target;
-  const movieId = activeImg.dataset.movieId;
+      const activeImg = event.target;
+      const movieId = activeImg.dataset.movieId;
 
   openModal(movieId);
 }
@@ -43,7 +43,6 @@ function openModal(movieId) {
                   renderCardFilmInModal(movie);
                   initStorageBtns();
             })
-            // .then(() => checkMovieInStorage(movieId));
     
 }
 

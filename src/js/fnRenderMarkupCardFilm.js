@@ -1,13 +1,13 @@
 import refs from './refs';
 import movieModalTpl from '../tamplates/movieModal.hbs';
 
-function updateCardFilmInModal(cardFilm) {
+function updateCardFilmInModal(movie) {
 
     let markup = '';
 
-    if (cardFilm.status !== '404') {
-        cardFilm.popularity = Math.round(cardFilm.popularity);
-        markup = movieModalTpl(cardFilm);
+    if (movie.status !== '404') {
+        movie.popularity = Math.round(movie.popularity);
+        markup = movieModalTpl(movie);
     }
     refs.modalContent.insertAdjacentHTML('beforeend', markup);
 }
