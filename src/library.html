@@ -20,8 +20,8 @@
               <svg class="header-library-svg">
                 <use href="./images/sprite.svg#icon-film"></use>
               </svg>
+              <h1 class="header-library-title">Filmoteka</h1>
             </a>
-            <h1 class="header-library-title">Filmoteka</h1>
           </div>
           <nav class="header-library-nav">
             <ul class="header-library-nav-list">
@@ -29,7 +29,7 @@
                 <a class="header-library-nav-link" href="/index.html">Home</a>
               </li>
               <li class="header-library-nav-page">
-                <a class="header-library-nav-link current" href="#"
+                <a class="header-library-nav-link current" href="/library.html"
                   >my library</a
                 >
               </li>
@@ -38,14 +38,13 @@
         </div>
         <div class="header-library-buttons" id="tabs">
           <div class="controls" data-controls>
-            <button
-              class="header-library-btn controls-current"
-              id="watched-btn-js"
-            >
-              <a class="controls-item" href="#watched">Watched</a>
+            <button class="header-library-btn" id="watched-btn-js">
+              <!-- <a class="controls-item" href="#watched">Watched</a> -->
+              Watched
             </button>
             <button class="header-library-btn" id="queue-btn-js">
-              <a class="controls-item" href="#queue">queue</a>
+              <!-- <a class="controls-item" href="#queue">queue</a> -->
+              queue
             </button>
           </div>
         </div>
@@ -57,7 +56,7 @@
       <div class="container panes" data-panes id="js-library-container">
         <div class="alert-mesage"></div>
         <!-- Галерея для правильності позиціонування -->
-        <ul id="queue" class="library-movie-gallery" id="js-library-gallery">
+        <ul class="library-movie-gallery" id="js-library-gallery">
           <!-- <li class="library-movie-item"></li>
           <li class="library-movie-item"></li>
           <li class="library-movie-item"></li>
