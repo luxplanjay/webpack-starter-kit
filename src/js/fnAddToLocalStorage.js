@@ -8,13 +8,11 @@ export const initStorageBtns = () => {
 
   storageElement.addEventListener('change', onStorageBtnClick);
 
-  function onStorageBtnClick(element) { 
+  function onStorageBtnClick(event) { 
   
-    const storageKey = element.target.value;
-    // console.log(storageKey);
-
+    const storageKey = event.target.value;
     
-    const action = (element.target.checked) ? 'add' : 'remove';
+    const action = (event.target.checked) ? 'add' : 'remove';
 
     localStorageApi.getMovies(storageKey);
     makeActionInStorage({ storageKey, movieId, action });
@@ -27,27 +25,24 @@ export const initStorageBtns = () => {
     btnElement.forEach(element => {
       const storageKey = element.value;
       const arr = localStorageApi.load(storageKey);
-      // console.log(arr);
-      // console.log(movieId);
-      // console.log(arr.indexOf(movieId));
       if (arr.indexOf(movieId) >= 0) element.checked = "true";    
     });
   } 
 }
 
-function makeActionInStorage({movieKey, movieId, action}) { 
+function makeActionInStorage({storageKey, movieId, action}) { 
   if (action === 'add') {
-    localStorageApi.addMovie(movieKey, movieId);
+    localStorageApi.addMovie(storageKey, movieId);
     changeLibraryCardDisplay('initial');
   }
     
   if (action === 'remove') {
-    localStorageApi.removeMovie(movieKey, movieId);
+    localStorageApi.removeMovie(storageKey, movieId);
     changeLibraryCardDisplay('none');
   }
 
   function changeLibraryCardDisplay(value) { 
-      const libraryCard = document.querySelector(`[data-library="${movieKey}"] [data-action="${movieId}"]`);
+      const libraryCard = document.querySelector(`[data-library="${storageKey}"] [data-action="${movieId}"]`);
     //   установить на соответствующие окна в библиотеле data - library = watched и data - library = queue !!!!!!
     if (libraryCard) libraryCard.style.display = value;
   }
