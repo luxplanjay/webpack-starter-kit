@@ -1,6 +1,5 @@
 import localStorageApi from './localStorageApi';
 
-// ДОБАВИТЬ В МОДАЛ.ДЖС НА ОТКРЫТИЕ МОДАЛКИ
 export const initStorageBtns = () => {
   const storageElement = document.querySelector('.movie-container .storage');
   const movieId = document.querySelector('.movie-container').dataset.action;
@@ -9,11 +8,11 @@ export const initStorageBtns = () => {
 
   storageElement.addEventListener('change', onStorageBtnClick);
 
-  function onStorageBtnClick(e) { 
+  function onStorageBtnClick(event) { 
   
-    const storageKey = e.target.value;
+    const storageKey = event.target.value;
     
-    const action = (e.target.checked) ? 'add' : 'remove';
+    const action = (event.target.checked) ? 'add' : 'remove';
 
     localStorageApi.getMovies(storageKey);
     makeActionInStorage({ storageKey, movieId, action });
@@ -21,30 +20,29 @@ export const initStorageBtns = () => {
 
   function checkStorage(storageElement) { 
 
-  const btnElement = storageElement.querySelectorAll('.storage__input');
+  const btnElement = storageElement.querySelectorAll('[type=checkbox]');
   
-    btnElement.forEach(element => {
+  btnElement.forEach(element => {
       const storageKey = element.value;
       const arr = localStorageApi.load(storageKey);
-      
-      if (arr.indexOf(movieId) >= 0) element.checked = "true";    
-    });
+      if (arr !== undefined && arr.indexOf(movieId) >= 0) element.checked = "true";
+  });
   } 
 }
 
-function makeActionInStorage({movieKey, movieId, action}) { 
+function makeActionInStorage({storageKey, movieId, action}) { 
   if (action === 'add') {
-    localStorageApi.addMovie(movieKey, movieId);
+    localStorageApi.addMovie(storageKey, movieId);
     changeLibraryCardDisplay('initial');
   }
     
   if (action === 'remove') {
-    localStorageApi.removeMovie(movieKey, movieId);
+    localStorageApi.removeMovie(storageKey, movieId);
     changeLibraryCardDisplay('none');
   }
 
   function changeLibraryCardDisplay(value) { 
-      const libraryCard = document.querySelector(`[data-library="${movieKey}"] [data-action="${movieId}"]`);
+      const libraryCard = document.querySelector(`[data-library="${storageKey}"] [data-action="${movieId}"]`);
     //   установить на соответствующие окна в библиотеле data - library = watched и data - library = queue !!!!!!
     if (libraryCard) libraryCard.style.display = value;
   }

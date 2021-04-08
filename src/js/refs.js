@@ -17,5 +17,10 @@ export default {
       // storageBtns: document.querySelector('.controls'),
       // queueLibrary: document.querySelector('.library-movie-gallery'),
       // pagination: document.querySelector('.pagination'),
+      // headerLibraryBtn: document.querySelector('.header-library-btn'),
+      watchedBtn: document.getElementById('watched-btn-js'),
+      queueBtn: document.getElementById('queue-btn-js'),
+      alertMessage: document.querySelector('.alert-mesage'),
+      libraryGallery: document.getElementById('js-library-gallery'),
 
 }

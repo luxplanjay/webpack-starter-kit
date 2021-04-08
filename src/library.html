@@ -36,14 +36,12 @@
             </ul>
           </nav>
         </div>
-        <div class="header-library-buttons" id="tabs">
-          <div class="controls" data-controls>
+        <div class="header-library-buttons">
+          <div class="controls">
             <button class="header-library-btn" id="watched-btn-js">
-              <!-- <a class="controls-item" href="#watched">Watched</a> -->
               Watched
             </button>
-            <button class="header-library-btn" id="queue-btn-js">
-              <!-- <a class="controls-item" href="#queue">queue</a> -->
+            <button class="header-library-btn" id="queue-btn-js" value="Queue">
               queue
             </button>
           </div>
@@ -53,24 +51,30 @@
     <!--Header library end-->
     <!-- Library section -->
     <main class="library">
-      <div class="container panes" data-panes id="js-library-container">
+      <div class="container panes" id="js-library-container">
         <div class="alert-mesage"></div>
         <!-- Галерея для правильності позиціонування -->
         <ul class="library-movie-gallery" id="js-library-gallery">
-          <!-- <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li>
-          <li class="library-movie-item"></li> -->
         </ul>
+        <!-- Контейнер для правильності позиціонування пагінації за необхідності-->
         <div class="pagination"></div>
       </div>
     </main>
     <!-- End library section -->
+    <!-- Modal -->
+    <div class="lightbox js-lightbox" id="js-spinner">
+      <div class="lightbox__overlay"></div>
 
+      <div class="lightbox__content">
+        <img class="lightbox__image" />
+      </div>
+      <button type="button" class="lightbox__btn">
+        <svg class="close-modal-icon">
+          <use href="./images/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+    <!-- /Modal -->
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
