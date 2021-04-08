@@ -292,7 +292,7 @@
 }
 
 .storage__btn {
-  transition: 2s;
+  transition: 500ms;
   display: block;
 
   padding-top: 14px;
@@ -322,6 +322,11 @@
   background-color: $color-white;
   border: 1px solid $color-black;
   color: $color-black;
+}
+
+.storage__input:hover,
+.storage__input:focus {
+  border: 1px solid $accent-color;
 }
 
 .storage__input:checked ~ .storage__btn {
