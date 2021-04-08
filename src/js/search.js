@@ -14,10 +14,13 @@ async function onSearch (e) {
      clearArticlesConteiner();     
     newsApiService.query = e.target.value;    
         if (newsApiService.query.trim() === '') {
-        refs.spanRef.classList.add('js-notification');
+            refs.spanRef.classList.add('js-notification');
+            // або такий варіант
+            // refs.spanRef.classList.remove('js-notification');
         toCreateGallery();              
         return 
-    }   else {
+        }
+        else {
         refs.spanRef.classList.remove('js-notification');
     }
     newsApiService.resetPage();
