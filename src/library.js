@@ -1,2 +1,2 @@
 import './styles.scss';
-import './js/libraryStorageButtons';
+import './js/library-movie-render-btns';
