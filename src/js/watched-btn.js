@@ -1,14 +1,9 @@
-const refs = {
-  watchedBtn: document.getElementById('watched-btn-js'),
-  queueBtn: document.getElementById('queue-btn-js'),
-  alertMessage: document.querySelector('.alert-mesage'),
-  libraryGallery: document.getElementById('js-library-gallery'),
-};
+import refs from './refs';
 import movieGallaryCardTmpl from '../tamplates/library-gallery-card.hbs';
  
 // якщо відкриваємо лібрарі, то watched активна,
 refs.watchedBtn.classList.add('btn-active');
-const watchedStr = localStorage.getItem('Watched');
+// const watchedStr = localStorage.getItem('Watched');
 fetchMoviesFromLocalStorage();
 
 let arrWatchedFilms;
