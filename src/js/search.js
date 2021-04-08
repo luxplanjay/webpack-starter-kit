@@ -6,7 +6,6 @@ import NewApiService from './apiService';
 import toCreateGallery from'./renderGallery';
 const newsApiService = new NewApiService();
 
-
 refs.formRef.addEventListener('input', debounce(onSearch, 500));
 
 async function onSearch (e) {
@@ -14,15 +13,21 @@ async function onSearch (e) {
     try {        
      clearArticlesConteiner();     
     newsApiService.query = e.target.value;    
-    if (newsApiService.query === ''){ 
-        refs.spanRef.classList.add('js-notification');        
+    if (newsApiService.query === ''){                
         toCreateGallery();              
         return 
     }   else {
         refs.spanRef.classList.remove('js-notification');
     }
     newsApiService.resetPage();
-    const fetch = await newsApiService.fetchFilm();    
+    const fetch = await newsApiService.fetchFilm(); 
+    if (fetch.total_results === 0){ 
+        refs.spanRef.classList.add('js-notification');        
+        toCreateGallery();              
+        return 
+    }   else {
+        refs.spanRef.classList.remove('js-notification');
+    }
     const marcup = await addArticlesMarcup(fetch.results);    
     return marcup;  
     } 
