@@ -272,7 +272,7 @@
 }
 
 .storage__btn {
-  transition: 250ms;
+  transition: 1000ms;
   display: block;
 
   padding-top: 14px;
@@ -304,10 +304,10 @@
   color: $color-black;
 }
 
-.storage__btn:hover,
 .storage__btn:focus {
+  outline-style: none;
   border: 1px solid $accent-color;
-  transition: 250ms;
+  transition: 1000ms;
   color: $accent-color;
 }
 
