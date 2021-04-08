@@ -22,11 +22,11 @@ export const initStorageBtns = () => {
 
   const btnElement = storageElement.querySelectorAll('[type=checkbox]');
   
-    btnElement.forEach(element => {
+  btnElement.forEach(element => {
       const storageKey = element.value;
       const arr = localStorageApi.load(storageKey);
       if (arr !== undefined && arr.indexOf(movieId) >= 0) element.checked = "true";
-    });
+  });
   } 
 }
 
