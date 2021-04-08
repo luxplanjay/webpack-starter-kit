@@ -90,10 +90,10 @@
 
       &:hover,
       &:focus {
-        // background-color: $accent-color;
         outline-style: none;
         border: 1px solid $accent-color;
         transition: 250ms;
+        color: $accent-color;
       }
     }
   }
@@ -119,4 +119,10 @@
 .btn-active {
   background-color: $accent-color;
   border: none;
+
+  &:hover,
+  &:focus {
+    color: $color-white;
+    border-style: none;
+  }
 }

@@ -304,9 +304,11 @@
   color: $color-black;
 }
 
-.storage__input:hover,
-.storage__input:focus {
+.storage__btn:hover,
+.storage__btn:focus {
   border: 1px solid $accent-color;
+  transition: 250ms;
+  color: $accent-color;
 }
 
 .storage__input:checked ~ .storage__btn {
