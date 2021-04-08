@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     padding-top: 20px;
+    cursor: pointer;
 
       @media screen and (max-width: 1023px) {
         justify-content: space-between;
