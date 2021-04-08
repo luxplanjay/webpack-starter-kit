@@ -13,7 +13,8 @@ async function onSearch (e) {
     try {        
      clearArticlesConteiner();     
     newsApiService.query = e.target.value;    
-    if (newsApiService.query === ''){                
+        if (newsApiService.query.trim() === '') {
+        refs.spanRef.classList.add('js-notification');
         toCreateGallery();              
         return 
     }   else {
