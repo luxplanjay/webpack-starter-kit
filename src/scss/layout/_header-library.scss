@@ -118,11 +118,11 @@
 
 .btn-active {
   background-color: $accent-color;
-  border: none;
+  border: 1px solid $accent-color;
 
   &:hover,
   &:focus {
     color: $color-white;
-    border-style: none;
+    // border-style: none;
   }
 }

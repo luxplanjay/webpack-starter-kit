@@ -304,10 +304,11 @@
   color: $color-black;
 }
 
-.storage__btn:focus {
+.storage__btn:focus,
+.storage__btn:hover {
   outline-style: none;
   border: 1px solid $accent-color;
-  transition: 1000ms;
+  transition: 500ms;
   color: $accent-color;
 }
 
