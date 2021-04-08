@@ -43,7 +43,6 @@ function makeActionInStorage({storageKey, movieId, action}) {
 
   function changeLibraryCardDisplay(value) { 
       const libraryCard = document.querySelector(`[data-library="${storageKey}"] [data-action="${movieId}"]`);
-    //   установить на соответствующие окна в библиотеле data - library = watched и data - library = queue !!!!!!
     if (libraryCard) libraryCard.style.display = value;
   }
 }
