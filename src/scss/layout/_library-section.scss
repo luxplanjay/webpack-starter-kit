@@ -2,19 +2,25 @@
   &-movie-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     padding-top: 20px;
 
+      @media screen and (max-width: 1023px) {
+        justify-content: space-between;
+    }
+
     @media screen and (min-width: $tablet) {
+      padding-top: 60px;
+    }
+
+    @media screen and (min-width: $desktop) {
       padding-top: 60px;
     }
   }
 
   &-movie-item {
     width: 280px;
-    height: 440px;
+    // height: 440px;
     margin-bottom: 20px;
-    border: 1px solid black; // to delete
     border-radius: 5px;
 
     @media screen and (min-width: $tablet) {
@@ -24,10 +30,15 @@
 
     @media screen and (min-width: $desktop) {
       width: 274px;
+
+        &:not(:nth-child(3n + 3)) {
+         margin-right: 30px;
+        }
     }
   }
 }
 
+// контейнер для позиціонування
 .pagination {
   width: 280px;
   height: 40px;
