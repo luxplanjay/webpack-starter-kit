@@ -1,5 +1,6 @@
 import refs from './refs';
 import movieGallaryCardTmpl from '../tamplates/library-gallery-card.hbs';
+import spinner from './spinner';
  
 // якщо відкриваємо лібрарі, то watched активна,
 refs.watchedBtn.classList.add('btn-active');
@@ -44,25 +45,36 @@ function fetchMoviesForId(movie_id) {
     .then(response => {
       return response.json();
     })
+    .catch(error => {
+        console.log(error);
+      })
 }
  
-function fetchMoviesFromLocalStorage() {                               
+function fetchMoviesFromLocalStorage() {
+  spinner.spin(refs.loadSpinner);
     const arr = getArrWatchedFilms()
     refs.libraryGallery.innerHTML = '';
     if (arr.length === 0) {
       alertMessage()
     }
     arr.map(film => {
-        fetchMoviesForId(film)
+      fetchMoviesForId(film)
           .then(results => {
             const markup = movieGallaryCardTmpl(results);
             
             refs.libraryGallery.insertAdjacentHTML('beforeend', markup);
+          })
+          .catch(error => {
+            console.log(error);
+          })
+          .finally(() => {
+            spinner.stop();
           });
     })
 }
 
-function fetchQueueMoviesFromLocalStorage() {                               
+function fetchQueueMoviesFromLocalStorage() {
+  spinner.spin(refs.loadSpinner);
     const arr = getArrQueueFilms()
     refs.libraryGallery.innerHTML = '';
     if (arr.length === 0) {
@@ -74,6 +86,12 @@ function fetchQueueMoviesFromLocalStorage() {
             const markup = movieGallaryCardTmpl(results);
             
             refs.libraryGallery.insertAdjacentHTML('beforeend', markup);
+          })
+          .catch(error => {
+            console.log(error);
+          })
+          .finally(() => {
+            spinner.stop();
           });
     })
 }
