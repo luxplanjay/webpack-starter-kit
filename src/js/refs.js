@@ -15,6 +15,7 @@ export default {
       watchedBtn: document.getElementById('watched-btn-js'),
       queueBtn: document.getElementById('queue-btn-js'),
       alertMessage: document.querySelector('.alert-mesage'),
-      libraryGallery: document.getElementById('js-library-gallery'),
+      libraryGallery: document.querySelector('.js-library-gallery'),
+      galleryId: document.getElementById('js-gallery'),
 
 }
