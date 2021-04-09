@@ -11,6 +11,7 @@ export default {
       body: document.querySelector('body'),
       loadSpinner: document.getElementById('js-spinner'),
       ourTeamRef: document.getElementById('js-our_team'),
+      upBtn: document.getElementById('up-btn')
       // storageElement: document.querySelector('.movie-container .storage'),
       // movieId: document.querySelector('.movie-container').dataset.action,
       // storageBtns: document.querySelector('.controls'),
