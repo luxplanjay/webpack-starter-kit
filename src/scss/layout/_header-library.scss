@@ -93,7 +93,7 @@
         outline-style: none;
         border: 1px solid $accent-color;
         transition: 500ms;
-        color: $accent-color;
+        color: $color-white;
         background-color: $accent-color;
         outline: none;
       }
@@ -121,10 +121,4 @@
 .btn-active {
   background-color: $accent-color;
   border: 1px solid $accent-color;
-
-  &:hover,
-  &:focus {
-    color: $color-white;
-    // border-style: none;
-  }
 }
