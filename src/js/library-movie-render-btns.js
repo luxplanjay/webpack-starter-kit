@@ -34,6 +34,7 @@ function alertMessage() {
   const messageSorry = document.createElement('p');
   messageSorry.classList.add('library-message');
   messageSorry.textContent = 'Sorry, there are no movies';
+  refs.alertMessage.innerHTML = '';
   refs.alertMessage.appendChild(messageSorry);
 }
 
@@ -52,10 +53,12 @@ function fetchMoviesForId(movie_id) {
  
 function fetchMoviesFromLocalStorage() {
   spinner.spin(refs.loadSpinner);
-    const arr = getArrWatchedFilms()
+  const arr = getArrWatchedFilms()
+  refs.alertMessage.innerHTML = '';
     refs.libraryGallery.innerHTML = '';
-    if (arr.length === 0) {
-      alertMessage()
+  if (arr.length === 0) {
+      alertMessage();
+      spinner.stop();
     }
     arr.map(film => {
       fetchMoviesForId(film)
@@ -75,10 +78,12 @@ function fetchMoviesFromLocalStorage() {
 
 function fetchQueueMoviesFromLocalStorage() {
   spinner.spin(refs.loadSpinner);
-    const arr = getArrQueueFilms()
+  const arr = getArrQueueFilms()
+  refs.alertMessage.innerHTML = '';
     refs.libraryGallery.innerHTML = '';
     if (arr.length === 0) {
-      alertMessage()
+      alertMessage();
+      spinner.stop();
     }
     arr.map(film => {
         fetchMoviesForId(film)

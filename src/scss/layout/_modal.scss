@@ -130,7 +130,7 @@
 }
 
 .movie-description .active-btn-style {
-  transition: 1s;
+  transition: 250ms;
   background-color: $accent-color;
   border: none;
   outline: none;
@@ -198,7 +198,7 @@
   background-color: $color-white;
   border-radius: 5px;
   transition: 1s;
-  transform: scale(0.95);
+  transform: scale(0.75);
 }
 
 .lightbox.is-open .lightbox__content {
@@ -221,8 +221,8 @@
 
 .lightbox__btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 15px;
+  right: 15px;
   width: 30px;
   height: 30px;
   outline: none;
@@ -256,26 +256,6 @@
   border: 0;
 }
 
-// storage buttons
-
-// .inactive-btn-style {
-//   transition: 2s;
-//   font-size: 12px;
-//   background-color: $color-gray;
-//   cursor: ihherit;
-//   border: none;
-//   outline: none;
-//   width: 130px;
-//   height: 39px;
-//   text-align: center;
-//   color: $color-white;
-//   border-radius: 5px;
-//   @media screen and (min-width: $tablet) {
-//     width: 136px;
-//     height: 44px;
-//   }
-// }
-
 .storage {
   display: flex;
   justify-content: space-between;
@@ -292,7 +272,7 @@
 }
 
 .storage__btn {
-  transition: 2s;
+  transition: 1000ms;
   display: block;
 
   padding-top: 14px;
@@ -322,6 +302,14 @@
   background-color: $color-white;
   border: 1px solid $color-black;
   color: $color-black;
+}
+
+.storage__btn:focus,
+.storage__btn:hover {
+  outline-style: none;
+  border: 1px solid $accent-color;
+  transition: 500ms;
+  color: $accent-color;
 }
 
 .storage__input:checked ~ .storage__btn {

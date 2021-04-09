@@ -4,7 +4,7 @@ import emptyJpg from '../images/empty-img.jpg';
 import fetchOneFilm from './findOneFilm';
 import { initStorageBtns } from './fnAddToLocalStorage';
 
-refs.gallery.addEventListener('click', onImageClick);
+refs.galleryId.addEventListener('click', onImageClick);
 refs.btnClose.addEventListener('click', closeModal);
 refs.overlay.addEventListener('click', closeModal);
 
