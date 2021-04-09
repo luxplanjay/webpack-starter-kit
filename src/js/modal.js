@@ -8,23 +8,6 @@ refs.gallery.addEventListener('click', onImageClick);
 refs.btnClose.addEventListener('click', closeModal);
 refs.overlay.addEventListener('click', closeModal);
 
- function onImageClick(event) {
-      if (event.target === document.querySelectorAll(".move-card")) { console.log(event.target) }
-
-      if (event.target.nodeName !== 'IMG') {
-            return;
-      }
-
-      if (event.target.dataset.emptyPage) {
-            return;
-      }
-
-      const activeImg = event.target;
-      const movieId = activeImg.dataset.movieId;
-
-  openModal(movieId);
-}
-
 function openModal(movieId) {
       window.addEventListener('keydown', closeModalToPressEscape);
       refs.modal.classList.add('is-open');
@@ -39,11 +22,33 @@ function openModal(movieId) {
                         let img = poster_path
                         ? `https://image.tmdb.org/t/p/w500${poster_path}`
                         : emptyJpg;
-                        let movie = ({ id, title, release_date, genre_ids, img, vote_average, vote_count, original_title, genres, overview, popularity });
+                  let movie = ({
+                        id, title, release_date, genre_ids,
+                        img, vote_average, vote_count, original_title,
+                        genres, overview, popularity
+                  });
                   renderCardFilmInModal(movie);
                   initStorageBtns();
             })
     
+}
+
+
+function onImageClick(event) {
+      if (event.target === document.querySelectorAll(".move-card")) { console.log(event.target) }
+
+      if (event.target.nodeName !== 'IMG') {
+            return;
+      }
+
+      if (event.target.dataset.emptyPage) {
+            return;
+      }
+
+      const activeImg = event.target;
+      const movieId = activeImg.dataset.movieId;
+
+  openModal(movieId);
 }
 
 

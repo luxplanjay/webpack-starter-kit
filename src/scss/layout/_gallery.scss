@@ -11,6 +11,27 @@
     img {
       width: 100%;
       border-radius: 5px;
+      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        box-shadow: 1px 1px $accent-color, 2px 2px $accent-color,
+          3px 3px $accent-color, 4px 4px $accent-color, 5px 5px $accent-color;
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+      }
+    }
+  }
+
+  .library-move-card {
+    img {
+      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        box-shadow: none;
+        -webkit-transform: none;
+        transform: none;
+      }
     }
   }
 
@@ -27,8 +48,6 @@
     font-family: Roboto;
 
     color: #000000;
-
-    // color: #000000;
   }
   .move-info {
     font-family: Roboto;

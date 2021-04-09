@@ -13,8 +13,5 @@ function fetchOneFilm(movie_id) {
             spinner.stop();
         });
 }
-            // if (!response.ok) return Promise.reject('Server error!');
-            // return response.json();
-            // }
 
 export default fetchOneFilm;
