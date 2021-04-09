@@ -52,10 +52,57 @@
     border: none;
     // border-bottom: 0.5px solid #FFFFFF;
     color: $color-white;
+
     &::placeholder {
       font-size: 14px;
       line-height: 16px;
       color: $color-white;
+
+    &::after{
+        position: absolute;        
+        content: '';
+        display: flex;
+        justify-content: center;
+        // left: 0;   
+        margin-top: 16px;     
+        width: 336px;
+        height: 0.5px;
+        background-color: $color-white;
+        // border-radius: 2px;
+    }
+        .form-input{    
+        width: 324px;
+        outline: none;
+        background: none;
+        border: none;
+        // border-bottom: 0.5px solid #FFFFFF;
+        color: $color-white;    
+        &::placeholder{      
+        font-size: 14px;
+        line-height: 16px;
+        color: $color-white;
+        } 
+    }
+    .notification{
+        display: none;
+            
+        // width: 336px;
+        // height: 0.5px;
+        
+        // border-radius: 2px;
+        }
+    .js-notification{
+        color: #FF001B;
+        position: absolute;
+         
+        font-size: 14px;
+        line-height: 16px;
+        // content: '';
+        display: flex;
+        justify-content: center;
+        // left: 0;   
+        margin-top: 30px; 
+
     }
   }
   .notification {

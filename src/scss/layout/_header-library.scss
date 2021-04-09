@@ -75,7 +75,7 @@
       box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
       background-color: transparent;
       transition: 500ms;
-
+      cursor: pointer;
       @media screen and (min-width: $tablet) {
         width: 136px;
       }
@@ -94,6 +94,8 @@
         border: 1px solid $accent-color;
         transition: 500ms;
         color: $accent-color;
+        background-color: $accent-color;
+        outline: none;
       }
     }
   }
