@@ -1,32 +1,11 @@
 # Webpack starter kit &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
-## Developing
+## Зависимости
 
-### Prerequisites
+На компьютере должена быть установлена LTS-версия
+[Node.js](https://nodejs.org/en/).
 
-Для корректной работы SASS-компилятора и других инструментов, необходимо один
-раз глобально поставить дополнительные пакеты, выполнив в терминале следующие
-команды. Пользователям MacOS ничего делать не нужно.
-
-Пользователям **Windows**, в режиме администратора.
-[Как запусттить Powershell](https://youtu.be/p2tFnxcymwk) в режиме
-администратора.
-
-```shell
-npm install --global --production windows-build-tools
-```
-
-Вот как выглядит процесс успешной установки для пользователей **Windows**.
-
-![Установка windows-build-tools](https://user-images.githubusercontent.com/1426799/45007904-bde9f280-afb4-11e8-8a35-c77dffaffa2a.gif)
-
-Пользователям **Linux**.
-
-```shell
-sudo apt-get install gcc g++ make
-```
-
-### Setting up Dev
+### Разработка
 
 Для быстрого старта необходимо склонировать репозиторий.
 
@@ -68,7 +47,7 @@ npm start
 Во вкладке браузера перейти по адресу
 [http://localhost:4040](http://localhost:4040).
 
-### Building
+### Сборка в продакшен
 
 Для того чтобы создать оптимизированные файлы для хостинга, необходимо выполнить
 следующую команду. В корне проекта появится папка `build` со всеми
