@@ -1,6 +1,12 @@
-# Webpack starter kit &middot; [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
+# Webpack Starter Kit
 
-## Зависимости
+**Deprecation notice: сборка больше не поддерживается и не обновляется**
+
+Используйте [parcel-project-template](https://github.com/goitacademy/parcel-project-template)
+
+<!-- # Webpack starter kit &middot; [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE) -->
+
+<!-- ## Зависимости
 
 На компьютере должена быть установлена LTS-версия
 [Node.js](https://nodejs.org/en/).
@@ -77,4 +83,4 @@ npm run deploy
 проекта в продакшен, после чего содержимое папки `build` будет помещено в ветку
 `gh-pages` на удаленном (remote) репозитории. Через какое-то время живую
 страницу можно будет посмотреть по адресу указанному в отредактированном
-свойстве `homepage`.
+свойстве `homepage`. -->
